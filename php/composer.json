@@ -1,0 +1,19 @@
+{
+    "name": "pedro/src",
+    "description": "programa maestro pcr",
+    "autoload": {
+        "psr-4": {
+            "Pedro\\Src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pedro Arrieta",
+            "email": "37045854+Chicho25@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "mpdf/mpdf": "^8.1",
+        "phpmailer/phpmailer": "^6.8"
+    }
+}
