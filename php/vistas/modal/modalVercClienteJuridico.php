@@ -38,6 +38,8 @@ $obtener_registros_bfn = $cCclienteController->obtener_registros_bfn($id);
 $obtener_registros_bfpj = $cCclienteController->obtener_registros_bfpj($id);
 $obtener_registros_propietario = $cCclienteController->obtener_registros_propietario($id); 
 
+$todos_adjuntos_juridicos = $cCclienteController->obtenerTodosAdjuntos($id);
+
 if (isset($_GET['editar_formulario_cc'])) { ?>
 
 <form method="POST" action="" enctype="multipart/form-data">
@@ -4325,10 +4327,73 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                 <br>
                 <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Matriz de Riesgo<br>
+                <a href="vistas/documentos_generados/Matriz_Riesgo.xlsx" target="_blank"><i class="ri-file-warning-fill" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Recibido Conforme<br>
+                <a href="#" target="_blank"><i class="ri-user-star-line" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
         </div>
     </div>
-<?php }elseif(isset($_GET['adjuntos_formulario_cc'])){ ?>
-<h1>Adjuntos</h1>
+    <?php }elseif(isset($_GET['adjuntos_formulario_cc_pj'])){ ?>
+        
+        <button class="btn btn-primary" onclick="agregar_adjuntos_pj(<?php echo $_GET['id']; ?>, 'registrar_cClienteAdjuntos', 'registar_ccliente_adjuntos', 'cClienteAdjuntos')">Agregar Adjunto</button>
+        <br>
+        <table id="buttons-datatables" class="display table table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Descripcion del adjunto</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($todos_adjuntos_juridicos  as $key => $value) { ?>
+                <tr>
+                    <td><a href="<?php echo $value['link_desc_pj']; ?>" target="_blank"><?php echo $value['descripcion']; ?></a></td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="eliminar_adjunto_pn(<?php echo $value['id']; ?>, 'contenido_modal_ccliente_adjuntos', 'modal_adjuntos_eli', <?php echo $_GET['id']; ?>)"><i class="ri-delete-bin-5-line"></i></button>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>    
+        </table>
+
+    <?php }elseif(isset($_GET['adjuntos_cc_pj_reg'])){ ?> 
+
+    <div class="card-body">
+        <div class="live-preview">
+            <div class="row gy-4">
+                <!--end col-->
+                <div class="col-xxl-6 col-md-6">
+                    <div>
+                        <label for="basiInput" class="form-label">Descripcion</label>
+                        <input type="text" class="form-control" id="basiInput" name="descripcion" value="">
+                    </div>
+                </div>
+                <!--end col-->
+                <div class="col-xxl-6 col-md-6">
+                    <div>
+                        <label for="basiInput" class="form-label">Adjunto</label>
+                        <input type="file" class="form-control" id="basiInput" name="link_desc_pj" value="">
+                        <input type="hidden" name="id_general" value="<?php echo $_GET['id']; ?>">
+                        <br>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <div class="d-none code-view">
+            <pre class="language-markup" style="height: 450px;">
+        </div>
+    </div>
+
 <?php }elseif(isset($_GET['recaudos_contratos_formulario_cc_pj'])){ ?> 
     <div class="container">
         <div class="row">
@@ -4389,6 +4454,18 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
             <div class="col-sm-4" style="margin-top:20px;">
                 Detalle de Transaccion<br>
                 <a href="vistas/documentos_generados/detalle_transaccion.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-transfer" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Matriz de Riesgo<br>
+                <a href="vistas/documentos_generados/Matriz_Riesgo.xlsx" target="_blank"><i class="ri-file-warning-fill" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Recibido Conforme<br>
+                <a href="#" target="_blank"><i class="ri-user-star-line" style="font-size: 100px;" ></i></a>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>

@@ -31,6 +31,7 @@ class CcclienteController {
   private $tabla_cc_propietarios_bf_temp;
   private $tabla_cc_propietarios_bf;
   private $tabla_cc_declaracion_jurada;
+  private $tabla_cc_adjuntos_general;
   
   private $tabla_paises;
   private $tabla_codigo;
@@ -61,9 +62,14 @@ class CcclienteController {
         $this->tabla_cc_propietarios_bf_temp = "cc_pj_propietarios_beneficiarios_juridica_temp";
         $this->tabla_cc_propietarios_bf = "cc_pj_propietarios_beneficiarios_juridica";
         $this->tabla_cc_declaracion_jurada = "cc_pj_declaracion_jurada_2";
+        $this->tabla_cc_adjuntos_general = "adjuntos_general";
 
         $this->tabla_paises = "paises";
         $this->tabla_codigo = "codigos";
+    }
+
+    public function obtenerTodosAdjuntos($id){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_adjuntos_general, " id_general = $id ");
     }
 
     public function obtener_pais(){
@@ -714,6 +720,71 @@ class CcclienteController {
                 }elseif($key == 'pjad_evidencia_ingreso'){
 
                     $ruta = "vistas/adjuntos/evidencia_ingreso_pj/";
+                }elseif($key == 'link_desc'){
+                    
+                    $ruta = "vistas/adjuntos/adjuntos_g_pn/";
+
+                }elseif($key == 'link_desc_pj'){
+                    
+                    $ruta = "vistas/adjuntos/adjuntos_g_pn/";
+                }
+
+                if (strpos($key, 'link_desc') === 0) { 
+                    $ruta = "vistas/adjuntos/adjuntos_g_pn/";
+                    $ruta = $ruta;
+                    $file_name = basename($_FILES[$key]["name"]);
+                    $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                    $new_file_name = $id_general.'_'.uniqid() . "." . $file_ext;
+                    $target_file = $ruta . $new_file_name;
+                    $uploadOk = 1;
+                    
+                    // Verifica si el archivo ya existe
+                    if (file_exists($target_file)) {
+                        //echo "El archivo ya existe.";
+                        $uploadOk = 0;
+                    }
+            
+                    // Intenta mover el archivo a la carpeta de destino
+                    if ($uploadOk == 1 && move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
+                        $datos = array($key=>$target_file);
+                        $datos['id_general'] = $id_general;
+                        $datos['stat'] = 1;
+                        $datos['descripcion'] = $_POST['descripcion'];
+
+                        $this->ModelGlobal->agregar($this->tabla_cc_adjuntos_general, $datos);
+                    } else {
+                        //echo "Error al subir el archivo.";
+                    }
+                    
+                }
+
+                if (strpos($key, 'link_desc_pj') === 0) { 
+                    $ruta = "vistas/adjuntos/adjuntos_g_pj/";
+                    $ruta = $ruta;
+                    $file_name = basename($_FILES[$key]["name"]);
+                    $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                    $new_file_name = $id_general.'_'.uniqid() . "." . $file_ext;
+                    $target_file = $ruta . $new_file_name;
+                    $uploadOk = 1;
+                    
+                    // Verifica si el archivo ya existe
+                    if (file_exists($target_file)) {
+                        //echo "El archivo ya existe.";
+                        $uploadOk = 0;
+                    }
+            
+                    // Intenta mover el archivo a la carpeta de destino
+                    if ($uploadOk == 1 && move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
+                        $datos = array($key=>$target_file);
+                        $datos['id_general'] = $id_general;
+                        $datos['stat'] = 2;
+                        $datos['descripcion'] = $_POST['descripcion'];
+
+                        $this->ModelGlobal->agregar($this->tabla_cc_adjuntos_general, $datos);
+                    } else {
+                        //echo "Error al subir el archivo.";
+                    }
+                    
                 }
 
                 if (strpos($key, 'pjad_') === 0) { 

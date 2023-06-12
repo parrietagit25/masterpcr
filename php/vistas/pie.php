@@ -321,7 +321,7 @@
             } catch (error) {
                 console.log('Error al obtener los detalles:', error);
             }
-        }
+        } 
 
         function guardar_temp_apoderados(){
             
@@ -630,6 +630,19 @@
                 const data = await response.text();
                 //$('.generales_beneficiarios_finales').modal('hide');
                 document.querySelector('#generales_beneficiarios_final_natural').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        } 
+
+        async function solicitar_aprobacion(id_general, modal_aprobacion, contedino_aprobacion){
+            try {
+                var id = id_general;
+                const response = await fetch('vistas/modal/modalVercCliente.php?solicitar_aprobacion=1&id=' + id);
+                const data = await response.text();
+                $('.cClienteFormulario').modal('hide');
+                $('.solicitar_aprobacion').modal('show');
+                document.querySelector('#contenido_modal_solicitar_aprobacion').innerHTML = data;
             } catch (error) {
                 console.log('Error al obtener los detalles:', error);
             }
@@ -1069,9 +1082,29 @@
 
         }
 
-        async function agregar_adjuntos(id_general, modal_show, contenido_modal, ocultar_modal){
+        async function modal_ver_pj(id_ver, modulo, modal_show, contenido_modal){
 
-            console.log('ponchera');
+            var modulo = modulo;
+
+            if (modulo == 'ver_modal') {
+                try {
+                    
+                    var id = id_ver;
+                    var modal_show = modal_show;
+                    var contenido_modal = contenido_modal;
+
+                    const response = await fetch('vistas/modal/modalVercClienteJuridico.php?adjuntos_formulario_cc_pj=1&id=' + id);
+                    const data = await response.text();
+                    $('#'+modal_show+'').modal('show');
+                    document.querySelector('#'+contenido_modal+'').innerHTML = data;
+                } catch (error) {
+                    console.log('Error al obtener los detalles:', error);
+                }
+            }            
+
+        }
+
+        async function agregar_adjuntos(id_general, modal_show, contenido_modal, ocultar_modal){
 
             var modulo = modulo;
             
@@ -1082,6 +1115,26 @@
                 var contenido_modal = contenido_modal;
 
                 const response = await fetch('vistas/modal/modalVercCliente.php?adjuntos_cc_pn_reg=1&id=' + id);
+                const data = await response.text();
+                $('#'+ocultar_modal+'').modal('hide');
+                $('#'+modal_show+'').modal('show');
+                document.querySelector('#'+contenido_modal+'').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
+
+        async function agregar_adjuntos_pj(id_general, modal_show, contenido_modal, ocultar_modal){
+
+            var modulo = modulo;
+
+            try {
+                
+                var id = id_general;
+                var modal_show = modal_show;
+                var contenido_modal = contenido_modal;
+
+                const response = await fetch('vistas/modal/modalVercClienteJuridico.php?adjuntos_cc_pj_reg=1&id=' + id);
                 const data = await response.text();
                 $('#'+ocultar_modal+'').modal('hide');
                 $('#'+modal_show+'').modal('show');

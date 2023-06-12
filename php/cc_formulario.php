@@ -35,6 +35,7 @@ if (isset($_POST['eliminar_cc_cliente_pj'])) {
 }
 
 if (isset($_POST['registrar_adjunto'])) {
+  $id_general = $_POST['id_general'];
   $cCclienteController->subir_archivos($_FILES, $id_general);
   $alerta = 2;
 }

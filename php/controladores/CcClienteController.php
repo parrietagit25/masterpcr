@@ -318,6 +318,10 @@ class CcclienteController {
                 }elseif($key == 'link_desc'){
                     
                     $ruta = "vistas/adjuntos/adjuntos_g_pn/";
+
+                }elseif($key == 'link_desc_pj'){
+                    
+                    $ruta = "vistas/adjuntos/adjuntos_g_pn/";
                 }
 
                 if (strpos($key, 'link_desc') === 0) { 
@@ -340,6 +344,35 @@ class CcclienteController {
                         $datos = array($key=>$target_file);
                         $datos['id_general'] = $id_general;
                         $datos['stat'] = 1;
+                        $datos['descripcion'] = $_POST['descripcion'];
+
+                        $this->ModelGlobal->agregar($this->tabla_cc_adjuntos_general, $datos);
+                    } else {
+                        //echo "Error al subir el archivo.";
+                    }
+                    
+                }
+
+                if (strpos($key, 'link_desc_pj') === 0) { 
+                    $ruta = "vistas/adjuntos/adjuntos_g_pj/";
+                    $ruta = $ruta;
+                    $file_name = basename($_FILES[$key]["name"]);
+                    $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                    $new_file_name = $id_general.'_'.uniqid() . "." . $file_ext;
+                    $target_file = $ruta . $new_file_name;
+                    $uploadOk = 1;
+                    
+                    // Verifica si el archivo ya existe
+                    if (file_exists($target_file)) {
+                        //echo "El archivo ya existe.";
+                        $uploadOk = 0;
+                    }
+            
+                    // Intenta mover el archivo a la carpeta de destino
+                    if ($uploadOk == 1 && move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
+                        $datos = array($key=>$target_file);
+                        $datos['id_general'] = $id_general;
+                        $datos['stat'] = 2;
                         $datos['descripcion'] = $_POST['descripcion'];
 
                         $this->ModelGlobal->agregar($this->tabla_cc_adjuntos_general, $datos);
@@ -427,6 +460,21 @@ class CcclienteController {
     public function obtenerUsoInterno($id_uso_intterno){
         return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_uso_interno, "id_general = $id_uso_intterno");
     } 
+
+    public function actualizar_cc_cliente_solicitud($datos, $id){
+
+        // principal
+
+        $datos_generales = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'fg_') === 0) {
+                $datos_generales[$key] = $value; 
+            }
+        }
+
+        $this->ModelGlobal->actualizar($this->tabla_cc_generales, "id = $id", $datos_generales);
+
+    }
 
     public function actualizar_cc_cliente($datos, $id){
 
@@ -590,7 +638,7 @@ class CcclienteController {
     }
 
     public function eliminar_adjuntos_gen_pn($id){
-        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_adjuntos_general, "id = $id");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_adjuntos_general, " id = $id");
     }
 
 }

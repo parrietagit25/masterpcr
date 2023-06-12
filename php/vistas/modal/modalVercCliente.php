@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $modalDocu =1;
 $id = $_GET['id']; 
 #require_once("../../controladores/ReportesController.php");
@@ -177,7 +178,10 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 <div class="card-body">
                                                     <div class="live-preview">
                                                         <div class="row gy-4">
-                                                            <?php foreach ($generales as $key => $valueGenerales) { ?>
+                                                            <?php foreach ($generales as $key => $valueGenerales) {
+
+                                                                    $stado_general = $valueGenerales['fg_stat'];
+                                                                ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Primer Nombre</label>
@@ -714,14 +718,66 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 <div class="card-body">
                                                     <div class="live-preview">
                                                         <div class="row gy-4">
-                                                            <?php foreach ($beneficiario as $key => $valueBeneficiario) { ?>
+                                                            <?php 
+                                                            
+                                                            $fb_cliete_tercero = "";
+                                                            $fb_relacion_familiar_tercero = "";
+                                                            $fb_relacion_detalle = "";
+                                                            $fb_primer_nombre = "";
+                                                            $fb_segundo_nombre = "";
+                                                            $fb_apellido_paterno = "";
+                                                            $fb_apellido_materno = "";
+                                                            $fb_apellido_casada = "";
+                                                            $fb_pais_nacimiento = "";
+                                                            $fb_fecha_nacimiento = "";
+                                                            $fb_nacionaidad = "";
+                                                            $fb_genero = "";
+                                                            $fb_estado_civil = "";
+                                                            $fb_identificacion = "";
+                                                            $fb_pais_residencia = "";
+                                                            $fb_direccion_residencial = "";
+                                                            $fb_email = "";
+                                                            $fb_telefono_residencia = "";
+                                                            $fb_telefono_movil = "";
+                                                            $fb_profesion = "";
+                                                            $fb_ocupacion = "";
+                                                            $fb_lugar_trabajo = "";
+                                                            $fb_direccion_trabajo = "";
+                                                            
+                                                            foreach ($beneficiario as $key => $valueBeneficiario) { 
+
+                                                                $fb_cliete_tercero = $valueBeneficiario['fb_cliete_tercero'];
+                                                                $fb_relacion_familiar_tercero = $valueBeneficiario['fb_relacion_familiar_tercero'];
+                                                                $fb_relacion_detalle = $valueBeneficiario['fb_relacion_detalle'];
+                                                                $fb_primer_nombre = $valueBeneficiario['fb_primer_nombre'];
+                                                                $fb_segundo_nombre = $valueBeneficiario['fb_segundo_nombre'];
+                                                                $fb_apellido_paterno = $valueBeneficiario['fb_apellido_paterno'];
+                                                                $fb_apellido_materno = $valueBeneficiario['fb_apellido_materno'];
+                                                                $fb_apellido_casada = $valueBeneficiario['fb_apellido_casada'];
+                                                                $fb_pais_nacimiento = $valueBeneficiario['fb_pais_nacimiento'];
+                                                                $fb_fecha_nacimiento = $valueBeneficiario['fb_fecha_nacimiento'];
+                                                                $fb_nacionaidad = $valueBeneficiario['fb_nacionaidad'];
+                                                                $fb_genero = $valueBeneficiario['fb_genero'];
+                                                                $fb_estado_civil = $valueBeneficiario['fb_estado_civil'];
+                                                                $fb_identificacion = $valueBeneficiario['fb_identificacion'];
+                                                                $fb_pais_residencia = $valueBeneficiario['fb_pais_residencia'];
+                                                                $fb_direccion_residencial = $valueBeneficiario['fb_direccion_residencial'];
+                                                                $fb_email = $valueBeneficiario['fb_email'];
+                                                                $fb_telefono_residencia = $valueBeneficiario['fb_telefono_residencia'];
+                                                                $fb_telefono_movil = $valueBeneficiario['fb_telefono_movil'];
+                                                                $fb_profesion = $valueBeneficiario['fb_profesion'];
+                                                                $fb_ocupacion = $valueBeneficiario['fb_ocupacion'];
+                                                                $fb_lugar_trabajo = $valueBeneficiario['fb_lugar_trabajo'];
+                                                                $fb_direccion_trabajo = $valueBeneficiario['fb_direccion_trabajo'];
+
+                                                             } ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">¿EL AUTO SERÁ TRASPASADO A NOMBRE DEL CLIENTE O DE UN TERCERO?</label>
                                                                     <label for="basiInput" class="form-label">Cliente</label>
-                                                                    <input class="form-check-input" type="radio" name="fb_cliete_tercero" id="formradioRight6" value="109BFF" <?php if($valueBeneficiario['fb_cliete_tercero'] == '109BFF'){ echo 'checked'; } ?>>
+                                                                    <input class="form-check-input" type="radio" name="fb_cliete_tercero" id="formradioRight6" value="109BFF" <?php if($fb_cliete_tercero == '109BFF'){ echo 'checked'; } ?>>
                                                                     <label for="basiInput" class="form-label">Tercero</label>
-                                                                    <input class="form-check-input" type="radio" name="fb_cliete_tercero" id="formradioRight6" value="110BFF" <?php if($valueBeneficiario['fb_cliete_tercero'] == '110BFF'){ echo 'checked'; } ?>>
+                                                                    <input class="form-check-input" type="radio" name="fb_cliete_tercero" id="formradioRight6" value="110BFF" <?php if($fb_cliete_tercero == '110BFF'){ echo 'checked'; } ?>>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -729,51 +785,51 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Relacion con el cliente</label>
                                                                     <label for="basiInput" class="form-label">Familiar</label>
-                                                                    <input class="form-check-input" type="radio" name="fb_relacion_familiar_tercero" id="formradioRight6" value="111BFF" <?php if($valueBeneficiario['fb_relacion_familiar_tercero'] == '111BFF'){ echo 'checked'; } ?>>
+                                                                    <input class="form-check-input" type="radio" name="fb_relacion_familiar_tercero" id="formradioRight6" value="111BFF" <?php if($fb_relacion_familiar_tercero == '111BFF'){ echo 'checked'; } ?>>
                                                                     <label for="basiInput" class="form-label">Tercero</label>
-                                                                    <input class="form-check-input" type="radio" name="fb_relacion_familiar_tercero" id="formradioRight6" value="110BFF" <?php if($valueBeneficiario['fb_relacion_familiar_tercero'] == '110BFF'){ echo 'checked'; } ?>>
+                                                                    <input class="form-check-input" type="radio" name="fb_relacion_familiar_tercero" id="formradioRight6" value="110BFF" <?php if($fb_relacion_familiar_tercero == '110BFF'){ echo 'checked'; } ?>>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Detalle relacion</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="fb_relacion_detalle" value="<?php echo $valueBeneficiario['fb_relacion_detalle']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="fb_relacion_detalle" value="<?php echo $fb_relacion_detalle; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Primer Nombre</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="fb_primer_nombre" value="<?php echo $valueBeneficiario['fb_primer_nombre']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="fb_primer_nombre" value="<?php echo $fb_primer_nombre; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Segundo Nombre</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="fb_segundo_nombre" value="<?php echo $valueBeneficiario['fb_segundo_nombre']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="fb_segundo_nombre" value="<?php echo $fb_segundo_nombre; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido Paterno</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="fb_apellido_paterno" value="<?php echo $valueBeneficiario['fb_apellido_paterno']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="fb_apellido_paterno" value="<?php echo $fb_apellido_paterno; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido Materno</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="fb_apellido_materno" value="<?php echo $valueBeneficiario['fb_apellido_materno']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="fb_apellido_materno" value="<?php echo $fb_apellido_materno; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido de casada</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="fb_apellido_casada" value="<?php echo $valueBeneficiario['fb_apellido_casada']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="fb_apellido_casada" value="<?php echo $fb_apellido_casada; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -784,7 +840,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="fb_pais_nacimiento">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueBeneficiario['fb_pais_nacimiento'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($fb_pais_nacimiento == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -794,7 +850,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fb_fecha_nacimiento" value="<?php echo $valueBeneficiario['fb_fecha_nacimiento']; ?>">
+                                                                    data-date-format="d M, Y" name="fb_fecha_nacimiento" value="<?php echo $fb_fecha_nacimiento; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -805,7 +861,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="fb_nacionaidad">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueBeneficiario['fb_nacionaidad'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($fb_nacionaidad == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -818,7 +874,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="fb_genero">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($genero as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueBeneficiario['fb_genero'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($fb_genero == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -831,7 +887,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="fb_estado_civil">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($estado_civil as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueBeneficiario['fb_estado_civil'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($fb_estado_civil == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -840,7 +896,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Cedula / N# Pasaporte</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="fb_identificacion" value="<?php echo $valueBeneficiario['fb_identificacion']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="fb_identificacion" value="<?php echo $fb_identificacion; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->      
@@ -851,7 +907,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="fb_pais_residencia">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueBeneficiario['fb_pais_residencia'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($fb_pais_residencia == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -861,7 +917,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Direccion residencial</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="fb_direccion_residencial"><?php echo $valueBeneficiario['fb_direccion_residencial']; ?></textarea>
+                                                                        rows="3" name="fb_direccion_residencial"><?php echo $fb_direccion_residencial; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col--> 
@@ -883,7 +939,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="iconInput" class="form-label">Correo Electronico </label>
                                                                     <div class="form-icon">
                                                                         <input type="text" class="form-control form-control-icon"
-                                                                            id="iconInput" placeholder="example@gmail.com" name="fb_email" value="<?php echo $valueBeneficiario['fb_email']; ?>">
+                                                                            id="iconInput" placeholder="example@gmail.com" name="fb_email" value="<?php echo $fb_email; ?>">
                                                                         <i class="ri-mail-unread-line"></i>
                                                                     </div>
                                                                 </div>
@@ -892,14 +948,14 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Telefono Residencial</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="fb_telefono_residencia" value="<?php echo $valueBeneficiario['fb_telefono_residencia']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="fb_telefono_residencia" value="<?php echo $fb_telefono_residencia; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->     
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Telefono Movil</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="fb_telefono_movil" value="<?php echo $valueBeneficiario['fb_telefono_movil']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="fb_telefono_movil" value="<?php echo $fb_telefono_movil; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->    
@@ -910,7 +966,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="fb_profesion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueBeneficiario['fb_profesion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?>><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($fb_profesion == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -923,7 +979,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="fb_ocupacion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueBeneficiario['fb_ocupacion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($fb_ocupacion == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -933,7 +989,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Lugar de trabajo</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="fb_lugar_trabajo"><?php echo $valueBeneficiario['fb_lugar_trabajo']; ?></textarea>
+                                                                        rows="3" name="fb_lugar_trabajo"><?php echo $fb_lugar_trabajo; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->   
@@ -941,11 +997,11 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Direccion de trabajo</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="fb_direccion_trabajo"><?php echo $valueBeneficiario['fb_direccion_trabajo']; ?></textarea>
+                                                                        rows="3" name="fb_direccion_trabajo"><?php echo $fb_direccion_trabajo; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
-                                                            <?php } ?>
+                                                            
                                                         </div>
                                                         <!--end row-->
                                                     </div>
@@ -972,7 +1028,60 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 <div class="card-body">
                                                     <div class="live-preview">
                                                         <div class="row gy-4">
-                                                            <?php foreach ($terceros as $key => $valueTerceros) { ?>
+                                                            <?php 
+                                                            
+                                                            $ft_cliete_tercero = "";
+                                                            $ft_relacion_familiar_tercero = "";
+                                                            $ft_relacion_detalle = "";
+                                                            $ft_primer_nombre = "";
+                                                            $ft_segundo_nombre = "";
+                                                            $ft_apellido_paterno = "";
+                                                            $ft_apellido_casada = "";
+                                                            $ft_pais_nacimiento = "";
+                                                            $ft_fecha_nacimiento = "";
+                                                            $ft_nacionaidad = "";
+                                                            $ft_genero = "";
+                                                            $ft_estado_civil = "";
+                                                            $ft_identificacion = "";
+                                                            $ft_pais_residencia = "";
+                                                            $ft_direccion_residencial = "";
+                                                            $ft_pais_residencia_fiscal = "";
+                                                            $ft_email = "";
+                                                            $ft_telefono_residencia = "";
+                                                            $ft_telefono_movil = "";
+                                                            $ft_profesion = "";
+                                                            $ft_ocupacion = "";
+                                                            $ft_lugar_trabajo = "";
+                                                            $ft_direccion_trabajo = "";
+
+                                                            foreach ($terceros as $key => $valueTerceros) { 
+
+                                                                $ft_cliete_tercero = $valueTerceros['ft_cliete_tercero'];
+                                                                $ft_relacion_familiar_tercero = $valueTerceros['ft_relacion_familiar_tercero'];
+                                                                $ft_relacion_detalle = $valueTerceros['ft_relacion_detalle'];
+                                                                $ft_primer_nombre = $valueTerceros['ft_primer_nombre'];
+                                                                $ft_segundo_nombre = $valueTerceros['ft_segundo_nombre'];
+                                                                $ft_apellido_paterno = $valueTerceros['ft_apellido_paterno'];
+                                                                $ft_apellido_materno = $valueTerceros['ft_apellido_materno'];
+                                                                $ft_apellido_casada = $valueTerceros['ft_apellido_casada'];
+                                                                $ft_pais_nacimiento = $valueTerceros['ft_pais_nacimiento'];
+                                                                $ft_fecha_nacimiento = $valueTerceros['ft_fecha_nacimiento'];
+                                                                $ft_nacionaidad = $valueTerceros['ft_nacionaidad'];
+                                                                $ft_genero = $valueTerceros['ft_genero'];
+                                                                $ft_estado_civil = $valueTerceros['ft_estado_civil'];
+                                                                $ft_identificacion = $valueTerceros['ft_identificacion'];
+                                                                $ft_pais_residencia = $valueTerceros['ft_pais_residencia'];
+                                                                $ft_direccion_residencial = $valueTerceros['ft_direccion_residencial'];
+                                                                $ft_pais_residencia_fiscal = $valueTerceros['ft_pais_residencia_fiscal'];
+                                                                $ft_email = $valueTerceros['ft_email'];
+                                                                $ft_telefono_residencia = $valueTerceros['ft_telefono_residencia'];
+                                                                $ft_telefono_movil = $valueTerceros['ft_telefono_movil'];
+                                                                $ft_profesion = $valueTerceros['ft_profesion'];
+                                                                $ft_ocupacion = $valueTerceros['ft_ocupacion'];
+                                                                $ft_lugar_trabajo = $valueTerceros['ft_lugar_trabajo'];
+                                                                $ft_direccion_trabajo = $valueTerceros['ft_direccion_trabajo'];
+
+                                                             } ?>
 
                                                             <p>EN ESTE ÚLTIMO CASO, COMPLETE CON LOS DATOS DEL BENEFICIARIO FINAL DE LA TRANSACCIÓN. DE SER PERSONA JURÍDICA,
                                                             UTILIZAR EL FORMULARIO DE DEBIDA DILIGENCIA PERSONA JURÍDICA PCR-CUMP-FORM02 Y LA DECLARACIÓN JURADA DE BENEFICIARIOS
@@ -981,9 +1090,9 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">¿EL AUTO SERÁ TRASPASADO A NOMBRE DEL CLIENTE O DE UN TERCERO?</label>
                                                                     <label for="basiInput" class="form-label">Cliente</label>
-                                                                    <input class="form-check-input" type="radio" name="ft_cliete_tercero" id="formradioRight6" value="109BFF" <?php if($valueTerceros['ft_cliete_tercero'] == '109BFF'){ echo 'checked'; } ?>>
+                                                                    <input class="form-check-input" type="radio" name="ft_cliete_tercero" id="formradioRight6" value="109BFF" <?php if($ft_cliete_tercero == '109BFF'){ echo 'checked'; } ?>>
                                                                     <label for="basiInput" class="form-label">Tercero</label>
-                                                                    <input class="form-check-input" type="radio" name="ft_cliete_tercero" id="formradioRight6" value="111BFF" <?php if($valueTerceros['ft_cliete_tercero'] == '111BFF'){ echo 'checked'; } ?>>
+                                                                    <input class="form-check-input" type="radio" name="ft_cliete_tercero" id="formradioRight6" value="111BFF" <?php if($ft_cliete_tercero == '111BFF'){ echo 'checked'; } ?>>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -992,51 +1101,51 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="basiInput" class="form-label">Relacion con el cliente</label>
                                                                     <br>
                                                                     <label for="basiInput" class="form-label">Familiar</label>
-                                                                    <input class="form-check-input" type="radio" name="ft_relacion_familiar_tercero" id="formradioRight6" value="111BFF" <?php if($valueTerceros['ft_relacion_familiar_tercero'] == '111BFF'){ echo 'checked'; } ?>>
+                                                                    <input class="form-check-input" type="radio" name="ft_relacion_familiar_tercero" id="formradioRight6" value="111BFF" <?php if($ft_relacion_familiar_tercero == '111BFF'){ echo 'checked'; } ?>>
                                                                     <label for="basiInput" class="form-label">Tercero</label>
-                                                                    <input class="form-check-input" type="radio" name="ft_relacion_familiar_tercero" id="formradioRight6" value="110BFF" <?php if($valueTerceros['ft_relacion_familiar_tercero'] == '110BFF'){ echo 'checked'; } ?>>
+                                                                    <input class="form-check-input" type="radio" name="ft_relacion_familiar_tercero" id="formradioRight6" value="110BFF" <?php if($ft_relacion_familiar_tercero == '110BFF'){ echo 'checked'; } ?>>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Detalle relacion</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="ft_relacion_detalle" value="<?php echo $valueTerceros['ft_relacion_detalle']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="ft_relacion_detalle" value="<?php echo $ft_relacion_detalle; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Primer Nombre</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="ft_primer_nombre" value="<?php echo $valueTerceros['ft_primer_nombre']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="ft_primer_nombre" value="<?php echo $ft_primer_nombre; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Segundo Nombre</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="ft_segundo_nombre" value="<?php echo $valueTerceros['ft_segundo_nombre']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="ft_segundo_nombre" value="<?php echo $ft_segundo_nombre; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido Paterno</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="ft_apellido_paterno" value="<?php echo $valueTerceros['ft_apellido_paterno']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="ft_apellido_paterno" value="<?php echo $ft_apellido_paterno; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido Materno</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="ft_apellido_materno" value="<?php echo $valueTerceros['ft_apellido_materno']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="ft_apellido_materno" value="<?php echo $ft_apellido_materno; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido de casada</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="ft_apellido_casada" value="<?php echo $valueTerceros['ft_apellido_casada']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="ft_apellido_casada" value="<?php echo $ft_apellido_casada; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1047,7 +1156,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="ft_pais_nacimiento">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueTerceros['ft_pais_nacimiento'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($ft_pais_nacimiento == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1057,7 +1166,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="ft_fecha_nacimiento" value="<?php echo $valueTerceros['ft_fecha_nacimiento']; ?>">
+                                                                    data-date-format="d M, Y" name="ft_fecha_nacimiento" value="<?php echo $ft_fecha_nacimiento; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1068,7 +1177,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="ft_nacionaidad">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueTerceros['ft_nacionaidad'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($ft_nacionaidad == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1080,7 +1189,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="ft_genero">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($genero as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueTerceros['ft_genero'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($ft_genero == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1092,7 +1201,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="ft_estado_civil">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($estado_civil as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueTerceros['ft_estado_civil'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($ft_estado_civil == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1100,7 +1209,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Cedula / N# Pasaporte</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="ft_identificacion" value="<?php echo $valueTerceros['ft_identificacion']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="ft_identificacion" value="<?php echo $ft_identificacion; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->      
@@ -1111,7 +1220,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="ft_pais_residencia">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueTerceros['ft_pais_residencia'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($ft_pais_residencia == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1121,7 +1230,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Direccion residencial</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="ft_direccion_residencial"><?php echo $valueTerceros['ft_direccion_residencial']; ?></textarea>
+                                                                        rows="3" name="ft_direccion_residencial"><?php echo $ft_direccion_residencial; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col--> 
@@ -1132,7 +1241,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="ft_pais_residencia_fiscal">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueTerceros['ft_pais_residencia_fiscal'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($ft_pais_residencia_fiscal == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1143,7 +1252,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="iconInput" class="form-label">Correo Electronico </label>
                                                                     <div class="form-icon">
                                                                         <input type="text" class="form-control form-control-icon"
-                                                                            id="iconInput" placeholder="example@gmail.com" name="ft_email" value="<?php echo $valueTerceros['ft_email']; ?>">
+                                                                            id="iconInput" placeholder="example@gmail.com" name="ft_email" value="<?php echo $ft_email; ?>">
                                                                         <i class="ri-mail-unread-line"></i>
                                                                     </div>
                                                                 </div>
@@ -1152,14 +1261,14 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Telefono Residencial</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="ft_telefono_residencia" value="<?php echo $valueTerceros['ft_telefono_residencia']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="ft_telefono_residencia" value="<?php echo $ft_telefono_residencia; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->     
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Telefono Movil</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="ft_telefono_movil" value="<?php echo $valueTerceros['ft_telefono_movil']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="ft_telefono_movil" value="<?php echo $ft_telefono_movil; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->    
@@ -1170,7 +1279,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="ft_profesion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueTerceros['ft_profesion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($ft_profesion == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1183,7 +1292,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="ft_ocupacion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueTerceros['ft_ocupacion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($ft_ocupacion == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1193,7 +1302,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Lugar de trabajo</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="ft_lugar_trabajo"><?php echo $valueTerceros['ft_lugar_trabajo']; ?></textarea>
+                                                                        rows="3" name="ft_lugar_trabajo"><?php echo $ft_lugar_trabajo; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->   
@@ -1201,11 +1310,11 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Direccion de trabajo</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="ft_direccion_trabajo"><?php echo $valueTerceros['ft_direccion_trabajo']; ?></textarea>
+                                                                        rows="3" name="ft_direccion_trabajo"><?php echo $ft_direccion_trabajo; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
-                                                        <?php } ?>
+                                                        
                                                         </div>
                                                         <!--end row-->
                                                     </div>
@@ -1232,7 +1341,27 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 <div class="card-body">
                                                     <div class="live-preview">
                                                         <div class="row gy-4">
-                                                            <?php foreach ($expuestas as $key => $valueExpuestas) { ?>
+                                                            <?php 
+                                                            
+                                                            $fp_beneficiario = "";
+                                                            $fp_nombre_completo = "";
+                                                            $fp_cargo_actual = "";
+                                                            $fp_fecha = "";
+                                                            $fp_cargo_anterior = "";
+                                                            $fp_fecha_anterior = "";
+                                                            $fp_comentario = "";
+
+                                                            foreach ($expuestas as $key => $valueExpuestas) { 
+
+                                                                $fp_beneficiario = $valueExpuestas['fp_beneficiario'];
+                                                                $fp_nombre_completo = $valueExpuestas['fp_nombre_completo'];
+                                                                $fp_cargo_actual = $valueExpuestas['fp_cargo_actual'];
+                                                                $fp_fecha = $valueExpuestas['fp_fecha'];
+                                                                $fp_cargo_anterior = $valueExpuestas['fp_cargo_anterior'];
+                                                                $fp_fecha_anterior = $valueExpuestas['fp_fecha_anterior'];
+                                                                $fp_comentario = $valueExpuestas['fp_comentario'];
+
+                                                            } ?> 
                                                             <p>
                                                             LAS PERSONAS EXPUESTAS POLÍTICAMENTE SON LAS PERSONAS NACIONALES O EXTRANJERAS QUE CUMPLEN FUNCIONES PÚBLICAS DESTACADAS DE ALTO NIVEL O CON MANDO Y 
                                                             JURISDICCIÓN EN UN ESTADO, COMO (PERO SIN LIMITARSE) LOS JEFES DE ESTADO O DE UN GOBIERNO, LOS POLÍTICOS DE ALTO PERFIL, LOS FUNCIONARIOS GUBERNAMENTALES, 
@@ -1244,16 +1373,16 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">¿ES EL CLIENTE, EL BENEFICIARIO FINAL O EL TERCERO AUTORIZADO UN PEP, FAMILIAR CERCANO O ESTRECHO COLABORADOR DE UN PEP?</label>
                                                                     <label for="basiInput" class="form-label">Cliente</label>
-                                                                    <input class="form-check-input" type="radio" name="fp_beneficiario" value="109BFF" <?php if($valueExpuestas['fp_beneficiario'] == '109BFF'){ echo 'checked'; } ?>>
+                                                                    <input class="form-check-input" type="radio" name="fp_beneficiario" value="109BFF" <?php if($fp_beneficiario == '109BFF'){ echo 'checked'; } ?>>
                                                                     <label for="basiInput" class="form-label">Tercero</label>
-                                                                    <input class="form-check-input" type="radio" name="fp_beneficiario" value="110BFF" <?php if($valueExpuestas['fp_beneficiario'] == '110BFF'){ echo 'checked'; } ?>>
+                                                                    <input class="form-check-input" type="radio" name="fp_beneficiario" value="110BFF" <?php if($fp_beneficiario == '110BFF'){ echo 'checked'; } ?>>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-5 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre Completo</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="fp_nombre_completo" value="<?php echo $valueExpuestas['fp_nombre_completo']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="fp_nombre_completo" value="<?php echo $fp_nombre_completo; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1264,7 +1393,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="fp_cargo_actual">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueExpuestas['fp_cargo_actual'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($fp_cargo_actual == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1274,7 +1403,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Actual</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fp_fecha" value="<?php echo $valueExpuestas['fp_fecha']; ?>">
+                                                                    data-date-format="d M, Y" name="fp_fecha" value="<?php echo $fp_fecha; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1285,7 +1414,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="fp_cargo_anterior">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value) { ?>
-                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($valueExpuestas['fp_cargo_anterior'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value['codigo']; ?>" <?php if($fp_cargo_anterior == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1295,7 +1424,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Anterior</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fp_fecha_anterior" value="<?php echo $valueExpuestas['fp_fecha_anterior']; ?>">
+                                                                    data-date-format="d M, Y" name="fp_fecha_anterior" value="<?php echo $fp_fecha_anterior; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1303,11 +1432,11 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Comentarios</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="fp_comentario"><?php echo $valueExpuestas['fp_comentario']; ?></textarea>
+                                                                        rows="3" name="fp_comentario"><?php echo $fp_comentario; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!-- end col -->
-                                                            <?php } ?>                      
+                                                                                 
                                                         </div>
                                                         <!--end row-->
                                                     </div>
@@ -1334,7 +1463,19 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 <div class="card-body">
                                                     <div class="live-preview">
                                                         <div class="row gy-4">
-                                                            <?php foreach ($declaracion_jurada as $key => $valueJurada) { ?>
+                                                            <?php 
+                                                            
+                                                            $fdc_nombre_completo="";
+                                                            $fdc_fecha="";
+                                                            $fdc_firma="";
+                                                            
+                                                            foreach ($declaracion_jurada as $key => $valueJurada) {
+
+                                                                $fdc_nombre_completo=$valueJurada['fdc_nombre_completo'];
+                                                                $fdc_fecha=$valueJurada['fdc_fecha'];
+                                                                $fdc_firma=$valueJurada['fdc_firma'];
+
+                                                             } ?>
                                                             <p>
                                                             DECLARO QUE LA INFORMACIÓN ANTERIOR ES VERAZ Y HA SIDO PROPORCIONADA EN CUMPLIMIENTO DE LO ESTABLECIDO POR LAS LEYES Y REGULACIONES RELACIONADAS CON 
                                                             LA PREVENCIÓN DEL BLANQUEO DE CAPITALES, FINANCIAMIENTO DEL TERRORISMO Y FINANCIAMIENTO DE LA PROLIFERACIÓN DE ARMAS DE DESTRUCCIÓN MASIVA DE LA REPÚBLICA 
@@ -1345,7 +1486,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre Completo</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="fdc_nombre_completo" value="<?php echo $valueJurada['fdc_nombre_completo']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="fdc_nombre_completo" value="<?php echo $fdc_nombre_completo; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1353,7 +1494,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fdc_fecha" value="<?php echo $valueJurada['fdc_fecha']; ?>">
+                                                                    data-date-format="d M, Y" name="fdc_fecha" value="<?php echo $fdc_fecha; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1362,11 +1503,11 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="basiInput" class="form-label">Firma (igual que en el documento de identidad)</label>
                                                                     <input type="file" class="form-control" id="basiInput" name="fdc_firma" value="">
                                                                     <br>
-                                                                    <a href="<?php echo $valueJurada['fdc_firma']; ?>" target="_blank">Firma Adjunta</a>
+                                                                    <a href="<?php echo $fdc_firma; ?>" target="_blank">Firma Adjunta</a>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
-                                                            <?php } ?>
+                                                            
                                                         </div>
                                                         <!--end row-->
                                                     </div>
@@ -1393,14 +1534,28 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 <div class="card-body">
                                                     <div class="live-preview">
                                                         <div class="row gy-4">
-                                                            <?php foreach ($documentos_adjuntos as $key => $valueAdjuntos) { ?>
+                                                            <?php 
+                                                            
+                                                            $fdcad_documento_identidad="";
+                                                            $fdcad_recibo="";
+                                                            $fdcad_aviso_operaciones="";
+                                                            $fdcad_evidencia_ingresos="";
+
+                                                            foreach ($documentos_adjuntos as $key => $valueAdjuntos) { 
+
+                                                                $fdcad_documento_identidad=$valueAdjuntos['fdcad_documento_identidad'];
+                                                                $fdcad_recibo=$valueAdjuntos['fdcad_recibo'];
+                                                                $fdcad_aviso_operaciones=$valueAdjuntos['fdcad_aviso_operaciones'];
+                                                                $fdcad_evidencia_ingresos=$valueAdjuntos['fdcad_evidencia_ingresos'];
+
+                                                             } ?>
                                                             <!--end col-->
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">copia de cédula o pasaporte (para extranjeros)</label>
                                                                     <input type="file" class="form-control" id="basiInput" name="fdcad_documento_identidad">
                                                                     <br>
-                                                                    <a href="<?php echo $valueAdjuntos['fdcad_documento_identidad']; ?>" target="_blank">Cédula Adjunta</a>
+                                                                    <a href="<?php echo $fdcad_documento_identidad; ?>" target="_blank">Cédula Adjunta</a>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1409,7 +1564,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="basiInput" class="form-label">Recibo de servicio público dentro de los últimos 3 meses o contrato de arrendamiento</label>
                                                                     <input type="file" class="form-control" id="basiInput" name="fdcad_recibo">
                                                                     <br>
-                                                                    <a href="<?php echo $valueAdjuntos['fdcad_recibo']; ?>" target="_blank">Recibo Adjunto</a>
+                                                                    <a href="<?php echo $fdcad_recibo; ?>" target="_blank">Recibo Adjunto</a>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1418,7 +1573,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="basiInput" class="form-label">Aviso de operaciones o licencia comercial</label>
                                                                     <input type="file" class="form-control" id="basiInput" name="fdcad_aviso_operaciones">
                                                                     <br>
-                                                                    <a href="<?php echo $valueAdjuntos['fdcad_aviso_operaciones']; ?>" target="_blank">Aviso de oparacion Adjunto</a>
+                                                                    <a href="<?php echo $fdcad_aviso_operaciones; ?>" target="_blank">Aviso de oparacion Adjunto</a>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1427,11 +1582,11 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="basiInput" class="form-label">Evidencia de ingresos (de acuerdo con el perfil financiero)</label>
                                                                     <input type="file" class="form-control" id="basiInput" name="fdcad_evidencia_ingresos">
                                                                     <br>
-                                                                    <a href="<?php echo $valueAdjuntos['fdcad_evidencia_ingresos']; ?>" target="_blank">Evidencia de ingreso Adjunta</a>
+                                                                    <a href="<?php echo $fdcad_evidencia_ingresos; ?>" target="_blank">Evidencia de ingreso Adjunta</a>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
-                                                            <?php } ?>
+                                                            
                                                         </div>
                                                         <!--end row-->
                                                     </div>
@@ -1458,97 +1613,177 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 <div class="card-body">
                                                     <div class="live-preview">
                                                         <div class="row gy-4">
-                                                            <?php foreach ($uso_interno as $key => $valueUsoInterno) { ?>
-                                                            <div class="col-xxl-4 col-md-6">
+                                                            <?php 
+
+                                                                $fui_nombre_completo_1="";
+                                                                $fui_aprobacion_1="";
+                                                                $fui_fecha_1="";
+                                                                $fui_nombre_completo_2="";
+                                                                $fui_aprobacion_2="";
+                                                                $fui_fecha_2="";
+                                                                $fui_nombre_completo_3="";
+                                                                $fui_aprobacion_3="";
+                                                                $fui_fecha_3="";
+                                                                $fui_nombre_completo_4="";
+                                                                $fui_aprobacion_4="";
+                                                                $fui_fecha_4="";
+                                                            
+                                                            foreach ($uso_interno as $key => $valueUsoInterno) {
+
+                                                                $fui_nombre_completo_1=$valueUsoInterno['fui_nombre_completo_1'];
+                                                                $fui_aprobacion_1=$valueUsoInterno['fui_aprobacion_1'];
+                                                                $fui_comentario_1=$valueUsoInterno['fui_comentario_1'];
+                                                                $fui_fecha_1=$valueUsoInterno['fui_fecha_1'];
+                                                                $fui_nombre_completo_2=$valueUsoInterno['fui_nombre_completo_2'];
+                                                                $fui_aprobacion_2=$valueUsoInterno['fui_aprobacion_2'];
+                                                                $fui_comentario_2=$valueUsoInterno['fui_comentario_2'];
+                                                                $fui_fecha_2=$valueUsoInterno['fui_fecha_2'];
+                                                                $fui_nombre_completo_3=$valueUsoInterno['fui_nombre_completo_3'];
+                                                                $fui_aprobacion_3=$valueUsoInterno['fui_aprobacion_3'];
+                                                                $fui_comentario_3=$valueUsoInterno['fui_comentario_3'];
+                                                                $fui_fecha_3=$valueUsoInterno['fui_fecha_3'];
+                                                                $fui_nombre_completo_4=$valueUsoInterno['fui_nombre_completo_4'];
+                                                                $fui_aprobacion_4=$valueUsoInterno['fui_aprobacion_4'];
+                                                                $fui_comentario_4=$valueUsoInterno['fui_comentario_4'];
+                                                                $fui_fecha_4=$valueUsoInterno['fui_fecha_4'];
+
+                                                             } ?>
+                                                            <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre y apellidos del vendedor</label>
-                                                                    <input class="form-control" id="basiInput" name="fui_nombre_completo_1" value="<?php echo $valueUsoInterno['fui_nombre_completo_1']; ?>">
+                                                                    <input class="form-control" id="basiInput" name="fui_nombre_completo_1" value="<?php echo $fui_nombre_completo_1; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
-                                                            <div class="col-xxl-4 col-md-6">
+
+                                                            <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Aprobación</label>
-                                                                    <input class="form-control" id="basiInput" name="fui_aprobacion_1" value="<?php echo $valueUsoInterno['fui_aprobacion_1']; ?>">
+                                                                    <select class="form-control" data-choices id="choices-single-default" name="fui_aprobacion_1">
+                                                                        <option value="">Seleccione</option>
+                                                                        <option value="Aprobado" <?php if($fui_aprobacion_1 == 'Aprobado'){ echo 'selected'; } ?>>Aprobado</option>
+                                                                        <option value="Rechazado" <?php if($fui_aprobacion_1 == 'Rechazado'){ echo 'selected'; } ?>>Rechazado</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
-                                                            <div class="col-xxl-4 col-md-6">
+                                                            <div class="col-xxl-3 col-md-6">
                                                                 <div>
-                                                                    <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fui_fecha_1" value="<?php echo $valueUsoInterno['fui_fecha_1']; ?>">
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-4 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">Nombre y apellidos del encargado de sucursal</label>
-                                                                    <input class="form-control" id="basiInput" name="fui_nombre_completo_2" value="<?php echo $valueUsoInterno['fui_nombre_completo_2']; ?>">
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-4 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">Aprobación</label>
-                                                                    <input class="form-control" id="basiInput" name="fui_aprobacion_2" value="<?php echo $valueUsoInterno['fui_aprobacion_2']; ?>">
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-4 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fui_fecha_2" value="<?php echo $valueUsoInterno['fui_fecha_2']; ?>">
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-4 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">Nombre y apellidos del analista de cumplimiento</label>
-                                                                    <input class="form-control" id="basiInput" name="fui_nombre_completo_3" value="<?php echo $valueUsoInterno['fui_nombre_completo_3']; ?>">
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-4 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">Aprobación</label>
-                                                                    <input class="form-control" id="basiInput" name="fui_aprobacion_3" value="<?php echo $valueUsoInterno['fui_aprobacion_3']; ?>">
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-4 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fui_fecha_3" value="<?php echo $valueUsoInterno['fui_fecha_3']; ?>">
+                                                                    <label for="basiInput" class="form-label">Comentaro</label>
+                                                                    <textarea class="form-control" name="fui_comentario_1"><?php echo $fui_comentario_1; ?></textarea>
                                                                 </div>
                                                             </div>
 
                                                             <!--end col-->
-                                                            <div class="col-xxl-4 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">Nombre y apellidos del gerente de venta de autos (solo para PEPs)</label>
-                                                                    <input class="form-control" id="basiInput" name="fui_nombre_completo_4" value="<?php echo $valueUsoInterno['fui_nombre_completo_4']; ?>">
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-4 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">Aprobación</label>
-                                                                    <input class="form-control" id="basiInput" name="fui_aprobacion_4" value="<?php echo $valueUsoInterno['fui_aprobacion_4']; ?>">
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-4 col-md-6">
+                                                            <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fui_fecha_4" value="<?php echo $valueUsoInterno['fui_fecha_4']; ?>">
+                                                                    data-date-format="d M, Y" name="fui_fecha_1" value="<?php echo $fui_fecha_1; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
-                                                            <?php } ?>
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Nombre y apellidos del encargado de sucursal</label>
+                                                                    <input class="form-control" id="basiInput" name="fui_nombre_completo_2" value="<?php echo $fui_nombre_completo_2; ?>">
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Aprobación</label>
+                                                                    <select class="form-control" data-choices id="choices-single-default" name="fui_aprobacion_2">
+                                                                        <option value="">Seleccione</option>
+                                                                        <option value="Aprobado" <?php if($fui_aprobacion_2 == 'Aprobado'){ echo 'selected'; } ?>>Aprobado</option>
+                                                                        <option value="Rechazado" <?php if($fui_aprobacion_2 == 'Rechazado'){ echo 'selected'; } ?>>Rechazado</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Comentaro</label>
+                                                                    <textarea class="form-control" name="fui_comentario_2"><?php echo $fui_comentario_2; ?></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Fecha</label>
+                                                                    <input type="text" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fui_fecha_2" value="<?php echo $fui_fecha_2; ?>">
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Nombre y apellidos del analista de cumplimiento</label>
+                                                                    <input class="form-control" id="basiInput" name="fui_nombre_completo_3" value="<?php echo $fui_nombre_completo_3; ?>">
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Aprobación</label>
+                                                                    <select class="form-control" data-choices id="choices-single-default" name="fui_aprobacion_3">
+                                                                        <option value="">Seleccione</option>
+                                                                        <option value="Aprobado" <?php if($fui_aprobacion_3 == 'Aprobado'){ echo 'selected'; } ?>>Aprobado</option>
+                                                                        <option value="Rechazado" <?php if($fui_aprobacion_3 == 'Rechazado'){ echo 'selected'; } ?>>Rechazado</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Comentaro</label>
+                                                                    <textarea class="form-control" name="fui_comentario_3"><?php echo $fui_comentario_3; ?></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Fecha</label>
+                                                                    <input type="text" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fui_fecha_3" value="<?php echo $fui_fecha_3; ?>">
+                                                                </div>
+                                                            </div>
+
+                                                            <!--end col-->
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Nombre y apellidos del gerente de venta de autos (solo para PEPs)</label>
+                                                                    <input class="form-control" id="basiInput" name="fui_nombre_completo_4" value="<?php echo $fui_nombre_completo_4; ?>">
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Aprobación</label>
+                                                                    <select class="form-control" data-choices id="choices-single-default" name="fui_aprobacion_4">
+                                                                        <option value="">Seleccione</option>
+                                                                        <option value="Aprobado" <?php if($fui_aprobacion_4 == 'Aprobado'){ echo 'selected'; } ?>>Aprobado</option>
+                                                                        <option value="Rechazado" <?php if($fui_aprobacion_4 == 'Rechazado'){ echo 'selected'; } ?>>Rechazado</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Comentaro</label>
+                                                                    <textarea class="form-control" name="fui_comentario_4"><?php echo $fui_comentario_4; ?></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-xxl-3 col-md-6">
+                                                                <div>
+                                                                    <label for="basiInput" class="form-label">Fecha</label>
+                                                                    <input type="text" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fui_fecha_4" value="<?php echo $fui_fecha_4; ?>">
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            
                                                         </div>
                                                         <!--end row-->
                                                     </div>
@@ -1586,7 +1821,20 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                         </p>
                                                         </div>
                                                         <!--end row-->
-                                                        <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_cliente">
+                                                        
+                                                        <?php if ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 1) { ?>
+                                                            <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_cliente">
+                                                            <a class="btn btn-primary" onclick="solicitar_aprobacion(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion</a>
+                                                        <?php }elseif ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 2) { ?>
+                                                            <a class="btn btn-warning" onclick="revicion_cc_pn(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Revicion</a>
+                                                            <a class="btn btn-success" onclick="aprobacion_cc_pn(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Aprobar</a>
+                                                        <?php }elseif ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 3) { ?>
+                                                           <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_cliente">
+                                                           <a class="btn btn-primary" onclick="solicitar_aprobacion(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion</a>
+                                                        <?php }else{
+                                                            echo '<h4>Este master ha sido aprobado</h4>';
+                                                        } ?>
+                                                        
                                                         <input type="hidden" name="id_general" value="<?php echo $id; ?>">
                                                         
                                                     </div>
@@ -3269,6 +3517,18 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Matriz de Riesgo<br>
+                <a href="vistas/documentos_generados/Matriz_Riesgo.xlsx" target="_blank"><i class="ri-file-warning-fill" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Recibido Conforme<br>
+                <a href="#" target="_blank"><i class="ri-user-star-line" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
         </div>
     </div>
 <?php }elseif(isset($_GET['adjuntos_formulario_cc'])){ ?>
@@ -3350,4 +3610,32 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
         <?php } ?>
     </tbody>    
 </table>
+
+<?php }elseif(isset($_GET['solicitar_aprobacion'])){ ?>
+
+    <div class="card-body">
+        <div class="live-preview">
+            <p>Presione el botón "Solicitar" para solicitar la aprobación por parte del analista. Cuando la solicitud esté aprobada, 
+                podrá ver este formulario en la sección de "Histórico Persona Natural". Tome en cuenta que el analista puede indicarle 
+                que no está completo y requerirle que llene la información faltante. 
+            </p>
+            <input type="hidden" name="id_general" value="<?php echo $_GET['id']; ?>">
+        </div>
+        <div class="d-none code-view">
+            <pre class="language-markup" style="height: 450px;">
+        </div>
+    </div>
+
 <?php }
+
+//doc
+//blokearon
+//ines y lisbeth 
+// listo pa salir
+
+// irene 
+// plena seguridad
+// muy afectada
+// se;al cosmica 
+// demaciada verga
+// energia q te ayuda

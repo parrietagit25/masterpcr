@@ -165,6 +165,32 @@
                                         </div><!-- /.modal-content -->
                                     </div><!-- /.modal-dialog -->
                                 </div><!-- /.modal -->
+
+                                <!-- Solicitar Aprobacion -->
+                                <div class="modal fade solicitar_aprobacion" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content" style="text-align: center;">
+                                            <form action="" method="post">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h6 class="fs-15">
+                                                        Solicitar Aprobacion 
+                                                    </h6>
+                                                    <div id="contenido_modal_solicitar_aprobacion">
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                                    <input type="submit" value="Solicitar" class="btn btn-primary" name="solicitar_aprobacion">
+                                                </div>
+                                            </form>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
                                 
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -176,7 +202,7 @@
                                                 <table id="buttons-datatables" class="display table table-bordered" style="width:100%">
                                                     <thead>
                                                         <tr>
-                                                            <th>Codigo Dollar</th>
+                                                            <th>Cedula</th>
                                                             <th>Nombre completo</th>
                                                             <th>Vehiculo</th>
                                                             <th>Fecha de registro</th>
@@ -187,7 +213,7 @@
                                                     <tbody>
                                                         <?php foreach ($todos_registros_cc  as $key => $value) { ?>
                                                         <tr>
-                                                            <td><?php echo $value['exp_codigo_dollar']; ?></td>
+                                                            <td><?php echo $value['fg_cedula']; ?></td>
                                                             <td><?php echo $value['exp_cliente']; ?></td>
                                                             <td><?php echo $value['vehiculo']; ?></td>
                                                             <td><?php echo $value['fg_fecha_log']; ?></td>

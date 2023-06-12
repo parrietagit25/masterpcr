@@ -16,6 +16,59 @@
                         <div class="card">
                             <div class="card-body">
 
+                                <!-- Registrar Adjuntos -->
+
+                                <div class="modal fade" id="registrar_cClienteAdjuntos" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <form action="" method="POST" enctype="multipart/form-data">
+                                                <div class="modal-body">
+                                                    <h6 class="fs-15">
+                                                        Registrar Adjuntos
+                                                    </h6>
+                                                    <div id="registar_ccliente_adjuntos">
+
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                                    <button class="btn btn-primary" type="submit" name="registrar_adjunto">Registrar Adjuntos</button>
+                                                </div>
+                                            </form>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                <!-- Adjuntos -->
+
+                                <div class="modal fade" id="cClienteAdjuntos" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h6 class="fs-15">
+                                                    Adjuntos Recaudados
+                                                </h6>
+                                                <div id="contenido_modal_ccliente_adjuntos">
+
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
                                 <!-- PROPIETARIOS BENEFICIARIOS FINALES- PERSONA JURÍDICA --> 
 
                                 <div class="modal fade propietarios_beneficiarios_juridicos" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
@@ -776,7 +829,7 @@
                                                 <table id="buttons-datatables" class="display table table-bordered" style="width:100%">
                                                     <thead>
                                                         <tr>
-                                                            <th>Codigo Dollar</th>
+                                                            <th>Rut</th>
                                                             <th>Nombre completo</th>
                                                             <th>Vehiculo</th>
                                                             <th>Fecha de registro</th>
@@ -787,7 +840,7 @@
                                                     <tbody>
                                                         <?php foreach ($todos_registros_cc_pj  as $key => $value) { ?>
                                                         <tr>
-                                                            <td><?php echo $value['pjexp_codigo_dollar']; ?></td>
+                                                            <td><?php echo $value['pjgn_ruc_dv']; ?></td>
                                                             <td><?php echo $value['pjexp_cliente']; ?></td>
                                                             <td><?php echo $value['vehiculo']; ?></td>
                                                             <td><?php echo $value['fecha_log']; ?></td>
@@ -796,7 +849,7 @@
                                                                 <button type="button" class="btn btn-secondary btn-icon waves-effect waves-light" onclick="id_modal_edit_rec_pj(<?php echo $value['id']; ?>)"><i class="ri-edit-line"></i></button>
                                                                 <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" onclick="modal_portada_pj_id(<?php echo $value['id']; ?>)"><i class="ri-file-2-fill"></i></button>
                                                                 <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="modal_contrato_id_pj(<?php echo $value['id']; ?>)"><i class=" ri-file-copy-2-line"></i></button>
-                                                                <!--<button type="button" class="btn btn-warning btn-icon waves-effect waves-light"><i class=" ri-attachment-2"></i></button>-->
+                                                                <button type="button" class="btn btn-warning btn-icon waves-effect waves-light" onclick="modal_ver_pj(<?php echo $value['id']; ?>, 'ver_modal', 'cClienteAdjuntos', 'contenido_modal_ccliente_adjuntos')"><i class=" ri-attachment-2"></i></button>
                                                                 <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="id_modal_eliminar_rec_pj(<?php echo $value['id']; ?>)"><i class="ri-delete-bin-5-line"></i></button>
                                                             </td>
                                                         </tr>

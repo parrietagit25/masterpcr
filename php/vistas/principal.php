@@ -1766,21 +1766,32 @@
                                                                                     <div class="live-preview">
                                                                                         <div class="row gy-4">
                                                                                             
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Nombre y apellidos del vendedor</label>
                                                                                                     <input class="form-control" id="basiInput" name="fui_nombre_completo_1">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Aprobación</label>
-                                                                                                    <input class="form-control" id="basiInput" name="fui_aprobacion_1">
+                                                                                                    <select class="form-control" data-choices id="choices-single-default" name="fui_aprobacion_1">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <option value="Aprobado">Aprobado</option>
+                                                                                                        <option value="Rechazado">Rechazado</option>
+                                                                                                    </select>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Comentaro</label>
+                                                                                                    <textarea class="form-control" name="fui_comentario_1"></textarea>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                                                     <input type="text" class="form-control" data-provider="flatpickr"
@@ -1788,21 +1799,32 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Nombre y apellidos del encargado de sucursal</label>
                                                                                                     <input class="form-control" id="basiInput" name="fui_nombre_completo_2">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Aprobación</label>
-                                                                                                    <input class="form-control" id="basiInput" name="fui_aprobacion_2">
+                                                                                                    <select class="form-control" data-choices id="choices-single-default" name="fui_aprobacion_2">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <option value="Aprobado">Aprobado</option>
+                                                                                                        <option value="Rechazado">Rechazado</option>
+                                                                                                    </select>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Comentaro</label>
+                                                                                                    <textarea class="form-control" name="fui_comentario_2"></textarea>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                                                     <input type="text" class="form-control" data-provider="flatpickr"
@@ -1810,21 +1832,32 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Nombre y apellidos del analista de cumplimiento</label>
                                                                                                     <input class="form-control" id="basiInput" name="fui_nombre_completo_3">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Aprobación</label>
-                                                                                                    <input class="form-control" id="basiInput" name="fui_aprobacion_3">
+                                                                                                    <select class="form-control" data-choices id="choices-single-default" name="fui_aprobacion_3">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <option value="Aprobado">Aprobado</option>
+                                                                                                        <option value="Rechazado">Rechazado</option>
+                                                                                                    </select>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Comentaro</label>
+                                                                                                    <textarea class="form-control" name="fui_comentario_3"></textarea>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                                                     <input type="text" class="form-control" data-provider="flatpickr"
@@ -1833,21 +1866,32 @@
                                                                                             </div>
 
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Nombre y apellidos del gerente de venta de autos (solo para PEPs)</label>
                                                                                                     <input class="form-control" id="basiInput" name="fui_nombre_completo_4">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Aprobación</label>
-                                                                                                    <input class="form-control" id="basiInput" name="fui_aprobacion_4">
+                                                                                                    <select class="form-control" data-choices id="choices-single-default" name="fui_aprobacion_4">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <option value="Aprobado">Aprobado</option>
+                                                                                                        <option value="Rechazado">Rechazado</option>
+                                                                                                    </select>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Comentaro</label>
+                                                                                                    <textarea class="form-control" name="fui_comentario_4"></textarea>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                                                     <input type="text" class="form-control" data-provider="flatpickr"

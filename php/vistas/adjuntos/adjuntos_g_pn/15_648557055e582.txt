@@ -1,0 +1,12 @@
+﻿- desactivar la tecla enter
+- scrol de la fecha (no)
+-- en forma de pago, aparecen profeciones, en declaracion
+-- los paises salen mal en los select, salen todos, 
+-- propietarios, 
+-- la fecha en generales en juridico .. no funciona
+-- los select en general salen con error 
+-- colocar a los codigos los numeros que le coresponde
+-- formulario juridico las fechas no se estan guardando bien
+-- error en las modales 
+-- los detalles de editar
+-- 

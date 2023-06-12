@@ -41,6 +41,14 @@ if (isset($_POST['registrar_adjunto'])) {
   $alerta = 2;
 }
 
+if (isset($_POST['solicitar_aprobacion'])) {
+  $datos = [];
+  $id_general = $_POST['id_general'];
+  $datos['fg_stat'] = 2;
+  $cCclienteController->actualizar_cc_cliente_solicitud($datos, $id_general);
+  $alerta = 2;
+}
+
 if (isset($_GET["view"])) {
     $view = $_GET["view"];
   

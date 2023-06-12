@@ -140,14 +140,17 @@ class ModelGlobal extends Conexion {
   public function obtenerRegistroClientes() {
 
     $result = $this->conn->query("SELECT 
-                                  ge.id,
+                                  ge.id, 
+                                  ge.fg_cedula, 
                                   ex.exp_codigo_dollar, 
                                   ex.exp_cliente, 
                                   (ex.exp_marca  + ' | ' + ex.exp_modelo + ' | ' + ex.exp_color + ' | ' + ex.exp_placa) as vehiculo, 
                                   ge.fg_fecha_log, 
                                   CASE
                                   WHEN ge.fg_stat = 1 THEN 'Registrado'
-                                  WHEN ge.fg_stat = 2 THEN 'No activo'
+                                  WHEN ge.fg_stat = 2 THEN 'Esperando Revision'
+                                  WHEN ge.fg_stat = 3 THEN 'Revisar de nuevo'
+                                  WHEN ge.fg_stat = 4 THEN 'Aprobado'
                                   ELSE 'Bajo'
                                   END AS estado
                                   FROM
@@ -161,13 +164,16 @@ class ModelGlobal extends Conexion {
 
       $result = $this->conn->query("SELECT 
                                     ge.id,
+                                    ge.pjgn_ruc_dv, 
                                     ex.pjexp_codigo_dollar, 
                                     ex.pjexp_cliente, 
                                     (ex.pjexp_marca  + ' | ' + ex.pjexp_modelo + ' | ' + ex.pjexp_color + ' | ' + ex.pjexp_placa) as vehiculo, 
                                     ge.fecha_log, 
                                     CASE
                                     WHEN ge.pjgn_stat = 1 THEN 'Registrado'
-                                    WHEN ge.pjgn_stat = 2 THEN 'No activo'
+                                    WHEN ge.pjgn_stat = 2 THEN 'Esperando Revision'
+                                    WHEN ge.pjgn_stat = 3 THEN 'Revisar de nuevo'
+                                    WHEN ge.pjgn_stat = 4 THEN 'Aprobado'
                                     ELSE 'Bajo'
                                     END AS estado
                                     FROM

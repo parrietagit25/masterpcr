@@ -1,0 +1,201 @@
+﻿id	codigo	descripcion	detalle_programa
+1	01GEN	Masculino	Conosca a su cliente, genero masculino
+2	02GEN	Femenino	Conosca a su cliente, genero femenino
+3	03GEN	Otro	Conosca a su cliente, genero otro
+4	04ECL	Solteroa	Conosca a su cliente, estado civil Soltero
+5	05ECL	Casadoa	Conosca a su cliente, estado civil Casado
+6	06PRO	Abogado	Conosca a su cliente, profesion Abogado 
+7	07PRO	Actuario	Conosca a su cliente, profesion Actuario 
+8	08PRO	Agencia de Seguridad	Conosca a su cliente, profesion Agencia de Seguridad 
+9	09PRO	Agente Deportivo	Conosca a su cliente, profesion Agente Deportivo 
+10	10PRO	Agente Inmobiliario	Conosca a su cliente, profesion Agente Inmobiliario 
+11	11PRO	Agricultor	Conosca a su cliente, profesion Agricultor 
+12	12PRO	Almacenamiento	Conosca a su cliente, profesion Almacenamiento 
+13	13PRO	Ama de Casa	Conosca a su cliente, profesion Ama de Casa 
+14	14PRO	Arte	Conosca a su cliente, profesion Arte 
+15	15PRO	Asalariado	Conosca a su cliente, profesion Asalariado 
+16	16PRO	Asesor Fiscal / Financiero	Conosca a su cliente, profesion Asesor Fiscal / Financiero 
+17	17PRO	Asesora de Inversión	Conosca a su cliente, profesion Asesora de Inversión 
+18	18PRO	Banca y Finanzas	Conosca a su cliente, profesion Banca y Finanzas 
+19	19PRO	Cadena de Restaurantes	Conosca a su cliente, profesion Cadena de Restaurantes 
+20	20PRO	Casa de Cambio	Conosca a su cliente, profesion Casa de Cambio 
+21	21PRO	Casa de Empeño	Conosca a su cliente, profesion Casa de Empeño 
+22	22PRO	Casa de Remesas	Conosca a su cliente, profesion Casa de Remesas 
+23	23PRO	Casa de Valores	Conosca a su cliente, profesion Casa de Valores 
+24	24PRO	Casino	Conosca a su cliente, profesion Casino 
+25	25PRO	Coaching	Conosca a su cliente, profesion Coaching 
+26	26PRO	Comunicación y Telefonía	Conosca a su cliente, profesion Comunicación y Telefonía 
+27	27PRO	Concesionario de Autos	Conosca a su cliente, profesion Concesionario de Autos 
+28	28PRO	Construcción	Conosca a su cliente, profesion Construcción 
+29	29PRO	Consultor de Riesgo	Conosca a su cliente, profesion Consultor de Riesgo 
+30	30PRO	Contador	Conosca a su cliente, profesion Contador 
+31	31PRO	Cooperativas de Ahorro y Crédito	Conosca a su cliente, profesion Cooperativas de Ahorro y Crédito 
+32	32PRO	Corredor Bienes Raíces	Conosca a su cliente, profesion Corredor Bienes Raíces 
+33	33PRO	Corredor de Bolsa	Conosca a su cliente, profesion Corredor de Bolsa 
+34	34PRO	Corredor de Seguros	Conosca a su cliente, profesion Corredor de Seguros 
+35	35PRO	Correos y Telégrafos	Conosca a su cliente, profesion Correos y Telégrafos 
+36	36PRO	Cumplimiento Normativo	Conosca a su cliente, profesion Cumplimiento Normativo 
+37	37PRO	Dependiente	Conosca a su cliente, profesion Dependiente 
+38	38PRO	Deportista	Conosca a su cliente, profesion Deportista 
+39	39PRO	Desempleado	Conosca a su cliente, profesion Desempleado 
+40	40PRO	Distribuidor de Alimentos	Conosca a su cliente, profesion Distribuidor de Alimentos 
+41	41PRO	Economista	Conosca a su cliente, profesion Economista 
+42	42PRO	Emprendedor	Conosca a su cliente, profesion Emprendedor 
+43	43PRO	Energía e Hidroeléctrica	Conosca a su cliente, profesion Energía e Hidroeléctrica 
+44	44PRO	Entretenimiento	Conosca a su cliente, profesion Entretenimiento 
+45	45PRO	Estudiante	Conosca a su cliente, profesion Estudiante 
+46	46PRO	Factoring	Conosca a su cliente, profesion Factoring 
+47	47PRO	Funcionario	Conosca a su cliente, profesion Funcionario 
+48	48PRO	Importador / Exportador	Conosca a su cliente, profesion Importador / Exportador 
+49	49PRO	Independiente	Conosca a su cliente, profesion Independiente 
+50	50PRO	Industria Farmacéutica	Conosca a su cliente, profesion Industria Farmacéutica 
+51	51PRO	Industria Médica	Conosca a su cliente, profesion Industria Médica 
+52	52PRO	Industria Petrolera	Conosca a su cliente, profesion Industria Petrolera 
+53	53PRO	Industria Química	Conosca a su cliente, profesion Industria Química 
+54	54PRO	Industria Textil	Conosca a su cliente, profesion Industria Textil 
+55	55PRO	Ingeniero Civil	Conosca a su cliente, profesion Ingeniero Civil 
+56	56PRO	Ingeniero Industrial	Conosca a su cliente, profesion Ingeniero Industrial 
+57	57PRO	Inversionista	Conosca a su cliente, profesion Inversionista 
+58	58PRO	Logística	Conosca a su cliente, profesion Logística 
+59	59PRO	Marítimo y Portuario	Conosca a su cliente, profesion Marítimo y Portuario 
+60	60PRO	Minería	Conosca a su cliente, profesion Minería 
+61	61PRO	Notario	Conosca a su cliente, profesion Notario 
+62	62PRO	ONG	Conosca a su cliente, profesion ONG 
+63	63PRO	Organizador de Eventos	Conosca a su cliente, profesion Organizador de Eventos 
+64	64PRO	Piloto	Conosca a su cliente, profesion Piloto 
+65	65PRO	Policía	Conosca a su cliente, profesion Policía 
+66	66PRO	Promotora	Conosca a su cliente, profesion Promotora 
+67	67PRO	Seguros y Reaseguros	Conosca a su cliente, profesion Seguros y Reaseguros 
+68	68PRO	Servicio al Cliente	Conosca a su cliente, profesion Servicio al Cliente 
+69	69PRO	Tecnología e Informática	Conosca a su cliente, profesion Tecnología e Informática 
+70	70PRO	Trader	Conosca a su cliente, profesion Trader 
+71	71PRO	Transporte de Valores	Conosca a su cliente, profesion Transporte de Valores 
+72	72PRO	Transportista	Conosca a su cliente, profesion Transportista 
+73	73PRO	Turismo y Hotelería	Conosca a su cliente, profesion Turismo y Hotelería 
+74	74PRO	Ventas al por Mayor	Conosca a su cliente, profesion Ventas al por Mayor 
+75	75PRO	Ventas al por Menor	Conosca a su cliente, profesion Ventas al por Menor 
+76	76PRO	Otro:	Conosca a su cliente, profesion Otro: 
+77	77FUE	Asalariado	Conosca a su cliente, fuente de ingreso Asalariado
+78	78FUE	Jubilado	Conosca a su cliente, fuente de ingreso Jubilado
+79	79FUE	Independiente Formal	Conosca a su cliente, fuente de ingreso Independiente
+80	80FUE	Empresario	Conosca a su cliente, fuente de ingreso Empresario
+81	81FUE	Emprendedor	Conosca a su cliente, fuente de ingreso Emprendedor
+82	82FUE	Comisiones	Conosca a su cliente, fuente de ingreso Comisiones
+83	83FUE	Ganancias	Conosca a su cliente, fuente de ingreso Ganancias
+84	84FUE	Herencia	Conosca a su cliente, fuente de ingreso Herencia
+85	85FUE	Ingresos por actividad económica	Conosca a su cliente, fuente de ingreso Ingresos
+86	86FUE	Negocio propio	Conosca a su cliente, fuente de ingreso Negocio propio
+87	87FUE	Préstamo personal	Conosca a su cliente, fuente de ingreso Préstamo personal
+88	88FUE	Retirado	Conosca a su cliente, fuente de ingreso Retirado
+89	89FUE	Salarios	Conosca a su cliente,fuente de ingreso Salarios
+90	90FDP	Contado	Conosca a su cliente, forma de pago contado
+91	91FDP	Financiado	Conosca a su cliente, forma de pago Financiado
+92	92FDP	Financiado al 100%	Conosca a su cliente, forma de pago Financiado al 100%
+93	93LIM	10k - 25k	Conosca a su cliente, fuente de ingreso limite 10k - 25k
+94	94LIM	25k - 50k	Conosca a su cliente, fuente de ingreso limite 25k - 50k
+95	95LIM	50k - 100k	Conosca a su cliente, fuente de ingreso limite 50k - 100k
+96	96LIM	100k - 150k	Conosca a su cliente, fuente de ingreso limite 100k - 150k
+97	97LIM	150k - 250k	Conosca a su cliente, fuente de ingreso limite 150k - 250k
+98	98LIM	250k - 1M	Conosca a su cliente, fuente de ingreso limite 250k - 1M
+99	99LIM	1M - 10M	Conosca a su cliente, fuente de ingreso limite 1M - 10M
+100	100LIM	 > 10M 	Conosca a su cliente,fuente de ingreso limite  > 10M
+101	101MDP	ACH	Conosca a su cliente, metodo de pago ACH
+102	102MDP	Deposito Bancario	Conosca a su cliente, metodo de pago Ganancias
+103	103MDP	Yappi	Conosca a su cliente, metodo de pago Herencia
+104	104MDP	Cheque - 150k	Conosca a su cliente, metodo de pago Ingresos
+105	105MDP	Tarjeta de debito	Conosca a su cliente, metodo de pago propio
+106	106MDP	Tarjeta de Credito	Conosca a su cliente, metodo de pago personal
+107	107MDP	Financiado al 100%	Conosca a su cliente, metodo de pago Retirado
+108	108MDP	Carta promesa de pago	Conosca a su cliente, metodo de pago Salarios
+109	109BFF	Beneficiario Cliente	Conosca a su cliente, Beneficiario final cliente
+110	110BFF	Beneficiario Tercero	Conosca a su cliente, Beneficiario final tercero
+111	111BFF	Beneficiario Familiar	Conosca a su cliente, Beneficiario relacion con el cliente familiar
+112	1PPEP	Alcalde	Profesion de persona expuesta politicamente Alcalde
+113	2PPEP	Concejal	Profesion de persona expuesta politicamente Concejal
+114	3PPEP	Contralor	Profesion de persona expuesta politicamente Contralor
+115	4PPEP	Diputado	Profesion de persona expuesta politicamente Diputado
+116	5PPEP	Director de la UAF	Profesion de persona expuesta politicamente Director de la UAF
+117	6PPEP	Director general	Profesion de persona expuesta politicamente Director general
+118	7PPEP	Director nacional	Profesion de persona expuesta politicamente Director nacional
+119	8PPEP	Director provincial	Profesion de persona expuesta politicamente Director provincial
+120	9PPEP	Director regional	Profesion de persona expuesta politicamente Director regional
+121	10PPEP	Fiscal de Cuentas	Profesion de persona expuesta politicamente Fiscal de Cuentas
+122	11PPEP	Fiscal Superir	Profesion de persona expuesta politicamente Fiscal Superir
+123	12PPEP	Gobernador	Profesion de persona expuesta politicamente Gobernador
+124	13PPEP	Magistrado de la Corte Suprema de Justicia	Profesion de persona expuesta politicamente Magistrado de la Corte Suprema de Justicia
+125	14PPEP	Magistrado del Tribunal de Cuentas	Profesion de persona expuesta politicamente Magistrado del Tribunal de Cuentas
+126	15PPEP	Ministro consejero	Profesion de persona expuesta politicamente Contralor
+127	16PPEP	Ministro de Estado	Profesion de persona expuesta politicamente Ministro de Estado
+128	17PPEP	Presidente de la República	Profesion de persona expuesta politicamente Presidente de la República
+129	18PPEP	Procurador General de la Administración	Profesion de persona expuesta politicamente Procurador General de la Administración
+130	19PPEP	Procurador General de la Nación	Profesion de persona expuesta politicamente Procurador General de la Nación
+131	20PPEP	Secretario general	Profesion de persona expuesta politicamente Secretario general
+132	21PPEP	Subcontralor	Profesion de persona expuesta politicamente Subcontralor
+133	22PPEP	Subdirector de la UAF	Profesion de persona expuesta politicamente Subdirector de la UAF
+134	23PPEP	Subdirector general	Profesion de persona expuesta politicamente Subdirector general
+135	24PPEP	Subdirector nacional	Profesion de persona expuesta politicamente Subdirector nacional
+136	25PPEP	Subdirector provincial	Profesion de persona expuesta politicamente Subdirector provincial
+137	26PPEP	Subdirector regional	Profesion de persona expuesta politicamente Subdirector regional
+138	27PPEP	Subintendente	Profesion de persona expuesta politicamente Subintendente
+139	28PPEP	Subsecretario general	Profesion de persona expuesta politicamente Subsecretario general
+140	29PPEP	Superintendente	Profesion de persona expuesta politicamente Superintendente
+141	30PPEP	Vicegobernador	Profesion de persona expuesta politicamente Vicegobernador
+142	31PPEP	Viceministro	Profesion de persona expuesta politicamente Viceministro
+143	32PPEP	Vicepresidente de la República	Profesion de persona expuesta politicamente Vicepresidente de la República
+144	33PPEP	Otro	Profesion de persona expuesta politicamente Otro
+145	01RECB	Agua	Conosca a su cliente Recibos, tipos de recibos Agua
+146	02RECB	Cable	Conosca a su cliente Recibos, tipos de recibos Cable
+147	03RECB	Celular	Conosca a su cliente Recibos, tipos de recibos Celular
+148	04RECB	Internet	Conosca a su cliente Recibos, tipos de recibos Internet
+149	05RECB	Luz	Conosca a su cliente Recibos, tipos de recibos Luz
+150	06RECB	Telefono	Conosca a su cliente Recibos, tipos de recibos Telefono
+151	07RECB	Television	Conosca a su cliente Recibos, tipos de recibos Television
+152	01TDPJ	Asociación sin fines de lucro (ONG)	Conosca a su cliente persona juridicca tipo de persona
+153	02TDPJ	Consorcio	Conosca a su cliente persona juridicca tipo de persona
+154	03TDPJ	Fundación de Interés Privado	Conosca a su cliente persona juridicca tipo de persona
+155	04TDPJ	Sociedad anónima	Conosca a su cliente persona juridicca tipo de persona
+156	05TDPJ	Sociedad anónima extranjera	Conosca a su cliente persona juridicca tipo de persona
+157	06TDPJ	Sociedad civil	Conosca a su cliente persona juridicca tipo de persona
+158	07TDPJ	Sociedad de responsabilidad limitada(S.R.de L.)	Conosca a su cliente persona juridicca tipo de persona
+159	08TDPJ	Sociedad en comandita	Conosca a su cliente persona juridicca tipo de persona
+160	09TDPJ	Estado	Conosca a su cliente persona juridicca tipo de persona
+161	01PJDD	Presidente	Conosca a su cliente persona juridica, cargo
+162	02PJDD	Vicepresidente	Conosca a su cliente persona juridica, cargo
+163	03PJDD	Secretario	Conosca a su cliente persona juridica, cargo
+164	04PJDD	Tesorero	Conosca a su cliente persona juridica, cargo
+165	05PJDD	Vocal	Conosca a su cliente persona juridica, cargo
+166	06PJDD	Director	Conosca a su cliente persona juridica, cargo
+167	07PJDD	Director Único	Conosca a su cliente persona juridica, cargo
+168	08PJDD	Director/Presidente	Conosca a su cliente persona juridica, cargo
+169	09PJDD	Director/Vicepresidente	Conosca a su cliente persona juridica, cargo
+170	10PJDD	Director/Secretario	Conosca a su cliente persona juridica, cargo
+171	11PJDD	Director/Tesorero	Conosca a su cliente persona juridica, cargo
+172	12PJDD	Director/Vocal	Conosca a su cliente persona juridica, cargo
+173	13PJDD	Fundador	Conosca a su cliente persona juridica, cargo
+174	14PJDD	Miembro del Consejo Fundacional	Conosca a su cliente persona juridica, cargo
+175	01GBPJ	Administración	conosca a su cliente, sector economico Administración
+176	02GBPJ	Agrícola	conosca a su cliente, sector economico Agrícola
+177	03GBPJ	Casinos y Juegos de Azar	conosca a su cliente, sector economico Casinos y Juegos de Azar
+178	04GBPJ	Comercialización de Metales y Piedras Preciosas	conosca a su cliente, sector economico Comercialización de Metales y Piedras Preciosas
+179	05GBPJ	Comunicaciones	conosca a su cliente, sector economico Comunicaciones
+180	06GBPJ	Construcción	conosca a su cliente, sector economico Construcción
+181	08GBPJ	Contabilidad	conosca a su cliente, sector economico Contabilidad
+182	09GBPJ	Cultura	conosca a su cliente, sector economico Cultura
+183	10GBPJ	De las artes	conosca a su cliente, sector economico De las artes
+184	11GBPJ	Educativo	conosca a su cliente, sector economico Educativo
+185	12GBPJ	Energético	conosca a su cliente, sector economico Energético
+186	13GBPJ	Financiero	conosca a su cliente, sector economico Financiero
+187	14GBPJ	Forestal	conosca a su cliente, sector economico Forestal
+188	15GBPJ	Ganadero	conosca a su cliente, sector economico Ganadero
+189	16GBPJ	Industrial	conosca a su cliente, sector economico Industrial
+190	17GBPJ	Inmobiliario	conosca a su cliente, sector economico Inmobiliario
+191	18GBPJ	Investigación	conosca a su cliente, sector economico Investigación
+192	19GBPJ	Legal	conosca a su cliente, sector economico Legal
+193	20GBPJ	Minero	conosca a su cliente, sector economico Minero
+194	21GBPJ	Notariales	conosca a su cliente, sector economico Notariales
+195	22GBPJ	Pesquero	conosca a su cliente, sector economico Pesquero
+196	23GBPJ	Público	conosca a su cliente, sector economico Público
+197	24GBPJ	Sanitario	conosca a su cliente, sector economico Sanitario
+198	25GBPJ	Seguridad	conosca a su cliente, sector economico Seguridad
+199	26GBPJ	Transporte	conosca a su cliente, sector economico Transporte
+200	27GBPJ	Turismo	conosca a su cliente, sector economico Turismo
