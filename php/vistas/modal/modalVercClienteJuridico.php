@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $modalDocu =1;
 $id = $_GET['id']; 
 #require_once("../../controladores/ReportesController.php");
@@ -194,7 +195,11 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 </div><!-- end card header -->
                                                 <div class="card-body">
                                                     <div class="live-preview">
-                                                    <?php foreach ($generales as $key => $value) { ?>
+                                                    <?php foreach ($generales as $key => $value) {
+                                                        
+                                                        $stado_general = $value['pjgn_stat'];
+                                                        
+                                                        ?>
                                                         <div class="row gy-4">
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
@@ -1680,40 +1685,47 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                     <div class="live-preview">
                                                         <div class="row gy-4">
                                                             <!--end col-->
-                                                            <div class="col-xxl-6 col-md-6">
+                                                            <p>Recuerde adjuntar un unico documento, donde este escaneada en un pdf los siguientes recaudos:<br>
+                                                                -COPIA DE CÉDULA O PASAPORTE DEL REPRESENTANTE LEGAL, APODERADOS, DIRECTORES, DIGNATARIOS, TERCEROS AUTORIZADOS Y BENEFICIARIOS FINALES <br> 
+                                                                -COPIA DE PACTO SOCIAL, CERTIFICADO DE REGISTRO PÚBLICO O SU EQUIVALENTE, CON UNA VIGENCIA NO MENOR DE 90 DÍAS CALENDARIO<br>
+                                                                -AVISO DE OPERACIONES O LICENCIA COMERCIAL<br>
+                                                                -EVIDENCIA DE INGRESO (DE ACUERDO CON PERFIL FINANCIERO)</p>
+                                                            <div class="col-xxl-12 col-md-6">
                                                                 <div>
-                                                                    <label for="basiInput" class="form-label">COPIA DE CÉDULA O PASAPORTE DEL REPRESENTANTE LEGAL, APODERADOS, DIRECTORES, DIGNATARIOS, TERCEROS AUTORIZADOS Y BENEFICIARIOS FINALES.</label>
+                                                                    <label for="basiInput" class="form-label">Adjuntar PDF.</label>
                                                                     <input type="file" class="form-control" id="basiInput" name="pjad_identificacion">
                                                                 </div>
                                                                 <br>
-                                                                <a href="<?php echo $value['pjad_identificacion']; ?>" target="_blank">Identificacion adjunta</a>
+                                                                <a href="<?php echo $value['pjad_identificacion']; ?>" target="_blank">pdf Adjuntos</a>
                                                             </div>
                                                             <!--end col-->
-                                                            <div class="col-xxl-6 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">COPIA DE PACTO SOCIAL, CERTIFICADO DE REGISTRO PÚBLICO O SU EQUIVALENTE, CON UNA VIGENCIA NO MENOR DE 90 DÍAS CALENDARIO</label>
-                                                                    <input type="file" class="form-control" id="basiInput" name="pjad_pacto_social">
+                                                            <div style="display:none;">
+                                                                <div class="col-xxl-6 col-md-6">
+                                                                    <div>
+                                                                        <label for="basiInput" class="form-label">COPIA DE PACTO SOCIAL, CERTIFICADO DE REGISTRO PÚBLICO O SU EQUIVALENTE, CON UNA VIGENCIA NO MENOR DE 90 DÍAS CALENDARIO</label>
+                                                                        <input type="file" class="form-control" id="basiInput" name="pjad_pacto_social">
+                                                                    </div>
+                                                                    <br>
+                                                                    <a href="<?php echo $value['pjad_pacto_social']; ?>" target="_blank">Pacto social adjunto</a>
                                                                 </div>
-                                                                <br>
-                                                                <a href="<?php echo $value['pjad_pacto_social']; ?>" target="_blank">Pacto social adjunto</a>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-6 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">AVISO DE OPERACIONES O LICENCIA COMERCIAL</label>
-                                                                    <input type="file" class="form-control" id="basiInput" name="pjad_aviso_operaciones">
+                                                                <!--end col-->
+                                                                <div class="col-xxl-6 col-md-6">
+                                                                    <div>
+                                                                        <label for="basiInput" class="form-label">AVISO DE OPERACIONES O LICENCIA COMERCIAL</label>
+                                                                        <input type="file" class="form-control" id="basiInput" name="pjad_aviso_operaciones">
+                                                                    </div>
+                                                                    <br>
+                                                                    <a href="<?php echo $value['pjad_aviso_operaciones']; ?>" target="_blank">Pacto social adjunto</a>
                                                                 </div>
-                                                                <br>
-                                                                <a href="<?php echo $value['pjad_aviso_operaciones']; ?>" target="_blank">Pacto social adjunto</a>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-6 col-md-6">                                                           
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">EVIDENCIA DE INGRESO (DE ACUERDO CON PERFIL FINANCIERO)</label>
-                                                                    <input type="file" class="form-control" id="basiInput" name="pjad_evidencia_ingreso">
+                                                                <!--end col-->
+                                                                <div class="col-xxl-6 col-md-6">                                                           
+                                                                    <div>
+                                                                        <label for="basiInput" class="form-label">EVIDENCIA DE INGRESO (DE ACUERDO CON PERFIL FINANCIERO)</label>
+                                                                        <input type="file" class="form-control" id="basiInput" name="pjad_evidencia_ingreso">
+                                                                    </div>
+                                                                    <br>
+                                                                    <a href="<?php echo $value['pjad_evidencia_ingreso']; ?>" target="_blank">Evidencia de ingreso adjunto</a>
                                                                 </div>
-                                                                <br>
-                                                                <a href="<?php echo $value['pjad_evidencia_ingreso']; ?>" target="_blank">Evidencia de ingreso adjunto</a>
                                                             </div>
                                                             <!--end col-->
                                                         </div>
@@ -2123,10 +2135,23 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                         TIENE RELACIÓN COMERCIAL Y/O CONTRACTUAL NI PRESTA SERVICIOS A LOS CLIENTES DE PANAMA CAR RENTAL, S.A. 
                                                         </p>
                                                         </div>
-                                                        <!--end row-->
-                                                        <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_pj">
+                                                        <!--end row
+                                                        <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_pj">-->
                                                         <button type="button" class="btn btn-primary btn-sm" id="sa-success" style="display:none;"></button>
                                                         <input type="hidden" name="id_general" value="<?php echo $_GET['id']; ?>">
+                                                        
+                                                        <?php if ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 1) { ?>
+                                                            <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_pj">
+                                                            <a class="btn btn-primary" onclick="solicitar_aprobacion_pj(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion</a>
+                                                        <?php }elseif ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 2) { ?>
+                                                            <a class="btn btn-warning" onclick="revicion_cc_pj(<?php echo $id; ?>, 'solicitar_revicion', 'contenido_modal_solicitar_revicion')">Revicion</a>
+                                                            <a class="btn btn-success" onclick="aprobacion_cc_pj(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Aprobar</a>
+                                                        <?php }elseif ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 3) { ?>
+                                                           <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_pj">
+                                                           <a class="btn btn-primary" onclick="solicitar_aprobacion_pj(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion</a>
+                                                        <?php }else{
+                                                            echo '<h4>Este master ha sido aprobado</h4>';
+                                                        } ?>
                                                     </div>
                                                     <div class="d-none code-view">
                                                         <pre class="language-markup" style="height: 450px;">

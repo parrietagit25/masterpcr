@@ -1550,42 +1550,49 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
 
                                                              } ?>
                                                             <!--end col-->
-                                                            <div class="col-xxl-6 col-md-6">
+                                                            <p>Recuerde adjuntar un unico documento, donde este escaneada en un pdf los siguientes recaudos:<br>
+                                                            -Copia de cédula o pasaporte (para extranjeros) <br> 
+                                                            -Recibo de servicio público dentro de los últimos 3 meses o contrato de arrendamiento<br>
+                                                            -Aviso de operaciones o licencia comercial<br>
+                                                            -Evidencia de ingresos (de acuerdo con el perfil financiero)</p>
+                                                            <div class="col-xxl-12 col-md-6">
                                                                 <div>
-                                                                    <label for="basiInput" class="form-label">copia de cédula o pasaporte (para extranjeros)</label>
+                                                                    <label for="basiInput" class="form-label">Documento pdf</label>
                                                                     <input type="file" class="form-control" id="basiInput" name="fdcad_documento_identidad">
                                                                     <br>
-                                                                    <a href="<?php echo $fdcad_documento_identidad; ?>" target="_blank">Cédula Adjunta</a>
+                                                                    <a href="<?php echo $fdcad_documento_identidad; ?>" target="_blank">Documentos pdf</a>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
-                                                            <div class="col-xxl-6 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">Recibo de servicio público dentro de los últimos 3 meses o contrato de arrendamiento</label>
-                                                                    <input type="file" class="form-control" id="basiInput" name="fdcad_recibo">
-                                                                    <br>
-                                                                    <a href="<?php echo $fdcad_recibo; ?>" target="_blank">Recibo Adjunto</a>
+                                                            <div style="display:none;">
+                                                                <div class="col-xxl-6 col-md-6">
+                                                                    <div>
+                                                                        <label for="basiInput" class="form-label">Recibo de servicio público dentro de los últimos 3 meses o contrato de arrendamiento</label>
+                                                                        <input type="file" class="form-control" id="basiInput" name="fdcad_recibo">
+                                                                        <br>
+                                                                        <a href="<?php echo $fdcad_recibo; ?>" target="_blank">Recibo Adjunto</a>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-6 col-md-6">
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">Aviso de operaciones o licencia comercial</label>
-                                                                    <input type="file" class="form-control" id="basiInput" name="fdcad_aviso_operaciones">
-                                                                    <br>
-                                                                    <a href="<?php echo $fdcad_aviso_operaciones; ?>" target="_blank">Aviso de oparacion Adjunto</a>
+                                                                <!--end col-->
+                                                                <div class="col-xxl-6 col-md-6">
+                                                                    <div>
+                                                                        <label for="basiInput" class="form-label">Aviso de operaciones o licencia comercial</label>
+                                                                        <input type="file" class="form-control" id="basiInput" name="fdcad_aviso_operaciones">
+                                                                        <br>
+                                                                        <a href="<?php echo $fdcad_aviso_operaciones; ?>" target="_blank">Aviso de oparacion Adjunto</a>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-xxl-6 col-md-6">                                                           
-                                                                <div>
-                                                                    <label for="basiInput" class="form-label">Evidencia de ingresos (de acuerdo con el perfil financiero)</label>
-                                                                    <input type="file" class="form-control" id="basiInput" name="fdcad_evidencia_ingresos">
-                                                                    <br>
-                                                                    <a href="<?php echo $fdcad_evidencia_ingresos; ?>" target="_blank">Evidencia de ingreso Adjunta</a>
+                                                                <!--end col-->
+                                                                <div class="col-xxl-6 col-md-6">                                                           
+                                                                    <div>
+                                                                        <label for="basiInput" class="form-label">Evidencia de ingresos (de acuerdo con el perfil financiero)</label>
+                                                                        <input type="file" class="form-control" id="basiInput" name="fdcad_evidencia_ingresos">
+                                                                        <br>
+                                                                        <a href="<?php echo $fdcad_evidencia_ingresos; ?>" target="_blank">Evidencia de ingreso Adjunta</a>
+                                                                    </div>
                                                                 </div>
+                                                                <!--end col-->
                                                             </div>
-                                                            <!--end col-->
                                                             
                                                         </div>
                                                         <!--end row-->
@@ -1826,7 +1833,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_cliente">
                                                             <a class="btn btn-primary" onclick="solicitar_aprobacion(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion</a>
                                                         <?php }elseif ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 2) { ?>
-                                                            <a class="btn btn-warning" onclick="revicion_cc_pn(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Revicion</a>
+                                                            <a class="btn btn-warning" onclick="revicion_cc_pn(<?php echo $id; ?>, 'solicitar_revicion', 'contenido_modal_solicitar_revicion')">Revicion</a>
                                                             <a class="btn btn-success" onclick="aprobacion_cc_pn(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Aprobar</a>
                                                         <?php }elseif ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 3) { ?>
                                                            <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_cliente">
@@ -3626,16 +3633,33 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
         </div>
     </div>
 
+<?php }elseif (isset($_GET['solicitar_revicion'])) { ?>
+
+    <div class="card-body">
+        <div class="live-preview">
+            <p>
+                Está solicitando una revisión del documento al vendedor.
+            </p>
+            <input type="hidden" name="id_general" value="<?php echo $_GET['id']; ?>">
+        </div>
+        <div class="d-none code-view">
+            <pre class="language-markup" style="height: 450px;">
+        </div>
+    </div>
+
+<?php }elseif (isset($_GET['aprobacion'])) { ?>
+
+    <div class="card-body">
+        <div class="live-preview">
+            <p>
+                ¿Está seguro de que desea aprobar este formulario de "conozca a su cliente"?
+            </p>
+            <input type="hidden" name="id_general" value="<?php echo $_GET['id']; ?>">
+        </div>
+        <div class="d-none code-view">
+            <pre class="language-markup" style="height: 450px;">
+        </div>
+    </div>
+
 <?php }
 
-//doc
-//blokearon
-//ines y lisbeth 
-// listo pa salir
-
-// irene 
-// plena seguridad
-// muy afectada
-// se;al cosmica 
-// demaciada verga
-// energia q te ayuda

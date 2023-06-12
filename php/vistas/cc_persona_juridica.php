@@ -2799,31 +2799,40 @@
                                                                                     <div class="live-preview">
                                                                                         <div class="row gy-4">
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-6 col-md-6">
+                                                                                            <p>
+                                                                                            <p>Recuerde adjuntar un unico documento, donde este escaneada en un pdf los siguientes recaudos:<br>
+                                                                                            -COPIA DE CÉDULA O PASAPORTE DEL REPRESENTANTE LEGAL, APODERADOS, DIRECTORES, DIGNATARIOS, TERCEROS AUTORIZADOS Y BENEFICIARIOS FINALES <br> 
+                                                                                            -COPIA DE PACTO SOCIAL, CERTIFICADO DE REGISTRO PÚBLICO O SU EQUIVALENTE, CON UNA VIGENCIA NO MENOR DE 90 DÍAS CALENDARIO<br>
+                                                                                            -AVISO DE OPERACIONES O LICENCIA COMERCIAL<br>
+                                                                                            -EVIDENCIA DE INGRESO (DE ACUERDO CON PERFIL FINANCIERO)</p>
+                                                                                            </p>
+                                                                                            <div class="col-xxl-12 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">COPIA DE CÉDULA O PASAPORTE DEL REPRESENTANTE LEGAL, APODERADOS, DIRECTORES, DIGNATARIOS, TERCEROS AUTORIZADOS Y BENEFICIARIOS FINALES.</label>
+                                                                                                    <label for="basiInput" class="form-label">Adjuntar pdf</label>
                                                                                                     <input type="file" class="form-control" id="basiInput" name="pjad_identificacion">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-6 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">COPIA DE PACTO SOCIAL, CERTIFICADO DE REGISTRO PÚBLICO O SU EQUIVALENTE, CON UNA VIGENCIA NO MENOR DE 90 DÍAS CALENDARIO</label>
-                                                                                                    <input type="file" class="form-control" id="basiInput" name="pjad_pacto_social">
+                                                                                            <div style="display: none;">
+                                                                                                <div class="col-xxl-6 col-md-6">
+                                                                                                    <div>
+                                                                                                        <label for="basiInput" class="form-label">COPIA DE PACTO SOCIAL, CERTIFICADO DE REGISTRO PÚBLICO O SU EQUIVALENTE, CON UNA VIGENCIA NO MENOR DE 90 DÍAS CALENDARIO</label>
+                                                                                                        <input type="file" class="form-control" id="basiInput" name="pjad_pacto_social">
+                                                                                                    </div>
                                                                                                 </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-6 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">AVISO DE OPERACIONES O LICENCIA COMERCIAL</label>
-                                                                                                    <input type="file" class="form-control" id="basiInput" name="pjad_aviso_operaciones">
+                                                                                                <!--end col-->
+                                                                                                <div class="col-xxl-6 col-md-6">
+                                                                                                    <div>
+                                                                                                        <label for="basiInput" class="form-label">AVISO DE OPERACIONES O LICENCIA COMERCIAL</label>
+                                                                                                        <input type="file" class="form-control" id="basiInput" name="pjad_aviso_operaciones">
+                                                                                                    </div>
                                                                                                 </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-6 col-md-6">                                                           
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">EVIDENCIA DE INGRESO (DE ACUERDO CON PERFIL FINANCIERO)</label>
-                                                                                                    <input type="file" class="form-control" id="basiInput" name="pjad_evidencia_ingreso">
+                                                                                                <!--end col-->
+                                                                                                <div class="col-xxl-6 col-md-6">                                                           
+                                                                                                    <div>
+                                                                                                        <label for="basiInput" class="form-label">EVIDENCIA DE INGRESO (DE ACUERDO CON PERFIL FINANCIERO)</label>
+                                                                                                        <input type="file" class="form-control" id="basiInput" name="pjad_evidencia_ingreso">
+                                                                                                    </div>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->

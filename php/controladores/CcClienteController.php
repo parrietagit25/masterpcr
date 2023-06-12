@@ -417,6 +417,10 @@ class CcclienteController {
         return $this->ModelGlobal->obtenerRegistroClientes();
     }
 
+    public function obtenerRegistroClientesHistorico(){
+        return $this->ModelGlobal->obtenerRegistroClientesHistorico();
+    }
+
     public function obtenerGenerales($id){
         return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_generales, "id = $id");
     }

@@ -154,7 +154,34 @@ class ModelGlobal extends Conexion {
                                   ELSE 'Bajo'
                                   END AS estado
                                   FROM
-                                  cc_expediente ex INNER JOIN cc_generales ge on ge.id = ex.id_general");
+                                  cc_expediente ex INNER JOIN cc_generales ge on ge.id = ex.id_general
+                                  WHERE 
+                                  ge.fg_stat not in(4)");
+    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+
+  }
+
+  public function obtenerRegistroClientesHistorico() {
+
+    $result = $this->conn->query("SELECT 
+                                  ge.id, 
+                                  ge.fg_cedula, 
+                                  ex.exp_codigo_dollar, 
+                                  ex.exp_cliente, 
+                                  (ex.exp_marca  + ' | ' + ex.exp_modelo + ' | ' + ex.exp_color + ' | ' + ex.exp_placa) as vehiculo, 
+                                  ge.fg_fecha_log, 
+                                  CASE
+                                  WHEN ge.fg_stat = 1 THEN 'Registrado'
+                                  WHEN ge.fg_stat = 2 THEN 'Esperando Revision'
+                                  WHEN ge.fg_stat = 3 THEN 'Revisar de nuevo'
+                                  WHEN ge.fg_stat = 4 THEN 'Aprobado'
+                                  ELSE 'Bajo'
+                                  END AS estado
+                                  FROM
+                                  cc_expediente ex INNER JOIN cc_generales ge on ge.id = ex.id_general
+                                  WHERE 
+                                  ge.fg_stat in(4)");
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
 
@@ -177,11 +204,38 @@ class ModelGlobal extends Conexion {
                                     ELSE 'Bajo'
                                     END AS estado
                                     FROM
-                                    cc_pj_expediente ex INNER JOIN cc_pj_generales ge on ge.id = ex.id_general");
+                                    cc_pj_expediente ex INNER JOIN cc_pj_generales ge on ge.id = ex.id_general
+                                    WHERE
+                                    ge.pjgn_stat not in(4)");
       $rows = $result->fetchAll(PDO::FETCH_ASSOC);
       return $rows;
 
   }
+
+  public function obtenerRegistroClientesJuridicosHistoricos(){
+
+    $result = $this->conn->query("SELECT 
+                                  ge.id,
+                                  ge.pjgn_ruc_dv, 
+                                  ex.pjexp_codigo_dollar, 
+                                  ex.pjexp_cliente, 
+                                  (ex.pjexp_marca  + ' | ' + ex.pjexp_modelo + ' | ' + ex.pjexp_color + ' | ' + ex.pjexp_placa) as vehiculo, 
+                                  ge.fecha_log, 
+                                  CASE
+                                  WHEN ge.pjgn_stat = 1 THEN 'Registrado'
+                                  WHEN ge.pjgn_stat = 2 THEN 'Esperando Revision'
+                                  WHEN ge.pjgn_stat = 3 THEN 'Revisar de nuevo'
+                                  WHEN ge.pjgn_stat = 4 THEN 'Aprobado'
+                                  ELSE 'Bajo'
+                                  END AS estado
+                                  FROM
+                                  cc_pj_expediente ex INNER JOIN cc_pj_generales ge on ge.id = ex.id_general
+                                  WHERE
+                                  ge.pjgn_stat in(4)");
+    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+
+}
 
   public function obtenerRegistrosPorId($tabla, $where){
 

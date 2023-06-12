@@ -49,6 +49,22 @@ if (isset($_POST['solicitar_aprobacion'])) {
   $alerta = 2;
 }
 
+if (isset($_POST['solicitar_revicion'])) {
+  $datos = [];
+  $id_general = $_POST['id_general'];
+  $datos['fg_stat'] = 3;
+  $cCclienteController->actualizar_cc_cliente_solicitud($datos, $id_general);
+  $alerta = 2;
+}
+
+if (isset($_POST['aprobar'])) {
+  $datos = [];
+  $id_general = $_POST['id_general'];
+  $datos['fg_stat'] = 4;
+  $cCclienteController->actualizar_cc_cliente_solicitud($datos, $id_general);
+  $alerta = 2;
+}
+
 if (isset($_GET["view"])) {
     $view = $_GET["view"];
   
@@ -57,11 +73,12 @@ if (isset($_GET["view"])) {
         $todos_registros_cc = $cCclienteController->obtenerRegistroClientes();
         require_once("vistas/ver_cc_form.php");
         break;
-      case "editar":
-        require_once("vistas/editar_usuario.php");
+      case "ver_clientes_pn_historico":
+        $todos_registros_cc_historico = $cCclienteController->obtenerRegistroClientesHistorico();
+        require_once("vistas/ver_cc_form_historico.php");
         break;
       default:
-        require_once("vistas/usuarios.php");
+        require_once("vistas/ver_cc_form.php");
         break;
     }
   } else {

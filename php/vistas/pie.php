@@ -648,6 +648,70 @@
             }
         }
 
+        async function revicion_cc_pn(id_general, modal_aprobacion, contedino_aprobacion){
+            try {
+                var id = id_general;
+                const response = await fetch('vistas/modal/modalVercCliente.php?solicitar_revicion=1&id=' + id);
+                const data = await response.text();
+                $('.cClienteFormulario').modal('hide');
+                $('.solicitar_revicion').modal('show');
+                document.querySelector('#contenido_modal_solicitar_revicion').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
+
+        async function aprobacion_cc_pn(id_general, modal_aprobacion, contedino_aprobacion){
+            try {
+                var id = id_general;
+                const response = await fetch('vistas/modal/modalVercCliente.php?solicitar_revicion=1&id=' + id);
+                const data = await response.text();
+                $('.cClienteFormulario').modal('hide');
+                $('.aprobacion').modal('show');
+                document.querySelector('#contenido_modal_aprobacion').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
+
+        async function solicitar_aprobacion_pj(id_general, modal_aprobacion, contedino_aprobacion){
+            try {
+                var id = id_general;
+                const response = await fetch('vistas/modal/modalVercCliente.php?solicitar_aprobacion=1&id=' + id);
+                const data = await response.text();
+                $('.cClienteFormulario').modal('hide');
+                $('.solicitar_aprobacion').modal('show');
+                document.querySelector('#contenido_modal_solicitar_aprobacion').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
+
+        async function revicion_cc_pj(id_general, modal_aprobacion, contedino_aprobacion){
+            try {
+                var id = id_general;
+                const response = await fetch('vistas/modal/modalVercCliente.php?solicitar_revicion=1&id=' + id);
+                const data = await response.text();
+                $('.cClienteFormulario').modal('hide');
+                $('.solicitar_revicion').modal('show');
+                document.querySelector('#contenido_modal_solicitar_revicion').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
+
+        async function aprobacion_cc_pj(id_general, modal_aprobacion, contedino_aprobacion){
+            try {
+                var id = id_general;
+                const response = await fetch('vistas/modal/modalVercCliente.php?solicitar_revicion=1&id=' + id);
+                const data = await response.text();
+                $('.cClienteFormulario').modal('hide');
+                $('.aprobacion').modal('show');
+                document.querySelector('#contenido_modal_aprobacion').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
 
         async function eliminar_generales_bf_temp(id_eliminar){
             try {

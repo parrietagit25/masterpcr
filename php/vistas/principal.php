@@ -1711,31 +1711,38 @@
                                                                                     <div class="live-preview">
                                                                                         <div class="row gy-4">
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-6 col-md-6">
+                                                                                            <p>Recuerde adjuntar un unico documento, donde este escaneada en un pdf los siguientes recaudos:<br>
+                                                                                            -Copia de cédula o pasaporte (para extranjeros) <br> 
+                                                                                            -Recibo de servicio público dentro de los últimos 3 meses o contrato de arrendamiento<br>
+                                                                                            -Aviso de operaciones o licencia comercial<br>
+                                                                                            -Evidencia de ingresos (de acuerdo con el perfil financiero)</p>
+                                                                                            <div class="col-xxl-12 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">copia de cédula o pasaporte (para extranjeros)</label>
+                                                                                                    <label for="basiInput" class="form-label">Adjuntar pdf</label>
                                                                                                     <input type="file" class="form-control" id="basiInput" name="fdcad_documento_identidad">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-6 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Recibo de servicio público dentro de los últimos 3 meses o contrato de arrendamiento</label>
-                                                                                                    <input type="file" class="form-control" id="basiInput" name="fdcad_recibo">
+                                                                                            <div style="display:none;">
+                                                                                                <div class="col-xxl-6 col-md-6">
+                                                                                                    <div>
+                                                                                                        <label for="basiInput" class="form-label">Recibo de servicio público dentro de los últimos 3 meses o contrato de arrendamiento</label>
+                                                                                                        <input type="file" class="form-control" id="basiInput" name="fdcad_recibo">
+                                                                                                    </div>
                                                                                                 </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-6 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Aviso de operaciones o licencia comercial</label>
-                                                                                                    <input type="file" class="form-control" id="basiInput" name="fdcad_aviso_operaciones">
+                                                                                                <!--end col-->
+                                                                                                <div class="col-xxl-6 col-md-6">
+                                                                                                    <div>
+                                                                                                        <label for="basiInput" class="form-label">Aviso de operaciones o licencia comercial</label>
+                                                                                                        <input type="file" class="form-control" id="basiInput" name="fdcad_aviso_operaciones">
+                                                                                                    </div>
                                                                                                 </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-6 col-md-6">                                                           
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Evidencia de ingresos (de acuerdo con el perfil financiero)</label>
-                                                                                                    <input type="file" class="form-control" id="basiInput" name="fdcad_evidencia_ingresos">
+                                                                                                <!--end col-->
+                                                                                                <div class="col-xxl-6 col-md-6">                                                           
+                                                                                                    <div>
+                                                                                                        <label for="basiInput" class="form-label">Evidencia de ingresos (de acuerdo con el perfil financiero)</label>
+                                                                                                        <input type="file" class="form-control" id="basiInput" name="fdcad_evidencia_ingresos">
+                                                                                                    </div>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->

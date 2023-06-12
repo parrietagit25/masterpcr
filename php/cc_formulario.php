@@ -40,6 +40,30 @@ if (isset($_POST['registrar_adjunto'])) {
   $alerta = 2;
 }
 
+if (isset($_POST['solicitar_aprobacion'])) {
+  $datos = [];
+  $id_general = $_POST['id_general'];
+  $datos['pjgn_stat'] = 2;
+  $cCclienteController->actualizar_cc_cliente_solicitud($datos, $id_general);
+  $alerta = 2;
+}
+
+if (isset($_POST['solicitar_revicion'])) {
+  $datos = [];
+  $id_general = $_POST['id_general'];
+  $datos['pjgn_stat'] = 3;
+  $cCclienteController->actualizar_cc_cliente_solicitud($datos, $id_general);
+  $alerta = 2;
+}
+
+if (isset($_POST['aprobar'])) {
+  $datos = [];
+  $id_general = $_POST['id_general'];
+  $datos['pjgn_stat'] = 4;
+  $cCclienteController->actualizar_cc_cliente_solicitud($datos, $id_general);
+  $alerta = 2;
+}
+
 if (isset($_GET["view"])) {
     $view = $_GET["view"];
   
@@ -53,11 +77,17 @@ if (isset($_GET["view"])) {
         $sector_economico = $cCclienteController->obtener_sector_economico();
         require_once("vistas/ver_cc_form_juridicas.php");
         break;
-      case "editar":
-        require_once("vistas/editar_usuario.php");
+      case "ver_clientes_pj_historico":
+        $todos_registros_cc_pj = $cCclienteController->obtenerRegistroClientesJuridicosHistoricos();
+        $paises = $cCclienteController->obtener_pais();
+        $genero = $cCclienteController->obtener_genero();
+        $profesion = $cCclienteController->obtener_profesion();
+        $tipo_persona = $cCclienteController->obtener_tipo_persona();
+        $sector_economico = $cCclienteController->obtener_sector_economico();
+        require_once("vistas/ver_cc_form_juridicas_historico.php");
         break;
       default:
-        require_once("vistas/usuarios.php");
+        require_once("vistas/ver_cc_form_juridicas.php");
         break;
     }
 

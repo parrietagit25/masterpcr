@@ -128,6 +128,21 @@ class CcclienteController {
         $this->ModelGlobal->agregar($this->tabla_cc_pj_apoderados, $datos);
     }
 
+    public function actualizar_cc_cliente_solicitud($datos, $id){
+
+        // principal
+
+        $datos_generales = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjgn_') === 0) {
+                $datos_generales[$key] = $value; 
+            }
+        }
+
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_generales, "id = $id", $datos_generales);
+
+    }
+
     public function agregar_cc_cliente($datos){
 
         // principal
@@ -820,6 +835,10 @@ class CcclienteController {
 
     public function obtenerRegistroClientesJuridicos(){ /* - */
         return $this->ModelGlobal->obtenerRegistroClientesJuridicos();
+    }
+
+    public function obtenerRegistroClientesJuridicosHistoricos(){ /* - */
+        return $this->ModelGlobal->obtenerRegistroClientesJuridicosHistoricos();
     }
 
     public function obtenerGenerales($id){ /* - */

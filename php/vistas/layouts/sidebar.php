@@ -66,7 +66,7 @@
                                 <a href="index.php?view=ver_clientes" class="nav-link">Ver Persona Natural</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?view=ver_clientes" class="nav-link">Historial Persona Natural</a>
+                                <a href="index.php?view=ver_clientes_pn_historico" class="nav-link">Historial Persona Natural</a>
                             </li>
                             <?php if ($_SESSION["usuario"][0]['tipo_user'] == 'admin' || $_SESSION["usuario"][0]['tipo_user'] == 'vendedor') { ?>
                             <li class="nav-item">
@@ -77,7 +77,7 @@
                                 <a href="cc_formulario.php?view=ver_cc_persona_juridicas" class="nav-link">Ver Persona Juridica</a>
                             </li>
                             <li class="nav-item">
-                                <a href="cc_formulario.php?view=ver_cc_persona_juridicas" class="nav-link">Historial Persona Juridica</a>
+                                <a href="cc_formulario.php?view=ver_clientes_pj_historico" class="nav-link">Historial Persona Juridica</a>
                             </li>
                         </ul>
                     </div>
