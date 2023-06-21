@@ -83,6 +83,20 @@
                     </div>
                 </li>
                 <?php } ?>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#mantenimientoRepo" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="mantenimientoRepo">
+                        <i class="ri-camera-fill"></i> <span>Repositorio</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="mantenimientoRepo">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="repo.php?view=ver_repo" class="nav-link">Repositorios </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
             </ul>
         </div>
         <!-- Sidebar -->
