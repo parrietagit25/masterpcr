@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: db
--- Tiempo de generación: 12-06-2023 a las 20:18:54
+-- Tiempo de generación: 22-06-2023 a las 17:50:35
 -- Versión del servidor: 8.0.33
 -- Versión de PHP: 8.1.17
 
@@ -31,17 +31,9 @@ CREATE TABLE `adjuntos_general` (
   `id` int NOT NULL,
   `id_general` int DEFAULT NULL,
   `descripcion` varchar(150) DEFAULT NULL,
-  `link_desc` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
-  `link_desc_pj` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
-  `stat` int DEFAULT NULL COMMENT '1=persona_natural\r\n2=persona juridica'
+  `link_descrip` varchar(100) DEFAULT NULL,
+  `stat` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Volcado de datos para la tabla `adjuntos_general`
---
-
-INSERT INTO `adjuntos_general` (`id`, `id_general`, `descripcion`, `link_desc`, `link_desc_pj`, `stat`) VALUES
-(2, 15, 'otro adjunto', NULL, 'vistas/adjuntos/adjuntos_g_pn/15_6485572b92731.txt', 1);
 
 -- --------------------------------------------------------
 
@@ -84,7 +76,11 @@ INSERT INTO `cc_adjuntos` (`id`, `id_general`, `fdcad_documento_identidad`, `fdc
 (5, 11, NULL, NULL, NULL, NULL),
 (6, 12, NULL, NULL, NULL, NULL),
 (7, 13, NULL, NULL, NULL, NULL),
-(8, 14, NULL, NULL, NULL, NULL);
+(8, 14, NULL, NULL, NULL, NULL),
+(9, 15, NULL, NULL, NULL, NULL),
+(10, 16, NULL, NULL, NULL, NULL),
+(11, 17, NULL, NULL, NULL, NULL),
+(12, 18, 'vistas/adjuntos/cedula/18_64937cef5dc91.png', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -121,14 +117,6 @@ CREATE TABLE `cc_beneficiario` (
   `fb_direccion_trabajo` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_beneficiario`
---
-
-INSERT INTO `cc_beneficiario` (`id`, `id_general`, `fb_cliete_tercero`, `fb_relacion_familiar_tercero`, `fb_relacion_detalle`, `fb_primer_nombre`, `fb_segundo_nombre`, `fb_apellido_paterno`, `fb_apellido_materno`, `fb_apellido_casada`, `fb_pais_nacimiento`, `fb_fecha_nacimiento`, `fb_nacionaidad`, `fb_genero`, `fb_estado_civil`, `fb_identificacion`, `fb_pais_residencia`, `fb_direccion_residencial`, `fb_pais_residencia_fiscal`, `fb_email`, `fb_telefono_residencia`, `fb_telefono_movil`, `fb_profesion`, `fb_ocupacion`, `fb_lugar_trabajo`, `fb_direccion_trabajo`) VALUES
-(11, 13, NULL, NULL, '', '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(12, 14, NULL, NULL, '', '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -146,15 +134,6 @@ CREATE TABLE `cc_declaracion` (
   `fd_forma_pago_1` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_declaracion`
---
-
-INSERT INTO `cc_declaracion` (`id`, `id_general`, `fd_actividad_principal`, `fd_otras_fuentes`, `fd_limite_compra`, `fd_metodo_pago_1`, `fd_metodo_pago_2`, `fd_forma_pago_1`) VALUES
-(1, 2, '', '', '', '', '', ''),
-(12, 13, '', '', '', '', '', ''),
-(13, 14, '', '', '', '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -168,14 +147,6 @@ CREATE TABLE `cc_declaracion_jurada` (
   `fdc_fecha` date DEFAULT NULL,
   `fdc_firma` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `cc_declaracion_jurada`
---
-
-INSERT INTO `cc_declaracion_jurada` (`id`, `id_general`, `fdc_nombre_completo`, `fdc_fecha`, `fdc_firma`) VALUES
-(7, 13, '', '1970-01-01', NULL),
-(8, 14, '', '1970-01-01', NULL);
 
 -- --------------------------------------------------------
 
@@ -214,15 +185,6 @@ CREATE TABLE `cc_expediente` (
   `exp_recibos_pago` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_expediente`
---
-
-INSERT INTO `cc_expediente` (`id`, `id_general`, `exp_fecha`, `exp_cliente`, `exp_marca`, `exp_modelo`, `exp_anio`, `exp_placa`, `exp_chasis`, `exp_motor`, `exp_color`, `exp_codigo_dollar`, `exp_n_intelisis`, `exp_cedula_pasaporte`, `exp_recibo_servicio`, `exp_detalle_transaccion_pago`, `exp_proforma`, `exp_factura_venta`, `exp_contrato_garantia`, `exp_contrato_consignacion`, `exp_contrato_como_donde`, `exp_exoneracion_responsabilidad`, `exp_documneto_traspaso`, `exp_hoja_entrada`, `exp_carta_promesa`, `exp_recibo_abono`, `exp_recibo_traspaso`, `exp_recibos_pago`) VALUES
-(1, 2, '2023-05-29', '', 'lexus', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe', '123', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(12, 13, '1970-01-01', '', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(13, 14, '1970-01-01', '', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -248,7 +210,7 @@ CREATE TABLE `cc_generales` (
   `fg_email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fg_telefono_residencia` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fg_telefono_movil` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fg_stat` int DEFAULT NULL COMMENT '1=registrado\r\n2=esperando revision\r\n3=revisar de nuevo\r\n4=aprobado',
+  `fg_stat` int DEFAULT NULL,
   `fg_fecha_log` datetime DEFAULT CURRENT_TIMESTAMP,
   `fg_id_user` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -258,10 +220,7 @@ CREATE TABLE `cc_generales` (
 --
 
 INSERT INTO `cc_generales` (`id`, `fg_primer_nombre`, `fg_segundo_nombre`, `fg_apellido_paterno`, `fg_apellido_materno`, `fg_apellido_casada`, `fg_pais_nacimiento`, `fg_fecha_nacimiento`, `fg_nacionalidad`, `fg_genero`, `fg_estado_civil`, `fg_cedula`, `fg_pais_residencia`, `fg_direccion_residencial`, `fg_pais_residencia_fiscal`, `fg_email`, `fg_telefono_residencia`, `fg_telefono_movil`, `fg_stat`, `fg_fecha_log`, `fg_id_user`) VALUES
-(1, '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', 1, '2023-05-30 04:38:35', 1),
-(2, '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', 4, '2023-05-30 04:40:52', 1),
-(13, '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', 3, '2023-05-31 14:50:13', 1),
-(14, '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', 1, '2023-05-31 14:52:40', 1);
+(1, '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', 1, '2023-05-30 04:38:35', 1);
 
 -- --------------------------------------------------------
 
@@ -284,15 +243,6 @@ CREATE TABLE `cc_ocupacionales` (
   `fo_pais_residencia_fiscal` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_ocupacionales`
---
-
-INSERT INTO `cc_ocupacionales` (`id`, `id_general`, `fo_profesion`, `fo_ocupacion`, `fo_lugar_trabajo`, `fo_direccion_trabajo`, `fo_correo_trabajo`, `fo_telefono_trabajo`, `fo_nombre_negocio`, `fo_aviso_operaciones`, `fo_licita_estado`, `fo_pais_residencia_fiscal`) VALUES
-(1, 2, '', '', '', '', '', '', '', '', '', ''),
-(12, 13, '', '', '', '', '', '', '', '', '', ''),
-(13, 14, '', '', '', '', '', '', '', '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -312,14 +262,6 @@ CREATE TABLE `cc_personas_expuestas` (
   `fp_comentario` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_personas_expuestas`
---
-
-INSERT INTO `cc_personas_expuestas` (`id`, `id_general`, `fp_beneficiario`, `fp_nombre_completo`, `fp_cargo_actual`, `fp_otro`, `fp_fecha`, `fp_cargo_anterior`, `fp_fecha_anterior`, `fp_comentario`) VALUES
-(8, 13, NULL, '', '', NULL, '1970-01-01', '', '1970-01-01', ''),
-(9, 14, NULL, '', '', NULL, '1970-01-01', '', '1970-01-01', '');
-
 -- --------------------------------------------------------
 
 --
@@ -334,14 +276,6 @@ CREATE TABLE `cc_pj_adjuntos` (
   `pjad_aviso_operaciones` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `pjad_evidencia_ingreso` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `cc_pj_adjuntos`
---
-
-INSERT INTO `cc_pj_adjuntos` (`id`, `id_general`, `pjad_identificacion`, `pjad_pacto_social`, `pjad_aviso_operaciones`, `pjad_evidencia_ingreso`) VALUES
-(6, 15, NULL, NULL, NULL, NULL),
-(7, 16, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -427,14 +361,6 @@ CREATE TABLE `cc_pj_beneficiario_final` (
   `pjbf_direccion_trabajo` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_pj_beneficiario_final`
---
-
-INSERT INTO `cc_pj_beneficiario_final` (`id`, `id_general`, `pjbf_transpaso_cliente_tercero`, `pjbf_relacion_cliente`, `pjbf_primer_nombre`, `pjbf_segundo_nomnbre`, `pjbf_apellido_parterno`, `pjbf_apellido_materno`, `pjbf_apellido_casada`, `pjbf_pais_nacimiento`, `pjbf_fecha_nacimiento`, `pjbf_nacionalidad`, `pjbf_genero`, `pjbf_cedula_pasaporte`, `pjbf_estado_civil`, `pjbf_pais_residencia`, `pjbf_pais_residencia_fiscal`, `pjbf_direccion_residencia`, `pjbf_correo`, `pjbf_telefono_residencial`, `pjbf_telefono_celular`, `pjbf_profesion`, `pjbf_ocupacion`, `pjbf_lugar_trabajo`, `pjbf_direccion_trabajo`) VALUES
-(12, 15, NULL, NULL, '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(13, 16, NULL, NULL, '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -447,20 +373,6 @@ CREATE TABLE `cc_pj_declaracion_accionista` (
   `pjda_nombre_completo_accionista` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `pjda_participacion_accionaria` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `cc_pj_declaracion_accionista`
---
-
-INSERT INTO `cc_pj_declaracion_accionista` (`id`, `id_general`, `pjda_nombre_completo_accionista`, `pjda_participacion_accionaria`) VALUES
-(49, 15, '', ''),
-(50, 15, '', ''),
-(51, 15, '', ''),
-(52, 15, '', ''),
-(53, 16, '', ''),
-(54, 16, '', ''),
-(55, 16, '', ''),
-(56, 16, '', '');
 
 -- --------------------------------------------------------
 
@@ -481,14 +393,6 @@ CREATE TABLE `cc_pj_declaracion_fuentes` (
   `pjdf_metodo_pago_2` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_pj_declaracion_fuentes`
---
-
-INSERT INTO `cc_pj_declaracion_fuentes` (`id`, `id_general`, `pjdf_actividad_principal`, `pjdf_actividad_secundaria`, `pjdf_otras_fuentes`, `pjdf_otras_fuentes_secundaria`, `pjdf_limite_compra`, `pjdf_forma_pago`, `pjdf_metodo_pago_1`, `pjdf_metodo_pago_2`) VALUES
-(14, 15, '', '', '', '', '', '', '', ''),
-(15, 16, '', '', '', '', '', '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -503,14 +407,6 @@ CREATE TABLE `cc_pj_declaracion_jurada` (
   `pjdj_firma` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_pj_declaracion_jurada`
---
-
-INSERT INTO `cc_pj_declaracion_jurada` (`id`, `id_general`, `pjdj_nombre_completo`, `pjdj_fecha`, `pjdj_firma`) VALUES
-(6, 15, '', '1970-01-01', NULL),
-(7, 16, '', '1970-01-01', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -524,14 +420,6 @@ CREATE TABLE `cc_pj_declaracion_jurada_2` (
   `p_jdj_fecha_2` date DEFAULT NULL,
   `p_jdj_firma_2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `cc_pj_declaracion_jurada_2`
---
-
-INSERT INTO `cc_pj_declaracion_jurada_2` (`id`, `id_general`, `p_jdj_nombre_completo_2`, `p_jdj_fecha_2`, `p_jdj_firma_2`) VALUES
-(5, 15, '', '1970-01-01', NULL),
-(6, 16, '', '1970-01-01', NULL);
 
 -- --------------------------------------------------------
 
@@ -606,14 +494,6 @@ CREATE TABLE `cc_pj_expediente` (
   `pjexp_recibos_pago` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_pj_expediente`
---
-
-INSERT INTO `cc_pj_expediente` (`id`, `id_general`, `pjexp_fecha`, `pjexp_cliente`, `pjexp_marca`, `pjexp_modelo`, `pjexp_anio`, `pjexp_placa`, `pjexp_chasis`, `pjexp_motor`, `pjexp_color`, `pjexp_codigo_dollar`, `pjexp_n_intelisis`, `pjexp_cedula_pasaporte`, `pjexp_recibo_servicio`, `pjexp_hoja_contabiidad`, `pjexp_proforma`, `pjexp_factura_venta`, `pjexp_contrato_garantia`, `pjexp_contrato_consignacion`, `pjexp_contrato_como_donde`, `pjexp_exoneracion_responsabilidad`, `pjexp_documneto_traspaso`, `pjexp_hoja_entrada`, `pjexp_carta_promesa`, `pjexp_recibo_abono`, `pjexp_recibo_traspaso`, `pjexp_recibos_pago`) VALUES
-(14, 15, '1970-01-01', '', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(15, 16, '2023-06-12', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -623,7 +503,7 @@ INSERT INTO `cc_pj_expediente` (`id`, `id_general`, `pjexp_fecha`, `pjexp_client
 CREATE TABLE `cc_pj_generales` (
   `id` int NOT NULL,
   `pjgn_id_user` int DEFAULT NULL,
-  `pjgn_stat` int DEFAULT NULL COMMENT '1=registrado \r\n2=esperando revision 3=revisar de nuevo 4=aprobado	',
+  `pjgn_stat` int DEFAULT NULL,
   `pjgn_razon_social` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `pjgn_nombre_comercial` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `pjgn_datos_inscripcion` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -651,9 +531,7 @@ CREATE TABLE `cc_pj_generales` (
 --
 
 INSERT INTO `cc_pj_generales` (`id`, `pjgn_id_user`, `pjgn_stat`, `pjgn_razon_social`, `pjgn_nombre_comercial`, `pjgn_datos_inscripcion`, `pjgn_tipo_persona`, `pjgn_direccion_fisica`, `pjgn_pais_constitucion`, `pjgn_residencia_fiscal`, `pjgn_ruc_dv`, `pjgn_telefono`, `pjgn_apartado_postal`, `pjgn_aviso_operacion`, `pjgn_licencia`, `pjgn_entidad_reguladora`, `pjgn_actividad_principal_dedica`, `pjgn_descripcion_negocio`, `pjgn_paises_ofrece_productos_servicios`, `pjgn_contacto`, `pjgn_email`, `pjgn_cargo`, `fecha_log`) VALUES
-(1, 1, 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '2023-05-30 04:53:27'),
-(15, 1, 4, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '2023-05-30 05:03:28'),
-(16, 1, 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '2023-06-12 17:27:51');
+(1, 1, 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, '', '', '2023-05-30 04:53:27');
 
 -- --------------------------------------------------------
 
@@ -797,14 +675,6 @@ CREATE TABLE `cc_pj_perosnas_expuestas` (
   `pjpx_comentarios_2` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_pj_perosnas_expuestas`
---
-
-INSERT INTO `cc_pj_perosnas_expuestas` (`id`, `id_general`, `pjpx_relacion_directa`, `pjpx_nombre_completo`, `pjpx_cargo_actual`, `pjpx_cargo_anterior`, `pjpx_fecha_cargo_actual`, `pjpx_fecha_cargo_anterior`, `pjpx_comentarios`, `pjpx_pep_relacion_directa`, `pjpx_nombre_completo_2`, `pjpx_cargo_actual_2`, `pjpx_fecha_cargo_actual_2`, `pjpx_cargo_anterior_2`, `pjpx_fecha_cargo_anterior_2`, `pjpx_comentarios_2`) VALUES
-(7, 15, NULL, '', '', '', '1970-01-01', '1970-01-01', '', NULL, '', '', '1970-01-01', '', '1970-01-01', ''),
-(8, 16, NULL, '', '', '', '1970-01-01', '1970-01-01', '', NULL, '', '', '1970-01-01', '', '1970-01-01', '');
-
 -- --------------------------------------------------------
 
 --
@@ -821,14 +691,6 @@ CREATE TABLE `cc_pj_propietarios` (
   `pjpr_descripcion_cotiza_bolsa` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `pjpr_nombre_bolsa_ticker` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `cc_pj_propietarios`
---
-
-INSERT INTO `cc_pj_propietarios` (`id`, `id_general`, `pjpr_publica_privada`, `pjpr_licita_estado`, `pjpr_licita_pais`, `pjpr_cotiza_bolsa`, `pjpr_descripcion_cotiza_bolsa`, `pjpr_nombre_bolsa_ticker`) VALUES
-(13, 15, NULL, '', '', '', '', ''),
-(14, 16, NULL, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -900,16 +762,6 @@ CREATE TABLE `cc_pj_referencias` (
   `pjrf_correo_electronico` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_pj_referencias`
---
-
-INSERT INTO `cc_pj_referencias` (`id`, `id_general`, `pjrf_nombre_razon_social`, `pjrf_actividad`, `pjrf_relacion`, `pjrf_telefono`, `pjrf_correo_electronico`) VALUES
-(13, 15, '', '', '', '', ''),
-(14, 15, '', '', '', '', ''),
-(15, 16, '', '', '', '', ''),
-(16, 16, '', '', '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -930,14 +782,6 @@ CREATE TABLE `cc_pj_representante_legal` (
   `pjrl_lugar_trabajo` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `pjrl_telefono` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `cc_pj_representante_legal`
---
-
-INSERT INTO `cc_pj_representante_legal` (`id`, `id_general`, `pjrl_nombre_completo`, `pjrl_cedula_pasaporte`, `pjrl_estado_civil`, `pjrl_nacionalidada`, `pjrl_fecha_nacimiento`, `pjrl_direccion`, `pjrl_correo`, `pjrl_profesion`, `pjrl_lugar_trabajo`, `pjrl_telefono`) VALUES
-(13, 15, '', '', '', '', '1970-01-01', '', '', '', '', ''),
-(14, 16, '', '', '', '', '1970-01-01', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -973,14 +817,6 @@ CREATE TABLE `cc_pj_terceros_autorizados` (
   `pjtu_direccion_trabajo` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_pj_terceros_autorizados`
---
-
-INSERT INTO `cc_pj_terceros_autorizados` (`id`, `id_general`, `pjtu_transpaso_cliente_tercero`, `pjtu_relacion_cliente`, `pjtu_primer_nombre`, `pjtu_segundo_nomnbre`, `pjtu_apellido_parterno`, `pjtu_apellido_materno`, `pjtu_apellido_casada`, `pjtu_pais_nacimiento`, `pjtu_fecha_nacimiento`, `pjtu_nacionalidad`, `pjtu_genero`, `pjtu_cedula_pasaporte`, `pjtu_estado_civil`, `pjtu_pais_residencia`, `pjtu_pais_residencia_fiscal`, `pjtu_direccion_residencia`, `pjtu_correo`, `pjtu_telefono_residencial`, `pjtu_telefono_celular`, `pjtu_profesion`, `pjtu_ocupacion`, `pjtu_lugar_trabajo`, `pjtu_direccion_trabajo`) VALUES
-(11, 15, NULL, NULL, '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(12, 16, NULL, NULL, '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -1001,20 +837,8 @@ CREATE TABLE `cc_pj_uso_interno` (
   `pjui_fecha_3` date DEFAULT NULL,
   `pjui_nombre_completo_4` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `pjui_aprobacion_4` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `pjui_fecha_4` date DEFAULT NULL,
-  `pjui_comentario_1` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
-  `pjui_comentario_2` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
-  `pjui_comentario_3` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
-  `pjui_comentario_4` varchar(250) COLLATE utf8mb4_general_ci NOT NULL
+  `pjui_fecha_4` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `cc_pj_uso_interno`
---
-
-INSERT INTO `cc_pj_uso_interno` (`id`, `id_general`, `pjui_nombre_completo_1`, `pjui_aprobacion_1`, `pjui_fecha_1`, `pjui_nombre_completo_2`, `pjui_aprobacion_2`, `pjui_fecha_2`, `pjui_nombre_completo_3`, `pjui_aprobacion_3`, `pjui_fecha_3`, `pjui_nombre_completo_4`, `pjui_aprobacion_4`, `pjui_fecha_4`, `pjui_comentario_1`, `pjui_comentario_2`, `pjui_comentario_3`, `pjui_comentario_4`) VALUES
-(1, 15, '', '', '1970-01-01', '', '', '1970-01-01', '', '', '1970-01-01', '', '', '1970-01-01', '', '', '', ''),
-(2, 16, '', '', '1970-01-01', '', '', '1970-01-01', '', '', '1970-01-01', '', '', '1970-01-01', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1036,15 +860,6 @@ CREATE TABLE `cc_referencias` (
   `fr_telefono_2` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fr_correo_electronico_2` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `cc_referencias`
---
-
-INSERT INTO `cc_referencias` (`id`, `id_general`, `fr_razon_social_1`, `fr_actividad_1`, `fr_relacion_cliente_1`, `fr_telefono_1`, `fr_correo_electronico_1`, `fr_razon_social_2`, `fr_actividad_2`, `fr_relacion_cliente_2`, `fr_telefono_2`, `fr_correo_electronico_2`) VALUES
-(1, 2, '', '', '', '', '', '', '', '', '', ''),
-(12, 13, '', '', '', '', '', '', '', '', '', ''),
-(13, 14, '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1081,14 +896,6 @@ CREATE TABLE `cc_terceros_autorizados` (
   `ft_direccion_trabajo` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `cc_terceros_autorizados`
---
-
-INSERT INTO `cc_terceros_autorizados` (`id`, `id_general`, `ft_cliete_tercero`, `ft_relacion_familiar_tercero`, `ft_relacion_detalle`, `ft_primer_nombre`, `ft_segundo_nombre`, `ft_apellido_paterno`, `ft_apellido_materno`, `ft_apellido_casada`, `ft_pais_nacimiento`, `ft_fecha_nacimiento`, `ft_nacionaidad`, `ft_genero`, `ft_estado_civil`, `ft_identificacion`, `ft_pais_residencia`, `ft_direccion_residencial`, `ft_pais_residencia_fiscal`, `ft_email`, `ft_telefono_residencia`, `ft_telefono_movil`, `ft_profesion`, `ft_ocupacion`, `ft_lugar_trabajo`, `ft_direccion_trabajo`) VALUES
-(10, 13, NULL, NULL, '', '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(11, 14, NULL, NULL, '', '', '', '', '', '', '', '1970-01-01', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
-
 -- --------------------------------------------------------
 
 --
@@ -1099,30 +906,22 @@ CREATE TABLE `cc_uso_interno` (
   `id` int NOT NULL,
   `id_general` int DEFAULT NULL,
   `fui_nombre_completo_1` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fui_aprobacion_1` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `fui_aprobacion_1` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fui_fecha_1` date DEFAULT NULL,
   `fui_nombre_completo_2` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fui_aprobacion_2` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `fui_aprobacion_2` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fui_fecha_2` date DEFAULT NULL,
   `fui_nombre_completo_3` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fui_aprobacion_3` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `fui_aprobacion_3` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fui_fecha_3` date DEFAULT NULL,
   `fui_nombre_completo_4` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `fui_aprobacion_4` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `fui_aprobacion_4` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `fui_fecha_4` date DEFAULT NULL,
   `fui_comentario_1` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
-  `fui_comentario_2` int NOT NULL,
-  `fui_comentario_3` int NOT NULL,
-  `fui_comentario_4` int NOT NULL
+  `fui_comentario_2` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
+  `fui_comentario_3` varchar(250) COLLATE utf8mb4_general_ci NOT NULL,
+  `fui_comentario_4` varchar(250) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `cc_uso_interno`
---
-
-INSERT INTO `cc_uso_interno` (`id`, `id_general`, `fui_nombre_completo_1`, `fui_aprobacion_1`, `fui_fecha_1`, `fui_nombre_completo_2`, `fui_aprobacion_2`, `fui_fecha_2`, `fui_nombre_completo_3`, `fui_aprobacion_3`, `fui_fecha_3`, `fui_nombre_completo_4`, `fui_aprobacion_4`, `fui_fecha_4`, `fui_comentario_1`, `fui_comentario_2`, `fui_comentario_3`, `fui_comentario_4`) VALUES
-(3, 13, '', '', '1970-01-01', '', '', '1970-01-01', '', '', '1970-01-01', '', '', '1970-01-01', '', 0, 0, 0),
-(4, 14, '', '', '1970-01-01', '', '', '1970-01-01', '', '', '1970-01-01', '', '', '1970-01-01', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1342,8 +1141,7 @@ INSERT INTO `codigos` (`id`, `codigo`, `descripcion`, `detalle_programa`) VALUES
 (198, '24GBPJ', 'Sanitario', 'conosca a su cliente, sector economico Sanitario'),
 (199, '25GBPJ', 'Seguridad', 'conosca a su cliente, sector economico Seguridad'),
 (200, '26GBPJ', 'Transporte', 'conosca a su cliente, sector economico Transporte'),
-(201, '27GBPJ', 'Turismo', 'conosca a su cliente, sector economico Turismo'),
-(202, '112MDP', 'Financiamiento', 'Conosca a su cliente, metodo de pago: financiamiento');
+(201, '27GBPJ', 'Turismo', 'conosca a su cliente, sector economico Turismo');
 
 -- --------------------------------------------------------
 
@@ -1624,8 +1422,7 @@ CREATE TABLE `tipos` (
 INSERT INTO `tipos` (`id`, `tipo`, `descripcion`, `stat`) VALUES
 (1, 'admin', 'usuairo administrador', 1),
 (2, 'analista', 'Analista de ventas', 1),
-(3, 'vendedor', 'Vendedor de autos', 1),
-(4, 'tipo_3', 'Usuario tipo 3', 1);
+(3, 'vendedor', 'Vendedor', 1);
 
 -- --------------------------------------------------------
 
@@ -1650,7 +1447,9 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `nombre`, `email`, `edad`, `password`, `tipo_user`, `stat`) VALUES
 (1, 'q', 'q@q.com', 1, '$2y$10$3pdKMRWZQjC6pD.2QkY48O6n.dimtn4IeDMHql3JmWic3/XcrNNyW', 'admin', 1),
 (2, 'tayronbus', 'pdarrieta@hormail.com', 24, '$2y$10$1aw/nCPLmOcV2S5tHE0AjO1tTyNFTnaqogUQXVIzaBvnAwHfYmmxO', 'tipo_1', 1),
-(5, 'tayron', 'pedroarrieta25@hotmail.com', 24, '$2y$10$omg2rq0KVc6gFmP8AU/Mt.w6JZXuhf.D0YJVOk7b3/eTlJGhuvLDi', 'tipo_1', 1);
+(5, 'tayron', 'pedroarrieta25@hotmail.com', 24, '$2y$10$omg2rq0KVc6gFmP8AU/Mt.w6JZXuhf.D0YJVOk7b3/eTlJGhuvLDi', 'tipo_1', 1),
+(7, 'Omar Carrillo', 'omar.carrillo@grupopcr.com.pa', NULL, '$2y$10$7aWZfki9miCKE0dN0NjOO.D18WfAbb6wau0HLWmX/PgoR7d7ADieq', 'analista', 1),
+(8, 'Vendedor 1', 'vendedor1@grupopcrprueba.com.pa', NULL, '$2y$10$zDyiSd4cxi4fIe7U933L4e6WdK4sbeGxkcNsTgGJ3J4CiYTVF7vKS', 'vendedor', 1);
 
 --
 -- Índices para tablas volcadas
@@ -1923,7 +1722,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `adjuntos_general`
 --
 ALTER TABLE `adjuntos_general`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria_reporte_pb`
@@ -1935,55 +1734,55 @@ ALTER TABLE `categoria_reporte_pb`
 -- AUTO_INCREMENT de la tabla `cc_adjuntos`
 --
 ALTER TABLE `cc_adjuntos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_beneficiario`
 --
 ALTER TABLE `cc_beneficiario`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_declaracion`
 --
 ALTER TABLE `cc_declaracion`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_declaracion_jurada`
 --
 ALTER TABLE `cc_declaracion_jurada`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_expediente`
 --
 ALTER TABLE `cc_expediente`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_generales`
 --
 ALTER TABLE `cc_generales`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_ocupacionales`
 --
 ALTER TABLE `cc_ocupacionales`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_personas_expuestas`
 --
 ALTER TABLE `cc_personas_expuestas`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_adjuntos`
 --
 ALTER TABLE `cc_pj_adjuntos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_apoderados`
@@ -2007,31 +1806,31 @@ ALTER TABLE `cc_pj_beneficiario_declaracion_jurada`
 -- AUTO_INCREMENT de la tabla `cc_pj_beneficiario_final`
 --
 ALTER TABLE `cc_pj_beneficiario_final`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_declaracion_accionista`
 --
 ALTER TABLE `cc_pj_declaracion_accionista`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_declaracion_fuentes`
 --
 ALTER TABLE `cc_pj_declaracion_fuentes`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_declaracion_jurada`
 --
 ALTER TABLE `cc_pj_declaracion_jurada`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_declaracion_jurada_2`
 --
 ALTER TABLE `cc_pj_declaracion_jurada_2`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_directiva_dignatarios`
@@ -2049,13 +1848,13 @@ ALTER TABLE `cc_pj_directiva_dignatarios_temp`
 -- AUTO_INCREMENT de la tabla `cc_pj_expediente`
 --
 ALTER TABLE `cc_pj_expediente`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_generales`
 --
 ALTER TABLE `cc_pj_generales`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_generales_beneficiarios_juridica`
@@ -2091,13 +1890,13 @@ ALTER TABLE `cc_pj_generales_bf_temp`
 -- AUTO_INCREMENT de la tabla `cc_pj_perosnas_expuestas`
 --
 ALTER TABLE `cc_pj_perosnas_expuestas`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_propietarios`
 --
 ALTER TABLE `cc_pj_propietarios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_propietarios_beneficiarios_juridica`
@@ -2115,49 +1914,49 @@ ALTER TABLE `cc_pj_propietarios_beneficiarios_juridica_temp`
 -- AUTO_INCREMENT de la tabla `cc_pj_referencias`
 --
 ALTER TABLE `cc_pj_referencias`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_representante_legal`
 --
 ALTER TABLE `cc_pj_representante_legal`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_terceros_autorizados`
 --
 ALTER TABLE `cc_pj_terceros_autorizados`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_pj_uso_interno`
 --
 ALTER TABLE `cc_pj_uso_interno`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_referencias`
 --
 ALTER TABLE `cc_referencias`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_terceros_autorizados`
 --
 ALTER TABLE `cc_terceros_autorizados`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `cc_uso_interno`
 --
 ALTER TABLE `cc_uso_interno`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `codigos`
 --
 ALTER TABLE `codigos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=203;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=202;
 
 --
 -- AUTO_INCREMENT de la tabla `paises`
@@ -2175,7 +1974,7 @@ ALTER TABLE `tipos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
