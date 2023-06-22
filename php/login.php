@@ -78,13 +78,14 @@ if (isset($_POST['g-recaptcha-response'])) {
                     <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                     <label for="password">Contraseña</label>
                 </div>
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
                 <div class="g-recaptcha" data-sitekey="6LecvL8mAAAAAJT2Ynh8K0pZiBZKQISlgmQUaGR1"></div>
                 <br>
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
             </form>
         </div>
     </div>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 </body>
 </html>
