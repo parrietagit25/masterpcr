@@ -4,7 +4,7 @@
 <?php $cCclienteController = new CcclienteController(); ?>
 <?php $id = $_GET['id']; ?>
 <?php 
-$paises = $cCclienteController->obtener_pais();
+
 $genero = $cCclienteController->obtener_genero();
 $estado_civil = $cCclienteController->obtener_estado_civil();
 $profesion = $cCclienteController->obtener_profesion();
@@ -27,6 +27,8 @@ $declaracion_jurada = $cCclienteController->obtenerDeclaracionJurada($id);
 $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
 $uso_interno = $cCclienteController->obtenerUsoInterno($id);
 $todos_adjuntos = $cCclienteController->obtenerTodosAdjuntos($id);
+
+//$paises = $cCclienteController->obtener_pais_id();
 
 $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
@@ -63,6 +65,12 @@ $html = '<div class="container" style="font-size: 10px;">
                     <br>';
 
                     foreach ($generales as $key => $value) { 
+
+                        /* $pais_nacimiento = $cCclienteController->obtener_pais_id($value['fg_pais_nacimiento']);
+
+                        foreach ($pais_nacimiento as $key => $valuePais) {
+                            $pais_n = $valuePais['nombre'];
+                        } */
 
                    $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
                         <tr>
@@ -247,6 +255,28 @@ $html = '<div class="container" style="font-size: 10px;">
                         <td><b>CORREO ELECTRÓNICO</b></td>
                         <td>'.$value['fr_correo_electronico_1'].'</td>
                     </tr>
+
+                    <tr>
+                        <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>Rerefencias personales o comerciales( clientes o proveedores)</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>REFERENCIAS BANCARIAS</b></td>
+                        <td></td>
+                        <td><b>NOMBRE O RAZÓN SOCIAL</b></td>
+                        <td>'.$value['fr_razon_social_2'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>ACTIVIDAD</b></td>
+                        <td>'.$value['fr_actividad_2'].'</td>
+                        <td><b>RELACIÓN CON CLIENTE</b></td>
+                        <td>'.$value['fr_relacion_cliente_2'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>TELÉFONO</b></td>
+                        <td>'.$value['fr_telefono_2'].'</td>
+                        <td><b>CORREO ELECTRÓNICO</b></td>
+                        <td>'.$value['fr_correo_electronico_2'].'</td>
+                    </tr>
                     
                 </table>
                 <br>';
@@ -277,11 +307,195 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td><b>APELLIDO MATERNO</b></td>
                             <td>'.$value['fb_apellido_materno'].'</td>
                         </tr>
+                        <tr>
+                            <td><b>APELLIDO DE CASADA:</b></td>
+                            <td>'.$value['fb_apellido_casada'].'</td>
+                            <td><b>PAIS DE NACIMIENTO</b></td>
+                            <td>'.$value['fb_pais_nacimiento'].'</td>
+                        </tr>
+                        <tr>
+                            <td><b>FECHA DE NACIMIENTO:</b></td>
+                            <td>'.$value['fb_fecha_nacimiento'].'</td>
+                            <td><b>NACINALIDAD</b></td>
+                            <td>'.$value['fb_nacionaidad'].'</td>
+                        </tr>
+                        <tr>
+                            <td><b>GENERO:</b></td>
+                            <td>'.$value['fb_genero'].'</td>
+                            <td><b>ESTADO CIVIL</b></td>
+                            <td>'.$value['fb_estado_civil'].'</td>
+                        </tr>
+                        <tr>
+                            <td><b>IDENTIFICACION:</b></td>
+                            <td>'.$value['fb_identificacion'].'</td>
+                            <td><b>PAIS DE RECIDENCIA</b></td>
+                            <td>'.$value['fb_pais_residencia'].'</td>
+                        </tr>
+                        <tr>
+                            <td><b>DIRECION DE RESIDENCIA:</b></td>
+                            <td>'.$value['fb_direccion_residencial'].'</td>
+                            <td><b>PAIS DE RECIDENCIA FISCAL</b></td>
+                            <td>'.$value['fb_pais_residencia_fiscal'].'</td>
+                        </tr>
+                        <tr>
+                            <td><b>EMAIL:</b></td>
+                            <td>'.$value['fb_email'].'</td>
+                            <td><b>TELEFONO DE RECIDENCIA</b></td>
+                            <td>'.$value['fb_telefono_residencia'].'</td>
+                        </tr>
+                        <tr>
+                            <td><b>TELEFONO MOVIL:</b></td>
+                            <td>'.$value['fb_telefono_movil'].'</td>
+                            <td><b>PROFESION</b></td>
+                            <td>'.$value['fb_profesion'].'</td>
+                        </tr>
+                        <tr>
+                            <td><b>OCUPACION:</b></td>
+                            <td>'.$value['fb_ocupacion'].'</td>
+                            <td><b>LUGAR DE TRABAJO</b></td>
+                            <td>'.$value['fb_lugar_trabajo'].'</td>
+                        </tr>
+                        <tr>
+                            <td><b>DIRECCION DE TRABAJO:</b></td>
+                            <td>'.$value['fb_ocupacion'].'</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                     </table>
                     <br>';
-
                 }
 
+    foreach ($terceros as $key => $value) { 
+
+        $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
+                    <tr>
+                        <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>TERCEROS AUTORIZADOS</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>CLIENTE / TERCERO</b></td>
+                        <td>'.$value['ft_cliete_tercero'].'</td>
+                        <td><b>FAMILIAR / TERCERO</b></td>
+                        <td>'.$value['ft_relacion_familiar_tercero'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>DETALLE DE LA RELACION</b></td>
+                        <td>'.$value['ft_relacion_detalle'].'</td>
+                        <td><b>PRIMER NOMBRE</b></td>
+                        <td>'.$value['ft_primer_nombre'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>SEGUNDO NOMBRE:</b></td>
+                        <td>'.$value['ft_segundo_nombre'].'</td>
+                        <td><b>APELLIDO PATERNO</b></td>
+                        <td>'.$value['ft_apellido_paterno'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>APELLIDO MATERNO:</b></td>
+                        <td>'.$value['ft_apellido_materno'].'</td>
+                        <td><b>APELLIDO CASADA</b></td>
+                        <td>'.$value['ft_apellido_casada'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>PAIS DE NACIMIENTO:</b></td>
+                        <td>'.$value['ft_pais_nacimiento'].'</td>
+                        <td><b>FECHA NACIMIENTO</b></td>
+                        <td>'.$value['ft_fecha_nacimiento'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>NACIONALIDAD:</b></td>
+                        <td>'.$value['ft_nacionaidad'].'</td>
+                        <td><b>GENERO</b></td>
+                        <td>'.$value['ft_genero'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>ESTADO CIVIL:</b></td>
+                        <td>'.$value['ft_estado_civil'].'</td>
+                        <td><b>IDENTIFICACION</b></td>
+                        <td>'.$value['ft_identificacion'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>PAIS DE RESIDENCIA:</b></td>
+                        <td>'.$value['ft_pais_residencia'].'</td>
+                        <td><b>DIRECCION FISCAL</b></td>
+                        <td>'.$value['ft_direccion_residencial'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>PAIS RESIDENCIA FISCAL:</b></td>
+                        <td>'.$value['ft_pais_residencia_fiscal'].'</td>
+                        <td><b>EMAIL</b></td>
+                        <td>'.$value['ft_email'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>TELEFONO DE RESIDENCIA:</b></td>
+                        <td>'.$value['ft_telefono_residencia'].'</td>
+                        <td><b>TELEFONO MOVIL</b></td>
+                        <td>'.$value['ft_telefono_movil'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>PROFESION:</b></td>
+                        <td>'.$value['ft_profesion'].'</td>
+                        <td><b>OCUPACION</b></td>
+                        <td>'.$value['ft_ocupacion'].'</td>
+                    </tr>
+                    <tr>
+                        <td><b>LUGAR DE TRABAJO:</b></td>
+                        <td>'.$value['ft_lugar_trabajo'].'</td>
+                        <td><b>DIRECCION DE TRABAJO</b></td>
+                        <td>'.$value['ft_direccion_trabajo'].'</td>
+                    </tr>
+                </table>
+                <br>';
+            }
+
+foreach ($expuestas as $key => $value) { 
+
+    $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
+                <tr>
+                    <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>PERSONAS EXPUESTAS POLÍTICAMENTE (PEPS)</b></td>
+                </tr>
+                <tr>
+                    <td><b>PERSONA O FAMILIAR PEP</b></td>
+                    <td>'.$value['fp_beneficiario'].'</td>
+                    <td><b>NOMBRE COMPLETO</b></td>
+                    <td>'.$value['fp_nombre_completo'].'</td>
+                </tr>
+                <tr>
+                    <td><b>CARGO ACTUAL</b></td>
+                    <td>'.$value['fp_cargo_actual'].'</td>
+                    <td><b>PRIMER NOMBRE</b></td>
+                    <td>'.$value['fp_otro'].'</td>
+                </tr>
+                <tr>
+                    <td><b>SEGUNDO NOMBRE:</b></td>
+                    <td>'.$value['fp_fecha'].'</td>
+                    <td><b>APELLIDO PATERNO</b></td>
+                    <td>'.$value['fp_cargo_anterior'].'</td>
+                </tr>
+                <tr>
+                    <td><b>APELLIDO MATERNO:</b></td>
+                    <td>'.$value['fp_fecha_anterior'].'</td>
+                    <td><b>APELLIDO CASADA</b></td>
+                    <td>'.$value['fp_comentario'].'</td>
+                </tr>
+            </table>
+            <br>';
+        }
+
+foreach ($declaracion_jurada as $key => $value) { 
+
+    $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
+                <tr>
+                    <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>DECLARACIÓN JURADA</b></td>
+                </tr>
+                <tr>
+                    <td><b>NOMBRE COMPLETO</b></td>
+                    <td>'.$value['fdc_nombre_completo'].'</td>
+                    <td><b>FECHA</b></td>
+                    <td>'.$value['fdc_fecha'].'</td>
+                </tr>
+            </table>
+            <br>';
+        }
 
         $html .='</div>
             </div>

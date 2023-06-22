@@ -250,4 +250,11 @@ class ModelGlobal extends Conexion {
     return $result;
   }
 
+  public function obtenerPaisId($tabla, $id_pais){
+
+    $result = $this->conn->query("SELECT * FROM $tabla WHERE codigo = $id_pais");
+    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+  }
+
 }
