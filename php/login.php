@@ -5,20 +5,36 @@ require_once("controladores/UsuarioController.php");
 
 $usuarioController = new UsuarioController();
 
-if (isset($_POST["email"]) && isset($_POST["password"])) {
-  $email = $_POST["email"];
-  $password = $_POST["password"];
+if (isset($_POST['g-recaptcha-response'])) {
 
-  $usuario = $usuarioController->autenticar($email, $password);
+    $recaptchaResponse = $_POST['g-recaptcha-response'];
+    $secretKey = "6LecvL8mAAAAAF4OH51xIBzC7Fk_C_NwLXy4SQK0";
 
-  if ($usuario) {
-    $_SESSION["usuario"] = $usuario;
-    header("Location: index.php");
-    exit();
-  } else {
-    $error = "Email o contraseña incorrectos.";
-  }
+    $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$recaptchaResponse);
+
+    $response = json_decode($request);
+
+    if($response->success){
+        if (isset($_POST["email"]) && isset($_POST["password"])) {
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+        
+            $usuario = $usuarioController->autenticar($email, $password);
+        
+            if ($usuario) {
+            $_SESSION["usuario"] = $usuario;
+            header("Location: index.php");
+            exit();
+            } else {
+            $error = "Email o contraseña incorrectos.";
+            }
+        }
+    }else{
+        $error = "Error al verificar el capcha, intente de nuevo";
+    }
+
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,11 +78,13 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
                     <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                     <label for="password">Contraseña</label>
                 </div>
+                <div class="g-recaptcha" data-sitekey="6LecvL8mAAAAAJT2Ynh8K0pZiBZKQISlgmQUaGR1"></div>
+                <br>
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
             </form>
         </div>
     </div>
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 </body>
 </html>
