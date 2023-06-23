@@ -5,35 +5,20 @@ require_once("controladores/UsuarioController.php");
 
 $usuarioController = new UsuarioController();
 
-if (isset($_POST['g-recaptcha-response'])) {
-
-    $recaptchaResponse = $_POST['g-recaptcha-response'];
-    $secretKey = "6LecvL8mAAAAAF4OH51xIBzC7Fk_C_NwLXy4SQK0";
-
-    $request = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$recaptchaResponse);
-
-    $response = json_decode($request);
-
-    if($response->success){
-        if (isset($_POST["email"]) && isset($_POST["password"])) {
-            $email = $_POST["email"];
-            $password = $_POST["password"];
-        
-            $usuario = $usuarioController->autenticar($email, $password);
-        
-            if ($usuario) {
-            $_SESSION["usuario"] = $usuario;
-            header("Location: index.php");
-            exit();
-            } else {
-            $error = "Email o contraseña incorrectos.";
-            }
+    if (isset($_POST["email"]) && isset($_POST["password"])) {
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+    
+        $usuario = $usuarioController->autenticar($email, $password);
+    
+        if ($usuario) {
+        $_SESSION["usuario"] = $usuario;
+        header("Location: index.php");
+        exit();
+        } else {
+        $error = "Email o contraseña incorrectos.";
         }
-    }else{
-        $error = "Error al verificar el capcha, intente de nuevo";
     }
-
-}
 
 ?>
 <!DOCTYPE html>
@@ -78,8 +63,6 @@ if (isset($_POST['g-recaptcha-response'])) {
                     <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                     <label for="password">Contraseña</label>
                 </div>
-                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                <div class="g-recaptcha" data-sitekey="6LecvL8mAAAAAJT2Ynh8K0pZiBZKQISlgmQUaGR1"></div>
                 <br>
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
             </form>
