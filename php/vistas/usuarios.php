@@ -177,8 +177,10 @@
                                                     <td><?php echo htmlspecialchars($value["tipo_user"]); ?></td>
                                                     <td><?php if($value["stat"]==1){ echo '<span style="color:green">ON</span>'; }else{ echo '<span style="color:red">OFF</span>'; } ?></td>
                                                     <td>
+                                                        <?php if($value["id"] == 1 || $value["id"] == 11){ ?>
                                                         <button type="button" class="btn btn-secondary btn-icon waves-effect waves-light" onclick="modal_edit(<?php echo $value['id']; ?>, 'edit_user', 'edit_contenido', 'edit_modal_eliminar')"><i class="ri-edit-line"></i></button>
                                                         <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="modal_eliminar(<?php echo $value['id']; ?>, 'user', 'eliminar_contenido', 'contenido_modal_eliminar')"><i class="ri-delete-bin-5-line"></i></button>
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                             <?php } ?>
