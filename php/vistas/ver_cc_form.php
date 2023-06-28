@@ -190,6 +190,32 @@
                                             </form>
                                         </div><!-- /.modal-content -->
                                     </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal --> 
+
+                                <!-- Solicitar Aprobacion -->
+                                <div class="modal fade solicitar_aprobacion_analista" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content" style="text-align: center;">
+                                            <form action="" method="post">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h6 class="fs-15">
+                                                        Solicitar Aprobacion del analista
+                                                    </h6>
+                                                    <div id="contenido_modal_solicitar_aprobacion_analista">
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                                    <input type="submit" value="Solicitar" class="btn btn-primary" name="solicitar_aprobacion_analista">
+                                                </div>
+                                            </form>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
                                 </div><!-- /.modal -->
 
                                 <!-- Solicitar Revicion -->
@@ -243,12 +269,48 @@
                                         </div><!-- /.modal-content -->
                                     </div><!-- /.modal-dialog -->
                                 </div><!-- /.modal -->
+
+                                <!-- Botonera -->
+                                <div class="modal fade descripcion_botones" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content" style="text-align: center;">
+                                            <form action="" method="post">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleMocClienteFormulario">Descripción Botones</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <ul>
+                                                        <li style="text-align: left;">
+                                                            <button type="button" class="btn btn-secondary btn-icon waves-effect waves-light"><i class="ri-edit-line"></i></button> Elitar Registrop
+                                                        </li>
+                                                        <li style="text-align: left;">
+                                                            <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-file-2-fill"></i></button> Portada file de ventas
+                                                        </li>
+                                                        <li style="text-align: left;">
+                                                            <button type="button" class="btn btn-success btn-icon waves-effect waves-light"><i class=" ri-file-copy-2-line"></i></button> Docuemntos
+                                                        </li>
+                                                        <li style="text-align: left;">
+                                                            <button type="button" class="btn btn-warning btn-icon waves-effect waves-light"><i class=" ri-attachment-2"></i></button> Adjuntar adicionales
+                                                        </li>
+                                                        <li style="text-align: left;">
+                                                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-delete-bin-5-line"></i></button> Eliminar Registro
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                                </div>
+                                            </form>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
                                 
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5 class="card-title mb-0">Clientes Registrados</h5>
+                                                <h5 class="card-title mb-0">Clientes Registrados <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".descripcion_botones">Descripción Botones</a> </h5>
                                             </div>
                                             <div class="card-body">
                                                 <table id="buttons-datatables" class="display table table-bordered" style="width:100%">

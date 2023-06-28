@@ -64,6 +64,14 @@ if (isset($_POST['aprobar'])) {
   $alerta = 2;
 }
 
+if (isset($_POST['solicitar_aprobacion_analista'])) {
+  $datos = [];
+  $id_general = $_POST['id_general'];
+  $datos['pjgn_stat'] = 5;
+  $cCclienteController->actualizar_cc_cliente_solicitud($datos, $id_general);
+  $alerta = 2;
+}
+
 if (isset($_GET["view"])) {
     $view = $_GET["view"];
   

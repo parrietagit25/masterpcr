@@ -139,6 +139,22 @@ class ModelGlobal extends Conexion {
 
   public function obtenerRegistroClientes() {
 
+    /*$where = "";
+
+    if ($_SESSION["usuario"][0]['tipo_user'] == 'vendedor') { // usuariop vendedor
+
+      $where .= " and ge.fg_stat in(2, 5, 3, 1)";
+
+    }elseif ($_SESSION["usuario"][0]['tipo_user'] == 'analista') { // usuario analista
+      
+      $where .= " and ge.fg_stat in(5)";
+
+    }elseif ($_SESSION["usuario"][0]['tipo_user'] == 'supervisor') { // usuario supervisor
+
+      $where .= " and ge.fg_stat in(2)";
+      
+    }   */
+
     $result = $this->conn->query("SELECT 
                                   ge.id, 
                                   ge.fg_cedula, 
@@ -148,7 +164,8 @@ class ModelGlobal extends Conexion {
                                   ge.fg_fecha_log, 
                                   CASE
                                   WHEN ge.fg_stat = 1 THEN 'Registrado'
-                                  WHEN ge.fg_stat = 2 THEN 'Esperando Revision'
+                                  WHEN ge.fg_stat = 2 THEN 'Esperando Revision de supervisor'
+                                  WHEN ge.fg_stat = 5 THEN 'Esperando Revision de Analista'
                                   WHEN ge.fg_stat = 3 THEN 'Revisar de nuevo'
                                   WHEN ge.fg_stat = 4 THEN 'Aprobado'
                                   ELSE 'Bajo'
@@ -173,7 +190,8 @@ class ModelGlobal extends Conexion {
                                   ge.fg_fecha_log, 
                                   CASE
                                   WHEN ge.fg_stat = 1 THEN 'Registrado'
-                                  WHEN ge.fg_stat = 2 THEN 'Esperando Revision'
+                                  WHEN ge.fg_stat = 2 THEN 'Esperando Revision de supervisor'
+                                  WHEN ge.fg_stat = 5 THEN 'Esperando Revision de Analista'
                                   WHEN ge.fg_stat = 3 THEN 'Revisar de nuevo'
                                   WHEN ge.fg_stat = 4 THEN 'Aprobado'
                                   ELSE 'Bajo'
@@ -189,6 +207,22 @@ class ModelGlobal extends Conexion {
 
   public function obtenerRegistroClientesJuridicos(){
 
+    /*$where = "";
+
+    if ($_SESSION["usuario"][0]['tipo_user'] == 'vendedor') { // usuariop vendedor
+
+      $where .= " and ge.fg_stat in(2, 5, 3, 1)";
+
+    }elseif ($_SESSION["usuario"][0]['tipo_user'] == 'analista') { // usuario analista
+      
+      $where .= " and ge.fg_stat in(5)";
+
+    }elseif ($_SESSION["usuario"][0]['tipo_user'] == 'supervisor') { // usuario supervisor
+
+      $where .= " and ge.fg_stat in(2)";
+      
+    } */  
+
       $result = $this->conn->query("SELECT 
                                     ge.id,
                                     ge.pjgn_ruc_dv, 
@@ -198,7 +232,8 @@ class ModelGlobal extends Conexion {
                                     ge.fecha_log, 
                                     CASE
                                     WHEN ge.pjgn_stat = 1 THEN 'Registrado'
-                                    WHEN ge.pjgn_stat = 2 THEN 'Esperando Revision'
+                                    WHEN ge.pjgn_stat = 2 THEN 'Esperando Revision de supervisor'
+                                    WHEN ge.pjgn_stat = 5 THEN 'Esperando Revision de Analista'
                                     WHEN ge.pjgn_stat = 3 THEN 'Revisar de nuevo'
                                     WHEN ge.pjgn_stat = 4 THEN 'Aprobado'
                                     ELSE 'Bajo'
@@ -223,7 +258,8 @@ class ModelGlobal extends Conexion {
                                   ge.fecha_log, 
                                   CASE
                                   WHEN ge.pjgn_stat = 1 THEN 'Registrado'
-                                  WHEN ge.pjgn_stat = 2 THEN 'Esperando Revision'
+                                  WHEN ge.pjgn_stat = 2 THEN 'Esperando Revision de supervisor'
+                                  WHEN ge.pjgn_stat = 5 THEN 'Esperando Revision de Analista'
                                   WHEN ge.pjgn_stat = 3 THEN 'Revisar de nuevo'
                                   WHEN ge.pjgn_stat = 4 THEN 'Aprobado'
                                   ELSE 'Bajo'

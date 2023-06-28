@@ -1824,22 +1824,37 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                         <p>
                                                         AUTOMARKET SEMINUEVOS SE REFIERE A LA MARCA BAJO LA CUAL PANAMA CAR RENTAL, S.A. OFRECE SUS PRODUCTOS Y SERVICIOS. EL NOMBRE 
                                                         “AUTOMARKET SEMINUEVOS” Y SU LOGOTIPO ES UNA MARCA REGISTRADA DE PROPIEDAD DE SEMINUEVOS, S.A. LA SOCIEDAD SEMINUEVOS, S.A. NO 
-                                                        TIENE RELACIÓN COMERCIAL Y/O CONTRACTUAL NI PRESTA SERVICIOS A LOS CLIENTES DE PANAMA CAR RENTAL, S.A. 
+                                                        TIENE RELACIÓN COMERCIAL Y/O CONTRACTUAL NI PRESTA SERVICIOS A LOS CLIENTES DE PANAMA CAR RENTAL, S.A.
                                                         </p>
                                                         </div>
                                                         <!--end row-->
                                                         
-                                                        <?php if ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 1) { ?>
+                                                        <?php //echo $stado_general; ?>
+                                                        <?php if (($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" || $_SESSION["usuario"][0]["tipo_user"] == "gerencia") && $stado_general == 1) { ?>
+                                                            
                                                             <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_cliente">
-                                                            <a class="btn btn-primary" onclick="solicitar_aprobacion(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion</a>
-                                                        <?php }elseif ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 2) { ?>
+                                                            <a class="btn btn-primary" onclick="solicitar_aprobacion(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion al supervisor</a>
+
+                                                        <?php }elseif (($_SESSION["usuario"][0]["tipo_user"] == "analista" || $_SESSION["usuario"][0]["tipo_user"] == "admin" || $_SESSION["usuario"][0]["tipo_user"] == "gerencia") && $stado_general == 5) { ?>
+                                                            
                                                             <a class="btn btn-warning" onclick="revicion_cc_pn(<?php echo $id; ?>, 'solicitar_revicion', 'contenido_modal_solicitar_revicion')">Revicion</a>
                                                             <a class="btn btn-success" onclick="aprobacion_cc_pn(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Aprobar</a>
-                                                        <?php }elseif ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 3) { ?>
+                                                        
+                                                        <?php }elseif (($_SESSION["usuario"][0]["tipo_user"] == "supervisor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" || $_SESSION["usuario"][0]["tipo_user"] == "gerencia") && $stado_general == 2) { ?>
+                                                            
+                                                            <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_cliente">
+                                                            <a class="btn btn-warning" onclick="revicion_cc_pn(<?php echo $id; ?>, 'solicitar_revicion', 'contenido_modal_solicitar_revicion')">Revicion</a>
+                                                            <a class="btn btn-primary" onclick="solicitar_aprobacion_analista(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion al analista</a>
+                                                        
+                                                        <?php }elseif (($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" || $_SESSION["usuario"][0]["tipo_user"] == "gerencia") && $stado_general == 3) { ?>
+                                                           
                                                            <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_cliente">
                                                            <a class="btn btn-primary" onclick="solicitar_aprobacion(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion</a>
-                                                        <?php }else{
-                                                            echo '<h4>Este master ha sido aprobado</h4>';
+
+                                                        <?php }elseif ($stado_general == 4) {
+                                                             echo '<h4>Este registro ha sido finalizado</h4>';
+                                                              }else{
+                                                            echo '<h4>Este registro esta en revicion</h4>';
                                                         } ?>
                                                         
                                                         <input type="hidden" name="id_general" value="<?php echo $id; ?>">
@@ -3661,5 +3676,19 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
         </div>
     </div>
 
-<?php }
+<?php }elseif (isset($_GET['solicitar_aprobacion_analista'])) { ?>
+
+    <div class="card-body">
+        <div class="live-preview">
+            <p>
+                ¿Está seguro de que desea solicitar la aprobacion del analista para este formulario de "conozca a su cliente"?
+            </p>
+            <input type="hidden" name="id_general" value="<?php echo $_GET['id']; ?>">
+        </div>
+        <div class="d-none code-view">
+            <pre class="language-markup" style="height: 450px;">
+        </div>
+    </div>
+
+<?php } 
 

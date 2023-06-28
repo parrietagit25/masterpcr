@@ -648,6 +648,32 @@
             }
         }
 
+        async function solicitar_aprobacion_analista(id_general, modal_aprobacion, contedino_aprobacion){
+            try {
+                var id = id_general;
+                const response = await fetch('vistas/modal/modalVercCliente.php?solicitar_aprobacion_analista=1&id=' + id);
+                const data = await response.text();
+                $('.cClienteFormulario').modal('hide');
+                $('.solicitar_aprobacion_analista').modal('show');
+                document.querySelector('#contenido_modal_solicitar_aprobacion_analista').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
+
+        async function solicitar_aprobacion_analista_pj(id_general, modal_aprobacion, contedino_aprobacion){
+            try {
+                var id = id_general;
+                const response = await fetch('vistas/modal/modalContenidosTablas.php?solicitar_aprobacion_analista_pj=1&id=' + id);
+                const data = await response.text();
+                $('.cClienteFormulario').modal('hide');
+                $('.solicitar_aprobacion_analista_pj').modal('show');
+                document.querySelector('#contenido_modal_solicitar_aprobacion_analista_pj').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
+
         async function revicion_cc_pn(id_general, modal_aprobacion, contedino_aprobacion){
             try {
                 var id = id_general;
@@ -677,7 +703,7 @@
         async function solicitar_aprobacion_pj(id_general, modal_aprobacion, contedino_aprobacion){
             try {
                 var id = id_general;
-                const response = await fetch('vistas/modal/modalVercCliente.php?solicitar_aprobacion=1&id=' + id);
+                const response = await fetch('vistas/modal/modalContenidosTablas.php?solicitar_aprobacion_analista=1&id=' + id);
                 const data = await response.text();
                 $('.cClienteFormulario').modal('hide');
                 $('.solicitar_aprobacion').modal('show');

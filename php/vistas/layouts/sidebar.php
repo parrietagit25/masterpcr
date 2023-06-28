@@ -83,7 +83,7 @@
                     </div>
                 </li>
                 <?php } ?>
-                <!--<li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link menu-link" href="#mantenimientoRepo" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="mantenimientoRepo">
                         <i class="ri-camera-fill"></i> <span>Repositorio</span>
@@ -95,7 +95,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>-->
+                </li>
 
             </ul>
         </div>

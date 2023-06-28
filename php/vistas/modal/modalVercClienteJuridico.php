@@ -2140,7 +2140,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                         <button type="button" class="btn btn-primary btn-sm" id="sa-success" style="display:none;"></button>
                                                         <input type="hidden" name="id_general" value="<?php echo $_GET['id']; ?>">
                                                         
-                                                        <?php if ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 1) { ?>
+                                                        <?php /* if ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 1) { ?>
                                                             <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_pj">
                                                             <a class="btn btn-primary" onclick="solicitar_aprobacion_pj(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion</a>
                                                         <?php }elseif ($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" && $stado_general == 2) { ?>
@@ -2151,7 +2151,36 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                            <a class="btn btn-primary" onclick="solicitar_aprobacion_pj(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion</a>
                                                         <?php }else{
                                                             echo '<h4>Este master ha sido aprobado</h4>';
+                                                        }  */ ?>
+
+                                                        <?php echo $stado_general; ?>
+                                                        <?php if (($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" || $_SESSION["usuario"][0]["tipo_user"] == "gerencia") && $stado_general == 1) { ?>
+                                                            
+                                                            <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_pj">
+                                                            <a class="btn btn-primary" onclick="solicitar_aprobacion_pj(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion al supervisor</a>
+
+                                                        <?php }elseif (($_SESSION["usuario"][0]["tipo_user"] == "analista" || $_SESSION["usuario"][0]["tipo_user"] == "admin" || $_SESSION["usuario"][0]["tipo_user"] == "gerencia") && $stado_general == 5) { ?>
+                                                            
+                                                            <a class="btn btn-warning" onclick="revicion_cc_pj(<?php echo $id; ?>, 'solicitar_revicion', 'contenido_modal_solicitar_revicion')">Revicion</a>
+                                                            <a class="btn btn-success" onclick="aprobacion_cc_pj(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Aprobar</a>
+                                                        
+                                                        <?php }elseif (($_SESSION["usuario"][0]["tipo_user"] == "supervisor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" || $_SESSION["usuario"][0]["tipo_user"] == "gerencia") && $stado_general == 2) { ?>
+                                                            
+                                                            <!--<input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_pj">-->
+                                                            <a class="btn btn-warning" onclick="revicion_cc_pj(<?php echo $id; ?>, 'solicitar_revicion', 'contenido_modal_solicitar_revicion')">Revicion</a>
+                                                            <a class="btn btn-primary" onclick="solicitar_aprobacion_analista_pj(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion al analista</a>
+                                                        
+                                                        <?php }elseif (($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" || $_SESSION["usuario"][0]["tipo_user"] == "gerencia") && $stado_general == 3) { ?>
+                                                           
+                                                           <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_pj">
+                                                           <a class="btn btn-primary" onclick="solicitar_aprobacion_pj(<?php echo $id; ?>, 'solicitar_aprobacion', 'contenido_modal_solicitar_aprobacion')">Solicitar Aprobacion</a>
+
+                                                        <?php }elseif ($stado_general == 4) {
+                                                             echo '<h4>Este registro ha sido finalizado</h4>';
+                                                              }else{
+                                                            echo '<h4>Este registro esta en revicion</h4>';
                                                         } ?>
+
                                                     </div>
                                                     <div class="d-none code-view">
                                                         <pre class="language-markup" style="height: 450px;">

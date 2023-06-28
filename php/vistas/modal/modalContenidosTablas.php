@@ -642,4 +642,18 @@ foreach ($obtener_registros_temp as $key => $value) { ?>
         </tr>
 
   <?php }   
-} ?>
+}elseif (isset($_GET['solicitar_aprobacion_analista_pj'])) { ?>
+    
+    <div class="card-body">
+        <div class="live-preview">
+            <p>
+                ¿Está seguro de que desea solicitar la aprobacion del analista para este formulario de "conozca a su cliente persona juridica"?
+            </p>
+            <input type="hidden" name="id_general" value="<?php echo $_GET['id']; ?>">
+        </div>
+        <div class="d-none code-view">
+            <pre class="language-markup" style="height: 450px;">
+        </div>
+    </div>
+
+<?php } ?>
