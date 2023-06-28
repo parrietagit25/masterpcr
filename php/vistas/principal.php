@@ -339,8 +339,10 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body"> 
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/mAfGj-F490o?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+                                            <video width="620" height="440" controls>
+                                                <source src="vistas/videos/ctc.mp4" type="video/mp4">
+                                                Tu navegador no soporta el elemento de video.
+                                            </video>
                                         </div>
                                         <div class="modal-footer">
                                             <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
