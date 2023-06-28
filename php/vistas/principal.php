@@ -339,10 +339,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body"> 
-                                            <video controls>
-                                                <source src="vistas/videos/ccmdd.mp4" type="video/mp4">
-                                                Tu navegador no admite la etiqueta de video.
-                                            </video>
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Z-elWL5Y9Bw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                                         </div>
                                         <div class="modal-footer">
