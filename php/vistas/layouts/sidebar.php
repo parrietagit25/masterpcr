@@ -83,7 +83,8 @@
                     </div>
                 </li>
                 <?php } ?>
-                <!--<li class="nav-item">
+                <?php if ($_SESSION["usuario"][0]['tipo_user'] == 'admin'){ ?>
+                <li class="nav-item">
                     <a class="nav-link menu-link" href="#mantenimientoRepo" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="mantenimientoRepo">
                         <i class="ri-camera-fill"></i> <span>Repositorio</span>
@@ -95,7 +96,25 @@
                             </li>
                         </ul>
                     </div>
-                </li> -->
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#mantenimientoComisiones" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="mantenimientoComisiones">
+                        <i class="ri-camera-fill"></i> <span>Comisiones Retail</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="mantenimientoComisiones">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="retail.php?view=ver_comisiones" class="nav-link">Comisiones </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="retail.php?view=ver_comisiones" class="nav-link">Ver Historico </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <?php } ?>
 
             </ul>
         </div>

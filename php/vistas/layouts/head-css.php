@@ -8,3 +8,25 @@
 <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 <!-- custom Css-->
 <link href="assets/css/custom.min.css" id="app-style" rel="stylesheet" type="text/css" />
+<style>
+        .file-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            padding: 10px 40px;
+            margin: 5px;
+            color: #ffffff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 0; /* Remove border radius */
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s ease;
+        }
+        .file-container:hover {
+            background-color: #0056b3;
+        }
+        .noFile {
+            display: none;
+        }
+</style>

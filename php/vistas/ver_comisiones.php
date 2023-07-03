@@ -12,7 +12,7 @@
                     </div>
                     <!-- tabs principal -->
                     <div class="col-xxl-12">
-                        <h5 class="mb-3">Repositorio</h5>
+                        <h5 class="mb-3">Comisiones Retail</h5>
                         <div class="card">
                             <div class="card-body">
 
@@ -22,26 +22,32 @@
                                         <div class="modal-content" style="text-align: center;">
                                             <form action="" method="post">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleMocClienteFormulario">Registrar Documento</h5>
+                                                    <h5 class="modal-title" id="exampleMocClienteFormulario">Ver Penalidades</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <div class="file-container">
-                                                        <label for="file1"><i class="ri-file-user-line" style="font-size: 100px;"></i> <br> Identificación</label>
-                                                        <input type="file" id="file1" class="noFile">
-                                                    </div>
-                                                    <div class="file-container">
-                                                        <label for="file2"><i class="ri-passport-line" style="font-size: 100px;"></i> <br> Pasaporte</label>
-                                                        <input type="file" id="file2" class="noFile">
-                                                    </div>
-                                                    <div class="file-container">
-                                                        <label for="file3"><i class="ri-car-line" style="font-size: 100px;"></i> <br> Licencia</label>
-                                                        <input type="file" id="file3" class="noFile">
-                                                    </div>
+                                                <table class="display table table-bordered" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Agente</th>
+                                                            <th>Monto</th>
+                                                            <th>Notas</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php //foreach ($todos_registros_cc  as $key => $value) { ?>
+                                                        <tr>
+                                                            <td><input type="text" class="form-control"></td>
+                                                            <td><input type="text" class="form-control"></td>
+                                                            <td><textarea class="form-control"></textarea></td>
+                                                        </tr>
+                                                        <?php //} ?>
+                                                    </tbody>    
+                                                </table>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                                    <a href="javascript:void(0);" class="btn btn-primary">Guardar</a>
+                                                    <a href="javascript:void(0);" class="btn btn-primary">Actualizar</a>
                                                 </div>
                                             </form>
                                         </div><!-- /.modal-content -->
@@ -52,18 +58,25 @@
                                     <div class="col-lg-12">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5 class="card-title mb-0">Repositorio <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".ver_penalidad">Agregar Documentos</a> </h5>
+                                                <h5 class="card-title mb-0">Comisiones Retail <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".ver_penalidad">Ver Penalidades</a> </h5>
                                             </div>
+                                            <select name="" id="" class="form-control">
+                                                    <option value="">Seleccionar Sucursal</option>
+                                                    <option value="">Tumba Muerto</option>
+                                                    <option value="">Chorrera</option>
+                                                    <option value="">Chiriqui</option>
+                                                </select>
                                             <div class="card-body">
                                                 
                                                 <table class="display table table-bordered" style="width:100%">
                                                     <thead>
                                                         <tr>
-                                                            <th>Nombre</th>
-                                                            <th>Cedula</th>
-                                                            <th>Licencia</th>
-                                                            <th>Pasaporte</th>
-                                                            <th>Acciones</th>
+                                                            <th>Sucursal</th>
+                                                            <th>TDA</th>
+                                                            <th>Incentive</th>
+                                                            <th>RPD</th>
+                                                            <th>Trigger</th>
+                                                            <th>Meta</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -74,6 +87,9 @@
                                                             <td><?php //echo $value['vehiculo']; ?></td>
                                                             <td><?php //echo $value['fg_fecha_log']; ?></td>
                                                             <td><?php //echo $value['estado']; ?></td>
+                                                            <td>
+                                                                
+                                                            </td>
                                                         </tr>
                                                         <?php //} ?>
                                                     </tbody>    
