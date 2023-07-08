@@ -7,16 +7,14 @@ if (!isset($_SESSION["usuario"])) {
   exit();
 }
 
-require_once("controladores/CcclientePjController.php");
+require_once("controladores/CrepositorioController.php");
 $cCclienteController = new CcclienteController();
 
-if (isset($_POST['registro_cc_pj'])) {
+if (isset($_POST['subir_documento_repo'])) {
   $datos = $_POST;  
-  unset($datos['registro_cc_pj']);
-  $id_general = $cCclienteController->agregar_cc_cliente($datos);
+  unset($datos['subir_documento_repo']);
   $cCclienteController->subir_archivos($_FILES, $id_general);
-  $cCclienteController->eliminar_tablas_temp(session_id());
-  $alerta = 1;
+  //$alerta = 1;
 }
 
 if (isset($_GET["view"])) {

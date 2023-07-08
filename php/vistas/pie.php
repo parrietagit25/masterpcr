@@ -2,6 +2,33 @@
     </div> <!-- <<<< solo esta linea - incluido por el tema -->
     <script>
 
+        function cambiar_color_file_repo(input){
+            if (input.files && input.files[0]) {
+                let clas_fondo = document.querySelector(".file-container");
+                clas_fondo.style.backgroundColor = 'green';
+            } else {
+                input.parentElement.style.backgroundColor = '#007BFF';
+            }
+        }
+
+        function cambiar_color_file_repo_lic(input){
+            if (input.files && input.files[0]) {
+                let clas_fondo = document.querySelector(".file-container_lic");
+                clas_fondo.style.backgroundColor = 'green';
+            } else {
+                input.parentElement.style.backgroundColor = '#007BFF';
+            }
+        }
+
+        function cambiar_color_file_repo_pass(input){
+            if (input.files && input.files[0]) {
+                let clas_fondo = document.querySelector(".file-container_pass");
+                clas_fondo.style.backgroundColor = 'green';
+            } else {
+                input.parentElement.style.backgroundColor = '#007BFF';
+            }
+        }
+
         function id_modal_edit_rec(id_edit){
             var id = id_edit;
             fetch('vistas/modal/modalVercCliente.php?editar_formulario_cc=1&id=' + id)

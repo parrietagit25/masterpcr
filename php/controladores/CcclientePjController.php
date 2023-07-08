@@ -744,7 +744,7 @@ class CcclienteController {
                     $ruta = "vistas/adjuntos/adjuntos_g_pn/";
                 }
 
-                if (strpos($key, 'link_desc') === 0) { 
+                if ($key == 'link_desc') { 
                     $ruta = "vistas/adjuntos/adjuntos_g_pn/";
                     $ruta = $ruta;
                     $file_name = basename($_FILES[$key]["name"]);
@@ -773,7 +773,7 @@ class CcclienteController {
                     
                 }
 
-                if (strpos($key, 'link_desc_pj') === 0) { 
+                if ($key == 'link_desc_pj') { 
                     $ruta = "vistas/adjuntos/adjuntos_g_pj/";
                     $ruta = $ruta;
                     $file_name = basename($_FILES[$key]["name"]);

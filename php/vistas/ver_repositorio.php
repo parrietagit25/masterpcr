@@ -20,7 +20,7 @@
                                 <div class="modal fade ver_penalidad" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content" style="text-align: center;">
-                                            <form action="" method="post">
+                                            <form action="" method="post" enctype="multipart/form-data">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleMocClienteFormulario">Registrar Documento</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -28,20 +28,20 @@
                                                 <div class="modal-body">
                                                     <div class="file-container">
                                                         <label for="file1"><i class="ri-file-user-line" style="font-size: 100px;"></i> <br> Identificación</label>
-                                                        <input type="file" id="file1" class="noFile">
+                                                        <input name="iden_path" type="file" id="file1" class="noFile" onchange="cambiar_color_file_repo(this)">
                                                     </div>
-                                                    <div class="file-container">
+                                                    <div class="file-container_pass">
                                                         <label for="file2"><i class="ri-passport-line" style="font-size: 100px;"></i> <br> Pasaporte</label>
-                                                        <input type="file" id="file2" class="noFile">
+                                                        <input name="pass_path" type="file" id="file2" class="noFile" onchange="cambiar_color_file_repo_pass(this)">
                                                     </div>
-                                                    <div class="file-container">
+                                                    <div class="file-container_lic">
                                                         <label for="file3"><i class="ri-car-line" style="font-size: 100px;"></i> <br> Licencia</label>
-                                                        <input type="file" id="file3" class="noFile">
+                                                        <input name="lic_path" type="file" id="file3" class="noFile" onchange="cambiar_color_file_repo_lic(this)">
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                                    <a href="javascript:void(0);" class="btn btn-primary">Guardar</a>
+                                                    <button type="submit" class="btn btn-primary" name="subir_documento_repo">Guardar</button>
                                                 </div>
                                             </form>
                                         </div><!-- /.modal-content -->

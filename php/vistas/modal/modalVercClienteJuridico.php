@@ -2152,8 +2152,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                         <?php }else{
                                                             echo '<h4>Este master ha sido aprobado</h4>';
                                                         }  */ ?>
-
-                                                        <?php echo $stado_general; ?>
+                                                        
                                                         <?php if (($_SESSION["usuario"][0]["tipo_user"] == "vendedor" || $_SESSION["usuario"][0]["tipo_user"] == "admin" || $_SESSION["usuario"][0]["tipo_user"] == "gerencia") && $stado_general == 1) { ?>
                                                             
                                                             <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_pj">
