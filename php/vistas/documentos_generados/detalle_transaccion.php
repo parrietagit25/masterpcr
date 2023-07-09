@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php //session_start(); ?>
 <?php require_once '../../vendor/autoload.php'; ?>
 <?php $modalDocu = 1; ?>
 <?php require_once("../../controladores/CcClienteController.php"); ?>
@@ -155,7 +155,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     <br>
 
                     <p>
-                        <b>Vendedor:</b> '.$_SESSION['usuario'][0]['nombre'].' <b>Tráfico:</b> ______________________________________ <br>
+                        <b>Vendedor:</b> _____________________________ <b>Tráfico:</b> ______________________________________ <br>
                         <b>Encargado de Sucursal:</b>_____________________________________ <b>Contabilidad:</b>____________________________________
                     </p>
                     
