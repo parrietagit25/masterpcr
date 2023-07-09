@@ -114,7 +114,7 @@ $html = '<div class="container" style="font-size: 10px;">
 
                     <table class="table" style="width:90%; font-size: 10px; text-align:center;">
                         <tr>
-                            <td>
+                            <td style="text-align:left;">
                             <b> EL COMPRADOR: ____'.$cliente.'___ </b> <br><br>
                             FIRMA: ____________________________
                             </td>
