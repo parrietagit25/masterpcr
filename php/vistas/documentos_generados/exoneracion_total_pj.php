@@ -65,7 +65,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     </table>
                     
                     <p>
-                    Yo _'.$nombre_completo.'_ con cédula de identificación personal número:  ______________ <br>
+                    Yo _'.$cliente.'_ con cédula de identificación personal número:  ______________ <br>
                     por este medio manifiesto que he  recibido conforme el vehículo, Marca _'.$marca.'_, modelo _'.$modelo.'_  <br>
                     con número de motor: _'.$motor.'_ número de chasis:_'.$chacis.'_ , con _______________ Km. Recorridos, y en  adelante  denominado <br>
                     <b>EL VEHÍCULO </b>, por  parte  de  la  empresa ___________________________  Sirva la misma para dejar constancia que a partir de la fecha, libero de <br>
