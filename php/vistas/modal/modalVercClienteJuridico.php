@@ -4494,7 +4494,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Exoneracion Total<br>
-                <a href="vistas/documentos_generados/exoneracion_total.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-user-voice" style="font-size: 100px;" ></i></a>
+                <a href="vistas/documentos_generados/exoneracion_total_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-user-voice" style="font-size: 100px;" ></i></a>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>

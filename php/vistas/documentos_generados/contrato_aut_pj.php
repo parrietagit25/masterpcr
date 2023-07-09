@@ -106,10 +106,10 @@ $html = '<div class="container" style="font-size: 10px;">
                     <b>TERCERA:</b> Por ser un vehículo vendido <b>Como Está y Donde Está, El COMPRADOR</b> entiende que no goza <br> 
                     de ningún tipo de garantía brindada por la empresa <b>PANAMA CAR RENTAL S.A.</b>
 
-                    <b>CUARTA:</b> El precio acordado entre ambas partes es B/.__________________________________________ <b> <br>
+                    <b>CUARTA:</b> El precio acordado entre ambas partes es B/.__________________________________________  <br>
                     En señal de aceptación firman el presente contrato en dos (2) ejemplares del mismo tenor y efecto en la República de Panamá el día <br>
                     
-                    '.date("j").' días del mes '.date("n").' del año '.date("Y").'.</b>
+                    '.date("j").' días del mes '.date("n").' del año '.date("Y").'.
                     <br>
 
                     <table class="table" style="width:90%; font-size: 10px; text-align:center;">
@@ -119,8 +119,8 @@ $html = '<div class="container" style="font-size: 10px;">
                             FIRMA: ____________________________
                             </td>
                             <td>
-                            EL VENDEDOR:<br>
-                            PANAMA CAR RENTAL, S.A.<br>
+                            <b>EL VENDEDOR:<br>
+                            PANAMA CAR RENTAL, S.A.</b><br>
                             RICARDO DE LA GUARDIA <br>
                             ____________________________________
                             </td>
