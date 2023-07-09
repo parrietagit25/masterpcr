@@ -4506,7 +4506,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Detalle de Transaccion<br>
-                <a href="vistas/documentos_generados/detalle_transaccion.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-transfer" style="font-size: 100px;" ></i></a>
+                <a href="vistas/documentos_generados/detalle_transaccion_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-transfer" style="font-size: 100px;" ></i></a>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>
