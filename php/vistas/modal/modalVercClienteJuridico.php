@@ -4449,7 +4449,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
 
 <?php }elseif(isset($_GET['recaudos_contratos_formulario_cc_pj'])){ ?> 
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top:20px;">
             <div class="col-sm-4">
                 Contrato <br>
                 <a href="vistas/documentos_generados/contrato_aut_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-highlight" style="font-size: 100px;" ></i></a>

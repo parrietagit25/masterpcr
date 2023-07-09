@@ -102,6 +102,10 @@ class ModelGlobal extends Conexion {
 
   public function obtenerRegistroClientes() {
 
+    echo '<pre>';
+    var_dump($_SESSION["usuario"]);
+    echo '</pre>';
+
     $result = $this->conn->query("SELECT 
                                   ge.id, 
                                   ge.fg_cedula, 
