@@ -6,7 +6,7 @@
 <?php $id = $_GET['id']; ?>
 <?php $expedienete = $cCclienteController->obtenerExpediente($id); 
 $generales = $cCclienteController->obtenerGenerales($id);
-$ocupacionales = $cCclienteController->obtenerOcupacionales($id);
+/* $ocupacionales = $cCclienteController->obtenerOcupacionales($id);
 $declaracion = $cCclienteController->obtenerDeclaracion($id);
 $referencias = $cCclienteController->obtenerReferencias($id);
 $beneficiario = $cCclienteController->obntenerBeneficiario($id);
@@ -14,7 +14,7 @@ $terceros = $cCclienteController->obtenerTerceros($id);
 $expuestas = $cCclienteController->obtenerExpuestas($id);
 $declaracion_jurada = $cCclienteController->obtenerDeclaracionJurada($id);
 $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
-$uso_interno = $cCclienteController->obtenerUsoInterno($id);
+$uso_interno = $cCclienteController->obtenerUsoInterno($id);*/
 
 foreach ($generales as $key => $value) {
     $pjgn_ruc_dv = $value['pjgn_ruc_dv'];
