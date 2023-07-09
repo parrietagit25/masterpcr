@@ -76,7 +76,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     <p>
                     Estimados señores: <br>
                     Por este medio yo _'.$cliente.'_ de nacionalidad	<br>
-                    _'.$pais_nac.'_, con cédula/pasaporte número _'.$cedula.'_, en mi calidad de COMPRADOR del auto marca <br>
+                    _________________, con cédula/pasaporte número __________________, en mi calidad de COMPRADOR del auto marca <br>
                     _'.$marca.'_, modelo _'.$modelo.'_ ,  del año __'.$anio.'__ , con placa __'.$placa.'__ <br>
                     AUTORIZO irrevocablemente, el traspaso de la propiedad del referido vehículo a favor del(la) señor(a)__________________________________ <br>				
                     ________________________________, de nacionalidad ________________________, con cédula/pasaporte número	________________________________ <br>
