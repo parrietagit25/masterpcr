@@ -4452,31 +4452,13 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
         <div class="row">
             <div class="col-sm-4">
                 Contrato <br>
-                <a href="vistas/documentos_generados/contrato_aut.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-highlight" style="font-size: 100px;" ></i></a>
+                <a href="vistas/documentos_generados/contrato_aut_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-highlight" style="font-size: 100px;" ></i></a>
                 <br>
                 <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
-            <div class="col-sm-4">
-                Declaracion de domicilio<br>
-                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-building-house" style="font-size: 100px;" ></i></a>
-                <br>
-                <!--<button class="btn btn-success">Enviar por Email</button>-->
-            </div>
-            <div class="col-sm-4">
-                Declaracion de Actividad <br>
-                <a href="vistas/documentos_generados/declaracion_actividad.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-show" style="font-size: 100px;" ></i></a>
-                <br>
-                <!--<button class="btn btn-success">Enviar por Email</button>-->
-            </div>
             <div class="col-sm-4" style="margin-top:20px;">
-                Pago de Familiares<br>
-                <a href="vistas/documentos_generados/pago_familiares.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bxs-group" style="font-size: 100px;" ></i></a>
-                <br>
-                <!--<button class="btn btn-success">Enviar por Email</button>-->
-            </div>
-            <div class="col-sm-4" style="margin-top:20px;">
-                Pago de Terceros<br>
-                <a href="vistas/documentos_generados/pago_terceros.php?id=<?php echo $id; ?>" target="_blank"><i class=" bx bx-user-circle" style="font-size: 100px;" ></i></a>
+                Autoridad de Transito<br>
+                <a href="vistas/documentos_generados/aut_tras_rdlgo_reg_pj.php?id=<?php echo $id; ?>" target="_blank"><i class=" bx bx-user-circle" style="font-size: 100px;" ></i></a>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>
@@ -4500,7 +4482,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Tesoreria Municipal<br>
-                <a href="vistas/documentos_generados/tesoreria_municipal.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-building" style="font-size: 100px;" ></i></a>
+                <a href="vistas/documentos_generados/tesoreria_municipal_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-building" style="font-size: 100px;" ></i></a>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>
