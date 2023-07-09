@@ -30,44 +30,7 @@ class ModelGlobal extends Conexion {
     return $rows;
   }
 
-  /* Para mysql  */
-  /*
   public function agregar($tabla, $datos) {
-
-    $columnas = implode(", ", array_keys($datos));
-    $placeholders = implode(", ", array_fill(0, count($datos), "?"));
-    $sql = "INSERT INTO $tabla ($columnas) VALUES ($placeholders)";
-    $stmt = $this->conn->prepare($sql);
-    $tipos = str_repeat("s", count($datos));
-    $params = array_merge([$tipos], array_values($datos));
-    $tmp = array();
-    foreach ($params as $key => $value) {
-        $tmp[$key] = &$params[$key];
-    }
-    call_user_func_array([$stmt, 'bind_param'], $tmp);
-    $resultado = $stmt->execute();
-    echo 'Registro Realizados';
-    return $resultado;
-    
-  } */
-
-  /* para sql server */
-
-  public function agregar($tabla, $datos) {
-    /*$columnas = implode(", ", array_keys($datos));
-    $placeholders = implode(", ", array_fill(0, count($datos), "?"));
-    $sql = "INSERT INTO $tabla ($columnas) VALUES ($placeholders)";
-    $stmt = $this->conn->prepare($sql);
-    $tipos = str_repeat("s", count($datos));
-    $params = array_values($datos);
-    
-    for ($i = 0; $i < count($params); $i++) {
-        $stmt->bindParam($i + 1, $params[$i]);
-    }
-    $resultado = $stmt->execute();
-    if ($resultado) {
-        echo 'Registro Realizado';
-    } */
     
     $columnas = implode(", ", array_keys($datos));
     $params = "'" . implode("', '", array_values($datos)) . "'";
@@ -139,22 +102,6 @@ class ModelGlobal extends Conexion {
 
   public function obtenerRegistroClientes() {
 
-    /*$where = "";
-
-    if ($_SESSION["usuario"][0]['tipo_user'] == 'vendedor') { // usuariop vendedor
-
-      $where .= " and ge.fg_stat in(2, 5, 3, 1)";
-
-    }elseif ($_SESSION["usuario"][0]['tipo_user'] == 'analista') { // usuario analista
-      
-      $where .= " and ge.fg_stat in(5)";
-
-    }elseif ($_SESSION["usuario"][0]['tipo_user'] == 'supervisor') { // usuario supervisor
-
-      $where .= " and ge.fg_stat in(2)";
-      
-    }   */
-
     $result = $this->conn->query("SELECT 
                                   ge.id, 
                                   ge.fg_cedula, 
@@ -174,6 +121,7 @@ class ModelGlobal extends Conexion {
                                   cc_expediente ex INNER JOIN cc_generales ge on ge.id = ex.id_general
                                   WHERE 
                                   ge.fg_stat not in(4)");
+                                  
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
 

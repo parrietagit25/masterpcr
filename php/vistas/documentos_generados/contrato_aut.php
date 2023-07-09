@@ -33,6 +33,9 @@ foreach ($expedienete as $key => $value) {
 
  foreach ($generales as $key => $value) {
     $cedula = $value['fg_cedula'];
+    $direccion = $value['fg_direccion_residencial'];
+    $telefono = $value['fg_telefono_movil'];
+    $nombre_completo = $value['fg_primer_nombre'].' '.$value['fg_segundo_nombre'].' '.$value['fg_apellido_paterno'].' '.$value['fg_apellido_materno'];
  }
 
 $html = '<div class="container" style="font-size: 10px;">
@@ -93,8 +96,8 @@ $html = '<div class="container" style="font-size: 10px;">
                     de ningún tipo de garantía brindada por la empresa <b>PANAMA CAR RENTAL S.A.</b>
 
                     <b>CUARTA:</b> El precio acordado entre ambas partes es B/.__________________________________________ <b>Por lo cual, YO <br> 
-                    ________________________________________________, con cédula de identidad personal _________________________________, con domicilio <br> 
-                    en_____________________________________________________, número de teléfono: _____________________________________________, ACEPTO, </b><br> 
+                    ________________________________________________, con cédula de identidad personal _________'.$cedula.'_________, con domicilio <br> 
+                    en___'.$direccion.'___, número de teléfono: _____'.$telefono.'___, ACEPTO, </b><br> 
                     comprar el vehículo antes descrito sin derecho a ningún reclamo futuro, declaro que he inspeccionado a cabalidad <br>
                     el vehículo antes descrito y lo estoy aceptando en las condiciones actuales, y que es de mi interés continuar con la <br> 
                     compra de dicho auto sin ningún tipo de garantía.
@@ -105,10 +108,10 @@ $html = '<div class="container" style="font-size: 10px;">
                     que el comprador estará llevando el bien bajo su responsabilidad y no goza de garantías ni reclamos legales, <b> por <br>
                     recibir descuento en el precio original de venta. (Base Legal, Artículo 66 , Ley 45 del 2007).</b>
 
-                    <b>Dado en la Ciudad de Panamá, a los ________ días del mes _________ del año ___________________.</b>
+                    <b>Dado en la Ciudad de Panamá, a los '.date("j").' días del mes '.date("n").' del año '.date("Y").'.</b>
                     <br>
-                    <b> EL COMPRADOR: _________________________________________________ </b> <br><br>
-                    DOC. IDENT: __________________________________________________ <br> <br><br>
+                    <b> EL COMPRADOR: ____'.$nombre_completo.'___ </b> <br><br>
+                    DOC. IDENT: __'.$cedula.'__ <br> <br><br>
                     FIRMA: ___________________________________________________
                     <br>
                     <br>
