@@ -4482,13 +4482,13 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Traspaso PN<br>
-                <a href="vistas/documentos_generados/traspaso_pn.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-repost" style="font-size: 100px;" ></i></a>
+                <a href="vistas/documentos_generados/traspaso_pn_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-repost" style="font-size: 100px;" ></i></a>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Traspaso PJ<br>
-                <a href="vistas/documentos_generados/traspaso_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-rotate-right" style="font-size: 100px;" ></i></a>
+                <a href="vistas/documentos_generados/traspaso_pj_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-rotate-right" style="font-size: 100px;" ></i></a>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>
