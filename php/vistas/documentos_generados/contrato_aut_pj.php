@@ -1,6 +1,6 @@
 <?php require_once '../../vendor/autoload.php'; ?>
 <?php $modalDocu = 1; ?>
-<?php require_once("../../controladores/CcClienteController.php"); ?>
+<?php require_once("../../controladores/CcclientePjController.php"); ?>
 <?php $cCclienteController = new CcclienteController(); ?>
 <?php $id = $_GET['id']; ?>
 <?php $expedienete = $cCclienteController->obtenerExpediente($id); 
