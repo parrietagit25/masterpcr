@@ -5,7 +5,7 @@
 <?php $id = $_GET['id']; ?>
 <?php $expedienete = $cCclienteController->obtenerExpediente($id); 
 $generales = $cCclienteController->obtenerGenerales($id);
-$ocupacionales = $cCclienteController->obtenerOcupacionales($id);
+/**$ocupacionales = $cCclienteController->obtenerOcupacionales($id);
 $declaracion = $cCclienteController->obtenerDeclaracion($id);
 $referencias = $cCclienteController->obtenerReferencias($id);
 $beneficiario = $cCclienteController->obntenerBeneficiario($id);
@@ -13,7 +13,7 @@ $terceros = $cCclienteController->obtenerTerceros($id);
 $expuestas = $cCclienteController->obtenerExpuestas($id);
 $declaracion_jurada = $cCclienteController->obtenerDeclaracionJurada($id);
 $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
-$uso_interno = $cCclienteController->obtenerUsoInterno($id);
+$uso_interno = $cCclienteController->obtenerUsoInterno($id);*/
 
 $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
