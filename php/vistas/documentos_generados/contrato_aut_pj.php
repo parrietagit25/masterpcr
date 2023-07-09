@@ -47,7 +47,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     <h4>CONTRATO COMO ESTÁ Y DONDE ESTÁ</h4>
                     <p>
                     Entre  los  siguientes  suscritos a saber: <b>'.$cliente.'</b>(coprador) en adelante <b>EL COMPRADOR</b>, con RUC y DV<br> 
-                    con documento de identidad personal No. '..' y por la otra parte PANAMÁ CAR RENTAL, S.A. <br>
+                    con documento de identidad personal No. __________________ y por la otra parte PANAMÁ CAR RENTAL, S.A. <br>
                     en adelante <b>EL VENDEDOR</b>, con RUC '.$pjgn_ruc_dv.',  representada en este acto por el(la) sr(a)  <b>RICARDO DE LA GUARDIA</b>, <br>
                     varón, mayor de edad, panameño, con cédula de identidad  personal No. 8-738-1347,  acuerdan celebrar un contrato de compraventa <br>
                     de vehículo sujeto a las cláusulas siguientes: <br>
