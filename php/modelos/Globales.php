@@ -121,7 +121,7 @@ class ModelGlobal extends Conexion {
                                   cc_expediente ex INNER JOIN cc_generales ge on ge.id = ex.id_general
                                   WHERE 
                                   ge.fg_stat not in(4)");
-                                  
+
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
 
@@ -236,7 +236,7 @@ class ModelGlobal extends Conexion {
 
   public function obtenerPaisId($tabla, $id_pais){
 
-    $result = $this->conn->query("SELECT * FROM $tabla WHERE codigo = $id_pais");
+    $result = $this->conn->query("SELECT * FROM $tabla WHERE codigo = '$id_pais'");
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
   }
