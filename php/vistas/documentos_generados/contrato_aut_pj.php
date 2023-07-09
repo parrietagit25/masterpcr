@@ -46,9 +46,7 @@ $html = '<div class="container" style="font-size: 10px;">
 
                     <table class="table" style="width:90%; font-size: 10px;">
                         <tr>
-                            <td style="text-align:right"><img src="logoima.jpg" alt="Descripción de la imagen" width="250"></td>
-                        </tr>
-                        <tr>
+                            <td style="text-align:left"><img src="logoima.jpg" alt="Descripción de la imagen" width="250"></td>
                             <td style="text-align:right">
                                 Apartado 87-1239-Zona 7<br>
                                 Panamá Rep. de Panamá <br>
