@@ -15,6 +15,30 @@ $declaracion_jurada = $cCclienteController->obtenerDeclaracionJurada($id);
 $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
 $uso_interno = $cCclienteController->obtenerUsoInterno($id);
 
+foreach ($expedienete as $key => $value) { 
+    $cliente = $value["exp_cliente"];
+    $marca = $value["exp_marca"];
+    $modelo = $value["exp_modelo"];
+    $anio = $value["exp_anio"];
+    $placa = $value["exp_placa"];
+    $chacis = $value["exp_chasis"];
+    $motor = $value["exp_motor"];
+    $color = $value["exp_color"];
+ }
+
+foreach ($generales as $key => $value) {
+    $cedula = $value['fg_cedula'];
+    $direccion = $value['fg_direccion_residencial'];
+    $telefono = $value['fg_telefono_movil'];
+    $nombre_completo = $value['fg_primer_nombre'].' '.$value['fg_segundo_nombre'].' '.$value['fg_apellido_paterno'].' '.$value['fg_apellido_materno'];
+ }
+
+ foreach ($ocupacionales as $key => $value) {
+    $fo_profesion = $value['fo_profesion'];
+    $fo_direccion_trabajo = $value['fo_direccion_trabajo'];
+    
+ }
+
 $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
 /*$mpdf->WriteHTML('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
@@ -51,13 +75,13 @@ $html = '<div class="container" style="font-size: 10px;">
                     
                     <p>
                     Estimados señores: <br>
-                    Por este medio yo _______________________________________________________________ con cédula/pasaporte número <br>
-                    ________________________________ declaro bajo la gravedad del juramento, en conocimiento del contenido del Artículo 385, texto Único del Código Penal, <br>
+                    Por este medio yo ___'.$nombre_completo.'__ con cédula/pasaporte número <br>
+                    declaro bajo la gravedad del juramento, en conocimiento del contenido del Artículo 385, texto Único del Código Penal, <br>
                     Gaceta Oficial No. 26,510 de 26 de abril de 2010, que tipifica el delito de falso testimonio, que los fondos con los cuales voy a abonar o cancelar el auto<br>
-                    marca: __________________________________________, modelo _____________________________________________, del año ________________________ <br>
-                    con placa: ______________________________________, son lícitos y producto de ingresos provenientes de mi actividad económica como <br>
-                    ____________________________________________________, negocio que se encuentra ubicado en _______________________________________________ <br>
-                    _____________________________________________________ y llevo a cabo desde el día _______________________________________________________ <br>
+                    marca: ___'.$marca.'__, modelo __'.$modelo.'__, del año __'.$anio.'__ <br>
+                    con placa: __'.$placa.'__, son lícitos y producto de ingresos provenientes de mi actividad económica como <br>
+                    __'.$fo_profesion.'_, negocio que se encuentra ubicado en _'.$fo_direccion_trabajo.'_ <br>
+                    y llevo a cabo desde el día _______________________________________________________ <br>
                     <br>
 
                     <table class="table" style="width:90%; font-size: 10px;">
@@ -80,8 +104,8 @@ $html = '<div class="container" style="font-size: 10px;">
                     <br>
                     Atentamente, <br>
                     x________________________________________________ Colocar huella dactilar al lado de la firma. <br>
-                    Nombre completo:_______________________________________________ <br>
-                    Cédula o pasaporte:____________________________________________ <br>
+                    Nombre completo:__'.$nombre_completo.'_ <br>
+                    Cédula o pasaporte:__'.$cedula.'__ <br>
                     </p>
                     <br>
                     <br>

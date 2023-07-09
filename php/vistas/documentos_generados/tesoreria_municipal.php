@@ -15,6 +15,31 @@ $declaracion_jurada = $cCclienteController->obtenerDeclaracionJurada($id);
 $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
 $uso_interno = $cCclienteController->obtenerUsoInterno($id);
 
+foreach ($generales as $key => $value) {
+    $cedula = $value['fg_cedula'];
+    $direccion = $value['fg_direccion_residencial'];
+    $telefono = $value['fg_telefono_movil'];
+    $nombre_completo = $value['fg_primer_nombre'].' '.$value['fg_segundo_nombre'].' '.$value['fg_apellido_paterno'].' '.$value['fg_apellido_materno'];
+    $pais_nacimineto = $value['fg_pais_nacimiento'];
+ }
+
+ foreach ($expedienete as $key => $value) { 
+    $cliente = $value["exp_cliente"];
+    $marca = $value["exp_marca"];
+    $modelo = $value["exp_modelo"];
+    $anio = $value["exp_anio"];
+    $placa = $value["exp_placa"];
+    $chacis = $value["exp_chasis"];
+    $motor = $value["exp_motor"];
+    $color = $value["exp_color"];
+ }
+
+ $obtener_pais_nacimiento = $cCclienteController->obtener_pais_id($pais_nacimineto);
+
+    foreach ($obtener_pais_nacimiento as $key => $value) {
+        $pais_nac = $value['nombre'];
+    }
+
 $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
 /*$mpdf->WriteHTML('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
@@ -45,19 +70,19 @@ $html = '<div class="container" style="font-size: 10px;">
                     A quien Concierna: <br>
 
                     <p>
-                    Por este medio  yo, ________________________________, con cédula de identidad <br> 
-                    personal número _____________________, autorizo a ___________________________, <br> 
+                    Por este medio  yo, _'.$nombre_completo.'_, con cédula de identidad _'.$cedula.'_ <br> 
+                    personal número _'.$telefono.'_, autorizo a ___________________________, <br> 
                     con cédula de identidad personal número:_______________________, realizar traspaso por <br> 
                     venta del siguiente vehículo: <br><br>
 
                     <table class="table" style="width:90%; font-size: 10px;">
                         <tr>
                             <td>MARCA:</td>
-                            <td>___________________________</td>
+                            <td>_'.$marca.'_</td>
                         </tr>
                         <tr>
                             <td>MODELO:</td>
-                            <td>___________________________</td>
+                            <td>_'.$modelo.'_</td>
                         </tr>
                         <tr>
                             <td>TIPO:</td>
@@ -65,23 +90,23 @@ $html = '<div class="container" style="font-size: 10px;">
                         </tr>
                         <tr>
                             <td>AÑO:</td>
-                            <td>___________________________</td>
+                            <td>__'.$anio.'__</td>
                         </tr>
                         <tr>
                             <td>PLACA:</td>
-                            <td>___________________________</td>
+                            <td>__'.$placa.'__</td>
                         </tr>
                         <tr>
                             <td>MOTOR:</td>
-                            <td>___________________________</td>
+                            <td>__'.$motor.'__</td>
                         </tr>
                         <tr>
                             <td>CHASIS:</td>
-                            <td>___________________________</td>
+                            <td>__'.$chacis.'__</td>
                         </tr>
                         <tr>
                             <td>COLOR:</td>
-                            <td>___________________________</td>
+                            <td>__'.$color.'__</td>
                         </tr>
                     </table>
                     <br>

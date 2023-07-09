@@ -15,6 +15,33 @@ $declaracion_jurada = $cCclienteController->obtenerDeclaracionJurada($id);
 $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
 $uso_interno = $cCclienteController->obtenerUsoInterno($id);
 
+
+foreach ($generales as $key => $value) {
+    $cedula = $value['fg_cedula'];
+    $direccion = $value['fg_direccion_residencial'];
+    $telefono = $value['fg_telefono_movil'];
+    $nombre_completo = $value['fg_primer_nombre'].' '.$value['fg_segundo_nombre'].' '.$value['fg_apellido_paterno'].' '.$value['fg_apellido_materno'];
+    $pais_nacimineto = $value['fg_pais_nacimiento'];
+ }
+
+ foreach ($expedienete as $key => $value) { 
+    $cliente = $value["exp_cliente"];
+    $marca = $value["exp_marca"];
+    $modelo = $value["exp_modelo"];
+    $anio = $value["exp_anio"];
+    $placa = $value["exp_placa"];
+    $chacis = $value["exp_chasis"];
+    $motor = $value["exp_motor"];
+    $color = $value["exp_color"];
+ }
+
+ $obtener_pais_nacimiento = $cCclienteController->obtener_pais_id($pais_nacimineto);
+
+    foreach ($obtener_pais_nacimiento as $key => $value) {
+        $pais_nac = $value['nombre'];
+    }
+
+
 $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
 /*$mpdf->WriteHTML('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
@@ -54,9 +81,9 @@ $html = '<div class="container" style="font-size: 10px;">
                     
                     <p>
                     Estimados señores: <br>
-                    Por este medio yo _______________________________________________________________ de nacionalidad	<br>
-                    __________________________, con cédula/pasaporte número _________________________, en mi calidad de COMPRADOR del auto marca <br>
-                    __________________________, modelo ______________________, del año ____________________, con placa ___________________________ <br>
+                    Por este medio yo _'.$nombre_completo.'_ de nacionalidad	<br>
+                    _'.$pais_nac.'_, con cédula/pasaporte número _'.$cedula.'_, en mi calidad de COMPRADOR del auto marca <br>
+                    _'.$marca.'_, modelo _'.$modelo.'_ ,  del año __'.$anio.'__ , con placa __'.$placa.'__ <br>
                     AUTORIZO irrevocablemente, el traspaso de la propiedad del referido vehículo a favor del(la) señor(a)__________________________________ <br>				
                     ________________________________, de nacionalidad ________________________, con cédula/pasaporte número	________________________________ <br>
                     quien guarda relación con mi persona en calidad de: ___________________________________________
@@ -65,8 +92,8 @@ $html = '<div class="container" style="font-size: 10px;">
                     <br>
                     Atentamente, <br>
                     x________________________________________________ Colocar huella dactilar al lado de la firma. <br>
-                    Nombre completo:_______________________________________________ <br>
-                    Cédula o pasaporte:____________________________________________ <br>
+                    Nombre completo:__'.$nombre_completo.'__ <br>
+                    Cédula o pasaporte:_'.$cedula.'_ <br>
                     </p>
                     <br>
                     <br>

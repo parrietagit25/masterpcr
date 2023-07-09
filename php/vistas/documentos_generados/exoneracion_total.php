@@ -15,6 +15,31 @@ $declaracion_jurada = $cCclienteController->obtenerDeclaracionJurada($id);
 $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
 $uso_interno = $cCclienteController->obtenerUsoInterno($id);
 
+foreach ($generales as $key => $value) {
+    $cedula = $value['fg_cedula'];
+    $direccion = $value['fg_direccion_residencial'];
+    $telefono = $value['fg_telefono_movil'];
+    $nombre_completo = $value['fg_primer_nombre'].' '.$value['fg_segundo_nombre'].' '.$value['fg_apellido_paterno'].' '.$value['fg_apellido_materno'];
+    $pais_nacimineto = $value['fg_pais_nacimiento'];
+ }
+
+ foreach ($expedienete as $key => $value) { 
+    $cliente = $value["exp_cliente"];
+    $marca = $value["exp_marca"];
+    $modelo = $value["exp_modelo"];
+    $anio = $value["exp_anio"];
+    $placa = $value["exp_placa"];
+    $chacis = $value["exp_chasis"];
+    $motor = $value["exp_motor"];
+    $color = $value["exp_color"];
+ }
+
+ $obtener_pais_nacimiento = $cCclienteController->obtener_pais_id($pais_nacimineto);
+
+    foreach ($obtener_pais_nacimiento as $key => $value) {
+        $pais_nac = $value['nombre'];
+    }
+
 $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
 /*$mpdf->WriteHTML('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
@@ -40,9 +65,9 @@ $html = '<div class="container" style="font-size: 10px;">
                     </table>
                     
                     <p>
-                    Yo _______________________________________________________________ con cédula de identificación personal número: _______________ <br>
-                    por este medio manifiesto que he  recibido conforme el vehículo, Marca _________________________ Modelo ______________________ <br>
-                    con número de motor: ________________________ número de chasis:_______________________ , con _______________ Km. Recorridos, y en  adelante  denominado <br>
+                    Yo _'.$nombre_completo.'_ con cédula de identificación personal número:  _'.$cedula.'_ <br>
+                    por este medio manifiesto que he  recibido conforme el vehículo, Marca _'.$marca.'_, modelo _'.$modelo.'_  <br>
+                    con número de motor: _'.$motor.'_ número de chasis:_'.$chacis.'_ , con _______________ Km. Recorridos, y en  adelante  denominado <br>
                     <b>EL VEHÍCULO </b>, por  parte  de  la  empresa ___________________________  Sirva la misma para dejar constancia que a partir de la fecha, libero de <br>
                     <b>TODA RESPONSABILIDAD</b> civil penal o de cualquier otra índole, a la empresa <b>PANAMA CAR RENTAL, S.A.</b> y a  sus  representantes legales,  en especial la Respon- <br>
                     sabilidad  hacia   Terceros   derivada  de los accidentes de tránsito, en los que ha partir de la fecha me encuentre involucrado por la 

@@ -96,7 +96,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     de ningún tipo de garantía brindada por la empresa <b>PANAMA CAR RENTAL S.A.</b>
 
                     <b>CUARTA:</b> El precio acordado entre ambas partes es B/.__________________________________________ <b>Por lo cual, YO <br> 
-                    ________________________________________________, con cédula de identidad personal _________'.$cedula.'_________, con domicilio <br> 
+                    ____'.$nombre_completo.'___ , con cédula de identidad personal _________'.$cedula.'_________, con domicilio <br> 
                     en___'.$direccion.'___, número de teléfono: _____'.$telefono.'___, ACEPTO, </b><br> 
                     comprar el vehículo antes descrito sin derecho a ningún reclamo futuro, declaro que he inspeccionado a cabalidad <br>
                     el vehículo antes descrito y lo estoy aceptando en las condiciones actuales, y que es de mi interés continuar con la <br> 

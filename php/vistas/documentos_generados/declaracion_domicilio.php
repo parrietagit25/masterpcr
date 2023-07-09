@@ -15,6 +15,13 @@ $declaracion_jurada = $cCclienteController->obtenerDeclaracionJurada($id);
 $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
 $uso_interno = $cCclienteController->obtenerUsoInterno($id);
 
+foreach ($generales as $key => $value) {
+    $cedula = $value['fg_cedula'];
+    $direccion = $value['fg_direccion_residencial'];
+    $telefono = $value['fg_telefono_movil'];
+    $nombre_completo = $value['fg_primer_nombre'].' '.$value['fg_segundo_nombre'].' '.$value['fg_apellido_paterno'].' '.$value['fg_apellido_materno'];
+ }
+
 $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
 /*$mpdf->WriteHTML('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
@@ -51,18 +58,18 @@ $html = '<div class="container" style="font-size: 10px;">
                     
                     <p>
                     Estimados señores: <br>
-                    Por este medio yo _______________________________________________________________ con cédula/pasaporte número <br>
-                    ________________________________ declaro bajo la gravedad del juramento, en conocimiento del contenido del Artículo 385, texto Único del Código Penal, <br>
-                    Gaceta Oficial No. 26,510 de 26 de abril de 2010, que tipifica el delito de falso testimonio, que mi residencia actual es ____________________________ <br>
-                    ________________________________________________________________, corregimiento de _____________________, distrito de, _____________________________ <br>
-                    provincia de _______________________________________, teléfono _______________________________________________ . <br>			
+                    Por este medio yo ____'.$nombre_completo.'___ con cédula/pasaporte número <br>
+                    __'.$cedula.'__ declaro bajo la gravedad del juramento, en conocimiento del contenido del Artículo 385, texto Único del Código Penal, <br>
+                    Gaceta Oficial No. 26,510 de 26 de abril de 2010, que tipifica el delito de falso testimonio, que mi residencia actual es _'.$direccion.'__, 
+                    corregimiento de _____________________, distrito de, _____________________________ <br>
+                    provincia de _______________________________________, teléfono __'.$telefono.'__ . <br>			
                     Las generales que aparecen en el recibo de _______________________________________________ aportado como prueba de domicilio corresponden a __________ <br>
                     ___________________________________________________, , con quien guardo relación de __________________________________________________________________ <br>
                     <br>
                     Atentamente, <br>
                     x________________________________________________ Colocar huella dactilar al lado de la firma. <br>
-                    Nombre completo:_______________________________________________ <br>
-                    Cédula o pasaporte:____________________________________________ <br>
+                    Nombre completo:__'.$nombre_completo.'__ <br>
+                    Cédula o pasaporte:___'.$cedula.'__ <br>
                     </p>
                     <br>
                     <br>

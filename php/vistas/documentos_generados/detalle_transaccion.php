@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require_once '../../vendor/autoload.php'; ?>
 <?php $modalDocu = 1; ?>
 <?php require_once("../../controladores/CcClienteController.php"); ?>
@@ -15,6 +16,31 @@ $declaracion_jurada = $cCclienteController->obtenerDeclaracionJurada($id);
 $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
 $uso_interno = $cCclienteController->obtenerUsoInterno($id);
 
+foreach ($generales as $key => $value) {
+    $cedula = $value['fg_cedula'];
+    $direccion = $value['fg_direccion_residencial'];
+    $telefono = $value['fg_telefono_movil'];
+    $nombre_completo = $value['fg_primer_nombre'].' '.$value['fg_segundo_nombre'].' '.$value['fg_apellido_paterno'].' '.$value['fg_apellido_materno'];
+    $pais_nacimineto = $value['fg_pais_nacimiento'];
+ }
+
+ foreach ($expedienete as $key => $value) { 
+    $cliente = $value["exp_cliente"];
+    $marca = $value["exp_marca"];
+    $modelo = $value["exp_modelo"];
+    $anio = $value["exp_anio"];
+    $placa = $value["exp_placa"];
+    $chacis = $value["exp_chasis"];
+    $motor = $value["exp_motor"];
+    $color = $value["exp_color"];
+ }
+
+ $obtener_pais_nacimiento = $cCclienteController->obtener_pais_id($pais_nacimineto);
+
+    foreach ($obtener_pais_nacimiento as $key => $value) {
+        $pais_nac = $value['nombre'];
+    }
+
 $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
 /*$mpdf->WriteHTML('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
@@ -30,9 +56,9 @@ $html = '<div class="container" style="font-size: 10px;">
                     <br>
                     <h3>DETALLE DE TRANSACCION DE PAGO</h3>
 
-                    CLIENTE:_______________________________________________________ MARCA:__________________________________ <br>
-                    MODELO:____________________ AÑO: ____________________ PLACA: ________________________ CÓDIGO: _________________ <br>
-                    CHASIS:____________________ MOTOR:______________________________ <br>
+                    CLIENTE:_'.$nombre_completo.'_ MARCA:_'.$marca.'_ <br>
+                    MODELO:_'.$modelo.'_ AÑO: __'.$anio.'__ PLACA: __'.$placa.'__ CÓDIGO: _________________ <br>
+                    CHASIS:__'.$chacis.'__ MOTOR:__'.$motor.'__ <br>
                     <br>
                     Número de factura:______________________________________ <br>
                     Monto: _______________________________________ <br>
@@ -129,7 +155,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     <br>
 
                     <p>
-                        <b>Vendedor:</b> __________________________________________ <b>Tráfico:</b> ______________________________________ <br>
+                        <b>Vendedor:</b> '.$_SESSION['usuario'][0]['nombre'].' <b>Tráfico:</b> ______________________________________ <br>
                         <b>Encargado de Sucursal:</b>_____________________________________ <b>Contabilidad:</b>____________________________________
                     </p>
                     

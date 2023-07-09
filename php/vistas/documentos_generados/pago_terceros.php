@@ -15,6 +15,24 @@ $declaracion_jurada = $cCclienteController->obtenerDeclaracionJurada($id);
 $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
 $uso_interno = $cCclienteController->obtenerUsoInterno($id);
 
+foreach ($generales as $key => $value) {
+    $cedula = $value['fg_cedula'];
+    $direccion = $value['fg_direccion_residencial'];
+    $telefono = $value['fg_telefono_movil'];
+    $nombre_completo = $value['fg_primer_nombre'].' '.$value['fg_segundo_nombre'].' '.$value['fg_apellido_paterno'].' '.$value['fg_apellido_materno'];
+ }
+
+ foreach ($expedienete as $key => $value) { 
+    $cliente = $value["exp_cliente"];
+    $marca = $value["exp_marca"];
+    $modelo = $value["exp_modelo"];
+    $anio = $value["exp_anio"];
+    $placa = $value["exp_placa"];
+    $chacis = $value["exp_chasis"];
+    $motor = $value["exp_motor"];
+    $color = $value["exp_color"];
+ }
+
 $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
 /*$mpdf->WriteHTML('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
@@ -55,12 +73,12 @@ $html = '<div class="container" style="font-size: 10px;">
                     
                     <p>
                     Estimados señores: <br>
-                    Por este medio yo _______________________________________________________________ con cédula/pasaporte número <br>
-                    ________________________________ declaro bajo la gravedad del juramento, en conocimiento del contenido del Artículo 385, texto Único del Código Penal, <br>
+                    Por este medio yo _'.$nombre_completo.'_ con cédula/pasaporte número <br>
+                    __'.$cedula.'__ declaro bajo la gravedad del juramento, en conocimiento del contenido del Artículo 385, texto Único del Código Penal, <br>
                     Gaceta Oficial No. 26,510 de 26 de abril de 2010, que tipifica el delito de falso testimonio, que el(la) señor(a): ____________________________ <br>
                     ________________________________________________________________, de nacionalidad _____________________, con cédula/pasaporte número _____________________________ <br>
                     , guarda relación con mi persona en calidad de _______________________________________, y estará realizando un abono o cancelación del precio de venta del auto marca. <br>			
-                    ___________________________________, modelo ______________________________________ ,  del año ___________________________________ , con placa _____________________ <br>
+                    _'.$marca.'_, modelo _'.$modelo.'_ ,  del año __'.$anio.'__ , con placa __'.$placa.'__ <br>
                     <br>
                     Monto del abono o cancelación:__________________________________<br>
 
@@ -84,8 +102,8 @@ $html = '<div class="container" style="font-size: 10px;">
                     <br>
                     Atentamente, <br>
                     x________________________________________________ Colocar huella dactilar al lado de la firma. <br>
-                    Nombre completo:_______________________________________________ <br>
-                    Cédula o pasaporte:____________________________________________ <br>
+                    Nombre completo:__'.$nombre_completo.'__ <br>
+                    Cédula o pasaporte:_'.$cedula.'_ <br>
                     </p>
                     <br>
                     <br>
