@@ -43,6 +43,21 @@ foreach ($generales as $key => $value) {
 $html = '<div class="container" style="font-size: 10px;">
             <div class="row">
                 <div class="col-sm-12">
+
+                    <table class="table" style="width:90%; font-size: 10px;">
+                        <tr>
+                            <td style="text-align:right"><img src="logoima.jpg" alt="Descripción de la imagen" width="250"></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right">
+                                Apartado 87-1239-Zona 7<br>
+                                Panamá Rep. de Panamá <br>
+                                Teléfono 223-6271 / 2263800 <br>
+                                Fax 265-4463 
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
                     
                     <h4>CONTRATO COMO ESTÁ Y DONDE ESTÁ</h4>
                     <p>
