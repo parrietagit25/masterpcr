@@ -102,9 +102,13 @@ class ModelGlobal extends Conexion {
 
   public function obtenerRegistroClientes() {
 
-    echo '<pre>';
-    var_dump($_SESSION["usuario"]);
-    echo '</pre>';
+    $where = "";
+
+    if ($_SESSION['usuario'][0]['tipo_user'] == "vendedor") {
+      
+      $where = " and ge.fg_id_user = $_SESSION['usuario'][0]['id']";
+    
+    }
 
     $result = $this->conn->query("SELECT 
                                   ge.id, 
@@ -124,7 +128,9 @@ class ModelGlobal extends Conexion {
                                   FROM
                                   cc_expediente ex INNER JOIN cc_generales ge on ge.id = ex.id_general
                                   WHERE 
-                                  ge.fg_stat not in(4)");
+                                  ge.fg_stat not in(4)
+                                  $where 
+                                  ");
 
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
@@ -175,6 +181,14 @@ class ModelGlobal extends Conexion {
       
     } */  
 
+    $where = "";
+
+    if ($_SESSION['usuario'][0]['tipo_user'] == "vendedor") {
+      
+      $where = " and ge.pjgn_id_user = $_SESSION['usuario'][0]['id']";
+    
+    }
+
       $result = $this->conn->query("SELECT 
                                     ge.id,
                                     ge.pjgn_ruc_dv, 
@@ -193,7 +207,8 @@ class ModelGlobal extends Conexion {
                                     FROM
                                     cc_pj_expediente ex INNER JOIN cc_pj_generales ge on ge.id = ex.id_general
                                     WHERE
-                                    ge.pjgn_stat not in(4)");
+                                    ge.pjgn_stat not in(4)
+                                    $where");
       $rows = $result->fetchAll(PDO::FETCH_ASSOC);
       return $rows;
 

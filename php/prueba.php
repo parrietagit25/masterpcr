@@ -14,7 +14,7 @@ $ocr->osd();
 $text = $ocr->run();
 echo $text;
 preg_match('/([A-Z]{0,2}-\d{1,3}-\d{3,4})/', $text, $idMatches);
-$id = $idMatches[1] ?? ''
+$id = $idMatches[1] ?? '';
 echo "ID: $id <br>";
 // Eliminar la imagen temporal
 unlink($tempImage);
