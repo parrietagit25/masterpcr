@@ -106,7 +106,7 @@ class ModelGlobal extends Conexion {
 
     if ($_SESSION['usuario'][0]['tipo_user'] == "vendedor") {
       
-      $where = " and ge.fg_id_user = $_SESSION['usuario'][0]['id']";
+      $where = " and ge.fg_id_user = '".$_SESSION['usuario'][0]['id']."'";
     
     }
 
