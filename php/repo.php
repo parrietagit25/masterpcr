@@ -8,12 +8,12 @@ if (!isset($_SESSION["usuario"])) {
 }
 
 require_once("controladores/CrepositorioController.php");
-$cCclienteController = new CcclienteController();
+$cRepositorioController = new Repositorio();
 
 if (isset($_POST['subir_documento_repo'])) {
   $datos = $_POST;  
   unset($datos['subir_documento_repo']);
-  $cCclienteController->subir_archivos($_FILES, $id_general);
+  $cRepositorioController->subir_archivos($_FILES, $id_general);
   //$alerta = 1;
 }
 

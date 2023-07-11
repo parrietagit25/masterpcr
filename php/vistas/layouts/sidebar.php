@@ -101,7 +101,7 @@
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#mantenimientoComisiones" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="mantenimientoComisiones">
-                        <i class="ri-camera-fill"></i> <span>Comisiones Retail</span>
+                        <i class="ri-exchange-dollar-line"></i> <span>Comisiones Retail</span>
                     </a>
                     <div class="collapse menu-dropdown" id="mantenimientoComisiones">
                         <ul class="nav nav-sm flex-column">
@@ -110,6 +110,20 @@
                             </li>
                             <li class="nav-item">
                                 <a href="retail.php?view=ver_comisiones" class="nav-link">Ver Historico </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#mantenimientoReservas" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="mantenimientoReservas">
+                        <i class="ri-calendar-check-fill"></i> <span>Reservas</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="mantenimientoReservas">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="retail.php?view=ver_Reservas" class="nav-link">Reservas </a>
                             </li>
                         </ul>
                     </div>
