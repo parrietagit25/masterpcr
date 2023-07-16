@@ -36,6 +36,7 @@ foreach ($resultData['regions'] as $region) {
 }
 
 // Muestra el texto
+/*
 echo $text;
 echo '<pre>';
 var_dump($text);
@@ -54,5 +55,16 @@ echo '///////////////////////////////////////////////////////';
 echo 'Nombre: '.$array[5].' '.$array[6].' '.$array[7].' <br>';
 echo 'Fecha de nacimineto: ' .$array[13].' <br>';
 echo 'Numero de identificacion : ' .$array[28]
+**/
+
+$nombre = '';
+$patron = '/\bNombre:\s*(\w+)/i';
+
+if (preg_match($patron, $text, $coincidencias)) {
+    $nombre = $coincidencias[1];
+}
+
+echo "Nombre: $nombre";
+
 
 ?>
