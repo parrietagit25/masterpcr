@@ -56,25 +56,25 @@ echo 'Nombre: '.$array[5].' '.$array[6].' '.$array[7].' <br>';
 echo 'Fecha de nacimineto: ' .$array[13].' <br>';
 echo 'Numero de identificacion : ' .$array[28]
 **/
-echo  $text;
+echo  $text .'<br> ################################################################# <br>';
 
 
 $nombre = '';
 $numero = '';
 
-$patronNombre = '/([A-Z\s]+)\b(?:\s[A-Z\s]+)?(?=\s*[,\d])/i';
-$patronNumero = '/\bPAB\d+\b/';
-
+// Expresión regular para el nombre
+$patronNombre = '/([A-Z\s]+)\s[A-Z\s]+\b/i';
 if (preg_match($patronNombre, $text, $coincidenciasNombre)) {
     $nombre = trim($coincidenciasNombre[1]);
 }
 
+// Expresión regular para el número
+$patronNumero = '/[A-Z]{3}\d+/i';
 if (preg_match($patronNumero, $text, $coincidenciasNumero)) {
     $numero = $coincidenciasNumero[0];
 }
 
 echo "Nombre: $nombre\n";
 echo "Número: $numero";
-
 
 ?>
