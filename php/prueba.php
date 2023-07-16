@@ -57,14 +57,24 @@ echo 'Fecha de nacimineto: ' .$array[13].' <br>';
 echo 'Numero de identificacion : ' .$array[28]
 **/
 echo  $text;
-$nombre = '';
-$patron = '/\bNombre:\s*(\w+)/i';
 
-if (preg_match($patron, $text, $coincidencias)) {
-    $nombre = $coincidencias[1];
+
+$nombre = '';
+$numero = '';
+
+$patronNombre = '/([A-Z\s]+)\b(?:\s[A-Z\s]+)?(?=\s*[,\d])/i';
+$patronNumero = '/\bPAB\d+\b/';
+
+if (preg_match($patronNombre, $text, $coincidenciasNombre)) {
+    $nombre = trim($coincidenciasNombre[1]);
 }
 
-echo "Nombre: $nombre";
+if (preg_match($patronNumero, $text, $coincidenciasNumero)) {
+    $numero = $coincidenciasNumero[0];
+}
+
+echo "Nombre: $nombre\n";
+echo "Número: $numero";
 
 
 ?>
