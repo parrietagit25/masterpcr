@@ -56,7 +56,7 @@ echo 'Nombre: '.$array[5].' '.$array[6].' '.$array[7].' <br>';
 echo 'Fecha de nacimineto: ' .$array[13].' <br>';
 echo 'Numero de identificacion : ' .$array[28]
 **/
-
+echo  $text;
 $nombre = '';
 $patron = '/\bNombre:\s*(\w+)/i';
 
