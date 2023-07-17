@@ -13,7 +13,7 @@ $cRepositorioController = new Repositorio();
 if (isset($_POST['subir_documento_repo'])) {
   $datos = $_POST;  
   unset($datos['subir_documento_repo']);
-  $cRepositorioController->subir_archivos($_FILES, $id_general);
+  $cRepositorioController->subir_archivos($_FILES);
   //$alerta = 1;
 }
 
