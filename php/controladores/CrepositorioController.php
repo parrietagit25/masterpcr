@@ -23,7 +23,7 @@ class Repositorio{
         $this->tabla_repositorios = "repositorios";
     }
 
-    public function subir_archivos($datos, $id_general){
+    public function subir_archivos($datos){
 
         $datos["stat"]= 1;
         $datos["id_user_reg"] = $_SESSION["usuario"][0]["id"];
