@@ -7,21 +7,21 @@ if (isset($modalDocu) && $modalDocu == 1) {
 }
 
 // lector de imagenes a texto este es de google se agrego por compose
-require_once 'vendor/autoload.php';
-use thiagoalessio\TesseractOCR\TesseractOCR;
+//require_once 'vendor/autoload.php';
+//use thiagoalessio\TesseractOCR\TesseractOCR;
 
 // este es otro de microsoft
 $apiUrl = 'https://brazilsouth.api.cognitive.microsoft.com/vision/v2.0/ocr';
 $apiKey = '90bc4d76077a4a6e9eb5ce2fbf2941ec';
 
-private $tabla_repo;
-
-public function __construct() {
-    $this->ModelGlobal = new ModelGlobal(); 
-    $this->tabla_repositorios = "repositorios";
-}
-
 class Repositorio{
+
+    private $tabla_repo;
+
+    public function __construct() {
+        $this->ModelGlobal = new ModelGlobal(); 
+        $this->tabla_repositorios = "repositorios";
+    }
 
     public function subir_archivos($datos, $id_general){
 
