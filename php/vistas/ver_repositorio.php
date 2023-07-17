@@ -17,7 +17,7 @@
                             <div class="card-body">
 
                                 <!-- Botonera -->
-                                <div class="modal fade ver_penalidad" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal fade documentos_repo" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content" style="text-align: center;">
                                             <form action="" method="post" enctype="multipart/form-data">
@@ -41,7 +41,34 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                                    <button type="submit" class="btn btn-primary" name="subir_documento_repo">Guardar</button>
+                                                    <button type="submit" class="btn btn-primary" name="subir_documento_repo">Registrar</button>
+                                                </div>
+                                            </form>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                <!-- Registrar Adjuntos -->
+
+                                <div class="modal fade" id="registrar_licencia" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <form action="" method="POST" enctype="multipart/form-data">
+                                                <div class="modal-body">
+                                                    <h6 class="fs-15">
+                                                        Registrar Licencia
+                                                    </h6>
+                                                    <div id="ver_licencia">
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                                    <button class="btn btn-primary" type="submit" name="registrar_adjunto">Registrar Licencia</button>
                                                 </div>
                                             </form>
                                         </div><!-- /.modal-content -->
