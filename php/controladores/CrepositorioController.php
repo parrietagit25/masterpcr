@@ -115,7 +115,7 @@ class Repositorio{
                     $apiUrl = 'https://brazilsouth.api.cognitive.microsoft.com/vision/v2.0/ocr';
                     $apiKey = '90bc4d76077a4a6e9eb5ce2fbf2941ec';
 
-                    $imageUrl = 'http://ctc.grupopcr.com.pa/material/'.$target_file;
+                    $imageUrl = "http://ctc.grupopcr.com.pa/material/$target_file";
 
                     $options = array(
                         'http' => array(
