@@ -36,7 +36,7 @@ class Repositorio{
                 $ruta = "vistas/adjuntos_repo/cedula/";
                 $file_name = basename($_FILES["iden_path"]["name"]);
                 $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
-                $new_file_name = $id_general.'_'.uniqid() . "." . $file_ext;
+                $new_file_name = $ultimo_id.'_'.uniqid() . "." . $file_ext;
                 $target_file = $ruta . $new_file_name;
                 $uploadOk = 1;
                 
@@ -50,7 +50,7 @@ class Repositorio{
 
                 if ($uploadOk == 1 && move_uploaded_file($_FILES["iden_path"]["tmp_name"], $target_file)) {
 
-                    $where = "id_general = $id_general";
+                    $where = "id = $ultimo_id";
                     $datos = array('iden_path'=>$target_file);
                     $this->ModelGlobal->actualizar($this->tabla_repositorios, $where, $datos);
 
@@ -66,7 +66,7 @@ class Repositorio{
                 $ruta = "vistas/adjuntos_repo/pasaporte/";
                 $file_name = basename($_FILES["pass_path"]["name"]);
                 $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
-                $new_file_name = $id_general.'_'.uniqid() . "." . $file_ext;
+                $new_file_name = $ultimo_id.'_'.uniqid() . "." . $file_ext;
                 $target_file = $ruta . $new_file_name;
                 $uploadOk = 1;
                 
@@ -80,7 +80,7 @@ class Repositorio{
 
                 if ($uploadOk == 1 && move_uploaded_file($_FILES["pass_path"]["tmp_name"], $target_file)) {
 
-                    $where = "id_general = $id_general";
+                    $where = "id = $ultimo_id";
                     $datos = array('pass_path'=>$target_file);
                     $this->ModelGlobal->actualizar($this->tabla_repositorios, $where, $datos);
 
@@ -96,7 +96,7 @@ class Repositorio{
                 $ruta = "vistas/adjuntos_repo/licencia/";
                 $file_name = basename($_FILES["lic_path"]["name"]);
                 $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
-                $new_file_name = $id_general.'_'.uniqid() . "." . $file_ext;
+                $new_file_name = $ultimo_id.'_'.uniqid() . "." . $file_ext;
                 $target_file = $ruta . $new_file_name;
                 $uploadOk = 1;
                 
