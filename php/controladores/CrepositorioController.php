@@ -21,6 +21,10 @@ class Repositorio{
         $this->tabla_repositorios = "repositorios";
     }
 
+    public function obtener_repo(){
+        return $this->ModelGlobal->obtenerTodos($this->tabla_repositorios);
+    }
+
     public function subir_archivos($datos){
 
         $datos["stat"]= 1;

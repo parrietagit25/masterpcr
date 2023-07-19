@@ -21,6 +21,7 @@ if (isset($_GET["view"])) {
     $view = $_GET["view"];
     switch ($view) {
       case "ver_repo":
+        $todos_registros = $cRepositorioController->obtener_repo();
         require_once("vistas/ver_repositorio.php");
         break;
       case "ver_clientes_pj_historico":

@@ -59,7 +59,7 @@
                                                 <table class="display table table-bordered" style="width:100%">
                                                     <thead>
                                                         <tr>
-                                                            <th>Nombre</th>
+                                                            <th>Scam texto</th>
                                                             <th>Cedula</th>
                                                             <th>Licencia</th>
                                                             <th>Pasaporte</th>
@@ -67,15 +67,15 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <?php //foreach ($todos_registros_cc  as $key => $value) { ?>
+                                                        <?php foreach ($todos_registros  as $key => $value) { ?>
                                                         <tr>
-                                                            <td><?php //echo $value['fg_cedula']; ?></td>
-                                                            <td><?php //echo $value['exp_cliente']; ?></td>
+                                                            <td><?php echo $value['scan_text']; ?></td>
+                                                            <!--<td><?php //echo $value['exp_cliente']; ?></td>
                                                             <td><?php //echo $value['vehiculo']; ?></td>
                                                             <td><?php //echo $value['fg_fecha_log']; ?></td>
-                                                            <td><?php //echo $value['estado']; ?></td>
+                                                            <td><?php //echo $value['estado']; ?></td>-->
                                                         </tr>
-                                                        <?php //} ?>
+                                                        <?php } ?>
                                                     </tbody>    
                                                 </table>
                                                 <button type="button" class="btn btn-primary">Guardar</button>
