@@ -60,10 +60,10 @@
                                                     <thead>
                                                         <tr>
                                                             <th>Scam texto</th>
-                                                            <th>Cedula</th>
+                                                            <!--<th>Cedula</th>
                                                             <th>Licencia</th>
                                                             <th>Pasaporte</th>
-                                                            <th>Acciones</th>
+                                                            <th>Acciones</th>-->
                                                         </tr>
                                                     </thead>
                                                     <tbody>
