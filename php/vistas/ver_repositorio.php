@@ -60,8 +60,8 @@
                                                     <thead>
                                                         <tr>
                                                             <th>Scam texto</th>
-                                                            <!--<th>Cedula</th>
-                                                            <th>Licencia</th>
+                                                            <th>Archivo</th>
+                                                            <!--<th>Licencia</th>
                                                             <th>Pasaporte</th>
                                                             <th>Acciones</th>-->
                                                         </tr>
@@ -70,7 +70,7 @@
                                                         <?php foreach ($todos_registros  as $key => $value) { ?>
                                                         <tr>
                                                             <td><?php echo $value['scan_text']; ?></td>
-                                                            <td><a href="<?php echo 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$value['iden_path']; ?>" > Documento </a></td>
+                                                            <td><a href="<?php echo 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$value['lic_path']; ?>" > Documento </a></td>
                                                             <!--<td><?php //echo $value['vehiculo']; ?></td>
                                                             <td><?php //echo $value['fg_fecha_log']; ?></td>
                                                             <td><?php //echo $value['estado']; ?></td>-->
