@@ -62,7 +62,11 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
         $where = "id = $ultimo_id";
         $datos['lic_path'] = $destino;
 
-        $cRepositorioController->subir_archivos_get_id($where, $datos);
+        echo '<pre>';
+        var_dump($text);
+        echo '</pre>';
+
+        $cRepositorioController->actualizar($where, $datos);
 
     } catch (Exception $e) {
         header('Content-Type: application/json');
