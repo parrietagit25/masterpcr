@@ -28,7 +28,7 @@
                                                 <div class="modal-body">
                                                     <div class="file-container">
                                                         <label for="file1"><i class="ri-file-user-line" style="font-size: 100px;"></i> <br> Identificación</label>
-                                                        <input name="iden_path" type="file" id="file1" class="noFile" onchange="cambiar_color_file_repo(this)">
+                                                        <input name="iden_path" type="file" id="file1" class="noFile" onchange="cambiar_color_file_repo(this);">
                                                     </div>
                                                     <div class="file-container_pass">
                                                         <label for="file2"><i class="ri-passport-line" style="font-size: 100px;"></i> <br> Pasaporte</label>
@@ -41,7 +41,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                                    <button type="submit" class="btn btn-primary" name="subir_documento_repo">Guardar</button>
+                                                    <a href="#" class="btn btn-primary" name="subir_documento_repo" onclick="cargar_imagen_server('file1', 1)">Guardar</a>
                                                 </div>
                                             </form>
                                         </div><!-- /.modal-content -->

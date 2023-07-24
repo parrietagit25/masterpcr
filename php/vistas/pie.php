@@ -1280,6 +1280,69 @@
             } 
         }
 
+        // funcion para transformar la imagen y quitarle el peso digital
+
+        function compressImage(file, quality, callback) {
+            // Crear un objeto URL desde el archivo
+            const url = URL.createObjectURL(file);
+            const img = new Image();
+
+            // Cuando la imagen se haya cargado
+            img.onload = function() {
+                // Crear un canvas
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                
+                // Ajustar el tamaño del canvas al de la imagen
+                canvas.width = this.naturalWidth;
+                canvas.height = this.naturalHeight;
+
+                // Dibujar la imagen en el canvas
+                ctx.drawImage(this, 0, 0);
+
+                // Extraer la imagen del canvas en un formato comprimido
+                canvas.toBlob(callback, 'image/jpeg', quality);
+
+                // Liberar el objeto URL
+                URL.revokeObjectURL(url);
+            };
+
+            // Empezar a cargar la imagen
+            img.src = url;
+        }
+
+        function cargar_imagen_server(identificador, tipo_doc) {
+
+            const file = document.querySelector('#' + identificador).files[0];
+
+            // Comprimir la imagen
+            compressImage(file, 0.6, function(compressedFile) {
+                // Crear un objeto FormData y agregar el archivo
+            const formData = new FormData();
+            formData.append('image', compressedFile, 'images.jpg');
+
+                // Enviar el objeto FormData al servidor con fetch
+                fetch('vistas/adjuntos_repo/subir_documento.php?tipo_doc='+tipo_doc, {
+                    method: 'POST',
+                    body: formData
+                }).then(response => {
+                    // Aquí puedes manejar la respuesta del servidor.
+                    // Por ejemplo, puedes verificar si la carga fue exitosa.
+                    if (!response.ok) {
+                        throw new Error('Error en la carga');
+                    }
+                    return response.text();
+                }).then(data => {
+                    // 'data' es el cuerpo de la respuesta convertido a JSON.
+                    // Aquí puedes usarlo como desees.
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+            }); 
+
+            $('.ver_penalidad').modal('hide');
+        }
+
     </script>
         
         <!-- END layout-wrapper  incluido por el tema -->

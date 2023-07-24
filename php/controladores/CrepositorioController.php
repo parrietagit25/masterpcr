@@ -164,5 +164,17 @@ class Repositorio{
 
     }
 
+    public function subir_archivos_get_id($datos){
+
+        return $ultimo_id = $this->ModelGlobal->agregar($this->tabla_repositorios, $datos);
+
+    }
+
+    public function actualizar($where, $datos){
+
+        $this->ModelGlobal->actualizar($this->tabla_repositorios, $where, $datos);
+
+    }
+
 }
 
