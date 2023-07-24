@@ -70,8 +70,8 @@
                                                         <?php foreach ($todos_registros  as $key => $value) { ?>
                                                         <tr>
                                                             <td><?php echo $value['scan_text']; ?></td>
-                                                            <!--<td><?php //echo $value['exp_cliente']; ?></td>
-                                                            <td><?php //echo $value['vehiculo']; ?></td>
+                                                            <td><a href="<?php echo 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$value['iden_path']; ?>" > Documento </a></td>
+                                                            <!--<td><?php //echo $value['vehiculo']; ?></td>
                                                             <td><?php //echo $value['fg_fecha_log']; ?></td>
                                                             <td><?php //echo $value['estado']; ?></td>-->
                                                         </tr>

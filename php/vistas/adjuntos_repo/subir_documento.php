@@ -62,9 +62,115 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
         $where = "id = $ultimo_id";
         $datos['lic_path'] = $destino;
 
-        echo '<pre>';
-        var_dump($text);
-        echo '</pre>';
+        $cRepositorioController->actualizar($where, $datos);
+
+    } catch (Exception $e) {
+        header('Content-Type: application/json');
+        echo json_encode(['error' => $e->getMessage()]);
+    }
+    
+}
+
+if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 2) {
+
+    $numero = rand(1000, 30000);
+    $destino = 'cedula/'.$numero.'.jpg';
+    $imageUrl = 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$destino;
+
+    try {
+        
+        move_uploaded_file($_FILES['image']['tmp_name'], $destino);
+
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/json\r\nOcp-Apim-Subscription-Key: $apiKey\r\n",
+                'method'  => 'POST',
+                'content' => json_encode(array(
+                    'url' => $imageUrl,
+                )),
+            ),
+        );
+
+        $context  = stream_context_create($options);
+        $result = file_get_contents($apiUrl, false, $context);
+
+        if ($result === FALSE) {
+            /* Handle error */
+        }
+
+        // Parsea el resultado
+        $resultData = json_decode($result, true);
+
+        // Extrae el texto de cada región
+        $text = '';
+        foreach ($resultData['regions'] as $region) {
+            foreach ($region['lines'] as $line) {
+                foreach ($line['words'] as $word) {
+                    $text .= $word['text'] . ' ';
+                }
+                $text .= "<br>";
+            }
+            $text .= "<br>";
+        } 
+        
+        $datos['scan_text'] = $text;
+        $where = "id = $ultimo_id";
+        $datos['lic_path'] = $destino;
+
+        $cRepositorioController->actualizar($where, $datos);
+
+    } catch (Exception $e) {
+        header('Content-Type: application/json');
+        echo json_encode(['error' => $e->getMessage()]);
+    }
+    
+}
+
+if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 3) {
+
+    $numero = rand(1000, 30000);
+    $destino = 'cedula/'.$numero.'.jpg';
+    $imageUrl = 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$destino;
+
+    try {
+        
+        move_uploaded_file($_FILES['image']['tmp_name'], $destino);
+
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/json\r\nOcp-Apim-Subscription-Key: $apiKey\r\n",
+                'method'  => 'POST',
+                'content' => json_encode(array(
+                    'url' => $imageUrl,
+                )),
+            ),
+        );
+
+        $context  = stream_context_create($options);
+        $result = file_get_contents($apiUrl, false, $context);
+
+        if ($result === FALSE) {
+            /* Handle error */
+        }
+
+        // Parsea el resultado
+        $resultData = json_decode($result, true);
+
+        // Extrae el texto de cada región
+        $text = '';
+        foreach ($resultData['regions'] as $region) {
+            foreach ($region['lines'] as $line) {
+                foreach ($line['words'] as $word) {
+                    $text .= $word['text'] . ' ';
+                }
+                $text .= "<br>";
+            }
+            $text .= "<br>";
+        } 
+        
+        $datos['scan_text'] = $text;
+        $where = "id = $ultimo_id";
+        $datos['lic_path'] = $destino;
 
         $cRepositorioController->actualizar($where, $datos);
 
