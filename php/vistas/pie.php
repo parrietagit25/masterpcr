@@ -1331,6 +1331,7 @@
                     if (!response.ok) {
                         throw new Error('Error en la carga');
                     }
+                    console.log(response.text());
                     return response.text();
                 }).then(data => {
                     // 'data' es el cuerpo de la respuesta convertido a JSON.
