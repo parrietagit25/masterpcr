@@ -42,7 +42,7 @@
                                                     -->
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                                    <a href="javascript:void(0);" id="boton_cancelar" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
                                                     <a href="#" id="boton_guardar" class="btn btn-primary" name="subir_documento_repo" onclick="cargar_imagen_server('file1', 1)">Guardar</a>
                                                 </div>
                                             </form>

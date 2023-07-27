@@ -1312,9 +1312,11 @@
         async function cargar_imagen_server(identificador, tipo_doc) {
             
             const file = document.querySelector('#' + identificador).files[0];
-            const boton_reg = document.querySelector('#boton_guardar');
+            const boton_reg = document.querySelector('#boton_guardar'); 
+            const boton_can = document.querySelector('#boton_cancelar');
 
             boton_reg.style.display = "none";
+            boton_can.style.display = "none";
 
             // Comprimir la imagen
             try {
@@ -1335,6 +1337,7 @@
                 console.log(await response.text());
                 
                 $('.ver_penalidad').modal('hide');
+                await location.reload();
             } catch (error) {
                 console.error('Error:', error);
             }
