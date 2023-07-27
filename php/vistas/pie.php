@@ -1282,26 +1282,31 @@
 
         // funcion para transformar la imagen y quitarle el peso digital
 
-        function compressImage(file, quality, callback) {
-            
-            const url = URL.createObjectURL(file);
-            const img = new Image();
+        function compressImage(file, quality) {
+            return new Promise((resolve, reject) => {
+                const url = URL.createObjectURL(file);
+                const img = new Image();
 
-            img.onload = function() {
-                
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                
-                canvas.width = this.naturalWidth;
-                canvas.height = this.naturalHeight;
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
 
-                ctx.drawImage(this, 0, 0);
-                canvas.toBlob(callback, 'image/jpeg', quality);
+                    canvas.width = this.naturalWidth;
+                    canvas.height = this.naturalHeight;
 
-                URL.revokeObjectURL(url);
-            };
+                    ctx.drawImage(this, 0, 0);
+                    canvas.toBlob(function(blob) {
+                        URL.revokeObjectURL(url);
+                        resolve(blob);
+                    }, 'image/jpeg', quality);
+                };
 
-            img.src = url;
+                img.onerror = function() {
+                    reject(new Error("Hubo un error al cargar la imagen."));
+                };
+
+                img.src = url;
+            });
         }
 
         async function cargar_imagen_server(identificador, tipo_doc) {
