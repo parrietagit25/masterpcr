@@ -1312,6 +1312,9 @@
         async function cargar_imagen_server(identificador, tipo_doc) {
             
             const file = document.querySelector('#' + identificador).files[0];
+            const boton_reg = document.querySelector('#boton_guardar');
+
+            boton_reg.style.display = "none";
 
             // Comprimir la imagen
             try {
