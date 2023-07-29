@@ -19,7 +19,7 @@ $ultimo_id = $cRepositorioController->subir_archivos_get_id($datos);
 if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
 
     $numero = rand(1000, 30000);
-    $destino = 'cedula/'.$numero.'.jpg';
+    $destino = 'cedula/'.$numero.'.png';
     $imageUrl = 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$destino;
 
     try {
