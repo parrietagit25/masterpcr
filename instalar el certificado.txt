@@ -1,0 +1,83 @@
+Quiero instalarle unos certificados de seguridad a est edominio http://ctc.grupopcr.com.pa
+estoy trabajado bajo este sistema 
+
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 20.04.6 LTS
+Release:        20.04
+Codename:       focal
+root@ip-172-31-17-232:/home/ubuntu# lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 20.04.6 LTS
+Release:        20.04
+Codename:       focal
+
+estoy usando docker 
+
+este es el archivo Dockerfile
+
+FROM php:8.0-apache
+
+RUN apt-get update 
+
+RUN apt-get install -y \
+    zlib1g-dev \
+    libzip-dev \
+    libtesseract-dev \
+    libleptonica-dev \
+    tesseract-ocr-eng \
+    tesseract-ocr-spa \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    nano
+
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg
+RUN docker-php-ext-install zip pdo pdo_mysql gd
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+y este es el archivo yml
+
+version: '3.1'
+
+services:
+  php:
+    build: .
+    volumes:
+      - ./php:/var/www/html
+    ports:
+      - 80:80
+    restart: always
+
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - ./my_database.sql:/docker-entrypoint-initdb.d/masterdd.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: db
+      MYSQL_USER: parrieta
+      MYSQL_PASSWORD: Dollar2022
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: rootpass
+
+
+y estos son los archivos que tengo del certificado de seguridad
+
+1599616341.grupopcr.com.pa.ca-bundle
+1599616341.grupopcr.com.pa.cert
+1599616341.grupopcr.com.pa.crt
+1599616341.grupopcr.com.pa.key
+
+
