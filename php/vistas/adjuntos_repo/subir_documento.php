@@ -19,7 +19,7 @@ $ultimo_id = $cRepositorioController->subir_archivos_get_id($datos);
 if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
 
     $numero = rand(1000, 30000);
-    $destino = 'cedula/'.$numero.'.png';
+    $destino = 'cedula/'.$ultimo_id.'_'.$numero.'.png';
     $imageUrl = 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$destino;
 
     try {
@@ -53,10 +53,17 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
                 foreach ($line['words'] as $word) {
                     $text .= $word['text'] . ' ';
                 }
-                $text .= "<br>";
+                //$text .= "<br>";
+                $text .= "\n";
             }
-            $text .= "<br>";
-        } 
+            //$text .= "<br>";
+            $text .= "\n";
+        }
+        
+        $array = explode(" ", $text);
+        echo '<pre>';
+        var_dump($array);
+        echo '</pre>';
         
         $datos['scan_text'] = $text;
         $where = "id = $ultimo_id";
