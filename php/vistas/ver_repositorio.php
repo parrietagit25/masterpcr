@@ -103,7 +103,16 @@
                                                     <tbody>
                                                         <?php foreach ($todos_registros  as $key => $value) { ?>
                                                         <tr>
-                                                            <td><?php echo $value['scan_text']; ?></td>
+                                                            <td><?php //echo $value['scan_text']; ?>
+                                                                <?php
+                                                                
+                                                                $array = explode(" ", $value['scan_text']);
+                                                                echo '<pre>';
+                                                                var_dump($array);
+                                                                echo '</pre>';
+
+                                                                ?>
+                                                            </td>
                                                             <td><a href="<?php echo 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$value['lic_path']; ?>" > Documento </a></td>
                                                             <!--<td><?php //echo $value['vehiculo']; ?></td>
                                                             <td><?php //echo $value['fg_fecha_log']; ?></td>

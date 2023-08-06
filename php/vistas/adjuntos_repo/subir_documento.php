@@ -60,11 +60,6 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             $text .= "\n";
         }
         
-        $array = explode(" ", $text);
-        echo '<pre>';
-        var_dump($array);
-        echo '</pre>';
-        
         $datos['scan_text'] = $text;
         $where = "id = $ultimo_id";
         $datos['lic_path'] = $destino;
