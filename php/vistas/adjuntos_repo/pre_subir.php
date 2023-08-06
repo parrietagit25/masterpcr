@@ -72,9 +72,9 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
         
         <input type="text" class="form-control" name="n_documento" value="<?php echo $array[13]; ?>">
         <br>
-        <input type="text" class="form-control" name="nombre" value="<?php echo $array[13]; ?>">
+        <input type="text" class="form-control" name="nombre" value="<?php echo $array[14].' '.$array[15].' '.$array[16].' '.$array[17]; ?>">
         <br>
-        <input type="text" class="form-control" name="fecha_vencimiento" value="<?php echo $array[14].' '.$array[15].' '.$array[16].' '.$array[17]; ?>">
+        <input type="text" class="form-control" name="fecha_vencimiento" value="<?php echo $array[20]; ?>">
         <br>
         <textarea name="todo_texto" class="form-control" id="" cols="30" rows="10"><?php echo $text; ?></textarea>
 
