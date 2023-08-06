@@ -1343,6 +1343,41 @@
             }
         }
 
+        async function cargar_imagen_server_lic(identificador, tipo_doc) {
+            
+            const file = document.querySelector('#' + identificador).files[0];
+            const boton_reg = document.querySelector('#boton_guardar'); 
+            const boton_can = document.querySelector('#boton_cancelar');
+            const contenido_lic = document.querySelector("#lic_contenido");
+
+            //boton_reg.style.display = "none";
+            //boton_can.style.display = "none";
+
+            // Comprimir la imagen
+            try {
+                const compressedFile = await compressImage(file, 0.6);
+
+                const formData = new FormData();
+                formData.append('image', compressedFile, 'images.jpg');
+
+                const response = await fetch('vistas/adjuntos_repo/pre_subir.php?tipo_doc='+tipo_doc, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Error en la carga');
+                }
+                contenido_lic.innerHTML = await response.text();
+                //console.log(await response.text());
+                
+                //$('.ver_penalidad').modal('hide');
+                //await location.reload();
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
     </script>
         
         <!-- END layout-wrapper  incluido por el tema -->
