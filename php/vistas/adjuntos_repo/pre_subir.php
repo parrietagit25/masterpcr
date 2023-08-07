@@ -111,7 +111,26 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             $fecha_vencimiento = "";
         }
 
-        $array = explode(" ", $text);
+        $cadena = $text;
+
+        $palabrasAEliminar = array(
+            "Republica de Panana",
+            "DEL TRANSITO",
+            "TRANSPORTE TERRESTRE",
+            "LICENCIA DE CONDUCIR",
+            "PANAMEÑA"
+        );
+
+        $cadenaSinPalabras = str_ireplace($palabrasAEliminar, "", $cadena);
+        $cadenaSinFechas = preg_replace("/\b\d{2}\/\d{2}\/\d{4}\b/", "", $cadenaSinPalabras);
+
+        echo $cadenaSinFechas;
+
+        $array = explode(" ", $cadenaSinFechas);
+
+        echo '<pre>';
+        var_dump($array);
+        echo '</pre>';
 
         ?>
         <label for=""><?php  ?></label>
