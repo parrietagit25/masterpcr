@@ -1371,6 +1371,9 @@
                     throw new Error('Error en la carga');
                 }
                 contenido_lic.innerHTML = await response.text();
+                boton_reg.style.display = "none";
+                boton_can.style.display = "none";
+                carga_sniper.style.display = "none";
                 //console.log(await response.text());
                 
                 //$('.ver_penalidad').modal('hide');
@@ -1409,7 +1412,7 @@
                 console.log(await response.text());
                 
                 //$('.ver_penalidad').modal('hide');
-                await location.reload();
+                //await location.reload();
             } catch (error) {
                 console.error('Error:', error);
             }
