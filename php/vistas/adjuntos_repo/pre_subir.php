@@ -80,6 +80,10 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
 
             $fecha_vencimiento = end($fechas);
 
+            echo '<br> fecha de la primera condicion '.$fecha_vencimiento;
+            print_r($fecha_vencimiento);
+
+
             $fechas = $fecha_vencimiento; 
             $fecha = DateTime::createFromFormat('d/m/Y', $fechas[0]); 
             $fechaActual = new DateTime(); 
