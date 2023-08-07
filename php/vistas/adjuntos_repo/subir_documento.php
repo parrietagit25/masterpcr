@@ -35,6 +35,12 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
     var_dump($datos);
     echo '</pre>';
 
+    $fechaOriginal = $datos['lic_vencimineto'];
+    $fechaConvertida = strtotime($fechaOriginal);
+    $fechaFormateada = date("Y/m/d", $fechaConvertida);
+
+    $datos['lic_vencimineto'] = $fechaFormateada;
+
     $ultimo_id = $cRepositorioController->subir_archivos_get_id($datos);
 
     /*
