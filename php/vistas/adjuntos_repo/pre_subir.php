@@ -118,7 +118,10 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             "República", 
             "de Panamà?", 
             "TIPO AUTORIDAD Y", 
-            "Panamà?"
+            "Panamà?", 
+            "TIPO", 
+            "AUTORIDAD", 
+            "Y"
             
         );
 
