@@ -1,80 +1,27 @@
-<?php
-$apiUrl = 'https://brazilsouth.api.cognitive.microsoft.com/vision/v2.0/ocr';
-$apiKey = '90bc4d76077a4a6e9eb5ce2fbf2941ec';
-
-$imageUrl = 'http://ctc.grupopcr.com.pa/material/licencia/3.PNG';
-
-$options = array(
-    'http' => array(
-        'header'  => "Content-type: application/json\r\nOcp-Apim-Subscription-Key: $apiKey\r\n",
-        'method'  => 'POST',
-        'content' => json_encode(array(
-            'url' => $imageUrl,
-        )),
-    ),
-);
-$context  = stream_context_create($options);
-$result = file_get_contents($apiUrl, false, $context);
-
-if ($result === FALSE) {
-    /* Handle error */
-}
-
-// Parsea el resultado
-$resultData = json_decode($result, true);
-
-// Extrae el texto de cada región
-$text = '';
-foreach ($resultData['regions'] as $region) {
-    foreach ($region['lines'] as $line) {
-        foreach ($line['words'] as $word) {
-            $text .= $word['text'] . ' ';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
         }
-        $text .= "\n";
-    }
-    $text .= "\n";
-}
 
-// Muestra el texto
-/*
-echo $text;
-echo '<pre>';
-var_dump($text);
-echo '</pre>';
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-echo '///////////////////////////////////////////////////////';
-
-$array = explode(" ", $text);
-
-echo '<pre>';
-var_dump($array);
-echo '</pre>';
-
-echo '///////////////////////////////////////////////////////';
-
-echo 'Nombre: '.$array[5].' '.$array[6].' '.$array[7].' <br>';
-echo 'Fecha de nacimineto: ' .$array[13].' <br>';
-echo 'Numero de identificacion : ' .$array[28]
-**/
-echo  $text .'<br> ################################################################# <br>';
-
-
-$nombre = '';
-$numero = '';
-
-// Expresión regular para el nombre
-$patronNombre = '/([A-Z\s]+)\s[A-Z\s]+\b/i';
-if (preg_match($patronNombre, $text, $coincidenciasNombre)) {
-    $nombre = trim($coincidenciasNombre[1]);
-}
-
-// Expresión regular para el número
-$patronNumero = '/[A-Z]{3}\d+/i';
-if (preg_match($patronNumero, $text, $coincidenciasNumero)) {
-    $numero = $coincidenciasNumero[0];
-}
-
-echo "Nombre: $nombre\n";
-echo "Número: $numero";
-
-?>
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+</body>
+</html>

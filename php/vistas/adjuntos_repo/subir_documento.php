@@ -8,20 +8,33 @@ $modalDocu = 1;
 require_once("../../controladores/CrepositorioController.php");
 $cRepositorioController = new Repositorio();
 
-$apiUrl = 'https://brazilsouth.api.cognitive.microsoft.com/vision/v2.0/ocr';
-$apiKey = '90bc4d76077a4a6e9eb5ce2fbf2941ec';
-
-$datos = [];
-$datos["stat"]= 1;
-$datos["id_user_reg"] = $_SESSION["usuario"][0]["id"];
-$ultimo_id = $cRepositorioController->subir_archivos_get_id($datos);
+//$apiUrl = 'https://brazilsouth.api.cognitive.microsoft.com/vision/v2.0/ocr';
+//$apiKey = '90bc4d76077a4a6e9eb5ce2fbf2941ec';
 
 if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
 
+    $datos = [];
+    $datos = $_POST;
+    $datos["stat"]= 1;
+    $datos["id_user_reg"] = $_SESSION["usuario"][0]["id"];
+
+    $origen = $datos['lic_path'];
+    $destino = str_replace('temp/', 'licencia/', $datos['lic_path']);
+
+    if (rename($origen, $destino)) {
+
+    } else {
+        
+    }
+
+    $ultimo_id = $cRepositorioController->subir_archivos_get_id($datos);
+
+    /*
     $numero = rand(1000, 30000);
     $destino = 'cedula/'.$ultimo_id.'_'.$numero.'.png';
     $imageUrl = 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$destino;
 
+    
     try {
         
         move_uploaded_file($_FILES['image']['tmp_name'], $destino);
@@ -40,7 +53,7 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
         $result = file_get_contents($apiUrl, false, $context);
 
         if ($result === FALSE) {
-            /* Handle error */
+            
         }
 
         // Parsea el resultado
@@ -69,7 +82,7 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
     } catch (Exception $e) {
         header('Content-Type: application/json');
         echo json_encode(['error' => $e->getMessage()]);
-    }
+    } */
     
 }
 
