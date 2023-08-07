@@ -1346,8 +1346,8 @@
         async function cargar_imagen_server_lic(identificador, tipo_doc) {
             
             const file = document.querySelector('#' + identificador).files[0];
-            const boton_reg = document.querySelector('#boton_guardar'); 
-            const boton_can = document.querySelector('#boton_cancelar');
+            const boton_reg = document.querySelector('#boton_guardar_2'); 
+            const boton_can = document.querySelector('#boton_cancelar_2');
             const contenido_lic = document.querySelector("#lic_contenido");
             const carga_sniper = document.querySelector("#loader_car");
 
