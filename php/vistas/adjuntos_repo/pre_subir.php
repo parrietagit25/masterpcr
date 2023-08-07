@@ -72,9 +72,9 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             usort($fechas, function($a, $b) {
                 $fechaA = DateTime::createFromFormat('d/m/Y', $a);
                 $fechaB = DateTime::createFromFormat('d/m/Y', $b);
-
-                return $fechaA < $fechaB;
-            });
+            
+                return $fechaA < $fechaB ? -1 : ($fechaA > $fechaB ? 1 : 0);
+            });            
 
             $fecha_vencimiento = end($fechas);
 
