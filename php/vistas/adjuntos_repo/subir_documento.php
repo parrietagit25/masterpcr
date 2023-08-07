@@ -30,7 +30,7 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
     echo '<pre>';
     var_dump($_POST);
     echo '</pre>';
-
+    echo '######################################################';
     echo '<pre>';
     var_dump($datos);
     echo '</pre>';
