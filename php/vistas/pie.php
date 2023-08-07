@@ -1393,11 +1393,11 @@
             boton_can.style.display = "none";
             carga_sniper.classList.add('loader_carga');
 
-            const lic_numero = document.querySelector("#lic_numero");
-            const lic_nombre = document.querySelector("#lic_nombre");
-            const lic_vencimineto = document.querySelector("#lic_vencimineto");
-            const scan_text = document.querySelector("#scan_text");
-            const lic_path = document.querySelector("#lic_path");
+            const lic_numero = document.querySelector("#lic_numero").value;
+            const lic_nombre = document.querySelector("#lic_nombre").value;
+            const lic_vencimineto = document.querySelector("#lic_vencimineto").value;
+            const scan_text = document.querySelector("#scan_text").value;
+            const lic_path = document.querySelector("#lic_path").value;
 
             // Comprimir la imagen
             try {
