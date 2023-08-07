@@ -84,7 +84,7 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             print_r($fecha_vencimiento);
 
 
-            $fechas = $fecha_vencimiento; 
+            /*$fechas = $fecha_vencimiento; 
             $fecha = DateTime::createFromFormat('d/m/Y', $fechas[0]); 
             $fechaActual = new DateTime(); 
 
@@ -92,7 +92,7 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
                 $fecha_vencimiento = $fecha;
             } else {
                 $fecha_vencimiento = "";
-            }
+            }*/
             
         }elseif ($fechas == 1) {
             echo '<br> entrando en la segunda condicion';
