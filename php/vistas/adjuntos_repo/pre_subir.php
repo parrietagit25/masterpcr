@@ -62,11 +62,52 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
 
         $fecha = $text;
         preg_match_all("/\b\d{4}-\d{2}-\d{2}\b|\b\d{2}\/\d{2}\/\d{4}\b|\b\d{2}-\d{2}-\d{4}\b/", $fecha, $coincidencias);
+        $contar_fechas = count($coincidencias[0]);
+        $fecha_vencimiento = "";
+        
+        if ($contar_fechas > 1) {
+
+            $fechas = $coincidencias[0];
+
+            usort($fechas, function($a, $b) {
+                $fechaA = DateTime::createFromFormat('d/m/Y', $a);
+                $fechaB = DateTime::createFromFormat('d/m/Y', $b);
+
+                return $fechaA < $fechaB;
+            });
+
+            $fecha_vencimiento = end($fechas);
+
+            $fechas = $fecha_vencimiento; 
+            $fecha = DateTime::createFromFormat('d/m/Y', $fechas[0]); 
+            $fechaActual = new DateTime(); 
+
+            if ($fecha > $fechaActual) {
+                $fecha_vencimiento = $fecha;
+            } else {
+                $fecha_vencimiento = "";
+            }
+            
+        }elseif ($fechas == 1) {
+
+            $fechas = $coincidencias[0]; 
+            $fecha = DateTime::createFromFormat('d/m/Y', $fechas[0]); 
+            $fechaActual = new DateTime(); 
+
+            if ($fecha > $fechaActual) {
+                $fecha_vencimiento = $fecha;
+            } else {
+                $fecha_vencimiento = "";
+            }
+            
+        }else{
+            $fecha_vencimiento = "";
+        }
 
         $array = explode(" ", $text);
 
         ?>
-        <label for=""><?php print_r($coincidencias[0]); ?></label>
+        <label for=""><?php  ?></label>
         <label for="">Numero de documento</label>
         <input type="text" class="form-control" name="lic_numero" id="lic_numero" value="<?php echo $array[13]; ?>">
         <br>
@@ -74,7 +115,7 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
         <input type="text" class="form-control" name="lic_nombre" id="lic_nombre" value="<?php echo $array[14].' '.$array[15].' '.$array[16].' '.$array[17]; ?>">
         <br>
         <label for="">Fecha de vencimineto</label>
-        <input type="text" class="form-control" name="lic_vencimineto" id="lic_vencimineto" value="<?php echo $array[20]; ?>">
+        <input type="text" class="form-control" name="lic_vencimineto" id="lic_vencimineto" value="<?php echo $fecha_vencimiento; ?>">
         <br>
         <label for="">Texto Extraido</label>
         <textarea name="scan_text" class="form-control" id="scan_text" cols="30" rows="10"><?php echo $text; ?></textarea>
