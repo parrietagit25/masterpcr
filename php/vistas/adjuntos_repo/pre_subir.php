@@ -65,10 +65,8 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
         $contar_fechas = count($coincidencias[0]);
         $fecha_vencimiento = "";
 
-        echo 'contar fechas - > '.$contar_fechas;
-
         if ($contar_fechas > 1) {
-            echo '<br> entrando en la primera condicion';
+            
             $fechas = $coincidencias[0];
 
             usort($fechas, function($a, $b) {
@@ -80,7 +78,6 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
 
             $fecha_vencimiento = end($fechas);
 
-            echo '<br> fecha de la primera condicion '.$fecha_vencimiento;
             print_r($fecha_vencimiento);
 
 
@@ -95,7 +92,6 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             }*/
             
         }elseif ($fechas == 1) {
-            echo '<br> entrando en la segunda condicion';
             $fechas = $coincidencias[0]; 
             $fecha = DateTime::createFromFormat('d/m/Y', $fechas[0]); 
             $fechaActual = new DateTime(); 
@@ -107,7 +103,6 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             }
             
         }else{
-            echo '<br> entrando en la ultima condicion';
             $fecha_vencimiento = "";
         }
 
@@ -118,7 +113,9 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             "DEL TRANSITO",
             "TRANSPORTE TERRESTRE",
             "LICENCIA DE CONDUCIR",
-            "PANAMEÑA"
+            "PANAMEÑA", 
+            "AC,D", 
+            
         );
 
         $cadenaSinPalabras = str_ireplace($palabrasAEliminar, "", $cadena);
@@ -127,10 +124,6 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
         echo $cadenaSinFechas;
 
         $array = explode(" ", $cadenaSinFechas);
-
-        echo '<pre>';
-        var_dump($array);
-        echo '</pre>';
 
         ?>
         <label for=""><?php  ?></label>
