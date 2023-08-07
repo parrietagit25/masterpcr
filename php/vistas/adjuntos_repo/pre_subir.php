@@ -64,9 +64,11 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
         preg_match_all("/\b\d{4}-\d{2}-\d{2}\b|\b\d{2}\/\d{2}\/\d{4}\b|\b\d{2}-\d{2}-\d{4}\b/", $fecha, $coincidencias);
         $contar_fechas = count($coincidencias[0]);
         $fecha_vencimiento = "";
-        
-        if ($contar_fechas > 1) {
 
+        echo 'contar fechas - > '.$contar_fechas;
+
+        if ($contar_fechas > 1) {
+            echo '<br> entrando en la primera condicion';
             $fechas = $coincidencias[0];
 
             usort($fechas, function($a, $b) {
@@ -89,7 +91,7 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             }
             
         }elseif ($fechas == 1) {
-
+            echo '<br> entrando en la segunda condicion';
             $fechas = $coincidencias[0]; 
             $fecha = DateTime::createFromFormat('d/m/Y', $fechas[0]); 
             $fechaActual = new DateTime(); 
@@ -101,6 +103,7 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             }
             
         }else{
+            echo '<br> entrando en la ultima condicion';
             $fecha_vencimiento = "";
         }
 
