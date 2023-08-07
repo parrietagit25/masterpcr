@@ -1391,7 +1391,7 @@
 
             boton_reg.style.display = "none";
             boton_can.style.display = "none";
-            carga_sniper.classList.add('loader_carga');
+            carga_sniper.style.display = "block";
 
             const lic_numero = document.querySelector("#lic_numero").value;
             const lic_nombre = document.querySelector("#lic_nombre").value;
@@ -1425,7 +1425,7 @@
                 console.log(await response.text());
                 
                 //$('.ver_penalidad').modal('hide');
-                //await location.reload();
+                await location.reload();
             } catch (error) {
                 console.error('Error:', error);
             }
