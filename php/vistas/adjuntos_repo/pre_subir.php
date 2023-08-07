@@ -59,16 +59,14 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             //$text .= "<br>";
             $text .= "\n";
         }
-        /*
-        $datos['scan_text'] = $text;
-        $where = "id = $ultimo_id";
-        $datos['lic_path'] = $destino;
 
-        $cRepositorioController->actualizar($where, $datos); */
+        $fecha = $text;
+        preg_match_all("/\b\d{4}-\d{2}-\d{2}\b|\b\d{2}\/\d{2}\/\d{4}\b|\b\d{2}-\d{2}-\d{4}\b/", $fecha, $coincidencias);
 
         $array = explode(" ", $text);
 
         ?>
+        <label for=""><?php print_r($coincidencias[0]); ?></label>
         <label for="">Numero de documento</label>
         <input type="text" class="form-control" name="lic_numero" id="lic_numero" value="<?php echo $array[13]; ?>">
         <br>
