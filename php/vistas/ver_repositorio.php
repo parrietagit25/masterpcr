@@ -65,7 +65,7 @@
                                                     </div> 
                                                     
                                                 </div>
-                                                <div id="loader_car" style="width: 200px; margin-left: auto; margin-right: auto;">
+                                                <div id="loader_car" style="width: 50px; margin-left: auto; margin-right: auto;">
 
                                                 </div>
                                                 <div class="modal-footer">
