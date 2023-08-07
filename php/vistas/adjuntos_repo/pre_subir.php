@@ -115,15 +115,25 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             "LICENCIA DE CONDUCIR",
             "PANAMEÑA", 
             "AC,D", 
+            "República", 
+            "de Panamà?", 
+            "TIPO AUTORIDAD Y", 
+            "Panamà?"
             
         );
 
         $cadenaSinPalabras = str_ireplace($palabrasAEliminar, "", $cadena);
         $cadenaSinFechas = preg_replace("/\b\d{2}\/\d{2}\/\d{4}\b/", "", $cadenaSinPalabras);
 
-        echo $cadenaSinFechas;
+        echo $cadenaSinFechas.'<br> ################################### <br>';
+        
+        $cadenaSinFechas2 = preg_replace("/\b\d{2}\/\d{2}\/\d{4}\b/", "", $cadenaSinFechas);
+        echo $cadenaSinFechas2;
 
         $array = explode(" ", $cadenaSinFechas);
+        echo '<pre>';
+        var_dump($array);
+        echo '</pre>';
 
         ?>
         <label for=""><?php  ?></label>
