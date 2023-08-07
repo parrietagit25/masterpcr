@@ -1393,11 +1393,24 @@
             boton_can.style.display = "none";
             carga_sniper.classList.add('loader_carga');
 
+            const lic_numero = document.querySelector("#lic_numero");
+            const lic_nombre = document.querySelector("#lic_nombre");
+            const lic_vencimineto = document.querySelector("#lic_vencimineto");
+            const scan_text = document.querySelector("#scan_text");
+            const lic_path = document.querySelector("#lic_path");
+
             // Comprimir la imagen
             try {
                 //const compressedFile = await compressImage(file, 0.6);
 
                 const formData = new FormData();
+                
+                formData.append('lic_numero', lic_numero);
+                formData.append('lic_nombre', lic_nombre);
+                formData.append('lic_vencimineto', lic_vencimineto);
+                formData.append('scan_text', scan_text);
+                formData.append('lic_path', lic_path);
+
                 //formData.append('image', compressedFile, 'images.jpg');
 
                 const response = await fetch('vistas/adjuntos_repo/subir_documento.php?tipo_doc='+identificador, {

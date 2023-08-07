@@ -70,20 +70,20 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
 
         ?>
         <label for="">Numero de documento</label>
-        <input type="text" class="form-control" name="lic_numero" value="<?php echo $array[13]; ?>">
+        <input type="text" class="form-control" name="lic_numero" id="lic_numero" value="<?php echo $array[13]; ?>">
         <br>
         <label for="">Nombre</label>
-        <input type="text" class="form-control" name="lic_nombre" value="<?php echo $array[14].' '.$array[15].' '.$array[16].' '.$array[17]; ?>">
+        <input type="text" class="form-control" name="lic_nombre" id="lic_nombre" value="<?php echo $array[14].' '.$array[15].' '.$array[16].' '.$array[17]; ?>">
         <br>
         <label for="">Fecha de vencimineto</label>
-        <input type="text" class="form-control" name="lic_vencimineto" value="<?php echo $array[20]; ?>">
+        <input type="text" class="form-control" name="lic_vencimineto" id="lic_vencimineto" value="<?php echo $array[20]; ?>">
         <br>
         <label for="">Texto Extraido</label>
-        <textarea name="scan_text" class="form-control" id="" cols="30" rows="10"><?php echo $text; ?></textarea>
+        <textarea name="scan_text" class="form-control" id="scan_text" cols="30" rows="10"><?php echo $text; ?></textarea>
         <br>
         <a href="<?php echo $imageUrl; ?>" target="_blank"> <img src="<?php echo $imageUrl; ?>" width="100"> </a>
         <br>
-        <input type="hidden" name="lic_path" value="<?php echo $destino; ?>">
+        <input type="hidden" name="lic_path" id="lic_path" value="<?php echo $destino; ?>">
         <a href="javascript:void(0);" id="boton_cancelar_2" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
         <a href="#" id="boton_guardar_2" class="btn btn-primary" name="subir_documento_repo" onclick="cargar_imagen_server_lic_carga(1)">Guardar</a>
 
