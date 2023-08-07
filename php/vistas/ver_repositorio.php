@@ -65,7 +65,10 @@
                                                     </div> 
                                                     
                                                 </div>
-                                                <div class="modal-footer" id="loader_car">
+                                                <div id="loader_car" style="width: 200px; margin-left: auto; margin-right: auto;">
+
+                                                </div>
+                                                <div class="modal-footer">
                                                     <a href="javascript:void(0);" id="boton_cancelar_2" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
                                                     <a href="#" id="boton_guardar_2" class="btn btn-primary" name="subir_documento_repo" onclick="cargar_imagen_server_lic('file3', 1)">Guardar</a>
                                                 </div>

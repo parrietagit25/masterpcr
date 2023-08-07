@@ -1384,16 +1384,18 @@
             
             const boton_reg = document.querySelector('#boton_cancelar_2'); 
             const boton_can = document.querySelector('#boton_guardar_2');
+            const carga_sniper = document.querySelector("#loader_car");
 
             boton_reg.style.display = "none";
             boton_can.style.display = "none";
+            carga_sniper.classList.add('loader_carga');
 
             // Comprimir la imagen
             try {
-                const compressedFile = await compressImage(file, 0.6);
+                //const compressedFile = await compressImage(file, 0.6);
 
                 const formData = new FormData();
-                formData.append('image', compressedFile, 'images.jpg');
+                //formData.append('image', compressedFile, 'images.jpg');
 
                 const response = await fetch('vistas/adjuntos_repo/subir_documento.php?tipo_doc='+identificador, {
                     method: 'POST',
@@ -1406,7 +1408,7 @@
 
                 console.log(await response.text());
                 
-                $('.ver_penalidad').modal('hide');
+                //$('.ver_penalidad').modal('hide');
                 await location.reload();
             } catch (error) {
                 console.error('Error:', error);
