@@ -128,13 +128,24 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
         $cadenaSinPalabras = str_ireplace($palabrasAEliminar, "", $cadena);
         $cadenaSinFechas = preg_replace("/\b\d{2}\/\d{2}\/\d{4}\b/", "", $cadenaSinPalabras);
 
-        echo $cadenaSinFechas.'<br> ################################### <br>';
+        echo $cadenaSinFechas.'<br> ################### sin fechas ################ <br>';
         
         $cadenaSinFechas2 = preg_replace("/\b\d{2}\/\d{2}\/\d{4}\b/", "", $cadenaSinFechas);
         echo $cadenaSinFechas2;
 
-        $array = explode(" ", $cadenaSinFechas);
-        echo '<pre>';
+        echo "<br>################ sin nuemro de cedula #################### <br>";
+        $resultado = preg_replace('/[0-9-]/', '', $cadenaSinFechas2);
+
+        $array = explode(" ", $cadenaSinFechas2);
+
+
+        echo '############################ con numero <pre>';
+        var_dump($array);
+        echo '</pre>';
+
+        $array = explode(" ", $resultado);
+
+        echo '############################ sin numero <pre>';
         var_dump($array);
         echo '</pre>';
 
