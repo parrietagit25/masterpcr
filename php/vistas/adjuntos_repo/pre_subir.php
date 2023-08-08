@@ -121,41 +121,35 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
             "Panamà?", 
             "TIPO", 
             "AUTORIDAD", 
-            "Y"
+            "Y", 
+            "Panamá».", 
+            "TRMSUO", 
+            "Republica", 
+            "Panama", 
+            "LICE*CIA", 
+            "CONDUCIR"
             
         );
 
         $cadenaSinPalabras = str_ireplace($palabrasAEliminar, "", $cadena);
         $cadenaSinFechas = preg_replace("/\b\d{2}\/\d{2}\/\d{4}\b/", "", $cadenaSinPalabras);
-
-        echo $cadenaSinFechas.'<br> ################### sin fechas ################ <br>';
-        
+        //echo $cadenaSinFechas.'<br> ################### sin fechas ################ <br>';
         $cadenaSinFechas2 = preg_replace("/\b\d{2}\/\d{2}\/\d{4}\b/", "", $cadenaSinFechas);
-        echo $cadenaSinFechas2;
-
-        echo "<br>################ sin nuemro de cedula #################### <br>";
+        //echo $cadenaSinFechas2;
+        //echo "<br>################ sin nuemro de cedula #################### <br>";
         $resultado = preg_replace('/[0-9-]/', '', $cadenaSinFechas2);
-        echo $resultado;
-        $array = explode(" ", $cadenaSinFechas2);
-
-
-        echo '############################ con numero <pre>';
-        var_dump($array);
-        echo '</pre>';
-
-        $array = explode(" ", $resultado);
-
-        echo '############################ sin numero <pre>';
-        var_dump($array);
-        echo '</pre>';
+        //echo $resultado;
+        // numero de cedula en la licencia
+        preg_match("/\b\d{1,2}-\d{3,4}-\d{3,4}\b/", $cadenaSinFechas2, $coincidenciasNc);
+        $numero_cedula = $coincidenciasNc[0];
 
         ?>
         <label for=""><?php  ?></label>
         <label for="">Numero de documento</label>
-        <input type="text" class="form-control" name="lic_numero" id="lic_numero" value="<?php echo $array[13]; ?>">
+        <input type="text" class="form-control" name="lic_numero" id="lic_numero" value="<?php echo $numero_cedula; ?>">
         <br>
         <label for="">Nombre</label>
-        <input type="text" class="form-control" name="lic_nombre" id="lic_nombre" value="<?php echo $array[14].' '.$array[15].' '.$array[16].' '.$array[17]; ?>">
+        <input type="text" class="form-control" name="lic_nombre" id="lic_nombre" value="<?php echo $resultado; ?>">
         <br>
         <label for="">Fecha de vencimineto</label>
         <input type="text" class="form-control" name="lic_vencimineto" id="lic_vencimineto" value="<?php echo $fecha_vencimiento; ?>">
