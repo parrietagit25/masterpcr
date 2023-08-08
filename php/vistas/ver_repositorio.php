@@ -117,7 +117,8 @@
                                                 <table class="display table table-bordered" style="width:100%">
                                                     <thead>
                                                         <tr>
-                                                            <th>Scam texto</th>
+                                                            <th>Nombre</th>
+                                                            <th>Fecha de Vencimiento</th>
                                                             <th>Archivo</th>
                                                             <th>Acciones</th>
                                                         </tr>
@@ -125,16 +126,13 @@
                                                     <tbody>
                                                         <?php foreach ($todos_registros  as $key => $value) { ?>
                                                         <tr>
-                                                            <td>
-                                                                <?php
-                                                                
-                                                                 echo $value['scan_text'];
-
-                                                                ?>
-                                                            </td>
+                                                            <td><?php  echo $value['lic_nombre']; ?></td>
+                                                            <td><?php  echo $value['lic_vencimineto']; ?></td>
                                                             <td><a href="<?php echo 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$value['lic_path']; ?>" > Documento </a></td>
-                                                           
-                                                            <td><a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target=".agregar_ced">Eliminar</a> </td>
+                                                            <td>
+                                                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="">+ Cedula</a>
+                                                                <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="">Eliminar</a> 
+                                                            </td>
                                                         </tr>
                                                         <?php } ?>
                                                     </tbody>    

@@ -23,6 +23,8 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
 
     if (rename($origen, $destino)) {
 
+        $datos['lic_path'] = $destino;
+
     } else {
         
     }
