@@ -135,7 +135,7 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
 
         echo "<br>################ sin nuemro de cedula #################### <br>";
         $resultado = preg_replace('/[0-9-]/', '', $cadenaSinFechas2);
-
+        echo $resultado;
         $array = explode(" ", $cadenaSinFechas2);
 
 
