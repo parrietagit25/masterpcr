@@ -141,7 +141,13 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
         //echo $resultado;
         // numero de cedula en la licencia
         preg_match("/\b\d{1,2}-\d{3,4}-\d{3,4}\b/", $cadenaSinFechas2, $coincidenciasNc);
-        $numero_cedula = $coincidenciasNc[0];
+
+        if (!empty($coincidenciasNc[0])) {
+            $numero_cedula = $coincidenciasNc[0];
+          }else{
+            $numero_cedula = 0;
+          }
+        
 
         ?>
         <label for=""><?php  ?></label>
