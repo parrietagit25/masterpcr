@@ -149,7 +149,7 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
         <input type="text" class="form-control" name="lic_numero" id="lic_numero" value="<?php echo $numero_cedula; ?>">
         <br>
         <label for="">Nombre</label>
-        <input type="text" class="form-control" name="lic_nombre" id="lic_nombre" value="<?php echo $resultado; ?>">
+        <input type="text" class="form-control" name="lic_nombre" id="lic_nombre" value="<?php echo trim($resultado); ?>">
         <br>
         <label for="">Fecha de vencimineto</label>
         <input type="text" class="form-control" name="lic_vencimineto" id="lic_vencimineto" value="<?php echo $fecha_vencimiento; ?>">
