@@ -109,7 +109,7 @@
                                         <div class="card">
                                             <div class="card-header">
                                                 <h5 class="card-title mb-0">Repositorio 
-                                                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".agregar_ced">Agregar Cedula</a> 
+                                                    <!--<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".agregar_ced">Agregar Cedula</a> -->
                                                     <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".agregar_lic">Agregar Licencia</a></h5>
                                             </div>
                                             <div class="card-body">
@@ -128,7 +128,7 @@
                                                         <tr>
                                                             <td><?php  echo $value['lic_nombre']; ?></td>
                                                             <td><?php  echo $value['lic_vencimineto']; ?></td>
-                                                            <td><a href="<?php echo 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$value['lic_path']; ?>" > Documento </a></td>
+                                                            <td><a href="<?php echo 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$value['lic_path']; ?>" target="_blank" > Documento </a></td>
                                                             <td>
                                                                 <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="">+ Cedula</a>
                                                                 <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="">Eliminar</a> 
