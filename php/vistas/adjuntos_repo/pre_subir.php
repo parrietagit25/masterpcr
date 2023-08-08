@@ -78,7 +78,7 @@ if (isset($_GET['tipo_doc']) && $_GET['tipo_doc'] == 1) {
 
             $fecha_vencimiento = end($fechas);
 
-            print_r($fecha_vencimiento);
+            //print_r($fecha_vencimiento);
 
 
             /*$fechas = $fecha_vencimiento; 
