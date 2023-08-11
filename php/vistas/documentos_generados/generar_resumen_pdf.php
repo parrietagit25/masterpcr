@@ -276,11 +276,11 @@ $html = '<div class="container" style="font-size: 10px;">
             // actiividad principal 
             $actividad_principal_1 = $cCclienteController->obtener_codigo_id($value['fd_actividad_principal']);
             foreach ($actividad_principal_1 as $key => $valueProfesion) {
-                $actividad_principal = $valueProfesion['descripcion'];
+                $actividad_principal_des = $valueProfesion['descripcion'];
             }  
 
-            if(!isset($actividad_principal)){
-                $actividad_principal = '';
+            if(!isset($actividad_principal_des)){
+                $actividad_principal_des = '';
             }
 
             // otras fuentes 
@@ -344,7 +344,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     </tr>
                     <tr>
                         <td><b>ACTIVIDAD PRINCIPAL:</b></td>
-                        <td>'.$actividad_principal.'</td>
+                        <td>'.$actividad_principal_des.'</td>
                         <td><b>OTRAS FUENTES:</b></td>
                         <td>'.$otras_fuentes.'</td>
                     </tr>
