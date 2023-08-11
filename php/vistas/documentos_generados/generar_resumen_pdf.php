@@ -420,6 +420,76 @@ $html = '<div class="container" style="font-size: 10px;">
 
         foreach ($beneficiario as $key => $value) { 
 
+            // pais de nacimiento
+            $pais_nacimiento = $cCclienteController->obtener_pais_id($value['fb_pais_nacimiento']);
+            foreach ($pais_nacimiento as $key => $valuePais) {
+                $pais_nbf = $valuePais['nombre'];
+            }  
+
+            if(!isset($pais_nbf)){
+                $pais_nbf = '';
+            }
+
+            // nacionalidad
+            $nacionalidad = $cCclienteController->obtener_pais_id($value['fb_nacionaidad']);
+            foreach ($nacionalidad as $key => $valuePais) {
+                $nacionalidad_bf = $valuePais['nombre'];
+            }  
+
+            if(!isset($nacionalidad_bf)){
+                $nacionalidad_bf = '';
+            }
+
+            // genero 
+            $genero_1 = $cCclienteController->obtener_codigo_id($value['fb_genero']);
+            foreach ($genero_1 as $key => $valueocupacion) {
+                $genero = $valueocupacion['descripcion'];
+            } 
+
+            if(!isset($genero)){
+                $genero = '';
+            }
+
+            // estado civil 
+            $estado_civil_1 = $cCclienteController->obtener_codigo_id($value['fb_estado_civil']);
+            foreach ($estado_civil_1 as $key => $valueocupacion) {
+                $estado_civil = $valueocupacion['descripcion'];
+            } 
+
+            if(!isset($estado_civil)){
+                $estado_civil = '';
+            }
+
+            // pais de recidencia
+            $pais_residencia_1 = $cCclienteController->obtener_pais_id($value['fb_pais_residencia_fiscal']);
+            foreach ($pais_residencia_1 as $key => $valuePais) {
+                $pais_residencia = $valuePais['nombre'];
+            }  
+
+            if(!isset($pais_residencia)){
+                $pais_residencia = '';
+            }
+
+             // profesion 
+             $profesion_1 = $cCclienteController->obtener_codigo_id($value['fb_profesion']);
+             foreach ($profesion_1 as $key => $valueProfesion) {
+                 $profesion_descripcion_1 = $valueProfesion['descripcion'];
+             }  
+ 
+             if(!isset($profesion_descripcion_1)){
+                 $profesion_descripcion_1 = '';
+             }
+ 
+             // ocupaciion 
+             $ocupacion_1 = $cCclienteController->obtener_codigo_id($value['fb_ocupacion']);
+             foreach ($ocupacion_1 as $key => $valueocupacion) {
+                 $ocupacion_descripcion_1 = $valueocupacion['descripcion'];
+             } 
+ 
+             if(!isset($ocupacion_descripcion_1)){
+                 $ocupacion_descripcion_1 = '';
+             }
+
             $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
                         <tr>
                             <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>Beneficiario Final</b></td>
@@ -446,19 +516,19 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td><b>APELLIDO DE CASADA:</b></td>
                             <td>'.$value['fb_apellido_casada'].'</td>
                             <td><b>PAIS DE NACIMIENTO</b></td>
-                            <td>'.$value['fb_pais_nacimiento'].'</td>
+                            <td>'.$pais_nbf.'</td>
                         </tr>
                         <tr>
                             <td><b>FECHA DE NACIMIENTO:</b></td>
                             <td>'.$value['fb_fecha_nacimiento'].'</td>
                             <td><b>NACINALIDAD</b></td>
-                            <td>'.$value['fb_nacionaidad'].'</td>
+                            <td>'.$nacionalidad_bf.'</td>
                         </tr>
                         <tr>
                             <td><b>GENERO:</b></td>
-                            <td>'.$value['fb_genero'].'</td>
+                            <td>'.$genero.'</td>
                             <td><b>ESTADO CIVIL</b></td>
-                            <td>'.$value['fb_estado_civil'].'</td>
+                            <td>'.$estado_civil.'</td>
                         </tr>
                         <tr>
                             <td><b>IDENTIFICACION:</b></td>
@@ -470,7 +540,7 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td><b>DIRECION DE RESIDENCIA:</b></td>
                             <td>'.$value['fb_direccion_residencial'].'</td>
                             <td><b>PAIS DE RECIDENCIA FISCAL</b></td>
-                            <td>'.$value['fb_pais_residencia_fiscal'].'</td>
+                            <td>'.$pais_residencia.'</td>
                         </tr>
                         <tr>
                             <td><b>EMAIL:</b></td>
@@ -482,17 +552,17 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td><b>TELEFONO MOVIL:</b></td>
                             <td>'.$value['fb_telefono_movil'].'</td>
                             <td><b>PROFESION</b></td>
-                            <td>'.$value['fb_profesion'].'</td>
+                            <td>'.$profesion_descripcion_1.'</td>
                         </tr>
                         <tr>
                             <td><b>OCUPACION:</b></td>
-                            <td>'.$value['fb_ocupacion'].'</td>
+                            <td>'.$ocupacion_descripcion_1.'</td>
                             <td><b>LUGAR DE TRABAJO</b></td>
                             <td>'.$value['fb_lugar_trabajo'].'</td>
                         </tr>
                         <tr>
                             <td><b>DIRECCION DE TRABAJO:</b></td>
-                            <td>'.$value['fb_ocupacion'].'</td>
+                            <td>'.$value['fb_direccion_trabajo'].'</td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -501,6 +571,86 @@ $html = '<div class="container" style="font-size: 10px;">
                 }
 
     foreach ($terceros as $key => $value) { 
+
+        // pais de nacimiento
+        $pais_nacimiento = $cCclienteController->obtener_pais_id($value['ft_pais_nacimiento']);
+        foreach ($pais_nacimiento as $key => $valuePais) {
+            $pais_nbft = $valuePais['nombre'];
+        }  
+
+        if(!isset($pais_nbft)){
+            $pais_nbft = '';
+        }
+
+        // nacionalidad
+        $nacionalidad = $cCclienteController->obtener_pais_id($value['ft_nacionaidad']);
+        foreach ($nacionalidad as $key => $valuePais) {
+            $nacionalidad_bft = $valuePais['nombre'];
+        }  
+
+        if(!isset($nacionalidad_bft)){
+            $nacionalidad_bft = '';
+        }
+
+        // genero 
+        $genero_1_1 = $cCclienteController->obtener_codigo_id($value['ft_genero']);
+        foreach ($genero_1_1 as $key => $valueocupacion) {
+            $genero_ft = $valueocupacion['descripcion'];
+        } 
+
+        if(!isset($genero_ft)){
+            $genero_ft = '';
+        }
+
+        // estado civil 
+        $estado_civil_1 = $cCclienteController->obtener_codigo_id($value['ft_estado_civil']);
+        foreach ($estado_civil_1 as $key => $valueocupacion) {
+            $estado_civil_ft = $valueocupacion['descripcion'];
+        } 
+
+        if(!isset($estado_civil_ft)){
+            $estado_civil_ft = '';
+        }
+
+        // pais de recidencia
+        $pais_residencia_1 = $cCclienteController->obtener_pais_id($value['ft_pais_residencia_fiscal']);
+        foreach ($pais_residencia_1 as $key => $valuePais) {
+            $pais_residencia_ft = $valuePais['nombre'];
+        }  
+
+        if(!isset($pais_residencia_ft)){
+            $pais_residencia_ft = '';
+        }
+
+        // pais de recidencia fiscal
+        $pais_residencia__fiscal_1 = $cCclienteController->obtener_pais_id($value['ft_pais_residencia_fiscal']);
+        foreach ($pais_residencia__fiscal_1 as $key => $valuePais) {
+            $pais_residencia_fiscal_ft = $valuePais['nombre'];
+        }  
+
+        if(!isset($pais_residencia_fiscal_ft)){
+            $pais_residencia_fiscal_ft = '';
+        }
+
+        // profesion 
+        $profesion_1 = $cCclienteController->obtener_codigo_id($value['ft_profesion']);
+        foreach ($profesion_1 as $key => $valueProfesion) {
+            $profesion_descripcion_1_ft = $valueProfesion['descripcion'];
+        }  
+
+        if(!isset($profesion_descripcion_1_ft)){
+            $profesion_descripcion_1_ft = '';
+        }
+
+        // ocupaciion 
+        $ocupacion_1 = $cCclienteController->obtener_codigo_id($value['ft_ocupacion']);
+        foreach ($ocupacion_1 as $key => $valueocupacion) {
+            $ocupacion_descripcion_1_ft = $valueocupacion['descripcion'];
+        } 
+
+        if(!isset($ocupacion_descripcion_1_ft)){
+            $ocupacion_descripcion_1_ft = '';
+        }
 
         $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
                     <tr>
@@ -532,25 +682,25 @@ $html = '<div class="container" style="font-size: 10px;">
                     </tr>
                     <tr>
                         <td><b>PAIS DE NACIMIENTO:</b></td>
-                        <td>'.$value['ft_pais_nacimiento'].'</td>
+                        <td>'.$pais_nbft.'</td>
                         <td><b>FECHA NACIMIENTO</b></td>
                         <td>'.$value['ft_fecha_nacimiento'].'</td>
                     </tr>
                     <tr>
                         <td><b>NACIONALIDAD:</b></td>
-                        <td>'.$value['ft_nacionaidad'].'</td>
+                        <td>'.$nacionalidad_bft.'</td>
                         <td><b>GENERO</b></td>
-                        <td>'.$value['ft_genero'].'</td>
+                        <td>'.$genero_ft.'</td>
                     </tr>
                     <tr>
                         <td><b>ESTADO CIVIL:</b></td>
-                        <td>'.$value['ft_estado_civil'].'</td>
+                        <td>'.$estado_civil_ft.'</td>
                         <td><b>IDENTIFICACION</b></td>
                         <td>'.$value['ft_identificacion'].'</td>
                     </tr>
                     <tr>
                         <td><b>PAIS DE RESIDENCIA:</b></td>
-                        <td>'.$value['ft_pais_residencia'].'</td>
+                        <td>'.$pais_residencia_ft.'</td>
                         <td><b>DIRECCION FISCAL</b></td>
                         <td>'.$value['ft_direccion_residencial'].'</td>
                     </tr>
@@ -568,9 +718,9 @@ $html = '<div class="container" style="font-size: 10px;">
                     </tr>
                     <tr>
                         <td><b>PROFESION:</b></td>
-                        <td>'.$value['ft_profesion'].'</td>
+                        <td>'.$profesion_descripcion_1_ft.'</td>
                         <td><b>OCUPACION</b></td>
-                        <td>'.$value['ft_ocupacion'].'</td>
+                        <td>'.$ocupacion_descripcion_1_ft.'</td>
                     </tr>
                     <tr>
                         <td><b>LUGAR DE TRABAJO:</b></td>
