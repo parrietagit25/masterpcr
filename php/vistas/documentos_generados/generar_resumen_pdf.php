@@ -28,7 +28,7 @@ $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
 $uso_interno = $cCclienteController->obtenerUsoInterno($id);
 $todos_adjuntos = $cCclienteController->obtenerTodosAdjuntos($id);
 
-//$paises = $cCclienteController->obtener_pais_id();
+
 
 $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
@@ -66,11 +66,38 @@ $html = '<div class="container" style="font-size: 10px;">
 
                     foreach ($generales as $key => $value) { 
 
-                        /* $pais_nacimiento = $cCclienteController->obtener_pais_id($value['fg_pais_nacimiento']);
-
+                        // pais de nacimiento
+                        $pais_nacimiento = $cCclienteController->obtener_pais_id($value['fg_pais_nacimiento']);
                         foreach ($pais_nacimiento as $key => $valuePais) {
                             $pais_n = $valuePais['nombre'];
-                        } */
+                        }  
+                        // pais de residencia
+                        $pais_residencia = $cCclienteController->obtener_pais_id($value['fg_pais_residencia']);
+                        foreach ($pais_residencia as $key => $valuePais) {
+                            $pais_r = $valuePais['nombre'];
+                        }  
+                        // Nacionalidad
+                        $nacionalidad = $cCclienteController->obtener_pais_id($value['fg_nacionalidad']);
+                        foreach ($nacionalidad as $key => $valuePais) {
+                            $pais_naci = $valuePais['nombre'];
+                        }  
+                        // Genero
+                        $genero_descripcion = $cCclienteController->obtener_codigo_id($value['fg_genero']);
+                        foreach ($genero_descripcion as $key => $valueGenero) {
+                            $genero_descripcion = $valueGenero['descripcion'];
+                        }  
+                        // Estado Civil
+                        $estado_civil = $cCclienteController->obtener_codigo_id($value['fg_estado_civil']);
+                        foreach ($estado_civil as $key => $valueGenero) {
+                            $estado_civil_descripcion = $valueGenero['descripcion'];
+                        } 
+
+                        // pais de residencia fiscal
+
+                        $residencia_fiscal = $cCclienteController->obtener_pais_id($value['fg_pais_residencia_fiscal']);
+                        foreach ($residencia_fiscal as $key => $valuePais) {
+                            $pais_rf = $valuePais['nombre'];
+                        }  
 
                    $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
                         <tr>
@@ -94,7 +121,7 @@ $html = '<div class="container" style="font-size: 10px;">
                         </tr>
                         <tr>
                             <td><b>PAÍS DE NACIMIENTO</b></td>
-                            <td>'.$value['fg_pais_nacimiento'].'</td>
+                            <td>'.$pais_n.'</td>
                             <td></td>
                             <td></td>
                             <td><b>FECHA DE NACIMIENTO</b></td>
@@ -102,11 +129,11 @@ $html = '<div class="container" style="font-size: 10px;">
                         </tr>
                         <tr>
                             <td><b>NACIONALIDAD</b></td>
-                            <td>'.$value['fg_nacionalidad'].'</td>
+                            <td>'.$pais_naci.'</td>
                             <td></td>
                             <td></td>
                             <td><b>GÉNERO</b></td>
-                            <td>'.$value['fg_genero'].'</td>
+                            <td>'.$genero_descripcion.'</td>
                         </tr>
                         <tr>
                             <td><b>CÉDULA / N° PASAPORTE</b></td>
@@ -114,11 +141,11 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td></td>
                             <td></td>
                             <td><b>ESTADO CIVIL</b></td>
-                            <td>'.$value['fg_estado_civil'].'</td>
+                            <td>'.$estado_civil_descripcion.'</td>
                         </tr>
                         <tr>
                             <td><b>PAÍS DE RESIDENCIA</b></td>
-                            <td>'.$value['fg_pais_residencia'].'</td>
+                            <td>'.$pais_r.'</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -126,7 +153,7 @@ $html = '<div class="container" style="font-size: 10px;">
                         </tr>
                         <tr>
                             <td><b>PAÍS(ES) DE RESIDENCIA FISCAL</b></td>
-                            <td>'.$value['fg_pais_residencia_fiscal'].'</td>
+                            <td>'.$pais_rf.'</td>
                             <td></td>
                             <td></td>
                             <td><b>DIRECCIÓN RESIDENCIAL</b></td>
@@ -155,6 +182,17 @@ $html = '<div class="container" style="font-size: 10px;">
 
 
         foreach ($ocupacionales as $key => $value) { 
+ 
+            // profesion 
+            $profesion_descripcion = $cCclienteController->obtener_codigo_id($value['fo_profesion']);
+            foreach ($profesion_descripcion as $key => $valueProfesion) {
+                $profesion_descripcion = $valueProfesion['descripcion'];
+            }  
+            // ocupaciion 
+            $ocupacion_descripcion = $cCclienteController->obtener_codigo_id($value['fo_ocupacion']);
+            foreach ($ocupacion_descripcion as $key => $valueocupacion) {
+                $ocupacion_descripcion = $valueocupacion['descripcion'];
+            } 
 
             $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
                     <tr>
@@ -162,9 +200,9 @@ $html = '<div class="container" style="font-size: 10px;">
                     </tr>
                     <tr>
                         <td><b>PROFESIÓN:</b></td>
-                        <td>'.$value['fo_profesion'].'</td>
+                        <td>'.$profesion_descripcion.'</td>
                         <td><b>OCUPACIÓN:</b></td>
-                        <td>'.$value['fo_ocupacion'].'</td>
+                        <td>'.$ocupacion_descripcion.'</td>
                     </tr>
                     <tr>
                         <td><b>LUGAR DE TRABAJO:</b></td>
@@ -198,6 +236,37 @@ $html = '<div class="container" style="font-size: 10px;">
 
         foreach ($declaracion as $key => $value) { 
 
+            // actiividad principal 
+            $actividad_principal = $cCclienteController->obtener_codigo_id($value['fd_actividad_principal']);
+            foreach ($actividad_principal as $key => $valueProfesion) {
+                $actividad_principal = $valueProfesion['descripcion'];
+            }  
+            // otras fuentes 
+            $otras_fuentes = $cCclienteController->obtener_codigo_id($value['fd_otras_fuentes']);
+            foreach ($otras_fuentes as $key => $valueocupacion) {
+                $otras_fuentes = $valueocupacion['descripcion'];
+            } 
+            // limite de compra 
+            $limite_compra = $cCclienteController->obtener_codigo_id($value['fd_limite_compra']);
+            foreach ($limite_compra as $key => $valueProfesion) {
+                $limite_compra = $valueProfesion['descripcion'];
+            }  
+            // forma de pago 
+            $forma_pago_1 = $cCclienteController->obtener_codigo_id($value['fd_forma_pago_1']);
+            foreach ($forma_pago_1 as $key => $valueocupacion) {
+                $forma_pago_1 = $valueocupacion['descripcion'];
+            } 
+            // metodo de pago 1  
+            $fd_metodo_pago_1 = $cCclienteController->obtener_codigo_id($value['fd_metodo_pago_1']);
+            foreach ($fd_metodo_pago_1 as $key => $valueProfesion) {
+                $fd_metodo_pago_1 = $valueProfesion['descripcion'];
+            }  
+            // metodo de pago 2 
+            $metodo_pago_2 = $cCclienteController->obtener_codigo_id($value['fd_metodo_pago_2']);
+            foreach ($metodo_pago_2 as $key => $valueocupacion) {
+                $metodo_pago_2 = $valueocupacion['descripcion'];
+            } 
+
             $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
                     <tr>
                         <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>Declaracion y origen de fondos</b></td>
@@ -209,21 +278,21 @@ $html = '<div class="container" style="font-size: 10px;">
                     </tr>
                     <tr>
                         <td><b>ACTIVIDAD PRINCIPAL:</b></td>
-                        <td>'.$value['fd_actividad_principal'].'</td>
+                        <td>'.$actividad_principal.'</td>
                         <td><b>OTRAS FUENTES:</b></td>
-                        <td>'.$value['fd_otras_fuentes'].'</td>
+                        <td>'.$otras_fuentes.'</td>
                     </tr>
                     <tr>
                         <td><b>LÍMITE DE COMPRA:</b></td>
-                        <td>'.$value['fd_limite_compra'].'</td>
+                        <td>'.$limite_compra.'</td>
                         <td><b>FORMA DE PAGO: </b></td>
-                        <td>'.$value['fd_forma_pago_1'].'</td>
+                        <td>'.$forma_pago_1.'</td>
                     </tr>
                     <tr>
                         <td><b>MÉTODO DE PAGO 1: </b></td>
-                        <td>'.$value['fd_metodo_pago_1'].'</td>
+                        <td>'.$fd_metodo_pago_1.'</td>
                         <td><b>MÉTODO DE PAGO 2:</b></td>
-                        <td>'.$value['fd_metodo_pago_2'].'</td>
+                        <td>'.$metodo_pago_2.'</td>
                     </tr>
                     
                 </table>
@@ -503,3 +572,5 @@ foreach ($declaracion_jurada as $key => $value) {
 
 $mpdf->WriteHTML($html);
 $mpdf->Output();
+
+

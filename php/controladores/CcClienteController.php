@@ -74,6 +74,10 @@ class CcclienteController {
     public function obtener_pais_id($id_pais){
         return $this->ModelGlobal->obtenerPaisId($this->tabla_paises, $id_pais);
     }
+    // codigo
+    public function obtener_codigo_id($id_genero){
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "=".$id_genero);    
+    }
 
     public function obtener_genero(){
         return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "in('01GEN', '02GEN', '03GEN')");    
