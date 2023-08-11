@@ -443,11 +443,11 @@ $html = '<div class="container" style="font-size: 10px;">
             // genero 
             $genero_1 = $cCclienteController->obtener_codigo_id($value['fb_genero']);
             foreach ($genero_1 as $key => $valueocupacion) {
-                $genero = $valueocupacion['descripcion'];
+                $genero_fb = $valueocupacion['descripcion'];
             } 
 
-            if(!isset($genero)){
-                $genero = '';
+            if(!isset($genero_fb)){
+                $genero_fb = '';
             }
 
             // estado civil 
@@ -526,7 +526,7 @@ $html = '<div class="container" style="font-size: 10px;">
                         </tr>
                         <tr>
                             <td><b>GENERO:</b></td>
-                            <td>'.$genero.'</td>
+                            <td>'.$genero_fb.'</td>
                             <td><b>ESTADO CIVIL</b></td>
                             <td>'.$estado_civil.'</td>
                         </tr>
