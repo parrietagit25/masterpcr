@@ -71,26 +71,50 @@ $html = '<div class="container" style="font-size: 10px;">
                         foreach ($pais_nacimiento as $key => $valuePais) {
                             $pais_n = $valuePais['nombre'];
                         }  
+
+                        if(!isset($pais_n)){
+                            $pais_n = '';
+                        }
+
                         // pais de residencia
                         $pais_residencia = $cCclienteController->obtener_pais_id($value['fg_pais_residencia']);
                         foreach ($pais_residencia as $key => $valuePais) {
                             $pais_r = $valuePais['nombre'];
                         }  
+
+                        if(!isset($pais_naci)){
+                            $pais_naci = '';
+                        }
+
                         // Nacionalidad
                         $nacionalidad = $cCclienteController->obtener_pais_id($value['fg_nacionalidad']);
                         foreach ($nacionalidad as $key => $valuePais) {
                             $pais_naci = $valuePais['nombre'];
                         }  
+
+                        if(!isset($pais_naci)){
+                            $pais_naci = '';
+                        }
+
                         // Genero
                         $genero_descripcion = $cCclienteController->obtener_codigo_id($value['fg_genero']);
                         foreach ($genero_descripcion as $key => $valueGenero) {
                             $genero_descripcion = $valueGenero['descripcion'];
                         }  
+
+                        if(!isset($genero_descripcion)){
+                            $genero_descripcion = '';
+                        }
+
                         // Estado Civil
                         $estado_civil = $cCclienteController->obtener_codigo_id($value['fg_estado_civil']);
                         foreach ($estado_civil as $key => $valueGenero) {
                             $estado_civil_descripcion = $valueGenero['descripcion'];
                         } 
+
+                        if(!isset($estado_civil_descripcion)){
+                            $estado_civil_descripcion = '';
+                        }
 
                         // pais de residencia fiscal
 
@@ -98,6 +122,10 @@ $html = '<div class="container" style="font-size: 10px;">
                         foreach ($residencia_fiscal as $key => $valuePais) {
                             $pais_rf = $valuePais['nombre'];
                         }  
+
+                        if(!isset($pais_rf)){
+                            $pais_rf = '';
+                        }
 
                    $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
                         <tr>
@@ -184,15 +212,24 @@ $html = '<div class="container" style="font-size: 10px;">
         foreach ($ocupacionales as $key => $value) { 
  
             // profesion 
-            $profesion_descripcion = $cCclienteController->obtener_codigo_id($value['fo_profesion']);
-            foreach ($profesion_descripcion as $key => $valueProfesion) {
+            $profesion = $cCclienteController->obtener_codigo_id($value['fo_profesion']);
+            foreach ($profesion as $key => $valueProfesion) {
                 $profesion_descripcion = $valueProfesion['descripcion'];
             }  
+
+            if(!isset($profesion_descripcion)){
+                $profesion_descripcion = '';
+            }
+
             // ocupaciion 
-            $ocupacion_descripcion = $cCclienteController->obtener_codigo_id($value['fo_ocupacion']);
-            foreach ($ocupacion_descripcion as $key => $valueocupacion) {
+            $ocupacion = $cCclienteController->obtener_codigo_id($value['fo_ocupacion']);
+            foreach ($ocupacion as $key => $valueocupacion) {
                 $ocupacion_descripcion = $valueocupacion['descripcion'];
             } 
+
+            if(!isset($ocupacion_descripcion)){
+                $ocupacion_descripcion = '';
+            }
 
             $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
                     <tr>
