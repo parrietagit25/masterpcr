@@ -453,21 +453,21 @@ $html = '<div class="container" style="font-size: 10px;">
             // estado civil 
             $estado_civil_1 = $cCclienteController->obtener_codigo_id($value['fb_estado_civil']);
             foreach ($estado_civil_1 as $key => $valueocupacion) {
-                $estado_civil = $valueocupacion['descripcion'];
+                $estado_civil_fb = $valueocupacion['descripcion'];
             } 
 
-            if(!isset($estado_civil)){
-                $estado_civil = '';
+            if(!isset($estado_civil_fb)){
+                $estado_civil_fb = '';
             }
 
             // pais de recidencia
             $pais_residencia_1 = $cCclienteController->obtener_pais_id($value['fb_pais_residencia_fiscal']);
             foreach ($pais_residencia_1 as $key => $valuePais) {
-                $pais_residencia = $valuePais['nombre'];
+                $pais_residencia_fb = $valuePais['nombre'];
             }  
 
-            if(!isset($pais_residencia)){
-                $pais_residencia = '';
+            if(!isset($pais_residencia_fb)){
+                $pais_residencia_fb = '';
             }
 
              // profesion 
@@ -528,19 +528,19 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td><b>GENERO:</b></td>
                             <td>'.$genero_fb.'</td>
                             <td><b>ESTADO CIVIL</b></td>
-                            <td>'.$estado_civil.'</td>
+                            <td>'.$estado_civil_fb.'</td>
                         </tr>
                         <tr>
                             <td><b>IDENTIFICACION:</b></td>
                             <td>'.$value['fb_identificacion'].'</td>
                             <td><b>PAIS DE RECIDENCIA</b></td>
-                            <td>'.$value['fb_pais_residencia'].'</td>
+                            <td>'.$pais_residencia_fb.'</td>
                         </tr>
                         <tr>
                             <td><b>DIRECION DE RESIDENCIA:</b></td>
                             <td>'.$value['fb_direccion_residencial'].'</td>
                             <td><b>PAIS DE RECIDENCIA FISCAL</b></td>
-                            <td>'.$pais_residencia.'</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td><b>EMAIL:</b></td>
