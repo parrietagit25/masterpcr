@@ -76,7 +76,7 @@ class CcclienteController {
     }
     // codigo
     public function obtener_codigo_id($id_genero){
-        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "=".$id_genero);    
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "=".'$id_gene0ro');    
     }
 
     public function obtener_genero(){
