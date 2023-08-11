@@ -17,17 +17,17 @@
                             <div class="card-body">
 
                                 <!-- Botonera -->
-                                <div class="modal fade ver_penalidad" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal fade agregar_ced" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content" style="text-align: center;">
                                             <form action="" method="post" enctype="multipart/form-data">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleMocClienteFormulario">Registrar Documento</h5>
+                                                    <h5 class="modal-title" id="exampleMocClienteFormulario">Registrar Cedula</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="file-container">
-                                                        <label for="file1"><i class="ri-file-user-line" style="font-size: 100px;"></i> <br> Identificación</label>
+                                                        <label for="file1"><i class="ri-file-user-line" style="font-size: 100px;"></i> <br> Cedula</label>
                                                         <input name="iden_path" type="file" id="file1" class="noFile" onchange="cambiar_color_file_repo(this);">
                                                     </div>
                                                     <div class="file-container_lic">
@@ -50,33 +50,90 @@
                                         </div><!-- /.modal-content -->
                                     </div><!-- /.modal-dialog -->
                                 </div><!-- /.modal -->
+
+                                <div class="modal fade agregar_lic" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content" style="text-align: center;">
+                                            <form action="" method="post" enctype="multipart/form-data">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleMocClienteFormulario">Registrar Licencia</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body" id="lic_contenido">
+                                                    <div class="file-container_lic">
+                                                        <label for="file3"><i class="ri-car-line" style="font-size: 100px;"></i> <br> Licencia</label>
+                                                        <input name="lic_path" type="file" id="file3" class="noFile" onchange="cambiar_color_file_repo(this)">
+                                                    </div> 
+                                                    
+                                                </div>
+                                                <div id="loader_car" style="width: 50px; margin-left: auto; margin-right: auto;">
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="javascript:void(0);" id="boton_cancelar_2" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                                    <a href="#" id="boton_guardar_2" class="btn btn-primary" name="subir_documento_repo" onclick="cargar_imagen_server_lic('file3', 1)">Guardar</a>
+                                                </div>
+                                            </form>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                <div class="modal fade agregar_lic" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content" style="text-align: center;">
+                                            <form action="" method="post" enctype="multipart/form-data">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleMocClienteFormulario">Eliminar Documneto</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body" id="lic_contenido">
+                                                    <div class="file-container_lic">
+                                                        <label for="file3"><i class="ri-car-line" style="font-size: 100px;"></i> <br> Licencia</label>
+                                                        <input name="lic_path" type="file" id="file3" class="noFile" onchange="cambiar_color_file_repo(this)">
+                                                    </div> 
+                                                    
+                                                </div>
+                                                <div id="loader_car" style="width: 50px; margin-left: auto; margin-right: auto;">
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <a href="javascript:void(0);" id="boton_cancelar_2" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                                    <a href="#" id="boton_guardar_2" class="btn btn-primary" name="subir_documento_repo" onclick="cargar_imagen_server_lic('file3', 1)">Guardar</a>
+                                                </div>
+                                            </form>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
                                 
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5 class="card-title mb-0">Repositorio <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".ver_penalidad">Agregar Documentos</a> </h5>
+                                                <h5 class="card-title mb-0">Repositorio 
+                                                    <!--<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".agregar_ced">Agregar Cedula</a> -->
+                                                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".agregar_lic">Agregar Licencia</a></h5>
                                             </div>
                                             <div class="card-body">
                                                 
                                                 <table class="display table table-bordered" style="width:100%">
                                                     <thead>
                                                         <tr>
-                                                            <th>Scam texto</th>
+                                                            <th>Nombre</th>
+                                                            <th>Fecha de Vencimiento</th>
                                                             <th>Archivo</th>
-                                                            <!--<th>Licencia</th>
-                                                            <th>Pasaporte</th>
-                                                            <th>Acciones</th>-->
+                                                            <th>Acciones</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <?php foreach ($todos_registros  as $key => $value) { ?>
                                                         <tr>
-                                                            <td><?php echo $value['scan_text']; ?></td>
-                                                            <td><a href="<?php echo 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$value['lic_path']; ?>" > Documento </a></td>
-                                                            <!--<td><?php //echo $value['vehiculo']; ?></td>
-                                                            <td><?php //echo $value['fg_fecha_log']; ?></td>
-                                                            <td><?php //echo $value['estado']; ?></td>-->
+                                                            <td><?php  echo $value['lic_nombre']; ?></td>
+                                                            <td><?php  echo $value['lic_vencimineto']; ?></td>
+                                                            <td><a href="<?php echo 'http://ctc.grupopcr.com.pa/vistas/adjuntos_repo/'.$value['lic_path']; ?>" target="_blank" > Documento </a></td>
+                                                            <td>
+                                                                <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="">+ Cedula</a>
+                                                                <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="">Eliminar</a> 
+                                                            </td>
                                                         </tr>
                                                         <?php } ?>
                                                     </tbody>    
