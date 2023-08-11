@@ -278,31 +278,60 @@ $html = '<div class="container" style="font-size: 10px;">
             foreach ($actividad_principal as $key => $valueProfesion) {
                 $actividad_principal = $valueProfesion['descripcion'];
             }  
+
+            if(!isset($actividad_principal)){
+                $actividad_principal = '';
+            }
+
             // otras fuentes 
             $otras_fuentes = $cCclienteController->obtener_codigo_id($value['fd_otras_fuentes']);
             foreach ($otras_fuentes as $key => $valueocupacion) {
                 $otras_fuentes = $valueocupacion['descripcion'];
-            } 
+            }
+            
+            if(!isset($otras_fuentes)){
+                $otras_fuentes = '';
+            }
+            
             // limite de compra 
             $limite_compra = $cCclienteController->obtener_codigo_id($value['fd_limite_compra']);
             foreach ($limite_compra as $key => $valueProfesion) {
                 $limite_compra = $valueProfesion['descripcion'];
-            }  
+            }
+            
+            if(!isset($limite_compra)){
+                $limite_compra = '';
+            }
+            
             // forma de pago 
             $forma_pago_1 = $cCclienteController->obtener_codigo_id($value['fd_forma_pago_1']);
             foreach ($forma_pago_1 as $key => $valueocupacion) {
                 $forma_pago_1 = $valueocupacion['descripcion'];
-            } 
+            }
+            
+            if(!isset($forma_pago_1)){
+                $forma_pago_1 = '';
+            }
+            
             // metodo de pago 1  
             $fd_metodo_pago_1 = $cCclienteController->obtener_codigo_id($value['fd_metodo_pago_1']);
             foreach ($fd_metodo_pago_1 as $key => $valueProfesion) {
                 $fd_metodo_pago_1 = $valueProfesion['descripcion'];
-            }  
+            }
+            
+            if(!isset($fd_metodo_pago_1)){
+                $fd_metodo_pago_1 = '';
+            }
+
             // metodo de pago 2 
             $metodo_pago_2 = $cCclienteController->obtener_codigo_id($value['fd_metodo_pago_2']);
             foreach ($metodo_pago_2 as $key => $valueocupacion) {
                 $metodo_pago_2 = $valueocupacion['descripcion'];
             } 
+
+            if(!isset($metodo_pago_2)){
+                $metodo_pago_2 = '';
+            }
 
             $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
                     <tr>
