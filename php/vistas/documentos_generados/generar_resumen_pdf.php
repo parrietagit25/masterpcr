@@ -274,8 +274,8 @@ $html = '<div class="container" style="font-size: 10px;">
         foreach ($declaracion as $key => $value) { 
 
             // actiividad principal 
-            $actividad_principal = $cCclienteController->obtener_codigo_id($value['fd_actividad_principal']);
-            foreach ($actividad_principal as $key => $valueProfesion) {
+            $actividad_principal_1 = $cCclienteController->obtener_codigo_id($value['fd_actividad_principal']);
+            foreach ($actividad_principal_1 as $key => $valueProfesion) {
                 $actividad_principal = $valueProfesion['descripcion'];
             }  
 
@@ -284,8 +284,8 @@ $html = '<div class="container" style="font-size: 10px;">
             }
 
             // otras fuentes 
-            $otras_fuentes = $cCclienteController->obtener_codigo_id($value['fd_otras_fuentes']);
-            foreach ($otras_fuentes as $key => $valueocupacion) {
+            $otras_fuentes_1 = $cCclienteController->obtener_codigo_id($value['fd_otras_fuentes']);
+            foreach ($otras_fuentes_1 as $key => $valueocupacion) {
                 $otras_fuentes = $valueocupacion['descripcion'];
             }
             
@@ -294,8 +294,8 @@ $html = '<div class="container" style="font-size: 10px;">
             }
             
             // limite de compra 
-            $limite_compra = $cCclienteController->obtener_codigo_id($value['fd_limite_compra']);
-            foreach ($limite_compra as $key => $valueProfesion) {
+            $limite_compra_1 = $cCclienteController->obtener_codigo_id($value['fd_limite_compra']);
+            foreach ($limite_compra_1 as $key => $valueProfesion) {
                 $limite_compra = $valueProfesion['descripcion'];
             }
             
@@ -304,8 +304,8 @@ $html = '<div class="container" style="font-size: 10px;">
             }
             
             // forma de pago 
-            $forma_pago_1 = $cCclienteController->obtener_codigo_id($value['fd_forma_pago_1']);
-            foreach ($forma_pago_1 as $key => $valueocupacion) {
+            $forma_pago_1_1 = $cCclienteController->obtener_codigo_id($value['fd_forma_pago_1']);
+            foreach ($forma_pago_1_1 as $key => $valueocupacion) {
                 $forma_pago_1 = $valueocupacion['descripcion'];
             }
             
@@ -314,8 +314,8 @@ $html = '<div class="container" style="font-size: 10px;">
             }
             
             // metodo de pago 1  
-            $fd_metodo_pago_1 = $cCclienteController->obtener_codigo_id($value['fd_metodo_pago_1']);
-            foreach ($fd_metodo_pago_1 as $key => $valueProfesion) {
+            $fd_metodo_pago_1_1 = $cCclienteController->obtener_codigo_id($value['fd_metodo_pago_1']);
+            foreach ($fd_metodo_pago_1_1 as $key => $valueProfesion) {
                 $fd_metodo_pago_1 = $valueProfesion['descripcion'];
             }
             
@@ -324,8 +324,8 @@ $html = '<div class="container" style="font-size: 10px;">
             }
 
             // metodo de pago 2 
-            $metodo_pago_2 = $cCclienteController->obtener_codigo_id($value['fd_metodo_pago_2']);
-            foreach ($metodo_pago_2 as $key => $valueocupacion) {
+            $metodo_pago_2_1 = $cCclienteController->obtener_codigo_id($value['fd_metodo_pago_2']);
+            foreach ($metodo_pago_2_1 as $key => $valueocupacion) {
                 $metodo_pago_2 = $valueocupacion['descripcion'];
             } 
 
