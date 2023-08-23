@@ -786,12 +786,14 @@ foreach ($declaracion_jurada as $key => $value) {
         
         <br>
         <br>
+        <br>
+        <br>
 
             <table class="table" style="width:100%; font-size: 10px;">
                 <tr>
-                    <td style="text-align: center;>____________________________________________</td>
-                    <td style="text-align: center;>____________________________________________</td>
-                    <td style="text-align: center;>____________________________________________</td>
+                    <td>____________________________________________</td>
+                    <td>____________________________________________</td>
+                    <td>____________________________________________</td>
                 </tr>
                 <tr>
                     <td style="text-align: center;">Firma del cliente</td>
