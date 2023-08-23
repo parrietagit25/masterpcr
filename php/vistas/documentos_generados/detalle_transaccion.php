@@ -198,7 +198,7 @@ $html = '<div class="container" style="font-size: 12px;">
                         <tr>
                             <td style="text-align:left">
                                 <b>OBSERVACIÓN ADICIONAL:</b>________________________________________________________________________ <br>
-                                <b>Recibo N°:</b>___________________________ <b>CANCELA TRASPASO</b>___________________________________<b>Monto</b><br>
+                                <b>Recibo N°:</b>___________________________ <b>CANCELA TRASPASO</b>___________________________ <b>Monto</b><br>
                                 ________________________________________________________________________________________________________<br>
                                 ________________________________________________________________________________________________________<br>
                                 ___________________________________________________________________________________________________<b>Total</b><br>
@@ -213,11 +213,11 @@ $html = '<div class="container" style="font-size: 12px;">
                     <br>
 
                     <p>
-                        <b>Vendedor:</b> _____________________________ <b>Tráfico:</b> ______________________________________ <br>
+                        <b>Vendedor:</b> _____________________________ <b>Tráfico:</b> ______________________________________ <br><br>
                         <b>Encargado de Sucursal:</b>_____________________________________ <b>Contabilidad:</b>____________________________________
                     </p>
                     
-                    <table class="table" style="width:90%; font-size: 12px; text-align:center;">
+                    <table class="table" style="width:100%; font-size: 12px; text-align:center;">
                         <tr>
                             <td style="background-color:#5467DE;">AVISO LEGAL</td>
                         </tr>
