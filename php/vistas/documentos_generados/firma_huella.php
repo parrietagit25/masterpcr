@@ -29,7 +29,7 @@ foreach ($generales as $key => $value) {
  // obtener la fecha en el formato que tiene el documento
 
 $timestamp = time();
-$fecha_formateada = date("j \d\e F \d\e Y", $timestamp);
+$fecha_formateada = date("j \de F \de Y", $timestamp);
 $meses_ingles = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 $meses_espanol = array("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre");
 $fecha_formateada = str_replace($meses_ingles, $meses_espanol, $fecha_formateada);
@@ -38,10 +38,10 @@ $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
 /*$mpdf->WriteHTML('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">'); */
-$html = '<div class="container" style="font-size: 10px;">
+$html = '<div class="container" style="font-size: 12px;">
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="table" style="width:90%; font-size: 10px;">
+                    <table class="table" style="width:100%; font-size: 12px;">
                         <tr>
                             <td style="text-align:left"><img src="logogrupopcr.png" alt="logo grupo pcr" width="200"></td>
                             <td style="text-align:right"><img src="logoima.jpg" alt="logo automarket" width="200"></td>
@@ -63,8 +63,28 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td></td>
                         </tr>
                     </table>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <table class="table" style="width:100%; font-size: 12px;">
+                        <tr>
+                            <td>
+                                Señores<br>
+                                PANAMÁ CAR RENTAL, S.A.<br>						
+                                Ciudad de Panamá
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table> 
                     
-                    
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
                     Estimados señores: <br>
                     Por este medio yo ____'.$nombre_completo.'___ con cédula/pasaporte número <br>
                     __'.$cedula.'__ doy fé que esta es mi firma realizada con mi puño y <br> 
@@ -73,7 +93,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     <br>
                     <br>
                     <br>
-                    <table class="table" style="width:100%; font-size: 10px;">
+                    <table class="table" style="width:100%; font-size: 12px; text-align: center;">
                         <tr>
                             <td style="text-align:left">______________________</td>
                             <td style="text-align:right">______________________</td>
@@ -86,13 +106,19 @@ $html = '<div class="container" style="font-size: 10px;">
                     
                     <br>
                     <br>
-                    En la ciudad de Panamá, yo ____________________, con cédula 0 pasaporte de identidad personal número <br>
+                    <br>
+                    <br>
+
+                    En la ciudad de Panamá, yo ____________________, con cédula o pasaporte de identidad personal número <br>
                     doy fé que la firma que antecede en este documento fue realizada por la persona arriba <br>
                     descrita, en mi presencia.
 
                     <br>
                     <br>
-                    <table class="table" style="width:100%; font-size: 10px;">
+                    <br>
+                    <br>
+
+                    <table class="table" style="width:100%; font-size: 12px; text-align: center;">
                         <tr>
                             <td style="text-align:left">______________________</td>
                             <td style="text-align:right">______________________</td>
@@ -103,9 +129,9 @@ $html = '<div class="container" style="font-size: 10px;">
                         </tr>
                     </table>
 
-                    </div>
                 </div>
-            </div>';
+            </div>
+        </div>';
 
 $mpdf->WriteHTML($html);
 $mpdf->Output();
