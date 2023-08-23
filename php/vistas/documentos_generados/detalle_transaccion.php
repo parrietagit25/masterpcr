@@ -75,14 +75,38 @@ $html = '<div class="container" style="font-size: 10px;">
                         </tr>
                     </table>
                     <br>
-                    <table class="table" style="width:64%; font-size: 10px;">
+                    <table class="table" style="width:100%; font-size: 12px;">
                         <tr>
                             <td>Recibo N°:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Monto:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Forma de Pago</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
+                        </tr>
+                        <tr>
+                            <td>|</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Recibo N°:</td>
+                            <td>___________________________</td>
+                            <td>Monto:</td>
+                            <td>___________________________</td>
+                            <td>Forma de Pago</td>
+                            <td>___________________________</td>
+                        </tr>
+                        <tr>
+                            <td>|</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Recibo N°:</td>
@@ -117,11 +141,11 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td>__________________</td>
                         </tr>
                         <tr>
-                            <td>Recibo N°:</td>
+                            <td>Carta Promesa:</td>
                             <td>__________________</td>
                             <td>Monto:</td>
                             <td>__________________</td>
-                            <td>Forma de Pago</td>
+                            <td>Banco</td>
                             <td>__________________</td>
                         </tr>
                     </table>

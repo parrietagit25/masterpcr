@@ -92,8 +92,8 @@ $html = '<div class="container" style="font-size: 10px;">
                     <br>
                     Atentamente, <br>
                     x________________________________________________ Colocar huella dactilar al lado de la firma. <br>
-                    Nombre completo:__'.$nombre_completo.'__ <br>
-                    Cédula o pasaporte:_'.$cedula.'_ <br>
+                    Nombre completo:____________________________________________<br>
+                    Cédula o pasaporte:_________________________________________ <br>
                     </p>
                     <br>
                     <br>
