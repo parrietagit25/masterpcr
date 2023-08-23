@@ -70,7 +70,7 @@ $html = '<div class="container" style="font-size: 10px;">
                         </tr>
                         <tr>
                             <td>
-                                |
+                                &nbsp;
                             </td>
                         </tr>
                     </table>
@@ -87,7 +87,7 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td>___________________________</td>
                         </tr>
                         <tr>
-                            <td style="color:withe;">|</td>
+                            <td style="color:withe;">&nbsp;</td>
                             <td></td>
                             <td></td>
                             <td></td>
