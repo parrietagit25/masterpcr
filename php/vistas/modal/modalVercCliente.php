@@ -3551,6 +3551,12 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Firma y Huella<br>
+                <a href="vistas/documentos_generados/firma_huella.php?id=<?php echo $id; ?>" target="_blank"><i class="fas fa-fingerprint" style="font-size: 100px;"></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
         </div>
     </div>
 <?php }elseif(isset($_GET['adjuntos_formulario_cc'])){ ?>
