@@ -35,7 +35,7 @@ $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
 $html = '<div class="container" style="font-size: 10px;">
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="table" style="width:90%; font-size: 10px;" border="0.5">
+                    <table class="table" style="width:100%; font-size: 10px;" border="0.5">
                         <tr>
                             <td>PANAMA CAR RENTAL, S.A.</td>
                             <td></td>
@@ -127,7 +127,7 @@ $html = '<div class="container" style="font-size: 10px;">
                             $pais_rf = '';
                         }
 
-                   $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
+                   $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                         <tr>
                             <td colspan="6" style="background-color:blue; color: white; text-align: center;"><b>Datos Generales</b></td>
                         </tr>
@@ -231,7 +231,7 @@ $html = '<div class="container" style="font-size: 10px;">
                 $ocupacion_descripcion = '';
             }
 
-            $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
+            $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                     <tr>
                         <td colspan="6" style="background-color:blue; color: white; text-align: center;"><b>Datos Ocupacionales</b></td>
                     </tr>
@@ -333,7 +333,7 @@ $html = '<div class="container" style="font-size: 10px;">
                 $metodo_pago_2 = '';
             }
 
-            $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
+            $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                     <tr>
                         <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>Declaracion y origen de fondos</b></td>
                     </tr>
@@ -368,7 +368,7 @@ $html = '<div class="container" style="font-size: 10px;">
 
         foreach ($referencias as $key => $value) { 
 
-            $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
+            $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                     <tr>
                         <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>Referencias</b></td>
                     </tr>
@@ -490,7 +490,7 @@ $html = '<div class="container" style="font-size: 10px;">
                  $ocupacion_descripcion_1 = '';
              }
 
-            $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
+            $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                         <tr>
                             <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>Beneficiario Final</b></td>
                         </tr>
@@ -652,7 +652,7 @@ $html = '<div class="container" style="font-size: 10px;">
             $ocupacion_descripcion_1_ft = '';
         }
 
-        $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
+        $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                     <tr>
                         <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>TERCEROS AUTORIZADOS</b></td>
                     </tr>
@@ -734,7 +734,7 @@ $html = '<div class="container" style="font-size: 10px;">
 
 foreach ($expuestas as $key => $value) { 
 
-    $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
+    $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                 <tr>
                     <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>PERSONAS EXPUESTAS POLÍTICAMENTE (PEPS)</b></td>
                 </tr>
@@ -768,7 +768,7 @@ foreach ($expuestas as $key => $value) {
 
 foreach ($declaracion_jurada as $key => $value) { 
 
-    $html .= '<table class="table" style="width:90%; font-size: 10px;" border="1">
+    $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                 <tr>
                     <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>DECLARACIÓN JURADA</b></td>
                 </tr>
@@ -782,7 +782,26 @@ foreach ($declaracion_jurada as $key => $value) {
             <br>';
         }
 
-        $html .='</div>
+        $html .='
+        
+        <br>
+        <br>
+
+            <table class="table" style="width:100%; font-size: 10px;">
+                <tr>
+                    <td>__________________________</td>
+                    <td>__________________________</td>
+                    <td>__________________________</td>
+                </tr>
+                <tr>
+                    <td>Firma del cliente</td>
+                    <td>Firma del Ejecutivo de ventas</td>
+                    <td>Firma del encargado de la sucursal</td>
+                </tr>
+            </table>
+
+        
+                </div>
             </div>
         </div>';
 
