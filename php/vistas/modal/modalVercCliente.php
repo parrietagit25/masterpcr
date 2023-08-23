@@ -3547,7 +3547,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Recibido Conforme<br>
-                <a href="#" target="_blank"><i class="ri-user-star-line" style="font-size: 100px;" ></i></a>
+                <a href="vistas/documentos_generados/RECIBIDO CONFORME _ macro.xlsx" target="_blank"><i class="ri-user-star-line" style="font-size: 100px;" ></i></a>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>
