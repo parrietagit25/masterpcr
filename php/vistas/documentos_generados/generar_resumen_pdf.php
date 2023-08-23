@@ -787,7 +787,6 @@ foreach ($declaracion_jurada as $key => $value) {
         <br>
         <br>
         <br>
-        <br>
 
             <table class="table" style="width:100%; font-size: 10px;">
                 <tr>
