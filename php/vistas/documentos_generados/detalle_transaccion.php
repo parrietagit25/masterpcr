@@ -184,7 +184,7 @@ $html = '<div class="container" style="font-size: 12px;">
                         </tr>
                     </table>
                     <br>
-                    Auto Trade In  (N° Recibo):	______________________ Monto: __________________________ <br>
+                    Auto Trade In  (N° Recibo):	______________________ Monto: __________________________ <br><br>
                     <table class="table" style="width:60%; font-size: 12px;">
                         <tr>
                             <td style="text-align:right">Total de Pagos</td>
@@ -198,7 +198,7 @@ $html = '<div class="container" style="font-size: 12px;">
                         <tr>
                             <td style="text-align:left">
                                 <b>OBSERVACIÓN ADICIONAL:</b>________________________________________________________________________ <br>
-                                <b>Recibo N°:</b>___________________________ <b>CANCELA TRASPASO</b>___________________________ <b>Monto</b><br>
+                                <b>Recibo N°:</b>___________________________ <b>CANCELA TRASPASO</b>_____________________________ <b>Monto</b><br>
                                 ________________________________________________________________________________________________________<br>
                                 ________________________________________________________________________________________________________<br>
                                 ___________________________________________________________________________________________________<b>Total</b><br>
