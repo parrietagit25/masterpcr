@@ -75,6 +75,8 @@ $html = '<div class="container" style="font-size: 10px;">
                         </tr>
                     </table>
                     <br>
+                    <br>
+                    <br>
                     <table class="table" style="width:100%; font-size: 12px;">
                         <tr>
                             <td>Recibo N°:</td>
@@ -85,7 +87,7 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td>___________________________</td>
                         </tr>
                         <tr>
-                            <td>|</td>
+                            <td style="color:withe;">|</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -101,7 +103,7 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td>___________________________</td>
                         </tr>
                         <tr>
-                            <td>|</td>
+                            <td style="color:withe;">|</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -110,43 +112,75 @@ $html = '<div class="container" style="font-size: 10px;">
                         </tr>
                         <tr>
                             <td>Recibo N°:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Monto:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Forma de Pago</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
+                        </tr>
+                        <tr>
+                            <td style="color:withe;">|</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Recibo N°:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Monto:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Forma de Pago</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
+                        </tr>
+                        <tr>
+                            <td style="color:withe;">|</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Recibo N°:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Monto:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Forma de Pago</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
+                        </tr>
+                        <tr>
+                            <td style="color:withe;">|</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Recibo N°:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Monto:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Forma de Pago</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
+                        </tr>
+                        <tr>
+                            <td style="color:withe;">|</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Carta Promesa:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Monto:</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                             <td>Banco</td>
-                            <td>__________________</td>
+                            <td>___________________________</td>
                         </tr>
                     </table>
                     <br>
