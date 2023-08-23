@@ -29,10 +29,14 @@ foreach ($generales as $key => $value) {
  // obtener la fecha en el formato que tiene el documento
 
 $timestamp = time();
-$fecha_formateada = date("j \d\e F \d\e Y", $timestamp);
+//$fecha_formateada = date("j \d\e F \d\e Y", $time`stamp);
+$dia = date('j', $timestamp);
+$mes = date('F', $timestamp);
+$ano = date('Y', $timestamp);
 $meses_ingles = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 $meses_espanol = array("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre");
-$fecha_formateada = str_replace($meses_ingles, $meses_espanol, $fecha_formateada);
+$mes = str_replace($meses_ingles, $meses_espanol, $mes);
+$fecha_formateada = $dia . ' de ' . $mes . ' de ' . $ano;
 
 $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
