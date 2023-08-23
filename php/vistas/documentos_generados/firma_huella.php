@@ -29,7 +29,7 @@ foreach ($generales as $key => $value) {
  // obtener la fecha en el formato que tiene el documento
 
 $timestamp = time();
-$fecha_formateada = date("j \de F \de Y", $timestamp);
+$fecha_formateada = date("j \d\e F \d\e Y", $timestamp);
 $meses_ingles = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 $meses_espanol = array("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre");
 $fecha_formateada = str_replace($meses_ingles, $meses_espanol, $fecha_formateada);
@@ -55,11 +55,7 @@ $html = '<div class="container" style="font-size: 12px;">
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                Señores<br>
-                                PANAMÁ CAR RENTAL, S.A.<br>						
-                                Ciudad de Panamá
-                            </td>
+                            <td></td>
                             <td></td>
                         </tr>
                     </table>
@@ -94,11 +90,11 @@ $html = '<div class="container" style="font-size: 12px;">
                     <br>
                     <br>
                     <table class="table" style="width:100%; font-size: 12px; text-align: center;">
-                        <tr>
+                        <tr style="text-align: center;">
                             <td style="text-align:left">______________________</td>
                             <td style="text-align:right">______________________</td>
                         </tr>
-                        <tr>
+                        <tr style="text-align: center;">
                             <td style="text-align:left">Firma y cédula del cliente</td>
                             <td style="text-align:right">Huella Dactilar del cliente</td>
                         </tr>
@@ -110,7 +106,7 @@ $html = '<div class="container" style="font-size: 12px;">
                     <br>
 
                     En la ciudad de Panamá, yo ____________________, con cédula o pasaporte de identidad personal número <br>
-                    doy fé que la firma que antecede en este documento fue realizada por la persona arriba <br>
+                    ____________________ doy fé que la firma que antecede en este documento fue realizada por la persona arriba <br>
                     descrita, en mi presencia.
 
                     <br>
@@ -119,11 +115,11 @@ $html = '<div class="container" style="font-size: 12px;">
                     <br>
 
                     <table class="table" style="width:100%; font-size: 12px; text-align: center;">
-                        <tr>
+                        <tr style="text-align: center;">
                             <td style="text-align:left">______________________</td>
                             <td style="text-align:right">______________________</td>
                         </tr>
-                        <tr>
+                        <tr style="text-align: center;">
                             <td style="text-align:left">Firma y cédula por Panamá<br> Car Rental S.A.</td>
                             <td style="text-align:right">Huella Dactilar por Panamá<br> Car Rental S.A.</td>
                         </tr>
