@@ -45,10 +45,10 @@ $mpdf = new \Mpdf\Mpdf();
 $link_imagen = "http://i.postimg.cc/Nj27DNw9/logonf.png";
 /*$mpdf->WriteHTML('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">'); */
-$html = '<div class="container" style="font-size: 10px;">
+$html = '<div class="container" style="font-size: 12px;">
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="table" style="width:90%; font-size: 10px;">
+                    <table class="table" style="width:90%; font-size: 12px;">
                         <tr>
                             <td style="text-align:right"><img src="logoima.jpg" alt="Descripción de la imagen" width="250"></td>
                         </tr>
@@ -59,12 +59,12 @@ $html = '<div class="container" style="font-size: 10px;">
                     CLIENTE:_'.$nombre_completo.'_ MARCA:_'.$marca.'_ <br>
                     MODELO:_'.$modelo.'_ AÑO: __'.$anio.'__ PLACA: __'.$placa.'__ CÓDIGO: _________________ <br>
                     CHASIS:__'.$chacis.'__ MOTOR:__'.$motor.'__ <br>
-                    <br>
-                    Número de factura:______________________________________ <br>
+                    <br><br>
+                    Número de factura:______________________________________ <br><br>
                     Monto: _______________________________________ <br>
                     <br>
 
-                    <table class="table" style="width:40%; font-size: 10px; position:absolute; left:50%; margin-left:33%; " border="1">
+                    <table class="table" style="width:40%; font-size: 12px; position:absolute; left:50%; margin-left:33%; " border="1">
                         <tr>
                             <td style="text-align:center">Formato de pago</td>
                         </tr>
@@ -185,7 +185,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     </table>
                     <br>
                     Auto Trade In  (N° Recibo):	______________________ Monto: __________________________ <br>
-                    <table class="table" style="width:60%; font-size: 10px;">
+                    <table class="table" style="width:60%; font-size: 12px;">
                         <tr>
                             <td style="text-align:right">Total de Pagos</td>
                             <td>B/. ________________________________</td>
@@ -194,7 +194,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     <br>
                     <b>NOTA:</b> El monto total de pagos debe ser igual al valor de la factura <br>
                     
-                    <table class="table" style="width:90%; font-size: 10px;" border="1">
+                    <table class="table" style="width:100%; font-size: 12px;" border="1">
                         <tr>
                             <td style="text-align:left">
                                 <b>OBSERVACIÓN ADICIONAL:</b>________________________________________________________________________ <br>
@@ -217,7 +217,7 @@ $html = '<div class="container" style="font-size: 10px;">
                         <b>Encargado de Sucursal:</b>_____________________________________ <b>Contabilidad:</b>____________________________________
                     </p>
                     
-                    <table class="table" style="width:90%; font-size: 10px; text-align:center;">
+                    <table class="table" style="width:90%; font-size: 12px; text-align:center;">
                         <tr>
                             <td style="background-color:#5467DE;">AVISO LEGAL</td>
                         </tr>
