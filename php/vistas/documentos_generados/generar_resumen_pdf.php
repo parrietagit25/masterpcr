@@ -794,9 +794,9 @@ foreach ($declaracion_jurada as $key => $value) {
                     <td>____________________________________________</td>
                 </tr>
                 <tr>
-                    <td>Firma del cliente</td>
-                    <td>Firma del Ejecutivo de ventas</td>
-                    <td>Firma del encargado de la sucursal</td>
+                    <td style="text-align: center;">Firma del cliente</td>
+                    <td style="text-align: center;">Firma del Ejecutivo de ventas</td>
+                    <td style="text-align: center;">Firma del encargado de la sucursal</td>
                 </tr>
             </table>
 
