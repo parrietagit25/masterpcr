@@ -75,8 +75,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="exp_fecha" value="<?php echo $value['exp_fecha']; ?>">
+                                                                    <input type="date" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="exp_fecha" value="<?php if($value['exp_fecha']=='1970-01-01'){ } else{echo $value['exp_fecha']; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -233,8 +233,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fg_fecha_nacimiento" value="<?php echo $valueGenerales['fg_fecha_nacimiento']; ?>">
+                                                                    <input type="date" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fg_fecha_nacimiento" value="<?php if($valueGenerales['fg_fecha_nacimiento']=='1970-01-01'){ } else{echo $valueGenerales['fg_fecha_nacimiento']; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -849,8 +849,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fb_fecha_nacimiento" value="<?php echo $fb_fecha_nacimiento; ?>">
+                                                                    <input type="date" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fb_fecha_nacimiento" value="<?php if($fb_fecha_nacimiento=='1970-01-01'){ } else{echo $fb_fecha_nacimiento; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1165,8 +1165,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="ft_fecha_nacimiento" value="<?php echo $ft_fecha_nacimiento; ?>">
+                                                                    <input type="date" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="ft_fecha_nacimiento" value="<?php if($ft_fecha_nacimiento=='1970-01-01'){ } else{echo $ft_fecha_nacimiento; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1402,8 +1402,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Actual</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fp_fecha" value="<?php echo $fp_fecha; ?>">
+                                                                    <input type="date" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fp_fecha" value="<?php if($fp_fecha=='1970-01-01'){ } else{echo $fp_fecha; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1423,8 +1423,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Anterior</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fp_fecha_anterior" value="<?php echo $fp_fecha_anterior; ?>">
+                                                                    <input type="date" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fp_fecha_anterior" value="<?php if($fp_fecha_anterior=='1970-01-01'){ } else{echo $fp_fecha_anterior; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1493,8 +1493,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fdc_fecha" value="<?php echo $fdc_fecha; ?>">
+                                                                    <input type="date" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fdc_fecha" value="<?php if($fdc_fecha=='1970-01-01'){ } else{echo $fdc_fecha; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1685,8 +1685,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fui_fecha_1" value="<?php echo $fui_fecha_1; ?>">
+                                                                    <input type="date" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fui_fecha_1" value="<?php if($fui_fecha_1=='1970-01-01'){ } else{echo $fui_fecha_1; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1718,8 +1718,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fui_fecha_2" value="<?php echo $fui_fecha_2; ?>">
+                                                                    <input type="date" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fui_fecha_2" value="<?php if($fui_fecha_2=='1970-01-01'){ } else{echo $fui_fecha_2; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1751,8 +1751,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fui_fecha_3" value="<?php echo $fui_fecha_3; ?>">
+                                                                    <input type="date" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fui_fecha_3" value="<?php if($fui_fecha_3=='1970-01-01'){ } else{echo $fui_fecha_3; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
 
@@ -1785,8 +1785,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="fui_fecha_4" value="<?php echo $fui_fecha_4; ?>">
+                                                                    <input type="date" class="form-control" data-provider="flatpickr"
+                                                                    data-date-format="d M, Y" name="fui_fecha_4" value="<?php if($fui_fecha_4=='1970-01-01'){ } else{echo $fui_fecha_4; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
                                                             <!--end col-->

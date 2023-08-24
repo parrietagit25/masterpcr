@@ -499,6 +499,8 @@ class CcclienteController {
             }
         }
 
+        $datos_generales["fg_fecha_nacimiento"] = date('Y-m-d', strtotime($datos_generales["fg_fecha_nacimiento"])); // agregado problema de la fecha 
+
         $this->ModelGlobal->actualizar($this->tabla_cc_generales, "id = $id", $datos_generales);
 
         // Portada
@@ -509,6 +511,8 @@ class CcclienteController {
                 $datos_expediente[$key] = $value; 
             }
         }
+
+        $datos_expediente["exp_fecha"] = date('Y-m-d', strtotime($datos_expediente["exp_fecha"])); // agregado problema de la fecha 
 
         $this->ModelGlobal->actualizar($this->tabla_cc_expediente, "id_general = $id", $datos_expediente);
 
@@ -554,6 +558,8 @@ class CcclienteController {
             }
         }
 
+        $datos_beneficiario["fb_fecha_nacimiento"] = date('Y-m-d', strtotime($datos_beneficiario["fb_fecha_nacimiento"])); // agregado problema de la fecha 
+
         $this->ModelGlobal->actualizar($this->tabla_cc_beneficiario, "id_general = $id", $datos_beneficiario);
 
         // Terceros autorizados
@@ -564,6 +570,9 @@ class CcclienteController {
                 $datos_terceros_autorizados[$key] = $value; 
             }
         }
+
+        $datos_terceros_autorizados["ft_fecha_nacimiento"] = date('Y-m-d', strtotime($datos_terceros_autorizados["ft_fecha_nacimiento"])); // agregado problema de la fecha 
+
 
         $this->ModelGlobal->actualizar($this->tabla_cc_terceros_autorizados, "id_general = $id", $datos_terceros_autorizados);
 
@@ -576,6 +585,9 @@ class CcclienteController {
             }
         }
 
+        $datos_personas_expuestas["fp_fecha"] = date('Y-m-d', strtotime($datos_personas_expuestas["fp_fecha"])); // agregado problema de la fecha 
+        $datos_personas_expuestas["fp_fecha_anterior"] = date('Y-m-d', strtotime($datos_personas_expuestas["fp_fecha_anterior"])); // agregado problema de la fecha
+
         $this->ModelGlobal->actualizar($this->tabla_cc_personas_expuestas, "id_general = $id", $datos_personas_expuestas);
 
         // Declaracion jurada
@@ -587,6 +599,7 @@ class CcclienteController {
             }
         }
 
+        $datos_cc_declaracion_jurada["fdc_fecha"] = date('Y-m-d', strtotime($datos_cc_declaracion_jurada["fdc_fecha"])); // agregado problema de la fecha 
         $this->ModelGlobal->actualizar($this->tabla_cc_declaracion_jurada, "id_general = $id", $datos_cc_declaracion_jurada);
 
         // uso interno
@@ -597,6 +610,11 @@ class CcclienteController {
                 $datos_cc_uso_interno[$key] = $value; 
             }
         }
+        
+        $datos_cc_uso_interno["fui_fecha_1"] = date('Y-m-d', strtotime($datos_cc_uso_interno["fui_fecha_1"])); // agregado problema de la fecha 
+        $datos_cc_uso_interno["fui_fecha_2"] = date('Y-m-d', strtotime($datos_cc_uso_interno["fui_fecha_2"])); // agregado problema de la fecha 
+        $datos_cc_uso_interno["fui_fecha_3"] = date('Y-m-d', strtotime($datos_cc_uso_interno["fui_fecha_3"])); // agregado problema de la fecha 
+        $datos_cc_uso_interno["fui_fecha_4"] = date('Y-m-d', strtotime($datos_cc_uso_interno["fui_fecha_4"])); // agregado problema de la fecha 
 
         $this->ModelGlobal->actualizar($this->tabla_cc_uso_interno, "id_general = $id", $datos_cc_uso_interno);
     
