@@ -756,7 +756,7 @@ foreach ($expuestas as $key => $value) {
                 <tr>
                     <td><b>CARGO ACTUAL</b></td>
                     <td>'.$value['fp_cargo_actual'].'</td>
-                    <td><b>PRIMER NOMBRE</b></td>
+                    <td><b>OTRO</b></td>
                     <td>'.$value['fp_otro'].'</td>
                 </tr>
                 <tr>
