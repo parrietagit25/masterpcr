@@ -127,6 +127,8 @@ $html = '<div class="container" style="font-size: 10px;">
                             $pais_rf = '';
                         }
 
+                        if($value['fg_fecha_nacimiento']=='1970-01-01'){ $fecha_nacimiento = ''; } else{ $fecha_nacimiento = $value['exp_fecha']; }
+
                    $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                         <tr>
                             <td colspan="6" style="background-color:blue; color: white; text-align: center;"><b>Datos Generales</b></td>
@@ -153,7 +155,7 @@ $html = '<div class="container" style="font-size: 10px;">
                             <td></td>
                             <td></td>
                             <td><b>FECHA DE NACIMIENTO</b></td>
-                            <td>'.$value['fg_fecha_nacimiento'].'</td>
+                            <td>'.$fecha_nacimiento.'</td>
                         </tr>
                         <tr>
                             <td><b>NACIONALIDAD</b></td>
@@ -490,6 +492,8 @@ $html = '<div class="container" style="font-size: 10px;">
                  $ocupacion_descripcion_1 = '';
              }
 
+             if($value['fb_fecha_nacimiento']=='1970-01-01'){ $fecha_nacimiento_bf = ''; } else{ $fecha_nacimiento_bf = $value['fb_fecha_nacimiento']; }
+
             $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                         <tr>
                             <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>Beneficiario Final</b></td>
@@ -520,7 +524,7 @@ $html = '<div class="container" style="font-size: 10px;">
                         </tr>
                         <tr>
                             <td><b>FECHA DE NACIMIENTO:</b></td>
-                            <td>'.$value['fb_fecha_nacimiento'].'</td>
+                            <td>'.$fecha_nacimiento_bf.'</td>
                             <td><b>NACINALIDAD</b></td>
                             <td>'.$nacionalidad_bf.'</td>
                         </tr>
@@ -652,6 +656,8 @@ $html = '<div class="container" style="font-size: 10px;">
             $ocupacion_descripcion_1_ft = '';
         }
 
+        if($value['ft_fecha_nacimiento']=='1970-01-01'){ $fecha_nacimiento_fn = ''; } else{ $fecha_nacimiento_fn = $value['ft_fecha_nacimiento']; }
+
         $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                     <tr>
                         <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>TERCEROS AUTORIZADOS</b></td>
@@ -684,7 +690,7 @@ $html = '<div class="container" style="font-size: 10px;">
                         <td><b>PAIS DE NACIMIENTO:</b></td>
                         <td>'.$pais_nbft.'</td>
                         <td><b>FECHA NACIMIENTO</b></td>
-                        <td>'.$value['ft_fecha_nacimiento'].'</td>
+                        <td>'.$fecha_nacimiento_fn.'</td>
                     </tr>
                     <tr>
                         <td><b>NACIONALIDAD:</b></td>
@@ -734,6 +740,9 @@ $html = '<div class="container" style="font-size: 10px;">
 
 foreach ($expuestas as $key => $value) { 
 
+    if($value['fp_fecha']=='1970-01-01'){ $fecha_actual = ''; } else{ $fecha_actual = $value['fp_fecha']; }
+    if($value['fp_fecha_anterior']=='1970-01-01'){ $fecha_anterior = ''; } else{ $fecha_anterior = $value['fp_fecha_anterior']; }
+
     $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                 <tr>
                     <td colspan="4" style="background-color:blue; color: white; text-align: center;"><b>PERSONAS EXPUESTAS POLÍTICAMENTE (PEPS)</b></td>
@@ -751,15 +760,15 @@ foreach ($expuestas as $key => $value) {
                     <td>'.$value['fp_otro'].'</td>
                 </tr>
                 <tr>
-                    <td><b>SEGUNDO NOMBRE:</b></td>
-                    <td>'.$value['fp_fecha'].'</td>
-                    <td><b>APELLIDO PATERNO</b></td>
+                    <td><b>FECHA ACTUAL:</b></td>
+                    <td>'.$fecha_actual.'</td>
+                    <td><b>CARGO ANTERIOR</b></td>
                     <td>'.$value['fp_cargo_anterior'].'</td>
                 </tr>
                 <tr>
-                    <td><b>APELLIDO MATERNO:</b></td>
-                    <td>'.$value['fp_fecha_anterior'].'</td>
-                    <td><b>APELLIDO CASADA</b></td>
+                    <td><b>FECHA ANTERIOR:</b></td>
+                    <td>'.$fecha_anterior.'</td>
+                    <td><b>COMENTARIOS</b></td>
                     <td>'.$value['fp_comentario'].'</td>
                 </tr>
             </table>
@@ -767,6 +776,8 @@ foreach ($expuestas as $key => $value) {
         }
 
 foreach ($declaracion_jurada as $key => $value) { 
+
+    if($value['fdc_fecha']=='1970-01-01'){ $fdc_fecha = ''; } else{ $fdc_fecha = $value['fdc_fecha']; }
 
     $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                 <tr>
@@ -776,7 +787,7 @@ foreach ($declaracion_jurada as $key => $value) {
                     <td><b>NOMBRE COMPLETO</b></td>
                     <td>'.$value['fdc_nombre_completo'].'</td>
                     <td><b>FECHA</b></td>
-                    <td>'.$value['fdc_fecha'].'</td>
+                    <td>'.$fdc_fecha.'</td>
                 </tr>
             </table>
             <br>';

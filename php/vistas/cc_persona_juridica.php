@@ -1483,7 +1483,7 @@
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="pjdf_forma_pago">
                                                                                                         <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($profesion as $key => $value) { ?>
+                                                                                                        <?php foreach ($forma_pago as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                                                         <?php } ?>
                                                                                                     </select>
