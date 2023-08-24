@@ -127,7 +127,7 @@ $html = '<div class="container" style="font-size: 10px;">
                             $pais_rf = '';
                         }
 
-                        if($value['fg_fecha_nacimiento']=='1970-01-01'){ $fecha_nacimiento = ''; } else{ $fecha_nacimiento = $value['exp_fecha']; }
+                        if($value['fg_fecha_nacimiento']=='1970-01-01'){ $fecha_nacimiento = ''; } else{ $fecha_nacimiento = $value['fg_fecha_nacimiento']; }
 
                    $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                         <tr>
