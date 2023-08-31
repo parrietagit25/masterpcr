@@ -2057,7 +2057,21 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                             $p_jdj_firma_2 = '<a href="'.$p_jdj_firma_2.'" target="_blank">Firma adjunta</a>';
                                          }
 
-                                     } ?>
+                                     }
+
+                                     if (!isset($p_jdj_nombre_completo_2)) {
+                                        $p_jdj_firma_2 = '';
+                                     }
+
+                                     if (!isset($p_jdj_fecha_2)) {
+                                        $$p_jdj_fecha_2 = '';
+                                     }
+                                     
+                                     if (!isset($p_jdj_firma_2)) {
+                                        $p_jdj_firma_2 = '';
+                                     }
+                                     
+                                     ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="card">
@@ -2093,8 +2107,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="p_jdj_fecha_2" value="<?php echo $p_jdj_fecha_2; ?>">
+                                                                    <input type="date" class="form-control" name="p_jdj_fecha_2" value="<?php echo $p_jdj_fecha_2; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
