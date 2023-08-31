@@ -2064,7 +2064,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                      }
 
                                      if (!isset($p_jdj_fecha_2)) {
-                                        $$p_jdj_fecha_2 = '';
+                                        $p_jdj_fecha_2 = '';
                                      }
                                      
                                      if (!isset($p_jdj_firma_2)) {
