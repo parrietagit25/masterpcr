@@ -1126,7 +1126,6 @@
                                             </div>
                                             <div class="modal-body">
                                                 <h6 class="fs-15">
-                                                    Portada Filen Ventas.
                                                 </h6>
                                                 <div id="contenido_modal_portada">
 

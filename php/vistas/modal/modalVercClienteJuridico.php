@@ -4916,8 +4916,18 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
 </form>
 
 <?php }elseif(isset($_GET['portada_formulario_cc'])){ ?>
-    <div class="col-xl-3 col-lg-4 col-sm-6" style="margin-left:75px;">
-        <a href="vistas/documentos_generados/general_pdf_pj_.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bxs-file-pdf" style="font-size: 100px;" ></i></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h5>Portada Filen Ventas</h5>
+                <a href="vistas/documentos_generados/general_pdf_pj_.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bxs-file-pdf" style="font-size: 100px;" ></i></a>
+            </div>
+            <div class="col-sm-6">
+                <br>
+                <h5>Resumen</h5>
+                <a href="vistas/documentos_generados/generar_resumen_pj_pdf.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bxs-file-pdf" style="font-size: 100px;" ></i></a>
+            </div>
+        </div>
     </div>
 <?php }elseif(isset($_GET['recaudos_contratos_formulario_cc'])){ ?> 
     <div class="container">
