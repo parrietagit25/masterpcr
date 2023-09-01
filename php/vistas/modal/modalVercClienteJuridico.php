@@ -1765,54 +1765,54 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
 
                                      } 
 
-                                     if ($pjpx_relacion_directa) {
+                                     if (!isset($pjpx_relacion_directa)) {
                                         $pjpx_relacion_directa='';
                                      }
 
-                                     if ($pjpx_nombre_completo) {
+                                     if (!isset($pjpx_nombre_completo)) {
                                         $pjpx_nombre_completo='';
                                      }
 
-                                     if ($pjpx_cargo_actual) {
+                                     if (!isset($pjpx_cargo_actual)) {
                                         $pjpx_cargo_actual='';
                                      }
 
-                                     if ($pjpx_fecha_cargo_actual) {
+                                     if (!isset($pjpx_fecha_cargo_actual)) {
                                         $pjpx_fecha_cargo_actual='';
                                      }
                                      
-                                     if ($pjpx_cargo_anterior) {
+                                     if (!isset($pjpx_cargo_anterior)) {
                                         $pjpx_cargo_anterior='';
                                      }
 
-                                     if ($pjpx_fecha_cargo_anterior) {
+                                     if (!isset($pjpx_fecha_cargo_anterior)) {
                                         $pjpx_fecha_cargo_anterior='';
                                      }
 
-                                     if ($pjpx_pep_relacion_directa) {
+                                     if (!isset($pjpx_pep_relacion_directa)) {
                                         $pjpx_pep_relacion_directa='';
                                      }
 
-                                     if ($pjpx_nombre_completo_2) {
+                                     if (!isset($pjpx_nombre_completo_2)) {
                                         $pjpx_nombre_completo_2='';
                                      }
-                                     if ($pjpx_cargo_actual_2) {
+                                     if (!isset($pjpx_cargo_actual_2)) {
                                         $pjpx_cargo_actual_2='';
                                      }
 
-                                     if ($pjpx_fecha_cargo_actual_2) {
+                                     if (!isset($pjpx_fecha_cargo_actual_2)) {
                                         $pjpx_fecha_cargo_actual_2='';
                                      }
 
-                                     if ($pjpx_cargo_anterior_2) {
+                                     if (!isset($pjpx_cargo_anterior_2)) {
                                         $pjpx_cargo_anterior_2='';
                                      }
 
-                                     if ($pjpx_fecha_cargo_anterior_2) {
+                                     if (!isset($pjpx_fecha_cargo_anterior_2)) {
                                         $pjpx_fecha_cargo_anterior_2='';
                                      }
                                      
-                                     if ($pjpx_comentarios_2) {
+                                     if (!isset($pjpx_comentarios_2)) {
                                         $pjpx_comentarios_2='';
                                      }
                                      
