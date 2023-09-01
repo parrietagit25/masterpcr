@@ -387,13 +387,25 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                     PROVENIENTES DE ACTIVIDADES ILÍCITAS, NI EFECTUARÉ TRANSACCIONES DESTINADAS A TALES ACTIVIDADES O A FAVOR DE PERSONAS RELACIONADAS A LAS MISMAS.
                                                     </p>
                                                     <div class="live-preview">
-                                                        <?php foreach ($declaracion as $key => $value) { ?>
+                                                        <?php foreach ($declaracion as $key => $value) { 
+
+                                                                $pjdf_actividad_principal = $value['pjdf_actividad_principal'];
+                                                                $pjdf_actividad_secundaria = $value['pjdf_actividad_secundaria'];
+                                                                $pjdf_otras_fuentes = $value['pjdf_otras_fuentes'];
+                                                                $pjdf_otras_fuentes_secundaria = $value['pjdf_otras_fuentes_secundaria'];
+                                                                $pjdf_limite_compra = $value['pjdf_limite_compra'];
+                                                                $pjdf_forma_pago = $value['pjdf_forma_pago'];
+                                                                $pjdf_metodo_pago_1 = $value['pjdf_metodo_pago_1'];
+                                                                $pjdf_metodo_pago_2 = $value['pjdf_metodo_pago_2'];
+
+                                                         } ?>
+                                                        
                                                         <div class="row gy-4">
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Actividaad principal</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjdf_actividad_principal"><?php echo $value['pjdf_actividad_principal']; ?></textarea>
+                                                                        rows="3" name="pjdf_actividad_principal"><?php echo $pjdf_actividad_principal; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -401,7 +413,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Actividad secundaria</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjdf_actividad_secundaria"><?php echo $value['pjdf_actividad_secundaria']; ?></textarea>
+                                                                        rows="3" name="pjdf_actividad_secundaria"><?php echo $pjdf_actividad_secundaria; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -409,7 +421,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Otras fuentes</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjdf_otras_fuentes"><?php echo $value['pjdf_otras_fuentes']; ?></textarea>
+                                                                        rows="3" name="pjdf_otras_fuentes"><?php echo $pjdf_otras_fuentes; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -417,7 +429,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Otras fuentes 2</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjdf_otras_fuentes_secundaria"><?php echo $value['pjdf_otras_fuentes_secundaria']; ?></textarea>
+                                                                        rows="3" name="pjdf_otras_fuentes_secundaria"><?php echo $pjdf_otras_fuentes_secundaria; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -428,7 +440,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjdf_limite_compra">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($limite as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjdf_limite_compra']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjdf_limite_compra){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -441,7 +453,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjdf_forma_pago">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjdf_forma_pago']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjdf_forma_pago){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -454,7 +466,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjdf_metodo_pago_1">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($motodo_pago as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjdf_metodo_pago_1']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjdf_metodo_pago_1){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -467,7 +479,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjdf_metodo_pago_2">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($motodo_pago as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjdf_metodo_pago_2']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjdf_metodo_pago_2){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -475,7 +487,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <!--end col-->
                                                         </div>
                                                         <!--end row-->
-                                                        <?php } ?>
+                                                        
                                                     </div>
                                                     <div class="d-none code-view">
                                                         <pre class="language-markup" style="height: 450px;">
