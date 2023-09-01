@@ -831,11 +831,11 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         $pjpr_licita_estado = '';
                                      }
 
-                                     if !(isset($pjpr_licita_pais)) {
+                                     if (!isset($pjpr_licita_pais)) {
                                         $pjpr_licita_pais = '';
                                      }
 
-                                     if !(isset($pjpr_cotiza_bolsa)) {
+                                     if (!isset($pjpr_cotiza_bolsa)) {
                                         $pjpr_cotiza_bolsa = '';
                                      }
 
