@@ -821,7 +821,33 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                             $pjpr_cotiza_bolsa = $value['pjpr_cotiza_bolsa'];
                                             $pjpr_descripcion_cotiza_bolsa = $value['pjpr_descripcion_cotiza_bolsa'];
                                             $pjpr_nombre_bolsa_ticker = $value['pjpr_nombre_bolsa_ticker'];
-                                     } ?>
+                                     } 
+                                     
+                                     if (!isset($pjpr_publica_privada)) {
+                                        $pjpr_publica_privada = '';
+                                     }
+
+                                     if (!isset($pjpr_licita_estado)) {
+                                        $pjpr_licita_estado = '';
+                                     }
+
+                                     if !(isset($pjpr_licita_pais)) {
+                                        $pjpr_licita_pais = '';
+                                     }
+
+                                     if !(isset($pjpr_cotiza_bolsa)) {
+                                        $pjpr_cotiza_bolsa = '';
+                                     }
+
+                                     if (!isset($pjpr_descripcion_cotiza_bolsa)) {
+                                        $pjpr_descripcion_cotiza_bolsa = '';
+                                     }
+
+                                     if (!isset($pjpr_nombre_bolsa_ticker)) {
+                                        $pjpr_nombre_bolsa_ticker = '';
+                                     }
+                                     
+                                     ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="card">
@@ -1015,7 +1041,101 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     $pjbf_lugar_trabajo = $value['pjbf_lugar_trabajo'];
                                                                     $pjbf_direccion_trabajo = $value['pjbf_direccion_trabajo'];
 
-                                                         } ?>
+                                                         } 
+                                                         
+                                                         if (!isset($pjbf_transpaso_cliente_tercero)) {
+                                                            $pjbf_transpaso_cliente_tercero = '';
+                                                         }
+                                                         
+                                                         if (!isset($pjbf_relacion_cliente)) {
+                                                            $pjbf_relacion_cliente = '';
+                                                         }
+
+                                                         if (!isset($pjbf_primer_nombre)) {
+                                                            $pjbf_primer_nombre = '';
+                                                         }
+
+                                                         if (!isset($pjbf_segundo_nomnbre)) {
+                                                            $pjbf_segundo_nomnbre = '';
+                                                         }
+
+                                                         if (!isset($pjbf_apellido_parterno)) {
+                                                            $pjbf_apellido_parterno = '';
+                                                         }
+
+                                                         if (!isset($pjbf_apellido_materno)) {
+                                                            $pjbf_apellido_materno = '';
+                                                         }
+
+                                                         if (!isset($pjbf_apellido_casada)) {
+                                                            $pjbf_apellido_casada = '';
+                                                         }
+
+                                                         if (!isset($pjbf_pais_nacimiento)) {
+                                                            $pjbf_pais_nacimiento = '';
+                                                         }
+
+                                                         if (!isset($pjbf_fecha_nacimiento)) {
+                                                            $pjbf_fecha_nacimiento = '';
+                                                         }
+                                                         
+                                                         if (!isset($pjbf_genero)) {
+                                                            $pjbf_genero = '';
+                                                         }
+
+                                                         if (!isset($pjbf_nacionalidad)) {
+                                                            $pjbf_nacionalidad = '';
+                                                         }
+
+                                                         if (!isset($pjbf_estado_civil)) {
+                                                            $pjbf_estado_civil = '';
+                                                         }
+
+                                                         if (!isset($pjbf_cedula_pasaporte)) {
+                                                            $pjbf_cedula_pasaporte = '';
+                                                         }
+
+                                                         if (!isset($pjbf_pais_residencia)) {
+                                                            $pjbf_pais_residencia = '';
+                                                         }
+
+                                                         if (!isset($pjbf_direccion_residencia)) {
+                                                            $pjbf_direccion_residencia = '';
+                                                         }
+
+                                                         if (!isset($pjbf_pais_residencia_fiscal)) {
+                                                            $pjbf_pais_residencia_fiscal = '';
+                                                         }
+
+                                                         if (!isset($pjbf_correo)) {
+                                                            $pjbf_correo = '';
+                                                         } 
+
+                                                         if (!isset($pjbf_telefono_residencial)) {
+                                                           $pjbf_telefono_residencial = '';
+                                                         }
+
+                                                         if (!isset($pjbf_telefono_celular)) {
+                                                            $pjbf_telefono_celular = '';
+                                                         }
+
+                                                         if (!isset($pjbf_profesion)) {
+                                                            $pjbf_profesion = '';
+                                                         }
+                                                         
+                                                         if (!isset($pjbf_ocupacion)) {
+                                                            $pjbf_ocupacion = '';
+                                                         }
+
+                                                         if (!isset($pjbf_lugar_trabajo)) {
+                                                            $pjbf_lugar_trabajo = '';
+                                                         }
+
+                                                         if (!isset($pjbf_direccion_trabajo)) {
+                                                            $pjbf_direccion_trabajo = '';
+                                                         }
+
+                                                         ?>
                                                         <div class="row gy-4">
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
@@ -1644,7 +1764,57 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                             $pjpx_comentarios_2 = $value['pjpx_comentarios_2'];
 
                                      } 
+
+                                     if ($pjpx_relacion_directa) {
+                                        $pjpx_relacion_directa='';
+                                     }
+
+                                     if ($pjpx_nombre_completo) {
+                                        $pjpx_nombre_completo='';
+                                     }
+
+                                     if ($pjpx_cargo_actual) {
+                                        $pjpx_cargo_actual='';
+                                     }
+
+                                     if ($pjpx_fecha_cargo_actual) {
+                                        $pjpx_fecha_cargo_actual='';
+                                     }
                                      
+                                     if ($pjpx_cargo_anterior) {
+                                        $pjpx_cargo_anterior='';
+                                     }
+
+                                     if ($pjpx_fecha_cargo_anterior) {
+                                        $pjpx_fecha_cargo_anterior='';
+                                     }
+
+                                     if ($pjpx_pep_relacion_directa) {
+                                        $pjpx_pep_relacion_directa='';
+                                     }
+
+                                     if ($pjpx_nombre_completo_2) {
+                                        $pjpx_nombre_completo_2='';
+                                     }
+                                     if ($pjpx_cargo_actual_2) {
+                                        $pjpx_cargo_actual_2='';
+                                     }
+
+                                     if ($pjpx_fecha_cargo_actual_2) {
+                                        $pjpx_fecha_cargo_actual_2='';
+                                     }
+
+                                     if ($pjpx_cargo_anterior_2) {
+                                        $pjpx_cargo_anterior_2='';
+                                     }
+
+                                     if ($pjpx_fecha_cargo_anterior_2) {
+                                        $pjpx_fecha_cargo_anterior_2='';
+                                     }
+                                     
+                                     if ($pjpx_comentarios_2) {
+                                        $pjpx_comentarios_2='';
+                                     }
                                      
                                      ?>
                                     <div class="row">
@@ -1839,7 +2009,29 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 $pjrf_telefono = $value['pjrf_telefono'];
                                                                 $pjrf_correo_electronico = $value['pjrf_correo_electronico'];
 
-                                                         } ?>
+                                                         } 
+                                                         
+                                                         if (isset($pjrf_nombre_razon_social)) {
+                                                            $pjrf_nombre_razon_social = '';
+                                                         }
+
+                                                         if (isset($pjrf_actividad)) {
+                                                            $pjrf_actividad = '';
+                                                         }
+
+                                                         if (isset($pjrf_relacion)) {
+                                                            $pjrf_relacion = '';
+                                                         }
+
+                                                         if (isset($pjrf_telefono)) {
+                                                            $pjrf_telefono = '';
+                                                         }
+
+                                                         if (isset($pjrf_correo_electronico)) {
+                                                            $pjrf_correo_electronico = '';
+                                                         }
+                                                         
+                                                         ?>
                                                         <div class="row gy-4">
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
