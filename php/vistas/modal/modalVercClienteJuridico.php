@@ -398,7 +398,41 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 $pjdf_metodo_pago_1 = $value['pjdf_metodo_pago_1'];
                                                                 $pjdf_metodo_pago_2 = $value['pjdf_metodo_pago_2'];
 
-                                                         } ?>
+                                                         }
+                                                         
+                                                         if (!isset($pjdf_actividad_principal)) {
+                                                            $pjdf_actividad_principal = ''
+                                                         }
+
+                                                         if (!isset($pjdf_actividad_secundaria)) {
+                                                            $pjdf_actividad_secundaria = ''
+                                                         }
+                                                         
+                                                         if (!isset($pjdf_otras_fuentes)) {
+                                                            $pjdf_otras_fuentes = ''
+                                                         }
+
+                                                         if (!isset($pjdf_otras_fuentes_secundaria)) {
+                                                            $pjdf_otras_fuentes_secundaria = ''
+                                                         }
+
+                                                         if (!isset($pjdf_limite_compra)) {
+                                                            $pjdf_limite_compra = ''
+                                                         }
+
+                                                         if (!isset($pjdf_forma_pago)) {
+                                                            $pjdf_forma_pago = ''
+                                                         }
+                                                         
+                                                         if (!isset($pjdf_metodo_pago_1)) {
+                                                            $pjdf_metodo_pago_1 = ''
+                                                         }
+
+                                                         if (!isset($pjdf_metodo_pago_2)) {
+                                                            $pjdf_metodo_pago_2 = ''
+                                                         }
+
+                                                         ?>
                                                         
                                                         <div class="row gy-4">
                                                             <div class="col-xxl-3 col-md-6">
