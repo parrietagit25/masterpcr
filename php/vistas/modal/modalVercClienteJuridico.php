@@ -547,19 +547,67 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 <div class="card-body"></div>
                                                 <div class="card-body">
                                                     <div class="live-preview">
-                                                        <?php foreach ($representante_legal as $key => $value) { ?>
+                                                        <?php foreach ($representante_legal as $key => $value) { 
+
+                                                                       $pjrl_nombre_completo = $value['pjrl_nombre_completo'];
+                                                                       $pjrl_cedula_pasaporte = $value['pjrl_cedula_pasaporte'];
+                                                                       $pjrl_estado_civil = $value['pjrl_estado_civil'];
+                                                                       $pjrl_nacionalidada = $value['pjrl_nacionalidada'];
+                                                                       $pjrl_fecha_nacimiento = $value['pjrl_fecha_nacimiento'];
+                                                                       $pjrl_direccion = $value['pjrl_direccion'];
+                                                                       $pjrl_correo = $value['pjrl_correo'];
+                                                                       $pjrl_profesion = $value['pjrl_profesion'];
+                                                                       $pjrl_lugar_trabajo = $value['pjrl_lugar_trabajo'];
+                                                                       $pjrl_telefono = $value['pjrl_telefono'];
+
+                                                            }
+                                                            
+                                                            
+                                                                if (!isset($pjrl_nombre_completo)) {
+                                                                    $pjrl_nombre_completo = '';
+                                                                }
+                                                                if (!isset($pjrl_cedula_pasaporte)) {
+                                                                    $pjrl_cedula_pasaporte = '';
+                                                                }
+                                                                if (!isset($pjrl_estado_civil)) {
+                                                                    $pjrl_estado_civil = '';
+                                                                }
+                                                                if (!isset($pjrl_nacionalidada)) {
+                                                                    $pjrl_nacionalidada = '';
+                                                                }
+                                                                if (!isset($pjrl_fecha_nacimiento)) {
+                                                                    $pjrl_fecha_nacimiento = '';
+                                                                }
+                                                                if (!isset($pjrl_direccion)) {
+                                                                    $pjrl_direccion = '';
+                                                                }
+                                                                if (!isset($pjrl_correo)) {
+                                                                    $pjrl_correo = '';
+                                                                }
+                                                                if (!isset($pjrl_profesion)) {
+                                                                    $pjrl_profesion = '';
+                                                                }
+                                                                if (!isset($pjrl_lugar_trabajo)) {
+                                                                    $pjrl_lugar_trabajo = '';
+                                                                }
+                                                                if (!isset($pjrl_telefono)) {
+                                                                    $pjrl_telefono = '';
+                                                                }
+                                                            
+                                                            
+                                                            ?>
                                                         <div class="row gy-4">
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre Completo</label>
-                                                                    <input type="text" class="form-control" name="pjrl_nombre_completo" value="<?php echo $value['pjrl_nombre_completo']; ?>">
+                                                                    <input type="text" class="form-control" name="pjrl_nombre_completo" value="<?php echo $pjrl_nombre_completo; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Cedula / N# Pasaporte.</label>
-                                                                    <input type="text" class="form-control" name="pjrl_cedula_pasaporte" value="<?php echo $value['pjrl_cedula_pasaporte']; ?>">
+                                                                    <input type="text" class="form-control" name="pjrl_cedula_pasaporte" value="<?php echo $pjrl_cedula_pasaporte; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -570,7 +618,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjrl_estado_civil">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($estado_civil as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjrl_estado_civil']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjrl_estado_civil){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -583,7 +631,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjrl_nacionalidada">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjrl_nacionalidada']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjrl_nacionalidada){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -593,7 +641,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha de nacimiento</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjrl_fecha_nacimiento" value="<?php echo $value['pjrl_fecha_nacimiento']; ?>">
+                                                                    data-date-format="d M, Y" name="pjrl_fecha_nacimiento" value="<?php echo $pjrl_fecha_nacimiento; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -601,7 +649,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Dirección</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjrl_direccion"><?php echo $value['pjrl_direccion']; ?></textarea>
+                                                                        rows="3" name="pjrl_direccion"><?php echo $pjrl_direccion; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -610,7 +658,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="iconInput" class="form-label">Correo Electronico </label>
                                                                     <div class="form-icon">
                                                                         <input type="text" class="form-control form-control-icon"
-                                                                            id="iconInput" placeholder="example@gmail.com" name="pjrl_correo" value="<?php echo $value['pjrl_correo']; ?>">
+                                                                            id="iconInput" placeholder="example@gmail.com" name="pjrl_correo" value="<?php echo $pjrl_correo; ?>">
                                                                         <i class="ri-mail-unread-line"></i>
                                                                     </div>
                                                                 </div>
@@ -619,27 +667,27 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Profesión.</label>
-                                                                    <input type="text" class="form-control" name="pjrl_profesion" value="<?php echo $value['pjrl_profesion']; ?>">
+                                                                    <input type="text" class="form-control" name="pjrl_profesion" value="<?php echo $pjrl_profesion; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Lugar de trabajo.</label>
-                                                                    <input type="text" class="form-control" name="pjrl_lugar_trabajo" value="<?php echo $value['pjrl_lugar_trabajo']; ?>">
+                                                                    <input type="text" class="form-control" name="pjrl_lugar_trabajo" value="<?php echo $pjrl_lugar_trabajo; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Teléfono.</label>
-                                                                    <input type="text" class="form-control" name="pjrl_telefono" value="<?php echo $value['pjrl_telefono']; ?>">
+                                                                    <input type="text" class="form-control" name="pjrl_telefono" value="<?php echo $pjrl_telefono; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                         </div>
                                                         <!--end row-->
-                                                        <?php } ?>
+                                                        
                                                     </div>
                                                     <div class="d-none code-view">
                                                         <pre class="language-markup" style="height: 450px;">
@@ -765,7 +813,15 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                             <!-- Propietarios -->
                             <div class="tab-pane fade" id="propietarios" role="tabpanel" aria-labelledby="propietarios-tab">
                                 <div class="d-flex mb-2">
-                                    <?php foreach ($propietario as $key => $value) { ?>
+                                    <?php foreach ($propietario as $key => $value) { 
+
+                                            $pjpr_publica_privada = $value['pjpr_publica_privada'];
+                                            $pjpr_licita_estado = $value['pjpr_licita_estado'];
+                                            $pjpr_licita_pais = $value['pjpr_licita_pais'];
+                                            $pjpr_cotiza_bolsa = $value['pjpr_cotiza_bolsa'];
+                                            $pjpr_descripcion_cotiza_bolsa = $value['pjpr_descripcion_cotiza_bolsa'];
+                                            $pjpr_nombre_bolsa_ticker = $value['pjpr_nombre_bolsa_ticker'];
+                                     } ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="card">
@@ -780,9 +836,9 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="basiInput" class="form-label">¿ESTA EMPRESA ES PÚBLICA O PRIVADA?  </label>
                                                                     <br>
                                                                     <label for="basiInput" class="form-label">Publica</label>
-                                                                    <input class="form-check-input" type="radio" name="pjpr_publica_privada" <?php if($value['pjpr_publica_privada'] == '109BFF'){ echo 'checked'; } ?> id="formradioRight6" value="109BFF">
+                                                                    <input class="form-check-input" type="radio" name="pjpr_publica_privada" <?php if($pjpr_publica_privada == '109BFF'){ echo 'checked'; } ?> id="formradioRight6" value="109BFF">
                                                                     <label for="basiInput" class="form-label">Privada</label>
-                                                                    <input class="form-check-input" type="radio" name="pjpr_publica_privada" <?php if($value['pjpr_publica_privada'] == '111BFF'){ echo 'checked'; } ?> id="formradioRight6" value="111BFF">
+                                                                    <input class="form-check-input" type="radio" name="pjpr_publica_privada" <?php if($pjpr_publica_privada == '111BFF'){ echo 'checked'; } ?> id="formradioRight6" value="111BFF">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -792,9 +848,9 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="pjpr_licita_estado">
                                                                         <option value="">Seleccione</option>
-                                                                        <option value="SI" <?php if($value['pjpr_licita_estado'] == 'SI'){ echo 'selected'; } ?>>SI</option>
-                                                                        <option value="NO" <?php if($value['pjpr_licita_estado'] == 'NO'){ echo 'selected'; } ?>>NO</option>
-                                                                        <option value="NO_APLICA" <?php if($value['pjpr_licita_estado'] == 'NO_APLICA'){ echo 'selected'; } ?>>NO APLICA</option>
+                                                                        <option value="SI" <?php if($pjpr_licita_estado == 'SI'){ echo 'selected'; } ?>>SI</option>
+                                                                        <option value="NO" <?php if($pjpr_licita_estado == 'NO'){ echo 'selected'; } ?>>NO</option>
+                                                                        <option value="NO_APLICA" <?php if($pjpr_licita_estado == 'NO_APLICA'){ echo 'selected'; } ?>>NO APLICA</option>
                                                                         
                                                                     </select>
                                                                 </div>
@@ -807,7 +863,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjpr_licita_pais">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['pjpr_licita_pais'] == $value['pjpr_licita_pais']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['pjpr_licita_pais'] == $pjpr_licita_pais){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -819,9 +875,9 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="pjpr_cotiza_bolsa">
                                                                         <option value="">Seleccione</option>
-                                                                        <option value="SI" <?php if($value['pjpr_cotiza_bolsa'] == 'SI'){ echo 'selected'; } ?>>SI</option>
-                                                                        <option value="NO" <?php if($value['pjpr_cotiza_bolsa'] == 'NO'){ echo 'selected'; } ?>>NO</option>
-                                                                        <option value="NO_APLICA" <?php if($value['pjpr_cotiza_bolsa'] == 'NO_APLICA'){ echo 'selected'; } ?>>NO APLICA</option>
+                                                                        <option value="SI" <?php if($pjpr_cotiza_bolsa == 'SI'){ echo 'selected'; } ?>>SI</option>
+                                                                        <option value="NO" <?php if($pjpr_cotiza_bolsa == 'NO'){ echo 'selected'; } ?>>NO</option>
+                                                                        <option value="NO_APLICA" <?php if($pjpr_cotiza_bolsa == 'NO_APLICA'){ echo 'selected'; } ?>>NO APLICA</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -829,14 +885,14 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">SI LA RESPUESTA ES AFIRMATIVA INDIQUE:</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjpr_descripcion_cotiza_bolsa" value="<?php echo $value['pjpr_descripcion_cotiza_bolsa']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjpr_descripcion_cotiza_bolsa" value="<?php echo $pjpr_descripcion_cotiza_bolsa; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">NOMBRE DE LA BOLSA DE VALORES Y TICKER:</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjpr_nombre_bolsa_ticker" value="<?php echo $value['pjpr_nombre_bolsa_ticker']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjpr_nombre_bolsa_ticker" value="<?php echo $pjpr_nombre_bolsa_ticker; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -859,7 +915,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         </div>
                                         <!--end col-->
                                     </div>
-                                    <?php } ?>
+                                    
                                 </div>
                             </div>
                             <!-- DECLARACION DE ACCIONISTAS -->
@@ -876,22 +932,37 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                     <div class="live-preview">
                                                         <div class="row gy-4">
                                                         <p>DETALLE LOS NOMBRES DE LOS ACCIONISTAS QUE TENGAN EL DERECHO A EJERCER EL VOTO CON RESPECTO AL VEINTICINCO POR CIENTO (25%) O MÁS DE LAS ACCIONES EMITIDAS Y EN CIRCULACIÓN. ADICIONAL DEBERÁ COMPLETAR LA DECLARACIÓN JURADA DE BENEFICIARIOS FINALES PERSONA JURÍDICA.</p>
-                                                            <?php foreach ($declaracion_accionistas as $key => $value) { ?>
+                                                            <?php foreach ($declaracion_accionistas as $key => $value) { 
+
+                                                                    $pjda_nombre_completo_accionista = $value['pjda_nombre_completo_accionista'];
+                                                                    $pjda_participacion_accionaria = $value['pjda_participacion_accionaria'];
+
+                                                             } 
+                                                             
+                                                             if (!isset($pjda_nombre_completo_accionista)) {
+                                                                $pjda_nombre_completo_accionista = '';
+                                                             }
+
+                                                             if (!isset($pjda_participacion_accionaria)) {
+                                                                $pjda_participacion_accionaria = '';
+                                                             }
+                                                             
+                                                             ?>
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre del accionista(Natural o Jurídica).</label>
-                                                                    <input class="form-control" type="text" name="pjda_nombre_completo_accionista[]" value="<?php echo $value['pjda_nombre_completo_accionista']; ?>">
+                                                                    <input class="form-control" type="text" name="pjda_nombre_completo_accionista[]" value="<?php echo $pjda_nombre_completo_accionista; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Participación Accionarias</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjda_participacion_accionaria[]" value="<?php echo $value['pjda_participacion_accionaria']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjda_participacion_accionaria[]" value="<?php echo $pjda_participacion_accionaria; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col -->                        
-                                                            <?php } ?>
+                                                           
                                                         </div>
                                                         <!--end row-->
                                                     </div>
@@ -918,16 +989,42 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 </div><!-- end card header -->
                                                 <div class="card-body">
                                                     <div class="live-preview">
-                                                        <?php foreach ($beneficiarioFinal as $key => $value) { ?>
+                                                        <?php foreach ($beneficiarioFinal as $key => $value) { 
+
+                                                                    $pjbf_transpaso_cliente_tercero = $value['pjbf_transpaso_cliente_tercero']
+                                                                    $pjbf_relacion_cliente = $value['pjbf_relacion_cliente']
+                                                                    $pjbf_primer_nombre = $value['pjbf_primer_nombre']
+                                                                    $pjbf_segundo_nomnbre = $value['pjbf_segundo_nomnbre']
+                                                                    $pjbf_apellido_parterno = $value['pjbf_apellido_parterno']
+                                                                    $pjbf_apellido_materno = $value['pjbf_apellido_materno']
+                                                                    $pjbf_apellido_casada = $value['pjbf_apellido_casada']
+                                                                    $pjbf_pais_nacimiento = $value['pjbf_pais_nacimiento']
+                                                                    $pjbf_fecha_nacimiento = $value['pjbf_fecha_nacimiento']
+                                                                    $pjbf_genero = $value['pjbf_genero']
+                                                                    $pjbf_nacionalidad = $value['pjbf_nacionalidad']
+                                                                    $pjbf_estado_civil = $value['pjbf_estado_civil']
+                                                                    $pjbf_cedula_pasaporte = $value['pjbf_cedula_pasaporte']
+                                                                    $pjbf_pais_residencia = $value['pjbf_pais_residencia']
+                                                                    $pjbf_direccion_residencia = $value['pjbf_direccion_residencia']
+                                                                    $pjbf_pais_residencia_fiscal = $value['pjbf_pais_residencia_fiscal']
+                                                                    $pjbf_correo = $value['pjbf_correo']
+                                                                    $pjbf_telefono_residencial = $value['pjbf_telefono_residencial']
+                                                                    $pjbf_telefono_celular = $value['pjbf_telefono_celular']
+                                                                    $pjbf_profesion = $value['pjbf_profesion']
+                                                                    $pjbf_ocupacion = $value['pjbf_ocupacion']
+                                                                    $pjbf_lugar_trabajo = $value['pjbf_lugar_trabajo']
+                                                                    $pjbf_direccion_trabajo = $value['pjbf_direccion_trabajo']
+
+                                                         } ?>
                                                         <div class="row gy-4">
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">INDIQUE SI EL AUTO SERÁ TRASPASADO A NOMBRE DEL CLIENTE O DE UN TERCERO. ?  </label>
                                                                     <br>
                                                                     <label for="basiInput" class="form-label">Cliente </label>
-                                                                    <input class="form-check-input" type="radio" name="pjbf_transpaso_cliente_tercero" id="formradioRight6" <?php if($value['pjbf_transpaso_cliente_tercero'] == '109BFF'){ echo 'checked'; } ?> value="109BFF">
+                                                                    <input class="form-check-input" type="radio" name="pjbf_transpaso_cliente_tercero" id="formradioRight6" <?php if($pjbf_transpaso_cliente_tercero == '109BFF'){ echo 'checked'; } ?> value="109BFF">
                                                                     <label for="basiInput" class="form-label">Tercero </label>
-                                                                    <input class="form-check-input" type="radio" name="pjbf_transpaso_cliente_tercero" id="formradioRight6" <?php if($value['pjbf_transpaso_cliente_tercero'] == '110BFF'){ echo 'checked'; } ?> value="110BFF">
+                                                                    <input class="form-check-input" type="radio" name="pjbf_transpaso_cliente_tercero" id="formradioRight6" <?php if($pjbf_transpaso_cliente_tercero == '110BFF'){ echo 'checked'; } ?> value="110BFF">
                                                                 </div>
                                                             </div>
                                                             <!-- end col -->
@@ -936,44 +1033,44 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="basiInput" class="form-label">EN ESTE ÚLTIMO CASO, COMPLETE CON LOS DATOS DEL BENEFICIARIO FINAL DE LA TRANSACCIÓN. DE SER PERSONA JURÍDICA, UTILIZAR EL FORMULARIO DE DEBIDA DILIGENCIA PERSONA JURÍDICA PCR-CUMP-FORM02 Y LA DECLARACIÓN JURADA DE BENEFICIARIOS FINALES DE LAS PERSONAS JURÍDICAS.</label>
                                                                     <br>
                                                                     <label for="basiInput" class="form-label">Familiar </label>
-                                                                    <input class="form-check-input" type="radio" name="pjbf_relacion_cliente" id="formradioRight6" <?php if($value['pjbf_relacion_cliente'] == '111BFF'){ echo 'checked'; } ?> value="111BFF">
+                                                                    <input class="form-check-input" type="radio" name="pjbf_relacion_cliente" id="formradioRight6" <?php if($pjbf_relacion_cliente == '111BFF'){ echo 'checked'; } ?> value="111BFF">
                                                                     <label for="basiInput" class="form-label">Tercero </label>
-                                                                    <input class="form-check-input" type="radio" name="pjbf_relacion_cliente" id="formradioRight6" <?php if($value['pjbf_relacion_cliente'] == '110BFF'){ echo 'checked'; } ?> value="110BFF">
+                                                                    <input class="form-check-input" type="radio" name="pjbf_relacion_cliente" id="formradioRight6" <?php if($pjbf_relacion_cliente == '110BFF'){ echo 'checked'; } ?> value="110BFF">
                                                                 </div>
                                                             </div>
                                                             <!-- end col -->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Primer Nombre</label>
-                                                                    <input type="text" class="form-control" id="primer_nombre" name="pjbf_primer_nombre" value="<?php echo $value['pjbf_primer_nombre']; ?>">
+                                                                    <input type="text" class="form-control" id="primer_nombre" name="pjbf_primer_nombre" value="<?php echo $pjbf_primer_nombre; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Segundo Nombre</label>
-                                                                    <input type="text" class="form-control" id="segundo_nombre" name="pjbf_segundo_nomnbre" value="<?php echo $value['pjbf_segundo_nomnbre']; ?>">
+                                                                    <input type="text" class="form-control" id="segundo_nombre" name="pjbf_segundo_nomnbre" value="<?php echo $pjbf_segundo_nomnbre; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido Paterno</label>
-                                                                    <input type="text" class="form-control" id="apellido_paterno" name="pjbf_apellido_parterno" value="<?php echo $value['pjbf_apellido_parterno']; ?>">
+                                                                    <input type="text" class="form-control" id="apellido_paterno" name="pjbf_apellido_parterno" value="<?php echo $pjbf_apellido_parterno; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido Materno</label>
-                                                                    <input type="text" class="form-control" id="apellido_materno" name="pjbf_apellido_materno" value="<?php echo $value['pjbf_apellido_materno']; ?>">
+                                                                    <input type="text" class="form-control" id="apellido_materno" name="pjbf_apellido_materno" value="<?php echo $pjbf_apellido_materno; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido de Casada</label>
-                                                                    <input type="text" class="form-control" id="apellido_casada" name="pjbf_apellido_casada" value="<?php echo $value['pjbf_apellido_casada']; ?>">
+                                                                    <input type="text" class="form-control" id="apellido_casada" name="pjbf_apellido_casada" value="<?php echo $pjbf_apellido_casada; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -984,7 +1081,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjbf_pais_nacimiento">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjbf_pais_nacimiento']){ echo 'selected'; } ?> ><?php echo utf8_encode($value2['nombre']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjbf_pais_nacimiento){ echo 'selected'; } ?> ><?php echo utf8_encode($value2['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -994,7 +1091,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjbf_fecha_nacimiento" value="<?php echo $value['pjbf_fecha_nacimiento']; ?>">
+                                                                    data-date-format="d M, Y" name="pjbf_fecha_nacimiento" value="<?php echo $pjbf_fecha_nacimiento; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -1005,7 +1102,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjbf_genero">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($genero as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjbf_genero']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjbf_genero){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1018,7 +1115,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjbf_nacionalidad">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjbf_nacionalidad']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjbf_nacionalidad){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1031,7 +1128,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjbf_estado_civil">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($estado_civil as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjbf_estado_civil']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjbf_estado_civil){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1040,7 +1137,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Cédula/N# Pasaporte</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjbf_cedula_pasaporte" value="<?php echo $value['pjbf_cedula_pasaporte']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjbf_cedula_pasaporte" value="<?php echo $pjbf_cedula_pasaporte; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1051,7 +1148,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjbf_pais_residencia">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjbf_pais_residencia']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] ==  $pjbf_pais_residencia){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1061,7 +1158,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Dirección Residencial</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjbf_direccion_residencia"><?php echo $value['pjbf_direccion_residencia']; ?></textarea>
+                                                                        rows="3" name="pjbf_direccion_residencia"><?php echo $pjbf_direccion_residencia; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1072,7 +1169,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjbf_pais_residencia_fiscal">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjbf_pais_residencia_fiscal']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjbf_pais_residencia_fiscal){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1083,7 +1180,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                                     <div class="form-icon">
                                                                         <input type="text" class="form-control form-control-icon"
-                                                                            id="iconInput" placeholder="example@gmail.com" name="pjbf_correo" value="<?php echo $value['pjbf_correo']; ?>">
+                                                                            id="iconInput" placeholder="example@gmail.com" name="pjbf_correo" value="<?php echo $pjbf_correo; ?>">
                                                                         <i class="ri-mail-unread-line"></i>
                                                                     </div>
                                                                 </div>
@@ -1092,14 +1189,14 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Teléfono Residencial</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjbf_telefono_residencial" value="<?php echo $value['pjbf_telefono_residencial']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjbf_telefono_residencial" value="<?php echo $pjbf_telefono_residencial; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Teléfono Móvil</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjbf_telefono_celular" value="<?php echo $value['pjbf_telefono_celular']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjbf_telefono_celular" value="<?php echo $pjbf_telefono_celular; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1110,7 +1207,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjbf_profesion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjbf_profesion']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjbf_profesion){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1123,7 +1220,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjbf_ocupacion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjbf_ocupacion']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjbf_ocupacion){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1133,7 +1230,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Lugar de trabajo</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjbf_lugar_trabajo"><?php echo $value['pjbf_lugar_trabajo']; ?></textarea>
+                                                                        rows="3" name="pjbf_lugar_trabajo"><?php echo $pjbf_lugar_trabajo; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1141,13 +1238,13 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Dirección de trabajo</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjbf_direccion_trabajo"><?php echo $value['pjbf_direccion_trabajo']; ?></textarea>
+                                                                        rows="3" name="pjbf_direccion_trabajo"><?php echo $pjbf_direccion_trabajo; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                         </div>
                                                         <!--end row-->
-                                                        <?php } ?>
+                                                        
                                                     </div>
                                                     <div class="d-none code-view">
                                                         <pre class="language-markup" style="height: 450px;">
@@ -1163,7 +1260,124 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                             <!-- Terceros autorizados -->
                             <div class="tab-pane fade" id="terceros_autorizados" role="tabpanel" aria-labelledby="terceros_autorizados-tab">
                                 <div class="d-flex mb-2">
-                                    <?php foreach ($tercerosAutorizados as $key => $value) { ?>
+                                    <?php foreach ($tercerosAutorizados as $key => $value) { 
+
+                                            $pjtu_relacion_cliente = $value['pjtu_relacion_cliente'];
+                                            $pjtu_primer_nombre = $value['pjtu_primer_nombre'];
+                                            $pjtu_segundo_nomnbre = $value['pjtu_segundo_nomnbre'];
+                                            $pjtu_apellido_parterno = $value['pjtu_apellido_parterno'];
+                                            $pjtu_apellido_materno = $value['pjtu_apellido_materno'];
+                                            $pjtu_apellido_casada = $value['pjtu_apellido_casada'];
+                                            $pjtu_pais_nacimiento = $value['pjtu_pais_nacimiento'];
+                                            $pjtu_fecha_nacimiento = $value['pjtu_fecha_nacimiento'];
+                                            $pjtu_genero = $value['pjtu_genero'];
+                                            $pjtu_nacionalidad = $value['pjtu_nacionalidad'];
+                                            $pjtu_estado_civil = $value['pjtu_estado_civil'];
+                                            $pjtu_cedula_pasaporte = $value['pjtu_cedula_pasaporte'];
+                                            $pjtu_pais_residencia = $value['pjtu_pais_residencia'];
+                                            $pjtu_direccion_residencia = $value['pjtu_direccion_residencia'];
+                                            $pjtu_pais_residencia_fiscal = $value['pjtu_pais_residencia_fiscal'];
+                                            $pjtu_correo = $value['pjtu_correo'];
+                                            $pjtu_telefono_residencial = $value['pjtu_telefono_residencial'];
+                                            $pjtu_telefono_celular = $value['pjtu_telefono_celular'];
+                                            $pjtu_profesion = $value['pjtu_profesion'];
+                                            $pjtu_ocupacion = $value['pjtu_ocupacion'];
+                                            $pjtu_lugar_trabajo = $value['pjtu_lugar_trabajo'];
+                                            $pjtu_direccion_trabajo = $value['pjtu_direccion_trabajo'];
+
+                                     } 
+                                     
+                                     if (!isset($pjtu_relacion_cliente)) {
+                                        $pjtu_relacion_cliente = '';
+                                     }
+
+                                     if (!isset($pjtu_primer_nombre)) {
+                                        $pjtu_primer_nombre = '';
+                                     }
+
+                                     if (!isset($pjtu_segundo_nomnbre)) {
+                                        $pjtu_segundo_nomnbre = '';
+                                     }
+
+                                     if (!isset($pjtu_apellido_parterno)) {
+                                        $pjtu_apellido_parterno = '';
+                                     }
+
+                                     if (!isset($pjtu_apellido_materno)) {
+                                        $pjtu_apellido_materno = '';
+                                     }
+
+                                     if (!isset($pjtu_apellido_casada)) {
+                                        $pjtu_apellido_casada = '';
+                                     }
+
+                                     if (!isset($pjtu_pais_nacimiento)) {
+                                        $pjtu_pais_nacimiento = '';
+                                     }
+
+                                     if (!isset($pjtu_fecha_nacimiento)) {
+                                        $pjtu_fecha_nacimiento = '';
+                                     }
+
+                                     if (!isset($pjtu_genero)) {
+                                        $pjtu_genero = '';
+                                     }
+
+                                     if (!isset($pjtu_nacionalidad)) {
+                                        $pjtu_nacionalidad = '';
+                                     }
+
+                                     if (!isset($pjtu_estado_civil)) {
+                                        $pjtu_estado_civil = '';
+                                     }
+
+                                     if (!isset($pjtu_cedula_pasaporte)) {
+                                        $pjtu_cedula_pasaporte = '';
+                                     }
+
+                                     if (!isset($pjtu_pais_residencia)) {
+                                        $pjtu_pais_residencia = '';
+                                     }
+
+                                     if (!isset($pjtu_direccion_residencia)) {
+                                        $pjtu_direccion_residencia = '';
+                                     }
+
+                                     if (!isset($pjtu_pais_residencia_fiscal)) {
+                                        $pjtu_pais_residencia_fiscal = '';
+                                     }
+
+                                     if (!isset($pjtu_correo)) {
+                                        $pjtu_correo = '';
+                                     }
+
+                                     if (!isset($pjtu_telefono_residencial)) {
+                                        $pjtu_telefono_residencial = '';
+                                     }
+
+                                     if (!isset($pjtu_telefono_celular)) {
+                                        $pjtu_telefono_celular = '';
+                                     }
+
+                                     if (!isset($pjtu_profesion)) {
+                                        $pjtu_profesion = '';
+                                     }
+
+                                     if (!isset($pjtu_ocupacion)) {
+                                        $pjtu_ocupacion = '';
+                                     }
+
+                                     if (!isset($pjtu_lugar_trabajo)) {
+                                        $pjtu_lugar_trabajo = '';
+                                     }
+
+                                     if (!isset($pjtu_direccion_trabajo)) {
+                                        $pjtu_direccion_trabajo = '';
+                                     }
+
+
+                                     
+                                     ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="card">
@@ -1187,44 +1401,44 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="basiInput" class="form-label">RELACIÓN CON EL CLIENTE.  </label>
                                                                     <br>
                                                                     <label for="basiInput" class="form-label">Familiar </label>
-                                                                    <input class="form-check-input" type="radio" name="pjtu_relacion_cliente" <?php if($value['pjtu_relacion_cliente'] == '111BFF'){ echo 'checked'; } ?> id="formradioRight6" value="111BFF">
+                                                                    <input class="form-check-input" type="radio" name="pjtu_relacion_cliente" <?php if($pjtu_relacion_cliente == '111BFF'){ echo 'checked'; } ?> id="formradioRight6" value="111BFF">
                                                                     <label for="basiInput" class="form-label">Tercero </label>
-                                                                    <input class="form-check-input" type="radio" name="pjtu_relacion_cliente" <?php if($value['pjtu_relacion_cliente'] == '110BFF'){ echo 'checked'; } ?> id="formradioRight6" value="110BFF">
+                                                                    <input class="form-check-input" type="radio" name="pjtu_relacion_cliente" <?php if($pjtu_relacion_cliente == '110BFF'){ echo 'checked'; } ?> id="formradioRight6" value="110BFF">
                                                                 </div>
                                                             </div>
                                                             <!-- end col -->
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Primer Nombre</label>
-                                                                    <input type="text" class="form-control" id="primer_nombre" name="pjtu_primer_nombre" value="<?php echo $value['pjtu_primer_nombre']; ?>">
+                                                                    <input type="text" class="form-control" id="primer_nombre" name="pjtu_primer_nombre" value="<?php echo $pjtu_primer_nombre; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Segundo Nombre</label>
-                                                                    <input type="text" class="form-control" id="segundo_nombre" name="pjtu_segundo_nomnbre" value="<?php echo $value['pjtu_segundo_nomnbre']; ?>">
+                                                                    <input type="text" class="form-control" id="segundo_nombre" name="pjtu_segundo_nomnbre" value="<?php echo $pjtu_segundo_nomnbre; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido Paterno</label>
-                                                                    <input type="text" class="form-control" id="apellido_paterno" name="pjtu_apellido_parterno" value="<?php echo $value['pjtu_apellido_parterno']; ?>">
+                                                                    <input type="text" class="form-control" id="apellido_paterno" name="pjtu_apellido_parterno" value="<?php echo $pjtu_apellido_parterno; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido Materno</label>
-                                                                    <input type="text" class="form-control" id="apellido_materno" name="pjtu_apellido_materno" value="<?php echo $value['pjtu_apellido_materno']; ?>">
+                                                                    <input type="text" class="form-control" id="apellido_materno" name="pjtu_apellido_materno" value="<?php echo $pjtu_apellido_materno; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Apellido de Casada</label>
-                                                                    <input type="text" class="form-control" id="apellido_casada" name="pjtu_apellido_casada" value="<?php echo $value['pjtu_apellido_casada']; ?>">
+                                                                    <input type="text" class="form-control" id="apellido_casada" name="pjtu_apellido_casada" value="<?php echo $pjtu_apellido_casada; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1235,7 +1449,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjtu_pais_nacimiento">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjtu_pais_nacimiento']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjtu_pais_nacimiento){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1245,7 +1459,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjtu_fecha_nacimiento" value="<?php echo $value['pjtu_fecha_nacimiento']; ?>">
+                                                                    data-date-format="d M, Y" name="pjtu_fecha_nacimiento" value="<?php echo $pjtu_fecha_nacimiento; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -1256,7 +1470,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjtu_genero">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($genero as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjtu_genero']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjtu_genero){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1269,7 +1483,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjtu_nacionalidad">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjtu_nacionalidad']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjtu_nacionalidad){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1282,7 +1496,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjtu_estado_civil">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($estado_civil as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjtu_estado_civil']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjtu_estado_civil){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1291,7 +1505,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Cédula/N# Pasaporte</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjtu_cedula_pasaporte" value="<?php echo $value['pjtu_cedula_pasaporte']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjtu_cedula_pasaporte" value="<?php echo $pjtu_cedula_pasaporte; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1302,7 +1516,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjtu_pais_residencia">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjtu_pais_residencia']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjtu_pais_residencia){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1312,7 +1526,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Dirección Residencial</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjtu_direccion_residencia"><?php echo $value['pjtu_direccion_residencia']; ?></textarea>
+                                                                        rows="3" name="pjtu_direccion_residencia"><?php echo $pjtu_direccion_residencia; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1323,7 +1537,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjtu_pais_residencia_fiscal">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($paises as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjtu_pais_residencia_fiscal']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjtu_pais_residencia_fiscal){ echo 'selected'; } ?>><?php echo utf8_encode($value2['nombre']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1334,7 +1548,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                                     <div class="form-icon">
                                                                         <input type="text" class="form-control form-control-icon"
-                                                                            id="iconInput" placeholder="example@gmail.com" name="pjtu_correo" value="<?php echo $value['pjtu_correo']; ?>">
+                                                                            id="iconInput" placeholder="example@gmail.com" name="pjtu_correo" value="<?php echo $pjtu_correo; ?>">
                                                                         <i class="ri-mail-unread-line"></i>
                                                                     </div>
                                                                 </div>
@@ -1343,14 +1557,14 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Teléfono Residencial</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjtu_telefono_residencial" value="<?php echo $value['pjtu_telefono_residencial']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjtu_telefono_residencial" value="<?php echo $pjtu_telefono_residencial; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Teléfono Móvil</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjtu_telefono_celular" value="<?php echo $value['pjtu_telefono_celular']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjtu_telefono_celular" value="<?php echo $pjtu_telefono_celular; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1361,7 +1575,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjtu_profesion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjtu_profesion']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjtu_profesion){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1374,7 +1588,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjtu_ocupacion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjtu_ocupacion']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjtu_ocupacion){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1384,7 +1598,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Lugar de trabajo</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjtu_lugar_trabajo"><?php echo $value['pjtu_lugar_trabajo']; ?></textarea>
+                                                                        rows="3" name="pjtu_lugar_trabajo"><?php echo $pjtu_lugar_trabajo; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1392,7 +1606,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Dirección de trabajo</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjtu_direccion_trabajo"><?php echo $value['pjtu_direccion_trabajo']; ?></textarea>
+                                                                        rows="3" name="pjtu_direccion_trabajo"><?php echo $pjtu_direccion_trabajo; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1407,13 +1621,32 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         </div>
                                         <!--end col-->
                                     </div>
-                                    <?php } ?>
+                                    
                                 </div>
                             </div>
                             <!-- Personas expuestas politicamente -->
                             <div class="tab-pane fade" id="expuestas_politicamente" role="tabpanel" aria-labelledby="expuestas_politicamente-tab">
                                 <div class="d-flex mb-2">
-                                    <?php foreach ($expuestas as $key => $value) { ?>
+                                    <?php foreach ($expuestas as $key => $value) { 
+
+                                            $pjpx_relacion_directa = $value['pjpx_relacion_directa'];
+                                            $pjpx_nombre_completo = $value['pjpx_nombre_completo'];
+                                            $pjpx_cargo_actual = $value['pjpx_cargo_actual'];
+                                            $pjpx_fecha_cargo_actual = $value['pjpx_fecha_cargo_actual'];
+                                            $pjpx_cargo_anterior = $value['pjpx_cargo_anterior'];
+                                            $pjpx_fecha_cargo_anterior = $value['pjpx_fecha_cargo_anterior'];
+                                            $pjpx_pep_relacion_directa = $value['pjpx_pep_relacion_directa'];
+                                            $pjpx_nombre_completo_2 = $value['pjpx_nombre_completo_2'];
+                                            $pjpx_cargo_actual_2 = $value['pjpx_cargo_actual_2'];
+                                            $pjpx_fecha_cargo_actual_2 = $value['pjpx_fecha_cargo_actual_2'];
+                                            $pjpx_cargo_anterior_2 = $value['pjpx_cargo_anterior_2'];
+                                            $pjpx_fecha_cargo_anterior_2 = $value['pjpx_fecha_cargo_anterior_2'];
+                                            $pjpx_comentarios_2 = $value['pjpx_comentarios_2'];
+
+                                     } 
+                                     
+                                     
+                                     ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="card">
@@ -1439,16 +1672,16 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="basiInput" class="form-label">¿ES EL REPRESENTANTE LEGAL, APODERADO, DIRECTOR O DIGNATARIO UN PEP, FAMILIAR CERCANO O ESTRECHO COLABORADOR DE UN PEP?</label>
                                                                     <br>
                                                                     <label for="basiInput" class="form-label">SI</label>
-                                                                    <input class="form-check-input" type="radio" name="pjpx_relacion_directa" id="formradioRight6" <?php if($value['pjpx_relacion_directa'] == 'SI'){ echo 'checked'; } ?> value="SI">
+                                                                    <input class="form-check-input" type="radio" name="pjpx_relacion_directa" id="formradioRight6" <?php if($pjpx_relacion_directa == 'SI'){ echo 'checked'; } ?> value="SI">
                                                                     <label for="basiInput" class="form-label">NO</label>
-                                                                    <input class="form-check-input" type="radio" name="pjpx_relacion_directa" id="formradioRight6" <?php if($value['pjpx_relacion_directa'] == 'NO'){ echo 'checked'; } ?> value="NO">
+                                                                    <input class="form-check-input" type="radio" name="pjpx_relacion_directa" id="formradioRight6" <?php if($pjpx_relacion_directa == 'NO'){ echo 'checked'; } ?> value="NO">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre completo</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjpx_nombre_completo" value="<?php echo $value['pjpx_nombre_completo']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjpx_nombre_completo" value="<?php echo $pjpx_nombre_completo; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1459,7 +1692,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjpx_cargo_actual">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjpx_cargo_actual']){ echo 'selected'; } ?> ><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjpx_cargo_actual){ echo 'selected'; } ?> ><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1469,7 +1702,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_actual" value="<?php echo $value['pjpx_fecha_cargo_actual']; ?>">
+                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_actual" value="<?php echo $pjpx_fecha_cargo_actual; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -1480,7 +1713,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjpx_cargo_anterior">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjpx_cargo_anterior']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjpx_cargo_anterior){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1490,7 +1723,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha anterior</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_anterior" value="<?php echo $value['pjpx_fecha_cargo_anterior']; ?>">
+                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_anterior" value="<?php echo $pjpx_fecha_cargo_anterior; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -1507,16 +1740,16 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="basiInput" class="form-label">¿ES EL BENEFICIARIO FINAL UN PEP, FAMILIAR CERCANO O ESTRECHO COLABORADOR DE UN PEP?</label>
                                                                     <br>
                                                                     <label for="basiInput" class="form-label">SI</label>
-                                                                    <input class="form-check-input" type="radio" name="pjpx_pep_relacion_directa" id="formradioRight6" <?php if($value['pjpx_pep_relacion_directa'] == 'SI'){ echo 'checked'; } ?> value="SI">
+                                                                    <input class="form-check-input" type="radio" name="pjpx_pep_relacion_directa" id="formradioRight6" <?php if($pjpx_pep_relacion_directa == 'SI'){ echo 'checked'; } ?> value="SI">
                                                                     <label for="basiInput" class="form-label">NO</label>
-                                                                    <input class="form-check-input" type="radio" name="pjpx_pep_relacion_directa" id="formradioRight6" <?php if($value['pjpx_pep_relacion_directa'] == 'NO'){ echo 'checked'; } ?> value="NO">
+                                                                    <input class="form-check-input" type="radio" name="pjpx_pep_relacion_directa" id="formradioRight6" <?php if($pjpx_pep_relacion_directa == 'NO'){ echo 'checked'; } ?> value="NO">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre completo</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjpx_nombre_completo_2" value="<?php echo $value['pjpx_nombre_completo_2']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjpx_nombre_completo_2" value="<?php echo $pjpx_nombre_completo_2; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1527,7 +1760,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjpx_cargo_actual_2">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjpx_cargo_actual_2']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjpx_cargo_actual_2){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1537,7 +1770,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_actual_2" value="<?php echo $value['pjpx_fecha_cargo_actual_2']; ?>">
+                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_actual_2" value="<?php echo $pjpx_fecha_cargo_actual_2; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -1548,7 +1781,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         id="choices-single-default" name="pjpx_cargo_anterior_2">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value2) { ?>
-                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $value['pjpx_cargo_anterior_2']){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
+                                                                        <option value="<?php echo $value2['codigo']; ?>" <?php if($value2['codigo'] == $pjpx_cargo_anterior_2){ echo 'selected'; } ?>><?php echo utf8_encode($value2['descripcion']); ?></option>
                                                                         <?php } ?>
                                                                     </select>
                                                                 </div>
@@ -1558,7 +1791,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha anterior</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_anterior_2" value="<?php echo $value['pjpx_fecha_cargo_anterior_2']; ?>">
+                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_anterior_2" value="<?php echo $pjpx_fecha_cargo_anterior_2; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -1566,7 +1799,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Comentarios</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjpx_comentarios_2"><?php echo $value['pjpx_comentarios_2']; ?></textarea>
+                                                                        rows="3" name="pjpx_comentarios_2"><?php echo $pjpx_comentarios_2; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1581,7 +1814,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         </div>
                                         <!--end col-->
                                     </div>
-                                    <?php } ?>
+                                    
                                 </div>
                             </div>
                             <!-- Referencias -->
@@ -1598,33 +1831,41 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="live-preview">
-                                                        <?php foreach ($referencias as $key => $value) { ?>
+                                                        <?php foreach ($referencias as $key => $value) { 
+
+                                                                $pjrf_nombre_razon_social = $value['pjrf_nombre_razon_social'];
+                                                                $pjrf_actividad = $value['pjrf_actividad'];
+                                                                $pjrf_relacion = $value['pjrf_relacion'];
+                                                                $pjrf_telefono = $value['pjrf_telefono'];
+                                                                $pjrf_correo_electronico = $value['pjrf_correo_electronico'];
+
+                                                         } ?>
                                                         <div class="row gy-4">
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre o razón social</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_nombre_razon_social[]" value="<?php echo $value['pjrf_nombre_razon_social']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_nombre_razon_social[]" value="<?php echo $pjrf_nombre_razon_social; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Actividad</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_actividad[]" value="<?php echo $value['pjrf_actividad']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_actividad[]" value="<?php echo $pjrf_actividad; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Relacón</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_relacion[]" value="<?php echo $value['pjrf_relacion']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_relacion[]" value="<?php echo $pjrf_relacion; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Teléfono</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_telefono[]" value="<?php echo $value['pjrf_telefono']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_telefono[]" value="<?php echo $pjrf_telefono; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1633,7 +1874,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <label for="iconInput" class="form-label">Correo Electrónico</label>
                                                                     <div class="form-icon">
                                                                         <input type="text" class="form-control form-control-icon"
-                                                                            id="iconInput" placeholder="example@gmail.com" name="pjrf_correo_electronico[]" value="<?php echo $value['pjrf_correo_electronico']; ?>">
+                                                                            id="iconInput" placeholder="example@gmail.com" name="pjrf_correo_electronico[]" value="<?php echo $pjrf_correo_electronico; ?>">
                                                                         <i class="ri-mail-unread-line"></i>
                                                                     </div>
                                                                 </div>
@@ -1643,7 +1884,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                         <!--end row-->
                                                         <br>
                                                         <br>
-                                                        <?php } ?>
+                                                       
                                                     </div>
                                                     <div class="d-none code-view">
                                                         <pre class="language-markup" style="height: 450px;">
@@ -1659,7 +1900,27 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                             <!-- jurada -->
                             <div class="tab-pane fade" id="jurada" role="tabpanel" aria-labelledby="jurada-tab">
                                 <div class="d-flex mb-2">
-                                    <?php foreach ($declaracion_jurada as $key => $value) { ?>
+                                    <?php foreach ($declaracion_jurada as $key => $value) { 
+
+                                                    $pjdj_nombre_completo = $value['pjdj_nombre_completo'];
+                                                    $pjdj_fecha = $value['pjdj_fecha'];
+                                                    $pjdj_firma = $value['pjdj_firma'];
+
+                                     } 
+                                     
+                                     if (!isset($pjdj_nombre_completo)) {
+                                        $pjdj_nombre_completo = '';
+                                     }
+
+                                     if (!isset($pjdj_fecha)) {
+                                        $pjdj_fecha = '';
+                                     }
+
+                                     if (!isset($pjdj_firma)) {
+                                        $pjdj_firma = '';
+                                     }
+                                     
+                                     ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="card">
@@ -1679,7 +1940,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre completo</label>
-                                                                    <input type="text" class="form-control" id="basiInput" name="pjdj_nombre_completo" value="<?php echo $value['pjdj_nombre_completo']; ?>">
+                                                                    <input type="text" class="form-control" id="basiInput" name="pjdj_nombre_completo" value="<?php echo $pjdj_nombre_completo; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1687,7 +1948,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjdj_fecha" value="<?php echo $value['pjdj_fecha']; ?>">
+                                                                    data-date-format="d M, Y" name="pjdj_fecha" value="<?php echo $pjdj_fecha; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1697,7 +1958,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <input type="file" class="form-control" id="basiInput" name="pjdj_firma">
                                                                     <br>
                                                                     <br>
-                                                                    <a href="<?php echo $value['pjdj_firma']; ?>" target="_blank">Firma adjunta</a>
+                                                                    <a href="<?php echo $pjdj_firma; ?>" target="_blank">Firma adjunta</a>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1712,13 +1973,38 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         </div>
                                         <!--end col-->
                                     </div>
-                                    <?php } ?>
+                                    
                                 </div>
                             </div>
                             <!-- Adjuntar -->
                             <div class="tab-pane fade" id="adjuntar" role="tabpanel" aria-labelledby="adjuntar-tab">
                                 <div class="d-flex mb-2">
-                                <?php foreach ($documentos_adjuntos as $key => $value) { ?>
+                                <?php foreach ($documentos_adjuntos as $key => $value) { 
+
+                                        $pjad_identificacion = $value['pjad_identificacion'];
+                                        $pjad_pacto_social = $value['pjad_pacto_social'];
+                                        $pjad_aviso_operaciones = $value['pjad_aviso_operaciones'];
+                                        $pjad_evidencia_ingreso = $value['pjad_evidencia_ingreso'];
+
+                                 } 
+                                 
+                                 if (isset($pjad_identificacion)) {
+                                    $pjad_identificacion = '';
+                                 }
+
+                                 if (isset($pjad_pacto_social)) {
+                                    $pjad_pacto_social = '';
+                                 }
+
+                                 if (isset($pjad_aviso_operaciones)) {
+                                    $pjad_aviso_operaciones = '';
+                                 }
+
+                                 if (isset($pjad_evidencia_ingreso)) {
+                                    $pjad_evidencia_ingreso = '';
+                                 }
+                                 
+                                 ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="card">
@@ -1742,7 +2028,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <input type="file" class="form-control" id="basiInput" name="pjad_identificacion">
                                                                 </div>
                                                                 <br>
-                                                                <a href="<?php echo $value['pjad_identificacion']; ?>" target="_blank">pdf Adjuntos</a>
+                                                                <a href="<?php echo $pjad_identificacion; ?>" target="_blank">pdf Adjuntos</a>
                                                             </div>
                                                             <!--end col-->
                                                             <div style="display:none;">
@@ -1752,7 +2038,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         <input type="file" class="form-control" id="basiInput" name="pjad_pacto_social">
                                                                     </div>
                                                                     <br>
-                                                                    <a href="<?php echo $value['pjad_pacto_social']; ?>" target="_blank">Pacto social adjunto</a>
+                                                                    <a href="<?php echo $pjad_pacto_social; ?>" target="_blank">Pacto social adjunto</a>
                                                                 </div>
                                                                 <!--end col-->
                                                                 <div class="col-xxl-6 col-md-6">
@@ -1761,7 +2047,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         <input type="file" class="form-control" id="basiInput" name="pjad_aviso_operaciones">
                                                                     </div>
                                                                     <br>
-                                                                    <a href="<?php echo $value['pjad_aviso_operaciones']; ?>" target="_blank">Pacto social adjunto</a>
+                                                                    <a href="<?php echo $pjad_aviso_operaciones; ?>" target="_blank">Pacto social adjunto</a>
                                                                 </div>
                                                                 <!--end col-->
                                                                 <div class="col-xxl-6 col-md-6">                                                           
@@ -1770,7 +2056,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         <input type="file" class="form-control" id="basiInput" name="pjad_evidencia_ingreso">
                                                                     </div>
                                                                     <br>
-                                                                    <a href="<?php echo $value['pjad_evidencia_ingreso']; ?>" target="_blank">Evidencia de ingreso adjunto</a>
+                                                                    <a href="<?php echo $pjad_evidencia_ingreso; ?>" target="_blank">Evidencia de ingreso adjunto</a>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1785,13 +2071,78 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         </div>
                                         <!--end col-->
                                     </div> 
-                                <?php } ?>
+                                
                                 </div>
                             </div>
                             <!-- uso interno -->
                             <div class="tab-pane fade" id="interno" role="tabpanel" aria-labelledby="interno-tab">
                                 <div class="d-flex mb-2">
-                                <?php foreach ($uso_interno as $key => $value) { ?>
+                                <?php foreach ($uso_interno as $key => $value) { 
+
+                                            $pjui_nombre_completo_1 = $value['pjui_nombre_completo_1'];
+                                            $pjui_aprobacion_1 = $value['pjui_aprobacion_1'];
+                                            $pjui_fecha_1 = $value['pjui_fecha_1'];
+                                            $pjui_nombre_completo_2 = $value['pjui_nombre_completo_2'];
+                                            $pjui_aprobacion_2 = $value['pjui_aprobacion_2'];
+                                            $pjui_fecha_2 = $value['pjui_fecha_2'];
+                                            $pjui_nombre_completo_3 = $value['pjui_nombre_completo_3'];
+                                            $pjui_aprobacion_3 = $value['pjui_aprobacion_3'];
+                                            $pjui_fecha_3 = $value['pjui_fecha_3'];
+                                            $pjui_nombre_completo_4 = $value['pjui_nombre_completo_4'];
+                                            $pjui_aprobacion_4 = $value['pjui_aprobacion_4'];
+                                            $pjui_fecha_4 = $value['pjui_fecha_4'];
+                                    
+                                 }
+                                 
+                                 if (!isset($pjui_nombre_completo_1)) {
+                                    $pjui_nombre_completo_1 = '';
+                                 }
+
+                                 if (!isset($pjui_aprobacion_1)) {
+                                    $pjui_aprobacion_1 = '';
+                                 }
+
+                                 if (!isset($pjui_fecha_1)) {
+                                    $pjui_fecha_1 = '';
+                                 }
+
+                                 if (!isset($pjui_nombre_completo_2)) {
+                                    $pjui_nombre_completo_2 = '';
+                                 }
+
+                                 if (!isset($pjui_aprobacion_2)) {
+                                    $pjui_aprobacion_2 = '';
+                                 }
+
+                                 if (!isset($pjui_fecha_2)) {
+                                    $pjui_fecha_2 = '';
+                                 }
+
+                                 if (!isset($pjui_nombre_completo_3)) {
+                                    $pjui_nombre_completo_3 = '';
+                                 }
+
+                                 if (!isset($pjui_aprobacion_3)) {
+                                    $pjui_aprobacion_3 = '';
+                                 }
+
+                                 if (!isset($pjui_fecha_3)) {
+                                    $pjui_fecha_3 = '';
+                                 }
+
+                                 if (!isset($pjui_nombre_completo_4)) {
+                                    $pjui_nombre_completo_4 = '';
+                                 }
+
+                                 if (!isset($pjui_aprobacion_4)) {
+                                    $pjui_aprobacion_4 = '';
+                                 }
+
+                                 if (!isset($pjui_fecha_4)) {
+                                    $pjui_fecha_4 = '';
+                                 }
+                                 
+                                 ?>
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="card">
@@ -1805,14 +2156,14 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre y apellidos del vendedor</label>
-                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_1" value="<?php echo $value['pjui_nombre_completo_1']; ?>">
+                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_1" value="<?php echo $pjui_nombre_completo_1; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Aprobación</label>
-                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_1" value="<?php echo $value['pjui_aprobacion_1']; ?>">
+                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_1" value="<?php echo $pjui_aprobacion_1; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1820,21 +2171,21 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjui_fecha_1" value="<?php echo $value['pjui_fecha_1']; ?>">
+                                                                    data-date-format="d M, Y" name="pjui_fecha_1" value="<?php echo $pjui_fecha_1; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre y apellidos del encargado de sucursal</label>
-                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_2" value="<?php echo $value['pjui_nombre_completo_2']; ?>">
+                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_2" value="<?php echo $pjui_nombre_completo_2; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Aprobación</label>
-                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_2" value="<?php echo $value['pjui_aprobacion_2']; ?>">
+                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_2" value="<?php echo $pjui_aprobacion_2; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1842,21 +2193,21 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjui_fecha_2" value="<?php echo $value['pjui_fecha_2']; ?>">
+                                                                    data-date-format="d M, Y" name="pjui_fecha_2" value="<?php echo $pjui_fecha_2; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre y apellidos del analista de cumplimiento</label>
-                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_3" value="<?php echo $value['pjui_nombre_completo_3']; ?>">
+                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_3" value="<?php echo $pjui_nombre_completo_3; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Aprobación</label>
-                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_3" value="<?php echo $value['pjui_aprobacion_3']; ?>">
+                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_3" value="<?php echo $pjui_aprobacion_3; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1864,7 +2215,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjui_fecha_3" value="<?php echo $value['pjui_fecha_3']; ?>">
+                                                                    data-date-format="d M, Y" name="pjui_fecha_3" value="<?php echo $pjui_fecha_3; ?>">
                                                                 </div>
                                                             </div>
 
@@ -1872,14 +2223,14 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Nombre y apellidos del gerente de venta de autos (solo para PEPs)</label>
-                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_4" value="<?php echo $value['pjui_nombre_completo_4']; ?>">
+                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_4" value="<?php echo $pjui_nombre_completo_4; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Aprobación</label>
-                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_4" value="<?php echo $value['pjui_aprobacion_4']; ?>">
+                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_4" value="<?php echo $pjui_aprobacion_4; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1887,7 +2238,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjui_fecha_4" value="<?php echo $value['pjui_fecha_4']; ?>">
+                                                                    data-date-format="d M, Y" name="pjui_fecha_4" value="<?php echo $pjui_fecha_4; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1902,7 +2253,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         </div>
                                         <!--end col-->
                                     </div>
-                                <?php } ?>
+                                
                                 </div>
                             </div>
                             <!-- I. GENERALES DE LOS BENEFICIARIOS FINALES- PERSONA NATURAL -->
