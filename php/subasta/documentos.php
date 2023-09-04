@@ -1,3 +1,529 @@
+<?php
+$mensaje = "";
+
+try {
+  $pdo = new PDO('mysql:host=db;dbname=db;charset=utf8mb4', 'parrieta', 'Dollar2022');
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+  echo "Error de conexión: " . $e->getMessage();
+}
+
+if (isset($_POST['nombre_pn'])) {
+
+    $insert = $pdo -> query("INSERT INTO cc_subastas(nombre_completo, email, telefono, tipo_persona, stat)VALUES('".$_POST['nombre_pn']."', '".$_POST['email_pn']."', '".$_POST['telefono_pn']."', 'NATURAL', 1)");
+    
+    $mensaje = '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>Registro Realizado!</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>';
+    
+    $ultimo_id = $pdo -> query("SELECT MAX(id) as id FROM cc_subastas");
+    $rows = $ultimo_id->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($rows as $row) {
+      $id_ult = $row['id'];
+    }
+
+    // recibo
+
+    if (!empty($_FILES["recibo_pn"]["name"])) {
+
+      $target_dir = "recibo_pn/";  
+
+      $uniqueFileName = uniqid() . "-" . time();
+      $fileExtension = pathinfo($_FILES["recibo_pn"]["name"], PATHINFO_EXTENSION);
+      $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+      $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+      $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+      $check = getimagesize($_FILES["recibo_pn"]["tmp_name"]);
+
+      if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+        if (move_uploaded_file($_FILES["recibo_pn"]["tmp_name"], $target_file)) {
+
+          $update = $pdo -> query("UPDATE cc_subastas SET pn_recibo_servicios = '".$target_file."' WHERE id = '".$id_ult."'");
+          
+        } else {
+          echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+        }
+    
+      } else {
+        echo "El archivo no es una imagen.";
+      }
+
+    }
+
+    // ficha
+
+    if (!empty($_FILES["ficha_pn"]["name"])) {
+
+      $target_dir = "ficha_pn/";  
+
+      $uniqueFileName = uniqid() . "-" . time();
+      $fileExtension = pathinfo($_FILES["ficha_pn"]["name"], PATHINFO_EXTENSION);
+      $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+      $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+      $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+      $check = getimagesize($_FILES["ficha_pn"]["tmp_name"]);
+
+      if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+        if (move_uploaded_file($_FILES["ficha_pn"]["tmp_name"], $target_file)) {
+
+          $update = $pdo -> query("UPDATE cc_subastas SET pn_ficha = '".$target_file."' WHERE id = '".$id_ult."'");
+          
+        } else {
+          echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+        }
+    
+      } else {
+        echo "El archivo no es una imagen.";
+      }
+
+    }
+
+    // cc_pn
+
+    if (!empty($_FILES["cc_pn"]["name"])) {
+
+      $target_dir = "cc_pn/";  
+
+      $uniqueFileName = uniqid() . "-" . time();
+      $fileExtension = pathinfo($_FILES["cc_pn"]["name"], PATHINFO_EXTENSION);
+      $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+      $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+      $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+      $check = getimagesize($_FILES["cc_pn"]["tmp_name"]);
+
+      if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+        if (move_uploaded_file($_FILES["cc_pn"]["tmp_name"], $target_file)) {
+
+          $update = $pdo -> query("UPDATE cc_subastas SET pn_cc = '".$target_file."' WHERE id = '".$id_ult."'");
+          
+        } else {
+          echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+        }
+    
+      } else {
+        echo "El archivo no es una imagen.";
+      }
+
+    }
+
+    // carta_exo_pn
+
+    if (!empty($_FILES["carta_exo_pn"]["name"])) {
+
+      $target_dir = "carta_exo_pn/";  
+
+      $uniqueFileName = uniqid() . "-" . time();
+      $fileExtension = pathinfo($_FILES["carta_exo_pn"]["name"], PATHINFO_EXTENSION);
+      $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+      $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+      $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+      $check = getimagesize($_FILES["carta_exo_pn"]["tmp_name"]);
+
+      if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+        if (move_uploaded_file($_FILES["carta_exo_pn"]["tmp_name"], $target_file)) {
+
+          $update = $pdo -> query("UPDATE cc_subastas SET pn_carta_ex = '".$target_file."' WHERE id = '".$id_ult."'");
+          
+        } else {
+          echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+        }
+    
+      } else {
+        echo "El archivo no es una imagen.";
+      }
+
+    }
+
+} 
+
+if (isset($_POST['nombre_completo_pni'])) {
+
+  $insert = $pdo -> query("INSERT INTO cc_subastas(nombre_completo, email, telefono, tipo_persona, stat)VALUES('".$_POST['nombre_completo_pni']."', '".$_POST['email_pni']."', '".$_POST['telefono_pni']."', 'NATURAL INDEPENDIENTE', 1)");
+  
+  $mensaje = '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Registro Realizado!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+  
+  $ultimo_id = $pdo -> query("SELECT MAX(id) as id FROM cc_subastas");
+  $rows = $ultimo_id->fetchAll(PDO::FETCH_ASSOC);
+  foreach ($rows as $row) {
+    $id_ult = $row['id'];
+  }
+
+  // recibo
+
+  if (!empty($_FILES["recibo_pni"]["name"])) {
+
+    $target_dir = "recibo_pni/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["recibo_pni"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["recibo_pni"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["recibo_pni"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pni_servicios = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+  // cedula pasaporte
+
+  if (!empty($_FILES["cedula_pni"]["name"])) {
+
+    $target_dir = "cedula_pni/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["cedula_pni"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["cedula_pni"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["cedula_pni"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pni_cedula = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+  // aviso operaciones
+
+  if (!empty($_FILES["aviso_pni"]["name"])) {
+
+    $target_dir = "aviso_pni/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["aviso_pni"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["aviso_pni"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["aviso_pni"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pni_aviso_op = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+  // referencia
+
+  if (!empty($_FILES["referencia_pni"]["name"])) {
+
+    $target_dir = "referencia_pni/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["referencia_pni"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["referencia_pni"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["referencia_pni"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pni_referencia = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+  // conosca a su cliente
+
+  if (!empty($_FILES["cc_pni"]["name"])) {
+
+    $target_dir = "cc_pni/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["cc_pni"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["cc_pni"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["cc_pni"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pni_cc = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+  // carta 
+
+  if (!empty($_FILES["carta_ex_pni"]["name"])) {
+
+    $target_dir = "carta_ex_pni/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["carta_ex_pni"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["carta_ex_pni"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["carta_ex_pni"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pni_carta_ex = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+}
+
+if (isset($_POST['nombre_completo_pj'])) {
+
+  $insert = $pdo -> query("INSERT INTO cc_subastas(nombre_completo, email, telefono, tipo_persona, stat)VALUES('".$_POST['nombre_completo_pj']."', '".$_POST['email_pj']."', '".$_POST['telefono_pj']."', 'JURIDICA', 1)");
+  
+  $mensaje = '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Registro Realizado!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
+  
+  $ultimo_id = $pdo -> query("SELECT MAX(id) as id FROM cc_subastas");
+  $rows = $ultimo_id->fetchAll(PDO::FETCH_ASSOC);
+  foreach ($rows as $row) {
+    $id_ult = $row['id'];
+  }
+
+  // registro publico
+
+  if (!empty($_FILES["registro_publico_pj"]["name"])) {
+
+    $target_dir = "registro_publico_pj/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["registro_publico_pj"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["registro_publico_pj"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["registro_publico_pj"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pj_registro_publico = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+  // cedula pasaporte
+
+  if (!empty($_FILES["cedula_pj"]["name"])) {
+
+    $target_dir = "cedula_pj/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["cedula_pj"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["cedula_pj"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["cedula_pj"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pj_cedula_pass = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+  // aviso operaciones
+
+  if (!empty($_FILES["aviso_op_pj"]["name"])) {
+
+    $target_dir = "aviso_op_pj/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["aviso_op_pj"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["aviso_op_pj"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["aviso_op_pj"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pj_aviso_ope = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+  // servicios
+
+  if (!empty($_FILES["servicios_pj"]["name"])) {
+
+    $target_dir = "servicios_pj/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["servicios_pj"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["servicios_pj"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["servicios_pj"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pj_servicios = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+  // conosca a su cliente
+
+  if (!empty($_FILES["cc_pj"]["name"])) {
+
+    $target_dir = "cc_pj/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["cc_pj"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["cc_pj"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["cc_pj"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pj_cc = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+  // carta 
+
+  if (!empty($_FILES["carta_ex_pj"]["name"])) {
+
+    $target_dir = "carta_ex_pj/";  
+
+    $uniqueFileName = uniqid() . "-" . time();
+    $fileExtension = pathinfo($_FILES["carta_ex_pj"]["name"], PATHINFO_EXTENSION);
+    $target_file = $target_dir . $uniqueFileName . "." . $fileExtension;
+    $allowed_image_extensions = ["jpg", "png", "gif", "bmp", "jpeg"];
+    $allowed_doc_extensions = ["pdf", "doc", "docx", "txt"];
+    $check = getimagesize($_FILES["carta_ex_pj"]["tmp_name"]);
+
+    if ($check !== false || in_array($fileExtension, $allowed_doc_extensions)) {
+
+      if (move_uploaded_file($_FILES["carta_ex_pj"]["tmp_name"], $target_file)) {
+
+        $update = $pdo -> query("UPDATE cc_subastas SET pj_carta_exo = '".$target_file."' WHERE id = '".$id_ult."'");
+        
+      } else {
+        echo "Lo siento, ha ocurrido un error al subir tu archivo.";
+      }
+  
+    } else {
+      echo "El archivo no es una imagen.";
+    }
+
+  }
+
+}
+
+?>
 
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -9,25 +535,17 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
     <title>Subastas - PCR</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/offcanvas-navbar/">
-
-    
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#712cf9">
-
-
+    <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+      <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -123,108 +641,27 @@
       </symbol>
     </svg>
 
-    <!--<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div> -->
-
     
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"> <img src="logogrupopcr.png" width="150"> </a>
-    <!--<button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-      
-    <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Notifications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Switch account</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-    -->
 
   </div>
 </nav>
 
-<!--<div class="nav-scroller bg-body shadow-sm">
-  <nav class="nav" aria-label="Secondary navigation">
-    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-    <a class="nav-link" href="#">
-      Friends
-      <span class="badge text-bg-light rounded-pill align-text-bottom">27</span>
-    </a>
-    <a class="nav-link" href="#">Explore</a>
-    <a class="nav-link" href="#">Suggestions</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-  </nav>
-</div> -->
+
 
 <main class="container">
-  <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm">
-    <img class="me-3" src="/docs/5.3/assets/brand/bootstrap-logo-white.svg" alt="" width="48" height="38">
-    <!-- <div class="lh-1">
-      <h1 class="h6 mb-0 text-white lh-1">Bootstrap</h1>
-      <small>Since 2011</small>
-    </div> -->
-  </div>
 
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <?php echo $mensaje; ?>
+    <p>Elija una de las tres opciones disponibles a continuación, seleccionando la que mejor se ajuste a su perfil: ya sea persona natural, 
+      independiente o jurídica. Complete el formulario correspondiente y adjunte todos los documentos requeridos.<br>
+      Se le notificará por correo electrónico una vez que su registro haya sido aprobado, permitiéndole así continuar con el proceso.<br></p>
   <div class="accordion accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
@@ -238,52 +675,52 @@
         <div class="my-3 p-3 bg-body rounded shadow-sm">
           <h6 class="border-bottom pb-2 mb-0">REQUISITOS</h6>
           <div class="d-flex text-body-secondary pt-3">
-            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" role="img" aria-label="Placeholder: 32x32" focusable="false"><title>Recibo de Servicios básicos</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
             <p class="pb-3 mb-0 small lh-sm border-bottom">
               <strong class="d-block text-gray-dark">Recibo de Servicios básicos: Luz - Agua - Teléfono - Cable - etc. (En caso que no tenga su nombre, debe completar la carta de Declaración Jurada de domicilio)</strong>
             </p>
           </div>
           <div class="d-flex text-body-secondary pt-3">
-            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" role="img" aria-label="Placeholder: 32x32" focusable="false"><title>Ficha o talonario o carta de trabajo</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
             <p class="pb-3 mb-0 small lh-sm border-bottom">
               <strong class="d-block text-gray-dark">Ficha o talonario o carta de trabajo</strong>
             </p>
           </div>
           <div class="d-flex text-body-secondary pt-3">
-            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" role="img" aria-label="Placeholder: 32x32" focusable="false"><title>Conoce tu Cliente</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
             <p class="pb-3 mb-0 small lh-sm border-bottom">
               <strong class="d-block text-gray-dark">Llenar formulario Conoce tu Cliente</strong>
-              Descargalo aqui, y llena todo el documento.
+              Descargalo <a href="Panama Car Rental Persona Natural.xlsm" target="_blank" rel="noopener noreferrer"> aqui </a>, y llena todo el documento. <a href="Panama Car Rental Persona Natural.xlsm" target="_blank" rel="noopener noreferrer"> Descargar</a>
             </p>
           </div>
-          <div class="d-flex text-body-secondary pt-3">
-            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+          <!--<div class="d-flex text-body-secondary pt-3">
+            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" role="img" aria-label="Placeholder: 32x32" focusable="false"><title>Carta de exoneración de responsabilidad con firma y huella</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
             <p class="pb-3 mb-0 small lh-sm border-bottom">
               <strong class="d-block text-gray-dark">Carta de exoneración de responsabilidad con firma y huella</strong>
             </p>
-          </div>
-          <div class="d-flex text-body-secondary pt-3">
-            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-            <p class="pb-3 mb-0 small lh-sm border-bottom">
-              <strong class="d-block text-gray-dark">Firma y huella de contrato de Compra venta Como está y Donde está</strong>
-            </p>
-          </div>
+          </div>-->
         </div>
-        <div class="my-3 p-3 bg-body rounded shadow-sm">
-          <h5>Llene los campos y adjunte los documentos solicitados, los campos con (<span style="color:red;">*</span>) son obligatorios</h5>
-          <label for="">Nombre Completo <span style="color:red;">*</span></label>
-          <input type="text" class="form-control" value="">
-          <label for="">Email <span style="color:red;">*</span></label>
-          <input type="text" name="" class="form-control">
-          <label for="">Recibo de Servicios básicos <span style="color:red;">*</span></label>
-          <input type="file" name="" id=""class="form-control">
-          <label for="">Ficha, talonario o carta de trabajo <span style="color:red;">*</span></label>
-          <input type="file" name="" id=""class="form-control">
-          <label for="">Carta de exoneración</label>
-          <input type="file" name="" id=""class="form-control">
-          <label for="">Firma y huella de contrato de Compra venta</label>
-          <input type="file" name="" id=""class="form-control">
-        </div>
+        <form action="" method="post" enctype="multipart/form-data">
+          <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <h5>Llene los campos y adjunte los documentos solicitados, los campos con (<span style="color:red;">*</span>) son obligatorios</h5>
+            <label for=""> <b> Nombre Completo </b> <span style="color:red;">*</span></label>
+            <input type="text" class="form-control" name="nombre_pn" required>
+            <label for=""><b>Email </b><span style="color:red;">*</span></label>
+            <input type="text" name="email_pn" class="form-control" required>
+            <label for=""><b>N# Telefono </b><span style="color:red;">*</span></label>
+            <input type="text" name="telefono_pn" class="form-control" required>
+            <label for=""><b>Recibo de Servicios básicos </b><span style="color:red;">*</span></label>
+            <input type="file" name="recibo_pn" required id=""class="form-control">
+            <label for=""><b>Ficha, talonario o carta de trabajo </b><span style="color:red;">*</span></label>
+            <input type="file" name="ficha_pn" id=""class="form-control" required>
+            <label for=""><b>Formulario Conoce tu Cliente </b><span style="color:red;">*</span></label>
+            <input type="file" name="cc_pn" id=""class="form-control" required>
+            <!--<label for=""><b>Carta de exoneración </b></label>
+            <input type="file" name="carta_exo_pn" name="" id=""class="form-control">-->
+            <br>
+            <input type="submit" value="Enviar Informacion" class="btn btn-primary" id="enviar_pn" name="perosna_pn">
+          </div>
+        </form>
 
       </div>
     </div>
@@ -330,42 +767,39 @@
             Descargalo <a href="Panama Car Rental Persona Natural.xlsm" target="_blank" rel="noopener noreferrer"> aqui </a>, y llena todo el documento. <a href="Panama Car Rental Persona Natural.xlsm" target="_blank" rel="noopener noreferrer"> Descargar</a>
           </p>
         </div>
-        <div class="d-flex text-body-secondary pt-3">
+        <!--<div class="d-flex text-body-secondary pt-3">
           <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
           <p class="pb-3 mb-0 small lh-sm border-bottom">
             <strong class="d-block text-gray-dark">Carta de exoneración de responsabilidad con firma y huella</strong>
           </p>
-        </div>
-        <div class="d-flex text-body-secondary pt-3">
-          <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-          <p class="pb-3 mb-0 small lh-sm border-bottom">
-            <strong class="d-block text-gray-dark">Firma y huella de contrato de Compra venta Como está y Donde está</strong>
-          </p>
-        </div>
+        </div> -->
       </div>
 
-      <div class="my-3 p-3 bg-body rounded shadow-sm">
-        <h5>Llene los campos y adjunte los documentos solicitados, los campos con (<span style="color:red;">*</span>) son obligatorios</h5>
-        <label for="">Nombre Completo <span style="color:red;">*</span></label>
-        <input type="text" class="form-control" value="">
-        <label for="">Email <span style="color:red;">*</span></label>
-        <input type="text" name="" class="form-control">
-        <label for="">Copia de cédula o Pasaporte <span style="color:red;">*</span></label>
-        <input type="file" name="" id=""class="form-control">
-        <label for="">Aviso de Operaciones vigente <span style="color:red;">*</span></label>
-        <input type="file" name="" id=""class="form-control">
-        <label for="">Recibo de Servicios básicos</label>
-        <input type="file" name="" id=""class="form-control">
-        <label for="">Carta de referencia bancaria</label>
-        <input type="file" name="" id=""class="form-control">
-        <label for="">Formulario Conoce tu Cliente</label>
-        <input type="file" name="" id=""class="form-control">
-        <label for="">Carta de exoneración</label>
-        <input type="file" name="" id=""class="form-control">
-        <label for="">Contrato de Compra</label>
-        <input type="file" name="" id=""class="form-control">
-      </div>
-
+      <form action="" method="post" enctype="multipart/form-data">
+        <div class="my-3 p-3 bg-body rounded shadow-sm">
+          <h5>Llene los campos y adjunte los documentos solicitados, los campos con (<span style="color:red;">*</span>) son obligatorios</h5>
+          <label for=""><b>Nombre Completo </b><span style="color:red;">*</span></label>
+          <input type="text" name="nombre_completo_pni" class="form-control" value="">
+          <label for=""><b>Email </b><span style="color:red;">*</span></label>
+          <input type="text" name="email_pni" class="form-control">
+          <label for=""><b>N# Telefono </b><span style="color:red;">*</span></label>
+          <input type="text" name="telefono_pni" class="form-control" required>
+          <label for=""><b>Copia de cédula o Pasaporte </b><span style="color:red;">*</span></label>
+          <input type="file" name="cedula_pni" id=""class="form-control">
+          <label for=""><b>Aviso de Operaciones vigente </b><span style="color:red;">*</span></label>
+          <input type="file" name="aviso_pni" id=""class="form-control">
+          <label for=""><b>Recibo de Servicios básicos</b><span style="color:red;">*</span></label>
+          <input type="file" name="recibo_pni" id=""class="form-control">
+          <label for=""><b>Carta de referencia bancaria</b><span style="color:red;">*</span></label>
+          <input type="file" name="referencia_pni" id=""class="form-control">
+          <label for=""><b>Formulario Conoce tu Cliente</b><span style="color:red;">*</span></label>
+          <input type="file" name="cc_pni" id=""class="form-control">
+          <!--<label for=""><b>Carta de exoneración</b></label>
+          <input type="file" name="carta_ex_pni" id=""class="form-control">-->
+          <br>
+          <input type="submit" value="Enviar Informacion" class="btn btn-primary" id="enviar_pni" name="pesona_pni">
+        </div>
+      </form>
       </div>
     </div>
   </div>
@@ -421,56 +855,67 @@
               Descargalo <a href="Panama Car Rental Persona Jurídica.xlsm" target="_blank" rel="noopener noreferrer"> aqui </a>, y llena todo el documento. <a href="Panama Car Rental Persona Jurídica.xlsm" target="_blank" rel="noopener noreferrer"> Descargar</a>
             </div>
           </div>
-          <div class="d-flex text-body-secondary pt-3">
+          <!--<div class="d-flex text-body-secondary pt-3">
             <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
             <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
               <div class="d-flex justify-content-between">
                 <strong class="text-gray-dark">Carta de exoneración de responsabilidad con firma y huella. </strong>
               </div>
             </div>
-          </div>
-          <div class="d-flex text-body-secondary pt-3">
-            <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-            <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
-              <div class="d-flex justify-content-between">
-                <strong class="text-gray-dark">Firma y huella de contrato de Compra venta Como está y Donde está. </strong>
-              </div>
-            </div>
-          </div>
+          </div>-->
         </div>
-
-        <div class="my-3 p-3 bg-body rounded shadow-sm">
-          <h5>Llene los campos y adjunte los documentos solicitados, los campos con (<span style="color:red;">*</span>) son obligatorios</h5>
-          <label for="">Nombre Completo <span style="color:red;">*</span></label>
-          <input type="text" class="form-control" value="">
-          <label for="">Email <span style="color:red;">*</span></label>
-          <input type="text" name="" class="form-control">
-          <label for="">Certificado de Registro Público <span style="color:red;">*</span></label>
-          <input type="file" name="" id=""class="form-control">
-          <label for="">Aviso de Operaciones vigente <span style="color:red;">*</span></label>
-          <input type="file" name="" id=""class="form-control">
-          <label for="">Copia de cédula o pasaport</label>
-          <input type="file" name="" id=""class="form-control">
-          <label for="">Recibo de Servicios</label>
-          <input type="file" name="" id=""class="form-control">
-          <label for="">Formulario Conoce tu Cliente</label>
-          <input type="file" name="" id=""class="form-control">
-          <label for="">Carta de exoneración</label>
-          <input type="file" name="" id=""class="form-control">
-          <label for="">Contrato de Compra</label>
-          <input type="file" name="" id=""class="form-control">
-        </div>
+        <form action="" method="post" enctype="multipart/form-data">
+          <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <h5>Llene los campos y adjunte los documentos solicitados, los campos con (<span style="color:red;">*</span>) son obligatorios</h5>
+            <label for=""><b>Nombre Completo </b><span style="color:red;">*</span></label>
+            <input type="text" class="form-control" name="nombre_completo_pj">
+            <label for=""><b>Email </b><span style="color:red;">*</span></label>
+            <input type="text" name="email_pj" class="form-control">
+            <label for=""><b>N# Telefono </b><span style="color:red;">*</span></label>
+            <input type="text" name="telefono_pj" class="form-control" required>
+            <label for=""><b>Certificado de Registro Público </b><span style="color:red;">*</span></label>
+            <input type="file" name="registro_publico_pj" id=""class="form-control">
+            <label for=""><b>Aviso de Operaciones vigente </b><span style="color:red;">*</span></label>
+            <input type="file" name="aviso_op_pj" id=""class="form-control">
+            <label for=""><b>Copia de cédula o pasaport</b><span style="color:red;">*</span></label>
+            <input type="file" name="cedula_pj" id=""class="form-control">
+            <label for=""><b>Recibo de Servicios</b><span style="color:red;">*</span></label>
+            <input type="file" name="servicios_pj" id=""class="form-control">
+            <label for=""><b>Formulario Conoce tu Cliente</b><span style="color:red;">*</span></label>
+            <input type="file" name="cc_pj" id=""class="form-control">
+            <!--<label for=""><b>Carta de exoneración</b></label>
+            <input type="file" name="carta_ex_pj" id=""class="form-control">-->
+            <br>
+            <input type="submit" value="Enviar Informacion" class="btn btn-primary" id="enviar_pj" name="persona_pj">
+          </div>
+        </form>
 
       </div>
     </div>
   </div>
 </div>
 
-
-
-
 </main>
-<script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/5.3/examples/offcanvas-navbar/offcanvas-navbar.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const btnEnviar = document.getElementById('enviar_pn');
+        const btnEnviarpni = document.getElementById('enviar_pni');
+        const btnEnviarpj = document.getElementById('enviar_pj');
 
-    <script src="https://getbootstrap.com/docs/5.3/examples/offcanvas-navbar/offcanvas-navbar.js"></script></body>
+        form.addEventListener('submit', function(event) {
+
+          btnEnviar.disabled = true;
+          btnEnviar.value = 'Enviando...'; 
+          btnEnviarpni.disabled = true;
+          btnEnviarpni.value = 'Enviando...'; 
+          btnEnviarpj.disabled = true;
+          btnEnviarpj.value = 'Enviando...'; 
+        });
+      });
+    </script>
+
+  </body>
 </html>
