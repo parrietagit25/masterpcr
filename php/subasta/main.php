@@ -299,7 +299,6 @@ try {
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary" name="aprobar_final">Aprobar</button>
             </div>
           </form>
         </div>
@@ -320,7 +319,7 @@ try {
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary" name="aprobar_final">Aprobar</button>
+              <button type="submit" class="btn btn-danger" name="aprobar_final">Eliminar</button>
             </div>
           </form>
         </div>
