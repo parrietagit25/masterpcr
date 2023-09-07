@@ -107,7 +107,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     ____________________________________________________, debido a que se vende como está y donde está. Dicho descuento cubre cualquier <br> 
                     desperfecto que tenga el vehiculo al momento de la firma del presente contrato y a futuro; incluyendo, pero no limitándose a cualquier <br> 
                     desperfecto que pueda surgir de que en el momento de la inspeccion mencionada en la clausula CUARTA no fue encontrado por <br> 
-                    EL COMPRADOR. Por lo tanto, <b>PANAMA CAR RENTAL, S.A.</b> manifiesta que EL COMPRADOR estará llevando el bien bajo su responsabilidad y no goza <br> 
+                    EL COMPRADOR. Por lo tanto, <b>PANAMA CAR RENTAL, S.A.</b> manifiesta que EL COMPRADOR estará llevando el bien bajo su <br> responsabilidad y no goza  
                     de garantías ni reclamos legales.<br>
 
                     <b>Dado en la Ciudad de Panamá, a los '.date("j").' días del mes '.date("n").' del año '.date("Y").'.</b>
