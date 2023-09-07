@@ -305,7 +305,6 @@ try {
       </div>
     </div>
 
-
     <!-- Modal Eliminar -->
     <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">

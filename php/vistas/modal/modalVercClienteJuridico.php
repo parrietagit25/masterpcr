@@ -94,7 +94,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjexp_fecha" value="<?php echo $value['pjexp_fecha']; ?>">
+                                                                    data-date-format="d M, Y" name="pjexp_fecha" value="<?php if($value['pjexp_fecha']=='1970-01-01'){ } else{echo $value['pjexp_fecha']; } ?>"><!-- agregado error de la fecha -->
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -641,7 +641,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha de nacimiento</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjrl_fecha_nacimiento" value="<?php echo $pjrl_fecha_nacimiento; ?>">
+                                                                    data-date-format="d M, Y" name="pjrl_fecha_nacimiento" value="<?php if($pjrl_fecha_nacimiento=='1970-01-01'){ } else{echo $pjrl_fecha_nacimiento; } ?>"> <!-- Error de la fecha-->
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1211,7 +1211,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjbf_fecha_nacimiento" value="<?php echo $pjbf_fecha_nacimiento; ?>">
+                                                                    data-date-format="d M, Y" name="pjbf_fecha_nacimiento" value="<?php if($pjbf_fecha_nacimientoo=='1970-01-01'){ } else{echo $pjbf_fecha_nacimiento; } ?>"> <!-- Error de la fecha-->
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -1579,7 +1579,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjtu_fecha_nacimiento" value="<?php echo $pjtu_fecha_nacimiento; ?>">
+                                                                    data-date-format="d M, Y" name="pjtu_fecha_nacimiento" value="<?php if($pjtu_fecha_nacimiento=='1970-01-01'){ } else{echo $pjtu_fecha_nacimiento; } ?>"> <!-- Error de la fecha-->
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 

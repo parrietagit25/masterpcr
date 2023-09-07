@@ -104,15 +104,39 @@ $html = '<div class="container" style="font-size: 10px;">
 
                     <b>Quinto:</b> El vehículo a motor, tiene la condición de usado por ello se vende como está y donde está, y su precio de <br>
                     original de venta es de B/. ___________________________________________________________, y se le esta otorgando un descuento de B/.<br> 
-                    ____________________________________________________, debido a que se vende como está y donde está, por lo cual nuestra empresa, manifiesta <br>
-                    que el comprador estará llevando el bien bajo su responsabilidad y no goza de garantías ni reclamos legales, <b> por <br>
-                    recibir descuento en el precio original de venta. (Base Legal, Artículo 66 , Ley 45 del 2007).</b>
+                    ____________________________________________________, debido a que se vende como está y donde está. Dicho descuento cubre cualquier <br> 
+                    desperfecto que tenga el vehiculo al momento de la firma del presente contrato y a futuro; incluyendo, pero no limitándose a cualquier <br> 
+                    desperfecto que pueda surgir de que en el momento de la inspeccion mencionada en la clausula CUARTA no fue encontrado por <br> 
+                    EL COMPRADOR. Por lo tanto, <b>PANAMA CAR RENTAL, S.A.</b> manifiesta que EL COMPRADOR estará llevando el bien bajo su responsabilidad y no goza <br> 
+                    de garantías ni reclamos legales.<br>
 
                     <b>Dado en la Ciudad de Panamá, a los '.date("j").' días del mes '.date("n").' del año '.date("Y").'.</b>
                     <br>
-                    <b> EL COMPRADOR: ____'.$nombre_completo.'___ </b> <br><br>
-                    DOC. IDENT: __'.$cedula.'__ <br> <br><br>
-                    FIRMA: ___________________________________________________
+                    <br>
+                    <br>
+                    <table border="0" style="width:100%;">
+                        <tr>
+                            <td> EL COMPRADOR: __'.$nombre_completo.'__</td>
+                            <td></td>
+                            <td></td>
+                            <td>EL VENDEDOR: ____________________</td>
+                        </tr>
+                        <tr>
+                            <td> DOC. IDENT: __'.$cedula.'__ </td>
+                            <td></td>
+                            <td></td>
+                            <td> Cedula: ____________________</td>
+                        </tr>
+                        <tr>
+                            <td>  <br><br><br>
+                            FIRMA: _________________________ </td>
+                            <td></td>
+                            <td></td>
+                            <td>  <br><br><br>
+                            FIRMA: _________________________</td>
+                        </tr>
+                    </table>
+
                     <br>
                     <br>
                     <br>
