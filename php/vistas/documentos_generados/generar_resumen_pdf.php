@@ -116,6 +116,17 @@ $html = '<div class="container" style="font-size: 10px;">
                             $estado_civil_descripcion = '';
                         }
 
+                        // pais de recidencia
+
+                        $residencia_fiscal = $cCclienteController->obtener_pais_id($value['fg_pais_residencia']);
+                        foreach ($residencia_fiscal as $key => $valuePais) {
+                            $pais_r = $valuePais['nombre'];
+                        }  
+                        
+                        if(!isset($pais_r)){
+                            $pais_r = '';
+                        }
+
                         // pais de residencia fiscal
 
                         $residencia_fiscal = $cCclienteController->obtener_pais_id($value['fg_pais_residencia_fiscal']);
