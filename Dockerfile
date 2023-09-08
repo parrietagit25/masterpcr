@@ -24,17 +24,15 @@ RUN docker-php-ext-install zip pdo pdo_mysql gd
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Copiar archivos del certificado
-COPY 1599616341.grupopcr.com.pa.crt /etc/apache2/ssl/1599616341.grupopcr.com.pa.crt
-COPY 1599616341.grupopcr.com.pa.key /etc/apache2/ssl/1599616341.grupopcr.com.pa.key
-COPY 1599616341.grupopcr.com.pa.ca-bundle /etc/apache2/ssl/1599616341.grupopcr.com.pa.ca-bundle
+COPY STAR_grupopcr_com_pa.crt /etc/apache2/ssl/STAR_grupopcr_com_pa.crt
+COPY grupopcr.key /etc/apache2/ssl/grupopcr.key
 
 # Configurar el sitio SSL en Apache
 RUN echo '<VirtualHost *:443>' > /etc/apache2/sites-available/default-ssl.conf && \
     echo '    DocumentRoot /var/www/html' >> /etc/apache2/sites-available/default-ssl.conf && \
     echo '    SSLEngine on' >> /etc/apache2/sites-available/default-ssl.conf && \
-    echo '    SSLCertificateFile /etc/apache2/ssl/1599616341.grupopcr.com.pa.crt' >> /etc/apache2/sites-available/default-ssl.conf && \
-    echo '    SSLCertificateKeyFile /etc/apache2/ssl/1599616341.grupopcr.com.pa.key' >> /etc/apache2/sites-available/default-ssl.conf && \
-    echo '    SSLCertificateChainFile /etc/apache2/ssl/1599616341.grupopcr.com.pa.ca-bundle' >> /etc/apache2/sites-available/default-ssl.conf && \
+    echo '    SSLCertificateFile /etc/apache2/ssl/STAR_grupopcr_com_pa.crt' >> /etc/apache2/sites-available/default-ssl.conf && \
+    echo '    SSLCertificateKeyFile /etc/apache2/ssl/grupopcr.key' >> /etc/apache2/sites-available/default-ssl.conf && \
     echo '</VirtualHost>' >> /etc/apache2/sites-available/default-ssl.conf
 
 # Copiar los archivos PHP a la ruta correcta
