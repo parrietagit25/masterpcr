@@ -561,7 +561,7 @@
                                                                                                     <label for="disabledInput" class="form-label">Género</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fg_genero">
-                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <!--<option value="">Seleccione</option> -->
                                                                                                         <?php foreach ($genero as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                                                         <?php } ?>
