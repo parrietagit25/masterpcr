@@ -169,7 +169,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                     <a href="javascript:void(0);" id="boton_cancelar_2" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                                    <button type="submit" class="btn btn-primary" name="eliminar_documento_repo">Guardar</button>
+                                                    <button type="submit" class="btn btn-danger" name="eliminar_documento_repo">Eliminar</button>
                                                 </div>
                                             </form>
                                         </div><!-- /.modal-content -->
