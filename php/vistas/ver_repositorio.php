@@ -198,7 +198,15 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <?php foreach ($todos_registros  as $key => $value) { 
+                                                        <?php 
+                                                        
+                                                            $tipo_doc = "";
+                                                            $num_doc = "";
+                                                            $nombre = "";
+                                                            $fecha_vencimiento = "";
+                                                            $imagen = "";
+                                                        
+                                                            foreach ($todos_registros  as $key => $value) { 
                                                             
                                                                 if ($value['tipo_documento'] == 'cedula') {
 
