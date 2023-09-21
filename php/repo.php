@@ -13,8 +13,16 @@ $cRepositorioController = new Repositorio();
 if (isset($_POST['subir_documento_repo'])) {
   $datos = $_POST;  
   unset($datos['subir_documento_repo']);
-  //$cRepositorioController->subir_archivos($datos);
-  //$alerta = 1;
+  $cRepositorioController->subir_archivos($datos);
+  $alerta = 1;
+}
+
+if (isset($_POST['eliminar_documento_repo'])) {
+  $datos = $_POST;  
+  unset($datos['eliminar_documento_repo']);
+  $where = " id = ".$datos['id'];
+  $cRepositorioController->eliminar_repo($where);
+  $alerta = 3;
 }
 
 if (isset($_GET["view"])) {

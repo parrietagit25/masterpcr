@@ -6,27 +6,90 @@
             if (input.files && input.files[0]) {
                 let clas_fondo = document.querySelector(".file-container");
                 clas_fondo.style.backgroundColor = 'green';
+                document.querySelector('#contenido_repo').style.display = "block"; 
+                document.querySelector('#pie_modal_doc').style.display = "block";
+                document.getElementById('file3').disabled = true;
+                document.getElementById('file2').disabled = true;
+                document.getElementById('tipo_licencia').disabled = true;
+                document.getElementById('tipo_pasaporte').disabled = true;
+
             } else {
                 input.parentElement.style.backgroundColor = '#007BFF';
             }
         }
+
+        document.getElementById('file1').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                document.getElementById('previimagen').src = reader.result;
+            };
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
 
         function cambiar_color_file_repo_lic(input){
             if (input.files && input.files[0]) {
                 let clas_fondo = document.querySelector(".file-container_lic");
                 clas_fondo.style.backgroundColor = 'green';
+                document.querySelector('#contenido_repo_lic').style.display = "block"; 
+                document.querySelector('#pie_modal_doc').style.display = "block";
+                document.getElementById('file1').disabled = true;
+                document.getElementById('file2').disabled = true;
+                document.getElementById('tipo_cedula').disabled = true;
+                document.getElementById('tipo_pasaporte').disabled = true;
+                
             } else {
                 input.parentElement.style.backgroundColor = '#007BFF';
             }
         }
 
+        document.getElementById('file3').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                document.getElementById('previimagen').src = reader.result;
+            };
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+
         function cambiar_color_file_repo_pass(input){
             if (input.files && input.files[0]) {
                 let clas_fondo = document.querySelector(".file-container_pass");
                 clas_fondo.style.backgroundColor = 'green';
+                document.querySelector('#contenido_repo_pass').style.display = "block"; 
+                document.querySelector('#pie_modal_doc').style.display = "block";
+                document.getElementById('file1').disabled = true;
+                document.getElementById('file3').disabled = true;
+                document.getElementById('tipo_cedula').disabled = true;
+                document.getElementById('tipo_licencia').disabled = true;
+
             } else {
                 input.parentElement.style.backgroundColor = '#007BFF';
             }
+        }
+
+        document.getElementById('file2').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                document.getElementById('previimagen').src = reader.result;
+            };
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function eliminar_repo(x){
+
+            document.getElementById('repo_descrip').innerHTML = `
+            <h3 style="color:red;">Esta seguro que desea eliminar el documento ?</h3>
+            <input class="form-control" value="${x}" name="id" type="hidden">
+            `;
+
         }
 
         function id_modal_edit_rec(id_edit){

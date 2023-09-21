@@ -114,6 +114,36 @@ class Repositorio{
 
                     $where = "id = $ultimo_id";
                     $datos = array('lic_path'=>$target_file);
+                    $this->ModelGlobal->actualizar($this->tabla_repositorios, $where, $datos);
+
+                } else {
+                    echo "Error al subir el archivo.";
+                }
+            }
+        }
+
+        /* if (!empty($_FILES["lic_path"]) && $_FILES["lic_path"]["error"] == 0) {
+            if (isset($_FILES["lic_path"])) {
+
+                $ruta = "vistas/adjuntos_repo/licencia/";
+                $file_name = basename($_FILES["lic_path"]["name"]);
+                $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                $new_file_name = $ultimo_id.'_'.uniqid() . "." . $file_ext;
+                $target_file = $ruta . $new_file_name;
+                $uploadOk = 1;
+                
+                // Verifica si el archivo ya existe
+                if (file_exists($target_file)) {
+                    echo "El archivo ya existe.";
+                    $uploadOk = 0;
+                }
+        
+                // Intenta mover el archivo a la carpeta de destino
+
+                if ($uploadOk == 1 && move_uploaded_file($_FILES["lic_path"]["tmp_name"], $target_file)) {
+
+                    $where = "id = $ultimo_id";
+                    $datos = array('lic_path'=>$target_file);
 
                     // este es otro de microsoft
                     $apiUrl = 'https://brazilsouth.api.cognitive.microsoft.com/vision/v2.0/ocr';
@@ -134,7 +164,7 @@ class Repositorio{
                     $result = file_get_contents($apiUrl, false, $context);
 
                     if ($result === FALSE) {
-                        /* Handle error */
+                        
                     }
 
                     // Parsea el resultado
@@ -160,7 +190,7 @@ class Repositorio{
                     echo "Error al subir el archivo.";
                 }
             }
-        }
+        } */
 
     }
 
@@ -173,6 +203,12 @@ class Repositorio{
     public function actualizar($where, $datos){
 
         $this->ModelGlobal->actualizar($this->tabla_repositorios, $where, $datos);
+
+    }
+
+    public function eliminar_repo($where){
+
+        return $ultimo_id = $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_repositorios, $where);
 
     }
 
