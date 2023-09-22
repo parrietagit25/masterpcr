@@ -1211,7 +1211,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjbf_fecha_nacimiento" value="<?php if($pjbf_fecha_nacimientoo=='1970-01-01'){ } else{echo $pjbf_fecha_nacimiento; } ?>"> <!-- Error de la fecha-->
+                                                                    data-date-format="d M, Y" name="pjbf_fecha_nacimiento" value="<?php if($pjbf_fecha_nacimiento=='1970-01-01'){ } else{echo $pjbf_fecha_nacimiento; } ?>"> <!-- Error de la fecha-->
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
