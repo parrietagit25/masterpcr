@@ -969,7 +969,7 @@ $html = '<div class="container" style="font-size: 10px;">
                     $pjtu_direccion_trabajo = '';
                  }
 
-                 if($pjtu_fecha_nacimiento=='1970-01-01'){ $pjtu_fecha_nacimiento = ''; } else{ $pjtu_fecha_nacimiento = $value['pjtu_fecha_nacimiento']; }
+                 if($pjtu_fecha_nacimiento=='1970-01-01'){ $pjtu_fecha_nacimiento = ''; }
 
                    $html.=' <table class="table" style="width:100%; font-size: 10px;" border="1">
                         <tr>
@@ -1114,10 +1114,10 @@ $html = '<div class="container" style="font-size: 10px;">
                     $pjpx_comentarios_2='';
                  }
 
-                 if($pjpx_fecha_cargo_actual=='1970-01-01'){ $pjpx_fecha_cargo_actual = ''; } else{ $pjpx_fecha_cargo_actual = $value['pjpx_fecha_cargo_actual']; }
-                 if($pjpx_fecha_cargo_anterior=='1970-01-01'){ $pjpx_fecha_cargo_anterior = ''; } else{ $pjpx_fecha_cargo_anterior = $value['pjpx_fecha_cargo_anterior']; }
-                 if($pjpx_fecha_cargo_actual_2=='1970-01-01'){ $pjpx_fecha_cargo_actual_2 = ''; } else{ $pjpx_fecha_cargo_actual_2 = $value['pjpx_fecha_cargo_actual_2']; }
-                 if($pjpx_fecha_cargo_anterior_2=='1970-01-01'){ $pjpx_fecha_cargo_anterior_2 = ''; } else{ $pjpx_fecha_cargo_anterior_2 = $value['pjpx_fecha_cargo_anterior_2']; }
+                 if($pjpx_fecha_cargo_actual=='1970-01-01'){ $pjpx_fecha_cargo_actual = ''; }
+                 if($pjpx_fecha_cargo_anterior=='1970-01-01'){ $pjpx_fecha_cargo_anterior = ''; }
+                 if($pjpx_fecha_cargo_actual_2=='1970-01-01'){ $pjpx_fecha_cargo_actual_2 = ''; } 
+                 if($pjpx_fecha_cargo_anterior_2=='1970-01-01'){ $pjpx_fecha_cargo_anterior_2 = ''; }
 
                     $html .='<table class="table" style="width:100%; font-size: 10px;" border="1">
                         <tr>
@@ -1175,23 +1175,23 @@ $html = '<div class="container" style="font-size: 10px;">
                     $pjrf_correo_electronico = $value['pjrf_correo_electronico'];
                  } 
 
-                 if (isset($pjrf_nombre_razon_social)) {
+                 if (!isset($pjrf_nombre_razon_social)) {
                     $pjrf_nombre_razon_social = '';
                  }
 
-                 if (isset($pjrf_actividad)) {
+                 if (!isset($pjrf_actividad)) {
                     $pjrf_actividad = '';
                  }
 
-                 if (isset($pjrf_relacion)) {
+                 if (!isset($pjrf_relacion)) {
                     $pjrf_relacion = '';
                  }
 
-                 if (isset($pjrf_telefono)) {
+                 if (!isset($pjrf_telefono)) {
                     $pjrf_telefono = '';
                  }
 
-                 if (isset($pjrf_correo_electronico)) {
+                 if (!isset($pjrf_correo_electronico)) {
                     $pjrf_correo_electronico = '';
                  }
 
