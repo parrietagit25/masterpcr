@@ -3557,6 +3557,25 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>
+
+            <div class="col-sm-4" style="margin-top:20px;">
+                Contrato de 12 M<br>
+                <a href="vistas/documentos_generados/contrato_de_compraventa_de_bien_inmueble_am12.php?id=<?php echo $id; ?>" target="_blank"><i class="ri-file-paper-2-fill" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Contrato de 6 M<br>
+                <a href="vistas/documentos_generados/contrato_de_compraventa_de_bien_inmueble_am6.php?id=<?php echo $id; ?>" target="_blank"><i class="ri-file-paper-2-fill" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Contrato de 3 M<br>
+                <a href="vistas/documentos_generados/contrato_de_compraventa_de_bien_inmueble_am3.php?id=<?php echo $id; ?>" target="_blank"><i class="ri-file-paper-2-fill" style="font-size: 100px;"></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
         </div>
     </div>
 <?php }elseif(isset($_GET['adjuntos_formulario_cc'])){ ?>

@@ -1751,7 +1751,9 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                             $pjpx_fecha_cargo_actual = $value['pjpx_fecha_cargo_actual'];
                                             $pjpx_cargo_anterior = $value['pjpx_cargo_anterior'];
                                             $pjpx_fecha_cargo_anterior = $value['pjpx_fecha_cargo_anterior'];
+                                            
                                             $pjpx_pep_relacion_directa = $value['pjpx_pep_relacion_directa'];
+
                                             $pjpx_nombre_completo_2 = $value['pjpx_nombre_completo_2'];
                                             $pjpx_cargo_actual_2 = $value['pjpx_cargo_actual_2'];
                                             $pjpx_fecha_cargo_actual_2 = $value['pjpx_fecha_cargo_actual_2'];
@@ -4991,6 +4993,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>
+            
         </div>
     </div>
     <?php }elseif(isset($_GET['adjuntos_formulario_cc_pj'])){ ?>
@@ -5100,6 +5103,24 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
             <div class="col-sm-4" style="margin-top:20px;">
                 Recibido Conforme<br>
                 <a href="vistas/documentos_generados/RECIBIDO CONFORME _ macro.xlsx" target="_blank"><i class="ri-user-star-line" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Contrato de 12 M<br>
+                <a href="vistas/documentos_generados/contrato_de_compraventa_de_bien_inmueble_am12_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="ri-file-paper-2-fill" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Contrato de 6 M<br>
+                <a href="vistas/documentos_generados/contrato_de_compraventa_de_bien_inmueble_am6_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="ri-file-paper-2-fill" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Contrato de 3 M<br>
+                <a href="vistas/documentos_generados/contrato_de_compraventa_de_bien_inmueble_am3_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="ri-file-paper-2-fill" style="font-size: 100px;"></i></a>
                 <br>
                 <!--<button class="btn btn-success">Enviar por Email</button>-->
             </div>
