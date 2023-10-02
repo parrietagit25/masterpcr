@@ -773,7 +773,7 @@ $html = '<div class="container" style="font-size: 10px;">
                 $pjbf_direccion_trabajo = '';
              }
 
-             if($pjbf_fecha_nacimiento=='1970-01-01'){ $pjbf_fecha_nacimiento = ''; } else{ $pjbf_fecha_nacimiento = $value['pjbf_fecha_nacimiento']; }
+             if($pjbf_fecha_nacimiento=='1970-01-01'){ $pjbf_fecha_nacimiento = ''; }
                     
                     $html .='<table class="table" style="width:100%; font-size: 10px;" border="1">
                         <tr>
