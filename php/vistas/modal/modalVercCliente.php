@@ -374,26 +374,28 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Profesion</label>
-                                                                    <select class="form-control" data-choices
+                                                                    <?php /*<select class="form-control" data-choices
                                                                         id="choices-single-default" name="fo_profesion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($valueOcupacionales['fo_profesion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fo_profesion" value="<?php echo $valueOcupacionales['fo_profesion']; ?>" class="form-control" id="">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Ocupacion</label>
-                                                                    <select class="form-control" data-choices
+                                                                    <?php /* <select class="form-control" data-choices
                                                                         id="choices-single-default" name="fo_ocupacion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($valueOcupacionales['fo_ocupacion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fo_ocupacion" value="<?php echo $valueOcupacionales['fo_ocupacion']; ?>" class="form-control" id="">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -962,26 +964,30 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Profesion</label>
+                                                                    <?php /*
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="fb_profesion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($fb_profesion == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fb_profesion" value="<?php echo $fb_profesion; ?>" class="form-control" id="">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->   
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Ocupacion</label>
+                                                                    <?php /*
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="fb_ocupacion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($fb_ocupacion == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fb_ocupacion" value="<?php echo $fb_ocupacion; ?>" class="form-control" id="">
                                                                 </div>
                                                             </div>
                                                             <!--end col--> 
@@ -1275,26 +1281,30 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Profesion</label>
+                                                                    <?php /*
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="ft_profesion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($ft_profesion == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="ft_profesion" value="<?php echo $ft_profesion; ?>" class="form-control" id="">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->   
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Ocupacion</label>
+                                                                    <?php /*
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="ft_ocupacion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($ft_ocupacion == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="ft_ocupacion" value="<?php echo $ft_ocupacion; ?>" class="form-control" id="">
                                                                 </div>
                                                             </div>
                                                             <!--end col--> 
@@ -1389,13 +1399,15 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Cargo Actual</label>
+                                                                    <?php /*
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="fp_cargo_actual">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($fp_cargo_actual == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fp_cargo_actual" id="" class="form-control" value="<?php echo $fp_cargo_actual; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1410,13 +1422,14 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Cargo Anterior</label>
-                                                                    <select class="form-control" data-choices
+                                                                    <?php /*<select class="form-control" data-choices
                                                                         id="choices-single-default" name="fp_cargo_anterior">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($fp_cargo_anterior == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fp_cargo_anterior" id="" class="form-control" value="<?php echo $fp_cargo_anterior; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -2221,26 +2234,29 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Profesion</label>
-                                                                    <select class="form-control" data-choices
+                                                                    <?php /* <select class="form-control" data-choices
                                                                         id="choices-single-default" name="fo_profesion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($valueOcupacionales['fo_profesion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fo_profesion" id="" class="form-control" value="<?php echo $valueOcupacionales['fo_profesion']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Ocupacion</label>
+                                                                    <?php /*
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="fo_ocupacion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($valueOcupacionales['fo_ocupacion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fo_ocupacion" id="" class="form-control" value="<?php echo $valueOcupacionales['fo_ocupacion']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -2757,26 +2773,30 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Profesion</label>
+                                                                    <?php /*
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="fb_profesion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($valueBeneficiario['fb_profesion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['nombre']); ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fb_profesion" id="" class="form-control" value="<?php echo $valueBeneficiario['fb_profesion']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->   
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Ocupacion</label>
+                                                                    <?php /*
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="fb_ocupacion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($valueBeneficiario['fb_ocupacion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fb_ocupacion" id="" class="form-control" value="<?php echo $valueBeneficiario['fb_ocupacion']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col--> 
@@ -3017,26 +3037,28 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Profesion</label>
-                                                                    <select class="form-control" data-choices
+                                                                    <?php /* <select class="form-control" data-choices
                                                                         id="choices-single-default" name="ft_profesion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($valueTerceros['ft_profesion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="ft_profesion" id="" class="form-control" value="<?php echo $valueTerceros['ft_profesion']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->   
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Ocupacion</label>
-                                                                    <select class="form-control" data-choices
+                                                                    <?php /* <select class="form-control" data-choices
                                                                         id="choices-single-default" name="ft_ocupacion">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($valueTerceros['ft_ocupacion'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="ft_ocupacion" id="" class="form-control" value="<?php echo $valueTerceros['ft_ocupacion']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col--> 
@@ -3111,13 +3133,15 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Cargo Actual</label>
+                                                                    <?php /*
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="fp_cargo_actual">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($valueExpuestas['fp_cargo_actual'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fp_cargo_actual" id="" class="form-control" value="<?php echo $valueExpuestas['fp_cargo_actual']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -3132,13 +3156,15 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="disabledInput" class="form-label">Cargo Anterior</label>
+                                                                    <?php /*
                                                                     <select class="form-control" data-choices
                                                                         id="choices-single-default" name="fp_cargo_anterior">
                                                                         <option value="">Seleccione</option>
                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value) { ?>
                                                                         <option value="<?php echo $value['codigo']; ?>" <?php if($valueExpuestas['fp_cargo_anterior'] == $value['codigo']){ echo 'selected'; } ?>><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select> */ ?>
+                                                                    <input type="text" name="fp_cargo_anterior" id="" class="form-control" value="<?php echo $valueExpuestas['fp_cargo_anterior']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->

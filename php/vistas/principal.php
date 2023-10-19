@@ -690,26 +690,29 @@
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Profesión</label>
+                                                                                                    <?php /*
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fo_profesion">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                                                         <?php } ?>
-                                                                                                    </select>
+                                                                                                    </select> */ ?>
+                                                                                                    <input type="text" name="fo_profesion" class="form-control" id="">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Ocupación</label>
-                                                                                                    <select class="form-control" data-choices
+                                                                                                    <?php /*<select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fo_ocupacion">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                                                         <?php } ?>
-                                                                                                    </select>
+                                                                                                    </select> */ ?>
+                                                                                                    <input type="text" class="form-control" name="fo_ocupacion" id="">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -1233,26 +1236,28 @@
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Profesión</label>
-                                                                                                    <select class="form-control" data-choices
+                                                                                                    <?php /* <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fb_profesion">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                                                         <?php } ?>
-                                                                                                    </select>
+                                                                                                    </select> */ ?>
+                                                                                                    <input type="text" class="form-control" name="fb_profesion" id="">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->   
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Ocupación</label>
-                                                                                                    <select class="form-control" data-choices
+                                                                                                    <?php /* <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fb_ocupacion">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                                                         <?php } ?>
-                                                                                                    </select>
+                                                                                                    </select> */ ?>
+                                                                                                    <input type="text" class="form-control" name="fb_ocupacion" id="">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col--> 
@@ -1489,26 +1494,29 @@
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Profesión</label>
+                                                                                                    <?php /*
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="ft_profesion">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                                                         <?php } ?>
-                                                                                                    </select>
+                                                                                                    </select> */ ?>
+                                                                                                    <input type="text" name="ft_profesion" class="form-control" name="ft_ocupacion" id="">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->   
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Ocupación</label>
-                                                                                                    <select class="form-control" data-choices
+                                                                                                    <?php /* <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="ft_ocupacion">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($profesion as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                                                         <?php } ?>
-                                                                                                    </select>
+                                                                                                    </select> */ ?>
+                                                                                                    <input type="text" class="form-control" name="ft_ocupacion" id="">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col--> 
@@ -1581,13 +1589,14 @@
                                                                                             <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Cargo Actual</label>
-                                                                                                    <select class="form-control" data-choices
+                                                                                                    <?php /* <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fp_cargo_actual">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                                                         <?php } ?>
-                                                                                                    </select>
+                                                                                                    </select> */ ?>
+                                                                                                    <input type="text" name="fp_cargo_actual" class="form-control" name="fp_cargo_actual" id="">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -1602,13 +1611,14 @@
                                                                                             <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Cargo Anterior</label>
-                                                                                                    <select class="form-control" data-choices
+                                                                                                    <?php /* <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fp_cargo_anterior">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($profesion_personas_expuestas as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                                                         <?php } ?>
-                                                                                                    </select>
+                                                                                                    </select> */ ?>
+                                                                                                    <input type="text" name="fp_cargo_anterior" class="form-control" name="ft_ocupacion" id="">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->

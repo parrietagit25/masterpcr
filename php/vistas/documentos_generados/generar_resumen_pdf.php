@@ -234,6 +234,8 @@ $html = '<div class="container" style="font-size: 10px;">
                 $profesion_descripcion = '';
             }
 
+            $profesion_descripcion = $value['fo_profesion'];
+
             // ocupaciion 
             $ocupacion = $cCclienteController->obtener_codigo_id($value['fo_ocupacion']);
             foreach ($ocupacion as $key => $valueocupacion) {
@@ -243,6 +245,8 @@ $html = '<div class="container" style="font-size: 10px;">
             if(!isset($ocupacion_descripcion)){
                 $ocupacion_descripcion = '';
             }
+
+            $ocupacion_descripcion = $value['fo_ocupacion'];
 
             $html .= '<table class="table" style="width:100%; font-size: 10px;" border="1">
                     <tr>
@@ -492,6 +496,8 @@ $html = '<div class="container" style="font-size: 10px;">
              if(!isset($profesion_descripcion_1)){
                  $profesion_descripcion_1 = '';
              }
+
+             $profesion_descripcion_1 = $value['fb_profesion'];
  
              // ocupaciion 
              $ocupacion_1 = $cCclienteController->obtener_codigo_id($value['fb_ocupacion']);
@@ -502,6 +508,8 @@ $html = '<div class="container" style="font-size: 10px;">
              if(!isset($ocupacion_descripcion_1)){
                  $ocupacion_descripcion_1 = '';
              }
+
+             $ocupacion_descripcion_1 = $value['fb_ocupacion'];
 
              if($value['fb_fecha_nacimiento']=='1970-01-01'){ $fecha_nacimiento_bf = ''; } else{ $fecha_nacimiento_bf = $value['fb_fecha_nacimiento']; }
 
@@ -657,6 +665,8 @@ $html = '<div class="container" style="font-size: 10px;">
             $profesion_descripcion_1_ft = '';
         }
 
+        $profesion_descripcion_1_ft = $value['ft_profesion'];
+
         // ocupaciion 
         $ocupacion_1 = $cCclienteController->obtener_codigo_id($value['ft_ocupacion']);
         foreach ($ocupacion_1 as $key => $valueocupacion) {
@@ -666,6 +676,8 @@ $html = '<div class="container" style="font-size: 10px;">
         if(!isset($ocupacion_descripcion_1_ft)){
             $ocupacion_descripcion_1_ft = '';
         }
+
+        $ocupacion_descripcion_1_ft = $value['ft_ocupacion'];
 
         if($value['ft_fecha_nacimiento']=='1970-01-01'){ $fecha_nacimiento_fn = ''; } else{ $fecha_nacimiento_fn = $value['ft_fecha_nacimiento']; }
 
@@ -831,5 +843,3 @@ foreach ($declaracion_jurada as $key => $value) {
 
 $mpdf->WriteHTML($html);
 $mpdf->Output();
-
-
