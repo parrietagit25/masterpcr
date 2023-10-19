@@ -1761,6 +1761,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                             $pjpx_fecha_cargo_anterior_2 = $value['pjpx_fecha_cargo_anterior_2'];
                                             $pjpx_comentarios_2 = $value['pjpx_comentarios_2'];
 
+                                            $pjpx_comentarios = $value['pjpx_comentarios'];
+
                                      } 
 
                                      if (!isset($pjpx_relacion_directa)) {
@@ -1812,6 +1814,10 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                      
                                      if (!isset($pjpx_comentarios_2)) {
                                         $pjpx_comentarios_2='';
+                                     }
+
+                                     if (!isset($pjpx_comentarios)) {
+                                        $pjpx_comentarios='';
                                      }
                                      
                                      ?>
@@ -1897,7 +1903,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <div>
                                                                     <label for="exampleFormControlTextarea5" class="form-label">Comentarios</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                        rows="3" name="pjpx_comentarios"><?php echo $value['pjpx_comentarios']; ?></textarea>
+                                                                        rows="3" name="pjpx_comentarios"><?php echo $pjpx_comentarios; ?></textarea>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -2005,23 +2011,23 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
 
                                                          } 
                                                          
-                                                         if (isset($pjrf_nombre_razon_social)) {
+                                                         if (!isset($pjrf_nombre_razon_social)) {
                                                             $pjrf_nombre_razon_social = '';
                                                          }
 
-                                                         if (isset($pjrf_actividad)) {
+                                                         if (!isset($pjrf_actividad)) {
                                                             $pjrf_actividad = '';
                                                          }
 
-                                                         if (isset($pjrf_relacion)) {
+                                                         if (!isset($pjrf_relacion)) {
                                                             $pjrf_relacion = '';
                                                          }
 
-                                                         if (isset($pjrf_telefono)) {
+                                                         if (!isset($pjrf_telefono)) {
                                                             $pjrf_telefono = '';
                                                          }
 
-                                                         if (isset($pjrf_correo_electronico)) {
+                                                         if (!isset($pjrf_correo_electronico)) {
                                                             $pjrf_correo_electronico = '';
                                                          }
                                                          
@@ -2419,7 +2425,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" name="pjui_fecha_4" value="<?php if($pjui_fecha_4=='1970-01-01'){ } else{echo $pjui_fecha_4; } ?>">
+                                                                    <input type="date" class="form-control" name="pjui_fecha_4" value="<?php if($pjui_fecha_4=='1970-01-01'){ } else{echo $pjui_fecha_4; } ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
