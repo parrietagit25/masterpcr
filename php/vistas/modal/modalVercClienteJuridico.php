@@ -3300,8 +3300,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha de nacimiento</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjrl_fecha_nacimiento" value="<?php echo $value['pjrl_fecha_nacimiento']; ?>">
+                                                                    <input type="date" class="form-control" name="pjrl_fecha_nacimiento" value="<?php echo $value['pjrl_fecha_nacimiento']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -3703,8 +3702,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjbf_fecha_nacimiento" value="<?php echo $value['pjbf_fecha_nacimiento']; ?>">
+                                                                    <input type="date" class="form-control" name="pjbf_fecha_nacimiento" value="<?php echo $value['pjbf_fecha_nacimiento']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -3954,8 +3952,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjtu_fecha_nacimiento" value="<?php echo $value['pjtu_fecha_nacimiento']; ?>">
+                                                                    <input type="date" class="form-control" name="pjtu_fecha_nacimiento" value="<?php echo $value['pjtu_fecha_nacimiento']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -4178,8 +4175,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_actual" value="<?php echo $value['pjpx_fecha_cargo_actual']; ?>">
+                                                                    <input type="date" class="form-control" name="pjpx_fecha_cargo_actual" value="<?php echo $value['pjpx_fecha_cargo_actual']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -4199,8 +4195,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha anterior</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_anterior" value="<?php echo $value['pjpx_fecha_cargo_anterior']; ?>">
+                                                                    <input type="date" class="form-control" name="pjpx_fecha_cargo_anterior" value="<?php echo $value['pjpx_fecha_cargo_anterior']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -4246,8 +4241,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_actual_2" value="<?php echo $value['pjpx_fecha_cargo_actual_2']; ?>">
+                                                                    <input type="date" class="form-control" name="pjpx_fecha_cargo_actual_2" value="<?php echo $value['pjpx_fecha_cargo_actual_2']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -4267,8 +4261,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha anterior</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjpx_fecha_cargo_anterior_2" value="<?php echo $value['pjpx_fecha_cargo_anterior_2']; ?>">
+                                                                    <input type="date" class="form-control" name="pjpx_fecha_cargo_anterior_2" value="<?php echo $value['pjpx_fecha_cargo_anterior_2']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!-- end col --> 
@@ -4396,8 +4389,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjdj_fecha" value="<?php echo $value['pjdj_fecha']; ?>">
+                                                                    <input type="date" class="form-control" name="pjdj_fecha" value="<?php echo $value['pjdj_fecha']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -4522,8 +4514,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjui_fecha_1" value="<?php echo $value['pjui_fecha_1']; ?>">
+                                                                    <input type="date" class="form-control" name="pjui_fecha_1" value="<?php echo $value['pjui_fecha_1']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -4544,8 +4535,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjui_fecha_2" value="<?php echo $value['pjui_fecha_2']; ?>">
+                                                                    <input type="date" class="form-control" name="pjui_fecha_2" value="<?php echo $value['pjui_fecha_2']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -4566,8 +4556,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjui_fecha_3" value="<?php echo $value['pjui_fecha_3']; ?>">
+                                                                    <input type="date" class="form-control" name="pjui_fecha_3" value="<?php echo $value['pjui_fecha_3']; ?>">
                                                                 </div>
                                                             </div>
 
@@ -4589,8 +4578,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-4 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjui_fecha_4" value="<?php echo $value['pjui_fecha_4']; ?>">
+                                                                    <input type="date" class="form-control" name="pjui_fecha_4" value="<?php echo $value['pjui_fecha_4']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -4843,8 +4831,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-6 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="p_jdj_fecha_2" value="<?php echo $p_jdj_fecha_2; ?>">
+                                                                    <input type="text" class="form-control" name="p_jdj_fecha_2" value="<?php echo $p_jdj_fecha_2; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
