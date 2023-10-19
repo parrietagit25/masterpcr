@@ -38,3 +38,4 @@ foreach (seleccionar("cc_ocupacionales", $conn) as $key => $value2) {
     }
 
 }
+// palas
