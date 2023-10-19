@@ -2852,8 +2852,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
                                                                     <label for="basiInput" class="form-label">Fecha</label>
-                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                    data-date-format="d M, Y" name="pjexp_fecha" value="<?php echo $value['pjexp_fecha']; ?>">
+                                                                    <input type="date" class="form-control" name="pjexp_fecha" value="<?php echo $value['pjexp_fecha']; ?>">
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
