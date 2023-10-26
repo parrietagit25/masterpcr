@@ -19,13 +19,13 @@ foreach ($expedienete as $key => $value) {
     $motor = $value["pjexp_motor"];
     $color = $value["pjexp_color"];
  }
-
+/*
  foreach ($generales as $key => $value) {
     $cedula = $value['fg_cedula'];
     $direccion = $value['fg_direccion_residencial'];
     $telefono = $value['fg_telefono_movil'];
     $nombre_completo = $value['fg_primer_nombre'].' '.$value['fg_segundo_nombre'].' '.$value['fg_apellido_paterno'].' '.$value['fg_apellido_materno'];
- } 
+ }  */
 
 $html = '<div class="container" style="font-size: 9px;">
             <div class="row">
@@ -41,9 +41,9 @@ $html = '<div class="container" style="font-size: 9px;">
                         </b>
                     </p>
                     <p>
-                        Entre los suscritos a saber, Panamá Car Rental S.A. Sociedad Anónima debidamente inscrita a la ficha 427175, documento 419758 debidamente representada en este acto por _________________________________________________________________________.ciudadano (a) panameño (a), mayor de edad, con número de cédula de
-                        identidad personal _____________________________________________________________________	quien actúa debidamente facultado (a) por una parte y quien para los efectos de este contrato, en adelante se denominará EL VENDEDOR y por la otra ____'.$cliente.'____ varón/mujer, mayor de edad, panameño (a), con cédula de
-                        identidad personal o Pasaporte No.  ___'.$cedula.'___ extranjero (a) actuando en su propio nombre y representación, en adelante y para los efectos de este contrato EL COMPRADOR y cuando se haga referencia de todas dichas partes se denominarán LAS PARTES convienen en celebrar el presente Contrato de Compraventa de Bien Mueble (Auto), en atención a las siguientes cláusulas y condiciones:
+                        Entre los suscritos a saber, Panamá Car Rental S.A. Sociedad Anónima debidamente inscrita a la ficha 427175, documento 419758 debidamente representada en este acto por _______________________________________________________________________________________________________.ciudadano (a) panameño (a), mayor de edad, con número de cédula de
+                        identidad personal _______________________________________________________________________________________________________	quien actúa debidamente facultado (a) por una parte y quien para los efectos de este contrato, en adelante se denominará EL VENDEDOR y por la otra _____________________________________________________________________ varón/mujer, mayor de edad, panameño (a), con cédula de
+                        identidad personal o Pasaporte No.  _____________________________________________________________________ extranjero (a) actuando en su propio nombre y representación, en adelante y para los efectos de este contrato EL COMPRADOR y cuando se haga referencia de todas dichas partes se denominarán LAS PARTES convienen en celebrar el presente Contrato de Compraventa de Bien Mueble (Auto), en atención a las siguientes cláusulas y condiciones:
                         Sección 1: (Declaración de Propiedad) EL VENDEDOR declara y así lo hace constar, que es dueño del auto descrito a continuación, el cual en adelante, para los efectos de este contrato será referido como el AUTO.
 
                     </p>';
