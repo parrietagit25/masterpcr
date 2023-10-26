@@ -20,6 +20,14 @@ foreach ($expedienete as $key => $value) {
     $color = $value["pjexp_color"];
  }
 
+ foreach ($generales as $key => $value) {
+    $cedula = $value['fg_cedula'];
+    $direccion = $value['fg_direccion_residencial'];
+    $telefono = $value['fg_telefono_movil'];
+    $nombre_completo = $value['fg_primer_nombre'].' '.$value['fg_segundo_nombre'].' '.$value['fg_apellido_paterno'].' '.$value['fg_apellido_materno'];
+ }
+
+
  /*
  foreach ($generales as $key => $value) {
     $cedula = $value['fg_cedula'];
@@ -42,9 +50,9 @@ $html = '<div class="container" style="font-size: 9px;">
                         </b>
                     </p>
                     <p>
-                        Entre los suscritos a saber, Panamá Car Rental S.A. Sociedad Anónima debidamente inscrita a la ficha 427175, documento 419758 debidamente representada en este acto por ____________________ _____________________.ciudadano (a) panameño (a), mayor de edad, con número de cédula de
-                        identidad personal _____________________	quien actúa debidamente facultado (a) por una parte y quien para los efectos de este contrato, en adelante se denominará EL VENDEDOR y por la otra ____________ varón/mujer, mayor de edad, panameño (a), con cédula de
-                        identidad personal o Pasaporte No. __________________ extranjero (a) actuando en su propio nombre y representación, en adelante y para los efectos de este contrato EL COMPRADOR y cuando se haga referencia de todas dichas partes se denominarán LAS PARTES convienen en celebrar el presente Contrato de Compraventa de Bien Mueble (Auto), en atención a las siguientes cláusulas y condiciones:
+                        Entre los suscritos a saber, Panamá Car Rental S.A. Sociedad Anónima debidamente inscrita a la ficha 427175, documento 419758 debidamente representada en este acto por _______________________________________________________________________________________________________.ciudadano (a) panameño (a), mayor de edad, con número de cédula de
+                        identidad personal ___________________________________________________________________________ quien actúa debidamente facultado (a) por una parte y quien para los efectos de este contrato, en adelante se denominará EL VENDEDOR y por la otra ____'.$cliente.'____ varón/mujer, mayor de edad, panameño (a), con cédula de
+                        identidad personal o Pasaporte No. ___'.$cedula.'___ extranjero (a) actuando en su propio nombre y representación, en adelante y para los efectos de este contrato EL COMPRADOR y cuando se haga referencia de todas dichas partes se denominarán LAS PARTES convienen en celebrar el presente Contrato de Compraventa de Bien Mueble (Auto), en atención a las siguientes cláusulas y condiciones:
                         Sección 1: (Declaración de Propiedad) EL VENDEDOR declara y así lo hace constar, que es dueño del auto descrito a continuación, el cual en adelante, para los efectos de este contrato será referido como el AUTO.
 
                     </p>';
@@ -87,7 +95,7 @@ $html = '<div class="container" style="font-size: 9px;">
                         </table>
 
                         <p>
-                        Sección 2: (Objeto) Por medio de este contrato, EL VENDEDOR vende como en efecto lo hace EL COMPRADOR, el AUTO descrito en líneas anteriores por un precio pactado de (US$) ________________ (US$) ________________	pagaderos con la firma de este contrato. El precio no incluye gastos de traspaso. <br>
+                        Sección 2: (Objeto) Por medio de este contrato, EL VENDEDOR vende como en efecto lo hace EL COMPRADOR, el AUTO descrito en líneas anteriores por un precio pactado de (US$) ________________________________________________________________ (US$) ________________________________________________________________	pagaderos con la firma de este contrato. El precio no incluye gastos de traspaso. <br>
                         Sección 3: (Gravámenes) Declara EL VENDEDOR que el AUTO se encuentra libre de gravámenes, multas e Hipoteca, se encuentra al día en el pago de todos sus impuestos, y se compromete a responder en caso de evicción. EL VENDEDOR no es responsable por atrasos en la en la entrega del AUTO y/o los documentos de traspaso del mismo, mientras dichos traspasos sean imputables o escapen de su control. <br>
                         Sección 4: (Condiciones de Garantía): Salvo las limitaciones o exclusiones indicadas en este documento EL VENDEDOR otorga una garantía de tres (3) meses o 5.000KM, lo que ocurra primero, en el bloque del motor y la transmisión únicamente. <br>
                         Los términos de la garantía comenzarán a regir a partir de la fecha de este contrato.
@@ -124,10 +132,10 @@ $html = '<div class="container" style="font-size: 9px;">
                         </p>
                         <table border="0" style="width:100%; font-size: 8px;">
                             <tr>
-                                <td> _______________________________________</td>
+                                <td> ______________________________________________________________________________________________</td>
                                 <td></td>
                                 <td></td>
-                                <td>________________________________________</td>
+                                <td>_______________________________________________________________________________________________</td>
                             </tr>
                             <tr>
                                 <td> <b>PANAMA CAR RENTAL, S.A.</b> <br>
