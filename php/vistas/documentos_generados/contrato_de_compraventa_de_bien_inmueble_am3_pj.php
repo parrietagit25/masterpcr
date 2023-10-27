@@ -20,14 +20,6 @@ foreach ($expedienete as $key => $value) {
     $color = $value["pjexp_color"];
  }
 
- foreach ($generales as $key => $value) {
-    $cedula = $value['fg_cedula'];
-    $direccion = $value['fg_direccion_residencial'];
-    $telefono = $value['fg_telefono_movil'];
-    $nombre_completo = $value['fg_primer_nombre'].' '.$value['fg_segundo_nombre'].' '.$value['fg_apellido_paterno'].' '.$value['fg_apellido_materno'];
- }
-
-
  /*
  foreach ($generales as $key => $value) {
     $cedula = $value['fg_cedula'];
